@@ -2,7 +2,8 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
-        <file>ui/Page1Form.ui.qml</file>
-        <file>ui/Page2Form.ui.qml</file>
+        <file>fonts/Oswald/Oswald.ttf</file>
+        <file>ui/Page1Form.qml</file>
+        <file>ui/Page2Form.qml</file>
     </qresource>
 </RCC>
