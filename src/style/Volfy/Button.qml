@@ -38,7 +38,6 @@ T.Button {
         }
         PropertyChanges {
             target: dropShadow
-            horizontalOffset: 1
             verticalOffset: 1
         }
     }
@@ -63,7 +62,6 @@ T.Button {
         DropShadow {
             id: dropShadow
             anchors.fill: buttonShape
-            horizontalOffset: 2
             verticalOffset: 3
             radius: 16.0
             samples: 17

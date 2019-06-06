@@ -5,7 +5,15 @@
         <file>fonts/Oswald/Oswald.ttf</file>
         <file>style/Volfy/Button.qml</file>
         <file>style/Volfy/ButtonShape.qml</file>
+        <file>style/Volfy/TabBar.qml</file>
+        <file>style/Volfy/TabButton.qml</file>
         <file>ui/Page1Form.qml</file>
         <file>ui/Page2Form.qml</file>
+        <file>assets/artwork_icon.svg</file>
+        <file>assets/artwork_icon_filled.svg</file>
+        <file>assets/game_icon.svg</file>
+        <file>assets/game_icon_filled.svg</file>
+        <file>assets/setup_icon.svg</file>
+        <file>assets/setup_icon_filled.svg</file>
     </qresource>
 </RCC>
