@@ -6,8 +6,8 @@ import "ui" as Ui
 
 ApplicationWindow {
     visible: true
-    width: 640
-    height: 480
+    width: 375
+    height: 667
     title: qsTr("Tabs")
 
     FontLoader { source: "qrc:/fonts/Oswald/Oswald.ttf" }

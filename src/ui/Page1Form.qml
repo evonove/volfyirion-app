@@ -13,9 +13,16 @@ Page {
         anchors.fill: parent
 
         Button {
-            id: button
             text: qsTr("Button")
-            highlighted: false
+
+            Layout.preferredWidth: 277
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+        }
+
+        Button {
+            text: qsTr("Button")
+
+            Layout.preferredWidth: 277
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
 
