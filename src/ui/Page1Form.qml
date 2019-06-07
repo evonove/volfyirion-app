@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+import Volfy.Controls 1.0
 
 Page {
     width: 600
@@ -26,9 +27,11 @@ Page {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
 
-        Label {
-            text: qsTr("You are on Page 1.")
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+        GrowlButton {
+            text: "growl"
+
+            Layout.alignment: Qt.AlignHCenter
         }
+
     }
 }
