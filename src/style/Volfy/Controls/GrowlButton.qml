@@ -33,10 +33,20 @@ T.Button {
             explicit: true
             y: iconLabel.y + 2
         }
+
         PropertyChanges {
-            target: background
-            y: 2
+            target: internalEllipse
+            explicit: true
+            width: externalEllipse.width - 12
+            height: externalEllipse.height - 12
         }
+
+        PropertyChanges {
+            target: image
+            width: externalEllipse.width - 12
+            height: externalEllipse.height - 12
+        }
+
         PropertyChanges {
             target: dropShadow
             verticalOffset: 1
