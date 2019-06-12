@@ -12,25 +12,10 @@ ApplicationWindow {
 
     FontLoader { source: "qrc:/fonts/Oswald/Oswald.ttf" }
 
-    header: ToolBar {
-        RowLayout {
-            anchors.fill: parent
-            ToolButton {
-                text: "<"
-            }
-        }
-        Label {
-            anchors.centerIn: parent
-            text: swipeView.currentItem.text
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            font.capitalization: Font.AllUppercase
-        }
-    }
-
     SwipeView {
         id: swipeView
         anchors.fill: parent
+        interactive: false
         currentIndex: tabBar.currentIndex
 
         Ui.Page1Form {

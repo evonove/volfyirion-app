@@ -1,3 +1,5 @@
+TARGET = volfyirion
+
 QT += quick
 CONFIG += c++11
 
