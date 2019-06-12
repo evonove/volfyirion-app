@@ -21,6 +21,8 @@
         <file>assets/setup_icon.svg</file>
         <file>assets/setup_icon_filled.svg</file>
         <file>assets/growl-button-background.png</file>
+        <file>assets/background.jpeg</file>
+        <file>assets/logo.png</file>
         <file>style/Volfy/Controls/qmldir</file>
         <file>style/Volfy/Controls/GrowlButton.qml</file>
     </qresource>

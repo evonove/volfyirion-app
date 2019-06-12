@@ -12,6 +12,7 @@ ApplicationWindow {
 
     FontLoader { source: "qrc:/fonts/Oswald/Oswald.ttf" }
 
+
     SwipeView {
         id: swipeView
         anchors.fill: parent
