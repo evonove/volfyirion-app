@@ -31,25 +31,13 @@ T.Button {
         PropertyChanges {
             target: iconLabel
             explicit: true
-            y: iconLabel.y + 2
+            opacity: 0.6
         }
 
         PropertyChanges {
-            target: internalEllipse
+            target: background
             explicit: true
-            width: externalEllipse.width - 12
-            height: externalEllipse.height - 12
-        }
-
-        PropertyChanges {
-            target: image
-            width: externalEllipse.width - 12
-            height: externalEllipse.height - 12
-        }
-
-        PropertyChanges {
-            target: dropShadow
-            verticalOffset: 1
+            opacity: 0.6
         }
     }
 
@@ -58,6 +46,7 @@ T.Button {
         spacing: control.spacing
         mirrored: control.mirrored
         display: control.display
+        opacity: 0.8
 
         icon: control.icon
         text: control.text
@@ -70,17 +59,8 @@ T.Button {
     background: Item {
         implicitHeight: 76
         implicitWidth: 76
-        opacity: 0.5
 
-        DropShadow {
-            id: dropShadow
-            anchors.fill: externalEllipse
-            verticalOffset: 3
-            radius: 16.0
-            samples: 17
-            color: "#80000000"
-            source: externalEllipse
-        }
+        opacity: 0.8
 
         Rectangle {
             id: externalEllipse
