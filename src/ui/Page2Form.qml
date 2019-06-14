@@ -11,19 +11,19 @@ Page {
     property string text: qsTr("Page 2")
 
     header: Header {
-        title: stack.currentItem.title
+            title: stack.currentItem.title
 
-        leftAction: stack.currentItem.leftAction
-        rightAction: stack.currentItem.rightAction
+            leftAction: stack.currentItem.leftAction
+            rightAction: stack.currentItem.rightAction
 
-        visible: stack.currentItem.hasToolbar
-        enabled: stack.currentItem.hasToolbar
-    }
+            visible: stack.currentItem.hasToolbar
+            enabled: stack.currentItem.hasToolbar
+        }
 
     StackView {
         id: stack
         anchors.fill: parent
-        anchors.topMargin: stack.currentItem.hasToolbar ? 0 : header.implicitHeight
+//        anchors.topMargin: stack.currentItem.hasToolbar ? 0 : header.implicitHeight
         initialItem: indexView
     }
 

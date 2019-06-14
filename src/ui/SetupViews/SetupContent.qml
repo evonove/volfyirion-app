@@ -3,13 +3,12 @@ import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import Volfy.Controls 1.0
 
-Page {
+import "../" as Ui
+
+Ui.BasePage {
+    signal gameSetupClicked()
 
     title: "first view"
-
-    property bool hasToolbar: false
-    property Action leftAction: null
-    property Action rightAction: null
 
     background: Image {
         source:"qrc:/assets/background.png"
@@ -41,6 +40,8 @@ Page {
 
         Button {
             text: qsTr("Game Setup")
+
+            onClicked: gameSetupClicked()
 
             Layout.preferredWidth: 277
             Layout.bottomMargin: 75

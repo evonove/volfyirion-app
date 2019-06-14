@@ -10,9 +10,13 @@ Page {
     height: 400
 
     property string text: qsTr("Page 1")
-    property bool hasToolBar: false
 
-    header: Ui.Header {
+    Ui.Header {
+        id: _header
+        position: ToolBar.Header
+        z:2
+        width: parent.width
+        height: 58
         title: stack.currentItem.title
 
         leftAction: stack.currentItem.leftAction
@@ -25,14 +29,29 @@ Page {
     StackView {
         id: stack
         anchors.fill: parent
-        anchors.topMargin: stack.currentItem.hasToolbar ? header.implicitHeight : 0
-        initialItem: setupContentPage
+
+        initialItem: setupContent
     }
 
     Component {
-        id: setupContentPage
+        id: setupContent
         SetupContent {
-            anchors.fill: parent
+            hasToolbar: false
+            onGameSetupClicked: stack.push(gameSetupContent)
+        }
+    }
+
+    Component {
+        id: gameSetupContent
+
+        GameSetupContent {
+            topPadding: _header.implicitHeight
+            hasToolbar: true
+
+            leftAction: Action {
+                icon.source: "qrc:/assets/back_icon.svg"
+                onTriggered: stack.pop()
+            }
         }
     }
 }
