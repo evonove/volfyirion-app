@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 
+import "ui/SetupViews" as SetupViews
 import "ui" as Ui
 
 ApplicationWindow {
@@ -19,7 +20,7 @@ ApplicationWindow {
         interactive: false
         currentIndex: tabBar.currentIndex
 
-        Ui.Page1Form {
+        SetupViews.SetupPage {
         }
 
         Ui.Page2Form {
