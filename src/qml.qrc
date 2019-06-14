@@ -9,9 +9,13 @@
         <file>style/Volfy/TabButton.qml</file>
         <file>style/Volfy/ToolBar.qml</file>
         <file>style/Volfy/ToolButton.qml</file>
+        <file>style/Volfy/Controls/qmldir</file>
+        <file>style/Volfy/Controls/GrowlButton.qml</file>
+        <file>ui/BasePage.qml</file>
         <file>ui/Header.qml</file>
         <file>ui/Page1Form.qml</file>
         <file>ui/Page2Form.qml</file>
+        <file>ui/SetupViews/GameSetupContent.qml</file>
         <file>assets/artwork_icon.svg</file>
         <file>assets/artwork_icon_filled.svg</file>
         <file>assets/back_icon.svg</file>
@@ -21,7 +25,7 @@
         <file>assets/setup_icon.svg</file>
         <file>assets/setup_icon_filled.svg</file>
         <file>assets/growl-button-background.png</file>
-        <file>style/Volfy/Controls/qmldir</file>
-        <file>style/Volfy/Controls/GrowlButton.qml</file>
+        <file>assets/game_setup.png</file>
+        <file>assets/volf_setup_01.png</file>
     </qresource>
 </RCC>

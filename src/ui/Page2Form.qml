@@ -2,6 +2,8 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 
+import "SetupViews" as SetupViews
+
 Page {
     width: 600
     height: 400
@@ -53,24 +55,12 @@ Page {
     Component {
         id: secondView
 
-        Page {
-            property bool hasToolbar: true
+        SetupViews.GameSetupContent {
+            hasToolbar: true
 
-            property Action leftAction: Action {
+            leftAction: Action {
                 icon.source: "qrc:/assets/back_icon.svg"
                 onTriggered: stack.pop()
-            }
-
-            property Action rightAction: Action {
-                icon.source: "qrc:/assets/index_icon.svg"
-            }
-
-            title: "second view"
-
-            ColumnLayout {
-                Label {
-                    text: "Empty page"
-                }
             }
         }
     }
