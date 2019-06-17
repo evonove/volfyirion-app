@@ -3,7 +3,7 @@ import QtQuick.Controls 2.12
 
 import ".." as Ui
 
-Ui.BasePage {
+Ui.BaseContent {
     id: root
 
     title: qsTr("game setup")

@@ -5,7 +5,7 @@ import Volfy.Controls 1.0
 
 import "../" as Ui
 
-Ui.BasePage {
+Ui.BaseContent {
     signal gameSetupClicked()
 
     title: "first view"
@@ -22,45 +22,68 @@ Ui.BasePage {
     }
 
     ColumnLayout {
-        id: columnLayout
+        id: _outer
         anchors.fill: parent
         spacing: 0
+
         Image {
             source: "qrc:/assets/logo.png"
             fillMode: Image.PreserveAspectFit
             smooth: false
             asynchronous: true
-            Layout.fillWidth: true
-            Layout.minimumWidth: 314
-            Layout.maximumHeight: 144
-            Layout.alignment: Qt.AlignTop
+
+            Layout.fillHeight: false
+            Layout.fillWidth: false
+
+            Layout.preferredWidth: 314
+            Layout.preferredHeight: 144
+            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
             Layout.topMargin: 18
-            Layout.bottomMargin: 68
         }
 
-        Button {
-            text: qsTr("Game Setup")
-
-            onClicked: gameSetupClicked()
-
-            Layout.preferredWidth: 277
-            Layout.bottomMargin: 75
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-        }
-
-        Button {
-            text: qsTr("Rulebook")
-
-            Layout.preferredWidth: 277
-            Layout.bottomMargin: 100
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-        }
-
-        GrowlButton {
-            text: "growl"
-
-            Layout.bottomMargin: 32
+        ColumnLayout {
+            id: _inner
+            Layout.fillWidth: true
+            Layout.fillHeight: true
             Layout.alignment: Qt.AlignHCenter
+
+            Item {
+                Layout.fillHeight: true
+                Layout.preferredHeight: 2
+            }
+
+            Button {
+                text: qsTr("Game Setup")
+
+                onClicked: gameSetupClicked()
+
+                Layout.preferredWidth: 277
+                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+            }
+
+            Item {
+                Layout.fillHeight: true
+                Layout.preferredHeight: 1
+            }
+
+            Button {
+                text: qsTr("Rulebook")
+
+                Layout.preferredWidth: 277
+                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+            }
+
+            Item {
+                Layout.fillHeight: true
+                Layout.preferredHeight: 2
+            }
+
+            GrowlButton {
+                text: "growl"
+
+                Layout.bottomMargin: 32
+                Layout.alignment:Qt.AlignTop | Qt.AlignHCenter
+            }
         }
     }
 }

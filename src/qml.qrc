@@ -11,7 +11,7 @@
         <file>style/Volfy/ToolButton.qml</file>
         <file>style/Volfy/Controls/qmldir</file>
         <file>style/Volfy/Controls/GrowlButton.qml</file>
-        <file>ui/BasePage.qml</file>
+        <file>ui/BaseContent.qml</file>
         <file>ui/Header.qml</file>
         <file>ui/SetupViews/SetupPage.qml</file>
         <file>ui/SetupViews/SetupContent.qml</file>
@@ -30,5 +30,6 @@
         <file>assets/logo.png</file>
         <file>assets/game_setup.png</file>
         <file>assets/volf_setup_01.png</file>
+        <file>ui/BasePage.qml</file>
     </qresource>
 </RCC>

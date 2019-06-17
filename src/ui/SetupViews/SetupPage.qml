@@ -5,39 +5,19 @@ import Volfy.Controls 1.0
 
 import "../" as Ui
 
-Page {
+Ui.BasePage {
+    id: root
     width: 600
     height: 400
 
-    property string text: qsTr("Page 1")
-
-    Ui.Header {
-        id: _header
-        position: ToolBar.Header
-        z:2
-        width: parent.width
-        height: 58
-        title: stack.currentItem.title
-
-        leftAction: stack.currentItem.leftAction
-        rightAction: stack.currentItem.rightAction
-
-        visible: stack.currentItem.hasToolbar
-        enabled: stack.currentItem.hasToolbar
-    }
-
-    StackView {
-        id: stack
-        anchors.fill: parent
-
-        initialItem: setupContent
-    }
+    initialItem: setupContent
 
     Component {
         id: setupContent
+
         SetupContent {
             hasToolbar: false
-            onGameSetupClicked: stack.push(gameSetupContent)
+            onGameSetupClicked: root.push(gameSetupContent)
         }
     }
 
@@ -45,12 +25,14 @@ Page {
         id: gameSetupContent
 
         GameSetupContent {
-            topPadding: _header.implicitHeight
+            // Padding here is needed when content has no toolbar
+            // so that everything can shift down
+            topPadding: root.headerHeight
             hasToolbar: true
 
             leftAction: Action {
                 icon.source: "qrc:/assets/back_icon.svg"
-                onTriggered: stack.pop()
+                onTriggered: root.pop()
             }
         }
     }
