@@ -31,5 +31,6 @@
         <file>assets/game_setup.png</file>
         <file>assets/volf_setup_01.png</file>
         <file>ui/BasePage.qml</file>
+        <file>ui/Search.qml</file>
     </qresource>
 </RCC>
