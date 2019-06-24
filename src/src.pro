@@ -1,13 +1,17 @@
 TARGET = volfyirion
 
-QT += quick svg
+QT += quick svg gui-private
 CONFIG += c++11
 
 DEFINES += QT_DEPRECATED_WARNINGS
 DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        system.cpp
+
+HEADERS += \
+    system.h
 
 RESOURCES += qml.qrc
 
@@ -63,4 +67,17 @@ android {
 
     ANDROID_VERSION_NAME = $$VERSION
     ANDROID_VERSION_CODE = $$droidVersionCode($$ANDROID_VERSION_NAME)
+}
+
+ios {
+    QMAKE_TARGET_BUNDLE_PREFIX = it.evonove
+    QMAKE_BUNDLE = volfyirion
+
+    QT += svg
+
+    QMAKE_INFO_PLIST = $${PWD}/ios/Info.plist
+
+    QMAKE_ASSET_CATALOGS = $${PWD}/ios/Images.xcassets
+    QMAKE_ASSET_CATALOGS_APP_ICON = "AppIcon"
+    QMAKE_ASSET_CATALOGS_LAUNCH_IMAGE = "LaunchImage"
 }

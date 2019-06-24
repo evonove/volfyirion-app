@@ -1,17 +1,36 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
 #endif
 
+#include "system.h"
+
+static QObject *
+system_manager_singletontype_provider(QQmlEngine *engine,
+                                      QJSEngine *scriptEngine) {
+  Q_UNUSED(scriptEngine)
+  Q_UNUSED(engine)
+  auto system = new System();
+
+  return system;
+}
+
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QCoreApplication::setApplicationName("Volfyirion");
+    QCoreApplication::setOrganizationName("Tabula Games");
 
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+
+    qmlRegisterSingletonType<System>(
+        "System", 1, 0, "System",
+        system_manager_singletontype_provider);
 
     engine.addImportPath("qrc:/style");
 

@@ -3,9 +3,13 @@ import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 
 Page {
+    id: root
+
+    property real safeTopMargin: 0
+
     property alias initialItem: _stack.initialItem
 
-    property alias headerHeight: _header.implicitHeight
+    property real headerHeight: 58 + root.safeTopMargin
 
     function push(component) {
         _stack.push(component)
@@ -26,7 +30,8 @@ Page {
     Header {
         id: _header
         width: parent.width
-        height: 58
+        topPadding: root.safeTopMargin
+        height: root.headerHeight
         z: 2
 
         position: ToolBar.Header

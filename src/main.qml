@@ -2,14 +2,29 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 
+import System 1.0
+
 import "ui/SetupViews" as SetupViews
 import "ui" as Ui
 
 ApplicationWindow {
+    id: root
     visible: true
     width: 375
     height: 667
     title: qsTr("Tabs")
+    flags: Qt.Window | Qt.MaximizeUsingFullscreenGeometryHint
+
+    // A top margin added to various components so that they're not covered
+    // by the iPhone top notch
+    property real safeTopMargin: 0
+    property real safeBottomMargin: 0
+
+    Component.onCompleted: {
+        let margins = System.getSafeAreaMargins(root)
+        root.safeTopMargin = margins.top
+        root.safeBottomMargin = margins.bottom
+    }
 
     FontLoader { source: "qrc:/fonts/Oswald/Oswald.ttf" }
 
@@ -56,12 +71,15 @@ ApplicationWindow {
             }
         }
 
-        SetupViews.SetupPage {}
+        SetupViews.SetupPage {
+            safeTopMargin: root.safeTopMargin
+        }
     }
 
     footer: TabBar {
         id: tabBar
         currentIndex: _swipe.currentIndex
+        bottomPadding: root.safeBottomMargin
 
         TabButton {
             text: qsTr("Setup")
