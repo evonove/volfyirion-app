@@ -6,7 +6,8 @@ import Volfy.Controls 1.0
 import "../" as Ui
 
 Ui.BaseContent {
-    signal gameSetupClicked()
+    signal gameSetupClicked
+    signal rulebookClicked
 
     title: "first view"
 
@@ -68,6 +69,8 @@ Ui.BaseContent {
 
             Button {
                 text: qsTr("Rulebook")
+
+                onClicked: rulebookClicked()
 
                 Layout.preferredWidth: 277
                 Layout.alignment: Qt.AlignTop | Qt.AlignHCenter

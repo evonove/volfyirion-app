@@ -35,5 +35,6 @@ T.ToolButton {
 
         opacity: control.down ? 0.2 : 0.5
         color: control.down || control.checked || control.highlighted ? "#000000" : control.palette.button
+        visible: !control.flat
     }
 }

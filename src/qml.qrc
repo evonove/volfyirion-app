@@ -5,24 +5,32 @@
         <file>fonts/Oswald/Oswald.ttf</file>
         <file>style/Volfy/Button.qml</file>
         <file>style/Volfy/ButtonShape.qml</file>
+        <file>style/Volfy/Page.qml</file>
         <file>style/Volfy/TabBar.qml</file>
         <file>style/Volfy/TabButton.qml</file>
+        <file>style/Volfy/TextField.qml</file>
         <file>style/Volfy/ToolBar.qml</file>
         <file>style/Volfy/ToolButton.qml</file>
         <file>style/Volfy/Controls/qmldir</file>
         <file>style/Volfy/Controls/GrowlButton.qml</file>
+        <file>ui/BasePage.qml</file>
         <file>ui/BaseContent.qml</file>
         <file>ui/Header.qml</file>
+        <file>ui/Page2Form.qml</file>
+        <file>ui/Search.qml</file>
+        <file>ui/SearchBar.qml</file>
+        <file>ui/SetupViews/GameSetup/GameSetupContent.qml</file>
+        <file>ui/SetupViews/Rulebook/RulebookContent.qml</file>
         <file>ui/SetupViews/SetupPage.qml</file>
         <file>ui/SetupViews/SetupContent.qml</file>
-        <file>ui/Page2Form.qml</file>
-        <file>ui/SetupViews/GameSetupContent.qml</file>
         <file>assets/artwork_icon.svg</file>
         <file>assets/artwork_icon_filled.svg</file>
         <file>assets/back_icon.svg</file>
+        <file>assets/forward_icon.svg</file>
         <file>assets/game_icon.svg</file>
         <file>assets/game_icon_filled.svg</file>
         <file>assets/index_icon.svg</file>
+        <file>assets/search_icon.svg</file>
         <file>assets/setup_icon.svg</file>
         <file>assets/setup_icon_filled.svg</file>
         <file>assets/growl-button-background.png</file>
@@ -30,7 +38,5 @@
         <file>assets/logo.png</file>
         <file>assets/game_setup.png</file>
         <file>assets/volf_setup_01.png</file>
-        <file>ui/BasePage.qml</file>
-        <file>ui/Search.qml</file>
     </qresource>
 </RCC>
