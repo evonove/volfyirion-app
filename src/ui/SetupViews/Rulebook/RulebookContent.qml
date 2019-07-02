@@ -79,7 +79,7 @@ Ui.BaseContent {
             }
 
             spacing: 0
-            cacheBuffer: contentItem.height> 0 ? contentItem.height : 100
+            cacheBuffer: 1000000
 
             model: Models.RulebookModel {
                 id: _model
