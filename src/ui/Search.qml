@@ -17,7 +17,7 @@ QtObject {
     /* The index of the item that should be currently highlighted */
     property int currentIndex: -1
 
-    signal selectionAt(rect cursorRectangle, real yPos)
+    signal selectionAt(rect cursorRectangle, var item)
 
     /* The only function that needs to be called to use the search engine.
      * The only parameter is the text string that needs to be searched */
@@ -76,7 +76,7 @@ QtObject {
         if (root.currentIndex !== -1) {
             var result = root.results[root.currentIndex]
             result.item.select(result.startIndex, result.endIndex)
-            root.selectionAt(result.item.cursorRectangle, result.item.y)
+            root.selectionAt(result.item.cursorRectangle, result.item)
         }
     }
 

@@ -28,8 +28,12 @@ Page {
         leftAction: _stack.currentItem.leftAction
         rightAction: _stack.currentItem.rightAction
 
-        visible: _stack.currentItem.hasToolbar
+        opacity: _stack.currentItem.hasToolbar ? 1.0 : 0.0
         enabled: _stack.currentItem.hasToolbar
+
+        Behavior on opacity {
+            NumberAnimation { duration: 200 }
+        }
     }
 
     StackView {

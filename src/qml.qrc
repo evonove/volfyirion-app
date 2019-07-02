@@ -4,7 +4,6 @@
         <file>qtquickcontrols2.conf</file>
         <file>fonts/Oswald/Oswald.ttf</file>
         <file>style/Volfy/Button.qml</file>
-        <file>style/Volfy/ButtonShape.qml</file>
         <file>style/Volfy/Page.qml</file>
         <file>style/Volfy/TabBar.qml</file>
         <file>style/Volfy/TabButton.qml</file>
@@ -12,15 +11,22 @@
         <file>style/Volfy/ToolBar.qml</file>
         <file>style/Volfy/ToolButton.qml</file>
         <file>style/Volfy/Controls/qmldir</file>
+        <file>style/Volfy/Controls/ButtonShape.qml</file>
         <file>style/Volfy/Controls/GrowlButton.qml</file>
         <file>ui/BasePage.qml</file>
         <file>ui/BaseContent.qml</file>
         <file>ui/Header.qml</file>
-        <file>ui/Page2Form.qml</file>
         <file>ui/Search.qml</file>
         <file>ui/SearchBar.qml</file>
         <file>ui/SetupViews/GameSetup/GameSetupContent.qml</file>
+        <file>ui/SetupViews/Rulebook/RulebookCardDelegate.qml</file>
         <file>ui/SetupViews/Rulebook/RulebookContent.qml</file>
+        <file>ui/SetupViews/Rulebook/RulebookText.qml</file>
+        <file>ui/SetupViews/Rulebook/RulebookTitle.qml</file>
+        <file>ui/SetupViews/Rulebook/RulebookSubtitle.qml</file>
+        <file>ui/SetupViews/Rulebook/Models/RulebookContentsModel.qml</file>
+        <file>ui/SetupViews/Rulebook/Models/RulebookExtraCardsModel.qml</file>
+        <file>ui/SetupViews/Rulebook/Models/RulebookModel.qml</file>
         <file>ui/SetupViews/SetupPage.qml</file>
         <file>ui/SetupViews/SetupContent.qml</file>
         <file>assets/artwork_icon.svg</file>
@@ -38,5 +44,40 @@
         <file>assets/logo.png</file>
         <file>assets/game_setup.png</file>
         <file>assets/volf_setup_01.png</file>
+        <file>assets/rulebook_page_background.png</file>
+        <file>assets/rulebook_user.png</file>
+        <file>assets/rulebook_section_header.svg</file>
+        <file>assets/00_contents.png</file>
+        <file>assets/01_contents.png</file>
+        <file>assets/02_contents.png</file>
+        <file>assets/03_contents.png</file>
+        <file>assets/04_contents.png</file>
+        <file>assets/05_contents.png</file>
+        <file>assets/06_contents.png</file>
+        <file>assets/07_contents.png</file>
+        <file>assets/00_extra.png</file>
+        <file>assets/01_extra.png</file>
+        <file>assets/02_extra.png</file>
+        <file>assets/03_extra.png</file>
+        <file>assets/04_extra.png</file>
+        <file>assets/05_extra.png</file>
+        <file>assets/tap_icon.png</file>
+        <file>assets/building_icon.png</file>
+        <file>assets/command_icon.png</file>
+        <file>assets/starting_composition.png</file>
+        <file>assets/troop_icon.png</file>
+        <file>assets/wonder_icon.png</file>
+        <file>assets/command.png</file>
+        <file>assets/flag_blue.png</file>
+        <file>assets/flag_grey.png</file>
+        <file>assets/flag_purple.png</file>
+        <file>assets/flag_red.png</file>
+        <file>assets/volf_display_app_2.png</file>
+        <file>assets/volf_display_app_3.png</file>
+        <file>assets/wn02.png</file>
+        <file>assets/icon_draw_card.png</file>
+        <file>assets/icon_remove_card.png</file>
+        <file>assets/event_background.png</file>
+        <file>assets/veteran_background.png</file>
     </qresource>
 </RCC>

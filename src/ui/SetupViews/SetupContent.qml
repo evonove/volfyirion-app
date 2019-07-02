@@ -9,8 +9,6 @@ Ui.BaseContent {
     signal gameSetupClicked
     signal rulebookClicked
 
-    title: "first view"
-
     background: Image {
         source:"qrc:/assets/background.png"
         fillMode: Image.PreserveAspectCrop

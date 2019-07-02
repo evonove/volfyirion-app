@@ -22,12 +22,6 @@ ApplicationWindow {
 
         SetupViews.SetupPage {
         }
-
-        Ui.Page2Form {
-        }
-
-        Ui.Page2Form {
-        }
     }
 
     footer: TabBar {

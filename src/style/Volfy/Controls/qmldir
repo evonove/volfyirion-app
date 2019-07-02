@@ -1,2 +1,3 @@
 module Volfy.Controls
+ButtonShape 1.0 ButtonShape.qml
 GrowlButton 1.0 GrowlButton.qml
