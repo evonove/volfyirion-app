@@ -3,6 +3,7 @@
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>fonts/Oswald/Oswald.ttf</file>
+        <file>style/Volfy/BusyIndicator.qml</file>
         <file>style/Volfy/Button.qml</file>
         <file>style/Volfy/Page.qml</file>
         <file>style/Volfy/TabBar.qml</file>

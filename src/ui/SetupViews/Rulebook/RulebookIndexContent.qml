@@ -28,6 +28,9 @@ Ui.BaseContent {
         anchors.margins: 24
         spacing: 24
 
+        boundsBehavior: Flickable.StopAtBounds
+        maximumFlickVelocity: 10000
+
         model: Models.RulebookIndexModel {}
 
         delegate: ItemDelegate {

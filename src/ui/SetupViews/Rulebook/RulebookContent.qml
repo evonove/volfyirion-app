@@ -13,7 +13,8 @@ Ui.BaseContent {
 
     title: qsTr("rulebook")
 
-    opacity: StackView.status === StackView.Active && _contentLoader.status === Loader.Ready ? 1.0 : 0.0
+    isLoading: !(StackView.status === StackView.Active && _contentLoader.status === Loader.Ready)
+    opacity: isLoading ? 0.0 : 1.0
 
     Behavior on opacity {
         NumberAnimation { duration: 100 }
@@ -59,6 +60,8 @@ Ui.BaseContent {
 
             property real searchMargin: 120
 
+            boundsBehavior: Flickable.StopAtBounds
+            maximumFlickVelocity: 10000
             preferredHighlightBegin: searchMargin
             preferredHighlightEnd: searchMargin + 80
 

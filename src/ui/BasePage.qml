@@ -15,6 +15,12 @@ Page {
         _stack.pop()
     }
 
+    BusyIndicator {
+        anchors.centerIn: parent
+        running: _stack.currentItem.isLoading
+
+    }
+
     Header {
         id: _header
         width: parent.width
