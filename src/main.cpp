@@ -1,6 +1,10 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
+#ifdef Q_OS_ANDROID
+#include <QtAndroid>
+#endif
+
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -19,5 +23,8 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
     engine.load(url);
 
+#ifdef Q_OS_ANDROID
+    QtAndroid::hideSplashScreen();
+#endif
     return app.exec();
 }

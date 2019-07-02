@@ -1,6 +1,6 @@
 TARGET = volfyirion
 
-QT += quick
+QT += quick svg
 CONFIG += c++11
 
 DEFINES += QT_DEPRECATED_WARNINGS
@@ -22,6 +22,45 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+
 android {
-    QT += svg
+    QT += androidextras
+
+    DISTFILES += \
+        android/AndroidManifest.xml \
+        android/build.gradle \
+        android/gradle/wrapper/gradle-wrapper.jar \
+        android/gradle/wrapper/gradle-wrapper.properties \
+        android/gradlew \
+        android/gradlew.bat \
+        android/res/values/* \
+        android/res/mipmap-hdpi/* \
+        android/res/mipmap-mdpi/* \
+        android/res/mipmap-xhdpi/* \
+        android/res/mipmap-xxhdpi/* \
+        android/res/mipmap-xxxhdpi/* \
+        android/res/drawable/*
+
+    ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
+    # This is needed to automate version code increment for 54bit builds
+    # Reference: https://blog.qt.io/blog/2019/06/28/comply-upcoming-requirements-google-play/
+    defineReplace(droidVersionCode) {
+        segments = $$split(1, ".")
+        for (segment, segments): vCode = "$$first(vCode)$$format_number($$segment, width=3 zeropad)"
+
+        contains(ANDROID_TARGET_ARCH, arm64-v8a): \
+            suffix = 1
+        else:contains(ANDROID_TARGET_ARCH, armeabi-v7a): \
+            suffix = 0
+        # add more cases as needed
+
+        return($$first(vCode)$$first(suffix))
+    }
+
+    # To upgrade the version change the following variable
+    VERSION = 1.2.3
+
+    ANDROID_VERSION_NAME = $$VERSION
+    ANDROID_VERSION_CODE = $$droidVersionCode($$ANDROID_VERSION_NAME)
 }

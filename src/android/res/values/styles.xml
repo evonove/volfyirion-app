@@ -1,0 +1,10 @@
+<resources>
+    <style name="SplashTheme" parent="@android:style/Theme.NoTitleBar">
+        <!-- this is set to windowBackground instead of background as a workaround
+             on Android 8.0, otherwise splash screen do not disappear -->
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>
