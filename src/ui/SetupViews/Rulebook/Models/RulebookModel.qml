@@ -32,6 +32,7 @@ ObjectModel {
         }
     }
 
+    // 0
     Item {
         width: root.width
         height: _background.paintedHeight
@@ -76,10 +77,12 @@ ObjectModel {
         }
     }
 
+    // 1
     Item {
         height: 144
     }
 
+    // 2
     ColumnLayout {
         id: _introduction
         width: root.width
@@ -105,10 +108,12 @@ ObjectModel {
         }
     }
 
+    // 3
     Item {
         height: 48
     }
 
+    // 4
     ColumnLayout {
         id: _contents
         width: root.width
@@ -146,10 +151,12 @@ ObjectModel {
         }
     }
 
+    // 5
     Item {
         height: 48
     }
 
+    // 6
     ColumnLayout {
         id: _extra
         width: root.width
@@ -187,10 +194,12 @@ ObjectModel {
         }
     }
 
+    // 7
     Item {
         height: 48
     }
 
+    // 8
     ColumnLayout {
         id: _gameOverview
         width: root.width
@@ -230,10 +239,12 @@ ObjectModel {
         }
     }
 
+    // 9
     Item {
         height: 28
     }
 
+    // 10
     ColumnLayout {
         id: _gameSetup
         width: root.width
@@ -371,10 +382,12 @@ ObjectModel {
         }
     }
 
+    // 11
     Item {
         height: 28
     }
 
+    // 12
     ColumnLayout {
         id: _cards
         width: root.width
@@ -386,6 +399,13 @@ ObjectModel {
 
             text: qsTr("cards")
         }
+    }
+
+    // 13
+    ColumnLayout {
+        id: _commandBattlePoints
+        width: root.width
+        spacing: 0
 
         RulebookSubtitle {
             Layout.preferredWidth: 216
@@ -432,6 +452,13 @@ ObjectModel {
                      + "In-Play cards such as Building Cards and Wonder Cards.")
             Layout.bottomMargin: 28
         }
+    }
+
+    // 14
+    ColumnLayout {
+        id: _commandBuildingTroop
+        width: root.width
+        spacing: 0
 
         RulebookSubtitle {
             Layout.preferredWidth: 216
@@ -506,6 +533,13 @@ ObjectModel {
                      + "by the new one.")
             Layout.bottomMargin: 28
         }
+    }
+
+    // 15
+    ColumnLayout {
+        id: _actions
+        width: root.width
+        spacing: 0
 
         RulebookSubtitle {
             Layout.preferredWidth: 216
@@ -720,10 +754,12 @@ ObjectModel {
         }
     }
 
+    // 16
     Item {
         height: 28
     }
 
+    // 17
     ColumnLayout {
         id: _extraCards
         width: root.width
@@ -829,6 +865,7 @@ ObjectModel {
         }
     }
 
+    // 18
     Item {
         height: 28
     }

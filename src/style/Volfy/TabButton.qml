@@ -17,7 +17,8 @@ T.TabButton {
 
     icon.width: 24
     icon.height: 24
-    icon.color: checked ? control.palette.brightText : control.palette.windowText
+    icon.color: control.checked ? control.palette.brightText : control.palette.windowText
+    opacity: control.enabled ? 1.0 : 0.3
 
     display: IconLabel.TextUnderIcon
 
@@ -32,7 +33,7 @@ T.TabButton {
         icon: control.icon
         text: control.text
         font: control.font
-        color: checked ? control.palette.brightText : control.palette.windowText
+        color: control.checked ? control.palette.brightText : control.palette.windowText
     }
 
     background: Rectangle {

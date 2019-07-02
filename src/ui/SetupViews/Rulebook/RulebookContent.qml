@@ -7,12 +7,16 @@ import "../../" as Ui
 import "./Models" as Models
 
 Ui.BaseContent {
+    function scrollTo(element) {
+        _contentLoader.item.positionViewAtIndex(element, ListView.SnapPosition)
+    }
+
     title: qsTr("rulebook")
 
     opacity: StackView.status === StackView.Active && _contentLoader.status === Loader.Ready ? 1.0 : 0.0
 
     Behavior on opacity {
-        NumberAnimation { duration: 200 }
+        NumberAnimation { duration: 100 }
     }
 
     Ui.Search {
@@ -55,12 +59,15 @@ Ui.BaseContent {
 
             property real searchMargin: 120
 
+            preferredHighlightBegin: searchMargin
+            preferredHighlightEnd: searchMargin + 80
+
             function ensureVisible(or, item) {
                 let r = flick.contentItem.mapFromItem(item, or.x, or.y, or.width, or.height)
 
-                console.log(contentY, height, r)
-                console.log(contentY + _searchBar.height, r.y, r.y - _searchBar.height)
-                console.log(contentY + height, r.y + r.height, r.y + r.height - height)
+                //console.log(contentY, height, r)
+                //console.log(contentY + _searchBar.height, r.y, r.y - _searchBar.height)
+                //console.log(contentY + height, r.y + r.height, r.y + r.height - height)
 
                 if (contentY + _searchBar.height >= r.y)
                     contentY = r.y - _searchBar.height

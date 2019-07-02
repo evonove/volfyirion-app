@@ -9,10 +9,19 @@ import "./Rulebook" as Rulebook
 
 Ui.BasePage {
     id: root
+
+    signal openSection(int element)
+
     width: 600
     height: 400
 
     initialItem: setupContent
+
+    Action {
+        id: _backAction
+        icon.source: "qrc:/assets/back_icon.svg"
+        onTriggered: root.pop()
+    }
 
     Component {
         id: setupContent
@@ -33,10 +42,7 @@ Ui.BasePage {
             topPadding: root.headerHeight
             hasToolbar: true
 
-            leftAction: Action {
-                icon.source: "qrc:/assets/back_icon.svg"
-                onTriggered: root.pop()
-            }
+            leftAction: _backAction
         }
 
     }
@@ -48,12 +54,31 @@ Ui.BasePage {
             topPadding: root.headerHeight
             hasToolbar: true
 
-            leftAction: Action {
-                icon.source: "qrc:/assets/back_icon.svg"
-                onTriggered: root.pop()
-            }
+            leftAction: _backAction
             rightAction: Action {
                 icon.source: "qrc:/assets/index_icon.svg"
+                onTriggered: root.push(rulebookIndex)
+            }
+
+            Connections {
+                target: root
+                onOpenSection: scrollTo(element)
+            }
+        }
+    }
+
+    Component {
+        id: rulebookIndex
+
+        Rulebook.RulebookIndexContent {
+            topPadding: root.headerHeight
+            hasToolbar: true
+
+            leftAction: _backAction
+
+            onOpenSection: {
+                root.openSection(element)
+                root.pop()
             }
         }
     }

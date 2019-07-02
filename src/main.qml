@@ -35,10 +35,12 @@ ApplicationWindow {
         TabButton {
             text: qsTr("Game")
             icon.source: this.down || this.checked ? _tabIcons.gameFilled : _tabIcons.game
+            enabled: false
         }
         TabButton {
             text: qsTr("Artwork")
             icon.source: this.down || this.checked ? _tabIcons.artworkFilled : _tabIcons.artwork
+            enabled: false
         }
     }
 
