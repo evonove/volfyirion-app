@@ -4,11 +4,11 @@
 
     <!-- The following comment will be replaced upon deployment with default permissions based on the dependencies of the application.
          Remove the comment if you do not require these default permissions. -->
-    <!-- %%INSERT_PERMISSIONS -->
+
 
     <!-- The following comment will be replaced upon deployment with default features based on the dependencies of the application.
          Remove the comment if you do not require these default features. -->
-    <!-- %%INSERT_FEATURES -->
+
 
     <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
 
@@ -52,7 +52,7 @@
                  then android.app.splash_screen_drawable. For best results, use together with splash_screen_sticky and
                  use hideSplashScreen() with a fade-out animation from Qt Android Extras to hide the splash screen when you
                  are done populating your window with content. -->
-            <meta-data android:name="android.app.splash_screen_drawable" android:resource="@drawable/splash" />
+            <meta-data android:name="android.app.splash_screen_drawable" android:resource="@drawable/splash"/>
             <meta-data android:name="android.app.splash_screen_sticky" android:value="true"/>
             <!-- Splash screen -->
 
