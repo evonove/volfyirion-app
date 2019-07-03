@@ -11,6 +11,7 @@ Ui.BasePage {
     id: root
 
     signal openSection(int element)
+    signal growlClicked
 
     width: 600
     height: 400
@@ -30,6 +31,7 @@ Ui.BasePage {
             hasToolbar: false
             onGameSetupClicked: root.push(gameSetupContent)
             onRulebookClicked: root.push(rulebookContent)
+            onGrowlClicked: root.growlClicked()
         }
     }
 

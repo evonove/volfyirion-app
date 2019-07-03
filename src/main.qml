@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+import QtMultimedia 5.13
 
 import "ui/SetupViews" as SetupViews
 import "ui" as Ui
@@ -21,6 +22,10 @@ ApplicationWindow {
         currentIndex: tabBar.currentIndex
 
         SetupViews.SetupPage {
+            onGrowlClicked: {
+                _player.play()
+                _player.playlist.shuffle()
+            }
         }
     }
 
@@ -53,5 +58,17 @@ ApplicationWindow {
         property url gameFilled: "qrc:/assets/game_icon_filled.svg"
         property url setup: "qrc:/assets/setup_icon.svg"
         property url setupFilled: "qrc:/assets/setup_icon_filled.svg"
+    }
+
+    Audio {
+        id: _player
+
+        loops: 0
+        playlist: Playlist {
+            playbackMode: Playlist.CurrentItemOnce
+
+            PlaylistItem { source: "qrc:/music/growl_A.mp3" }
+            PlaylistItem { source: "qrc:/music/growl_B.mp3" }
+        }
     }
 }

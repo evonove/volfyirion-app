@@ -6,8 +6,11 @@ import Volfy.Controls 1.0
 import "../" as Ui
 
 Ui.BaseContent {
+    id: root
+
     signal gameSetupClicked
     signal rulebookClicked
+    signal growlClicked
 
     background: Image {
         source:"qrc:/assets/background.png"
@@ -54,7 +57,7 @@ Ui.BaseContent {
             Button {
                 text: qsTr("Game Setup")
 
-                onClicked: gameSetupClicked()
+                onClicked: root.gameSetupClicked()
 
                 Layout.preferredWidth: 277
                 Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
@@ -68,7 +71,7 @@ Ui.BaseContent {
             Button {
                 text: qsTr("Rulebook")
 
-                onClicked: rulebookClicked()
+                onClicked: root.rulebookClicked()
 
                 Layout.preferredWidth: 277
                 Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
@@ -81,6 +84,8 @@ Ui.BaseContent {
 
             GrowlButton {
                 text: "growl"
+
+                onClicked: root.growlClicked()
 
                 Layout.bottomMargin: 32
                 Layout.alignment:Qt.AlignTop | Qt.AlignHCenter
