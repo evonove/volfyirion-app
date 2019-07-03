@@ -13,32 +13,71 @@ ApplicationWindow {
 
     FontLoader { source: "qrc:/fonts/Oswald/Oswald.ttf" }
 
+    QtObject {
+        id: history
+
+        property var items: [0]
+
+        function push(index) {
+            let lastIndex = items[items.length - 1]
+            if (lastIndex !== index) {
+                items.push(index)
+                // set current index of the swipe view
+                _swipe.currentIndex = index
+                _swipe.currentItem.forceActiveFocus()
+            }
+        }
+
+        function pop() {
+            if (items.length > 1) {
+                // remove current
+                items.pop();
+                // set swipe to the last item in the history
+                let index = items[items.length - 1]
+                _swipe.currentIndex = index
+                _swipe.currentItem.forceActiveFocus()
+            }
+        }
+    }
 
     SwipeView {
-        id: swipeView
+        id: _swipe
         anchors.fill: parent
         interactive: false
-        currentIndex: tabBar.currentIndex
+        focus: true
+
+        // Handles click of back button by popping current page from Swipe
+        Keys.onPressed: {
+            if (event.key === Qt.Key_Escape || event.key === Qt.Key_Back) {
+                if (history.items.length > 1) {
+                    history.pop()
+                    event.accepted = true
+                }
+            }
+        }
 
         SetupViews.SetupPage {}
     }
 
     footer: TabBar {
         id: tabBar
-        currentIndex: swipeView.currentIndex
+        currentIndex: _swipe.currentIndex
 
         TabButton {
             text: qsTr("Setup")
             icon.source: this.down || this.checked ? _tabIcons.setupFilled : _tabIcons.setup
+            onClicked: history.push(TabBar.index)
         }
         TabButton {
             text: qsTr("Game")
             icon.source: this.down || this.checked ? _tabIcons.gameFilled : _tabIcons.game
+            onClicked: history.push(TabBar.index)
             enabled: false
         }
         TabButton {
             text: qsTr("Artwork")
             icon.source: this.down || this.checked ? _tabIcons.artworkFilled : _tabIcons.artwork
+            onClicked: history.push(TabBar.index)
             enabled: false
         }
     }

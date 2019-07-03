@@ -9,10 +9,12 @@ Page {
 
     function push(component) {
         _stack.push(component)
+        _stack.forceActiveFocus()
     }
 
     function pop() {
         _stack.pop()
+        _stack.forceActiveFocus()
     }
 
     BusyIndicator {
@@ -45,5 +47,16 @@ Page {
     StackView {
         id: _stack
         anchors.fill: parent
+        focus: true
+
+        // Handles click of back button by popping current page from Swipe
+        Keys.onPressed: {
+            if (event.key === Qt.Key_Escape || event.key === Qt.Key_Back) {
+                if (_stack.depth > 1) {
+                    _stack.pop()
+                    event.accepted = true
+                }
+            }
+        }
     }
 }
