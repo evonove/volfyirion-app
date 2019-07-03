@@ -24,8 +24,8 @@ ApplicationWindow {
                 items.push(index)
                 // set current index of the swipe view
                 _swipe.currentIndex = index
-                _swipe.currentItem.forceActiveFocus()
             }
+            _swipe.currentItem.forceActiveFocus()
         }
 
         function pop() {
@@ -35,8 +35,8 @@ ApplicationWindow {
                 // set swipe to the last item in the history
                 let index = items[items.length - 1]
                 _swipe.currentIndex = index
-                _swipe.currentItem.forceActiveFocus()
             }
+            _swipe.currentItem.forceActiveFocus()
         }
     }
 
