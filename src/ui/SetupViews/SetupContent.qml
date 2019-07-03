@@ -1,6 +1,9 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+
+import QtMultimedia 5.13
+
 import Volfy.Controls 1.0
 
 import "../" as Ui
@@ -10,7 +13,6 @@ Ui.BaseContent {
 
     signal gameSetupClicked
     signal rulebookClicked
-    signal growlClicked
 
     background: Image {
         source:"qrc:/assets/background.png"
@@ -85,11 +87,29 @@ Ui.BaseContent {
             GrowlButton {
                 text: "growl"
 
-                onClicked: root.growlClicked()
+                onClicked: {
+                    _player.playlist.shuffle()
+                    _player.play()
+                }
+
+                running: _player.playbackState === Audio.PlayingState
 
                 Layout.bottomMargin: 32
                 Layout.alignment:Qt.AlignTop | Qt.AlignHCenter
             }
+        }
+    }
+
+    Audio {
+        id: _player
+
+        loops: 0
+        playlist: Playlist {
+            playbackMode: Playlist.CurrentItemOnce
+
+            PlaylistItem { source: "qrc:/music/growl_A.mp3" }
+            PlaylistItem { source: "qrc:/music/growl_B.mp3" }
+            PlaylistItem { source: "qrc:/music/growl_C.mp3" }
         }
     }
 }

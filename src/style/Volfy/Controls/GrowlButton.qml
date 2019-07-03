@@ -7,6 +7,8 @@ import QtGraphicalEffects 1.0
 T.Button {
     id: control
 
+    property bool running: false
+
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
                             implicitContentWidth + leftPadding + rightPadding)
     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
@@ -70,6 +72,15 @@ T.Button {
             border.width: 2
             radius: 50
 
+            SequentialAnimation on border.width {
+                running: control.running
+                loops: Animation.Infinite
+                alwaysRunToEnd: true
+
+                PropertyAnimation { to: 6 }
+                PropertyAnimation { to: 2 }
+            }
+
             Image {
                 id: image
                 anchors.centerIn: parent
@@ -79,6 +90,7 @@ T.Button {
                 fillMode: Image.PreserveAspectFit
                 source: "qrc:/assets/growl-button-background.png"
             }
+
             Rectangle {
                 id: internalEllipse
                 anchors.centerIn: parent

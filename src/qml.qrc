@@ -84,5 +84,6 @@
         <file>assets/veteran_background.png</file>
         <file>music/growl_A.mp3</file>
         <file>music/growl_B.mp3</file>
+        <file>music/growl_C.mp3</file>
     </qresource>
 </RCC>
