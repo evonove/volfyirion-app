@@ -45,8 +45,8 @@ Ui.BaseContent {
         id: _contentLoader
 
         anchors.fill: parent
-        anchors.leftMargin: 24
-        anchors.rightMargin: 24
+        anchors.leftMargin: 16
+        anchors.rightMargin: 16
         asynchronous: true
 
         sourceComponent: _listView

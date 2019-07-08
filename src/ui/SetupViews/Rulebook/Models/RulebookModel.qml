@@ -96,6 +96,7 @@ ObjectModel {
         }
 
         RulebookText {
+            Layout.fillWidth: true
             text: qsTr("The unspoken rivalry between House Volarees and House Rorius escalated into war once they "
                      + "learned that it was possible to control Volfyirion, the dreadful dragon inhabiting the ruins "
                      + "of Kyradar. The desire to gain complete dominion over the powerful beast resulted in a "
@@ -213,6 +214,7 @@ ObjectModel {
         }
 
         RulebookText {
+            Layout.fillWidth: true
             text: qsTr("In Volfyirion, each player represents one of two Houses of Mysthea."
                      + " The goal is to defeat the other player by destroying all of their "
                      + "Cities. This is done by playing cards to gain points which can be "
@@ -235,6 +237,7 @@ ObjectModel {
         RulebookText {
             text: qsTr("A player immediately wins the game after destroying all enemy Cities.")
 
+            Layout.fillWidth: true
             Layout.bottomMargin: 20
         }
     }
@@ -262,6 +265,7 @@ ObjectModel {
                      + " At the start of the game it is composed of ten Command Cards: eight "
                      + "Prospector, one Captain, and one Diviner.")
 
+            Layout.fillWidth: true
             Layout.bottomMargin: 20
         }
 
@@ -278,6 +282,7 @@ ObjectModel {
         RulebookText {
             text: qsTr("Both players shuffle their own House Deck then place it in front of themselves.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RowLayout {
@@ -300,6 +305,7 @@ ObjectModel {
         RulebookText {
             text: qsTr("Shuffle all Troop, Building and the remaining Command Cards to form the Asset Deck.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RowLayout {
@@ -315,24 +321,29 @@ ObjectModel {
             text: qsTr("Shuffle all Wonder Cards together to form the Wonder Deck. "
                      + "Asset and Wonder Decks are shared between players.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text:  qsTr("Place the Asset Deck face down on the side of the gaming area. "
                       + "Asset Deck’s top card is always flipped face up.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text:  qsTr("NOTE: To add a bit more of unpredictability to the game, keep "
                       + "the Asset Deck’s top card face down during the game.")
-            Layout.bottomMargin: 15
+
             background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 40
                 color: "#eeeeee"
                 opacity: 0.3
             }
+
+            Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
@@ -340,12 +351,14 @@ ObjectModel {
             text:  qsTr("Draw the top five cards from the Asset Deck and place them face"
                       + " up in a row to form the “Asset Row”.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text:  qsTr("Place the Volfyirion’s Lair Card face up at the end of the Asset Row. "
                       + "Put the Volfyirion Token on the Volfyirion’s Lair Card. ")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
@@ -354,6 +367,7 @@ ObjectModel {
                       + "then place them on the spaces of the Volfyirion’s Lair Card, face up. "
                       + "Put the other revealed cards, if any, on the bottom of the Wonder Deck.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
@@ -361,24 +375,29 @@ ObjectModel {
                       + " Cities have a Defence Value of 8, 9, and 10. Players arrange their three Cities "
                       + "in a line in front of them, which forms the “Cities Area”.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text:  qsTr("The two players have both a “Discard Area” and a “Playing Area”. Discarded Cards "
                       + "are stacked in a Pile in the respective Discard Area. ")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text:  qsTr("NOTE: In Volfyirion, “Discard” and “Remove” are two different operations. "
                       + "Removed cards (and tokens) leave the game and are put back into the box.")
-            Layout.bottomMargin: 15
+
             background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 40
                 color: "#eeeeee"
                 opacity: 0.3
             }
+
+            Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
     }
 
@@ -421,6 +440,7 @@ ObjectModel {
         RulebookText {
             text: qsTr("Cards in the game provide three resources that can be used in multiple ways.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RowLayout {
@@ -434,23 +454,27 @@ ObjectModel {
 
         RulebookText {
             text: qsTr("Command Points are used by players to:")
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Acquire cards from the Asset Row")
             Layout.leftMargin: 8
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Redeploy Troops between Cities.")
             Layout.bottomMargin: 15
             Layout.leftMargin: 8
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("Players Gain Command Points by Playing Command Cards or through "
                      + "In-Play cards such as Building Cards and Wonder Cards.")
             Layout.bottomMargin: 28
+            Layout.fillWidth: true
         }
     }
 
@@ -474,10 +498,12 @@ ObjectModel {
         RulebookText {
             text: qsTr("The banner in the upper left corner represents the color of a Minor House.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("The grey banner represents cards that are considered neutral.")
+            Layout.fillWidth: true
         }
 
         RowLayout {
@@ -511,11 +537,13 @@ ObjectModel {
         RulebookText {
             text: qsTr("Command and Building Cards grant you Points via their Main Ability.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("The majority of cards also have a Secondary Ability (explained at p. 27).")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
@@ -524,6 +552,7 @@ ObjectModel {
                      + "another Building Card on the Building slot, the previously placed Building "
                      + "Card is removed from the game and replaced by the new one.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
@@ -532,6 +561,7 @@ ObjectModel {
                      + "slot, the previously placed Troop Card is removed from the game and replaced "
                      + "by the new one.")
             Layout.bottomMargin: 28
+            Layout.fillWidth: true
         }
     }
 
@@ -558,6 +588,7 @@ ObjectModel {
             font.pixelSize: 18
             font.letterSpacing: 1
             horizontalAlignment: Text.AlignHCenter
+            Layout.fillWidth: true
         }
 
         RulebookText {
@@ -566,6 +597,7 @@ ObjectModel {
                      + "card is immediately moved to your Discard Pile. The empty space on the Volfyirion’s "
                      + "Lair Card is not refilled until the End of a Turn Phase.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         Image {
@@ -597,6 +629,7 @@ ObjectModel {
                      + "directly onto the Discard Pile [F]. The player is left with 1 Battle Point "
                      + "and 6 Knowledge Points to spend for other actions.")
             Layout.bottomMargin: 28
+            Layout.fillWidth: true
         }
 
         RulebookText {
@@ -606,12 +639,14 @@ ObjectModel {
             font.pixelSize: 18
             font.letterSpacing: 1
             horizontalAlignment: Text.AlignHCenter
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("You may Seal or Unseal a Wonder Card in either Playing Area by paying the "
                      + "equivalent of the card’s Cost in Knowledge Points, as reminded by the icon "
                      + "on each Wonder Card.")
+            Layout.fillWidth: true
         }
 
         RowLayout {
@@ -632,11 +667,13 @@ ObjectModel {
                      + "Unseal cards that are sealed. Rotate them back to vertical position to "
                      + "represent this.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("All Wonders are put into play “Unsealed”.")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
         }
 
         Pane {
@@ -707,6 +744,8 @@ ObjectModel {
                 font.pixelSize: 18
                 font.letterSpacing: 1
                 horizontalAlignment: Text.AlignHCenter
+
+                Layout.fillWidth: true
                 Layout.bottomMargin: 15
             }
 
