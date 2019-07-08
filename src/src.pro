@@ -1,6 +1,6 @@
 TARGET = volfyirion
 
-QT += quick svg gui-private
+QT += quick svg gui-private multimedia
 CONFIG += c++11
 
 DEFINES += QT_DEPRECATED_WARNINGS
