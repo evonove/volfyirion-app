@@ -36,39 +36,10 @@ Ui.BaseContent {
         delegate: ItemDelegate {
             width: parent.width
             padding: 0
-
-            contentItem: ColumnLayout {
-                spacing: 16
-
-                Label {
-                    text: title
-                    font.pixelSize: 21
-                    font.bold: true
-                    leftPadding: 8
-                }
-
-                Repeater {
-                    model: subitems
-                    delegate: ItemDelegate {
-                        padding: 0
-                        Layout.fillWidth: true
-                        Layout.fillHeight: false
-
-                        contentItem: Label {
-                            text: title
-                            wrapMode: Text.Wrap
-                            font.pixelSize: 21
-                            leftPadding: 24
-
-                            verticalAlignment: Text.AlignVCenter
-                        }
-
-                        onClicked: {
-                            root.openSection(element)
-                        }
-                    }
-                }
-            }
+            text: title
+            font.pixelSize: 21
+            font.bold: !subitem
+            leftPadding: subitem ? 24 : 8
 
             onClicked: {
                 root.openSection(element)

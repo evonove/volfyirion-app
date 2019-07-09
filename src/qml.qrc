@@ -5,6 +5,7 @@
         <file>fonts/Oswald/Oswald.ttf</file>
         <file>style/Volfy/BusyIndicator.qml</file>
         <file>style/Volfy/Button.qml</file>
+        <file>style/Volfy/ItemDelegate.qml</file>
         <file>style/Volfy/Page.qml</file>
         <file>style/Volfy/TabBar.qml</file>
         <file>style/Volfy/TabButton.qml</file>
