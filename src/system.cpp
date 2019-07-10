@@ -19,6 +19,5 @@ QVariantMap System::getSafeAreaMargins(QQuickWindow *window)
     map["right"] = margins.right();
     map["bottom"] = margins.bottom();
     map["left"] = margins.left();
-    qInfo() << map;
     return map;
 }
