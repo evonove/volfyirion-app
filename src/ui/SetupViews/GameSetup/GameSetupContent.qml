@@ -12,23 +12,19 @@ Ui.BaseContent {
         id: flick
         anchors.fill: parent
         contentWidth: width
-        contentHeight: height - 32
-
-        topMargin: 16
-        bottomMargin: 16
+        contentHeight: height
 
         flickableDirection: Flickable.HorizontalAndVerticalFlick
         boundsBehavior: Flickable.StopAtBounds
 
         PinchArea {
+            id: pinch
             width: Math.max(flick.contentWidth, flick.width)
             height: Math.max(flick.contentHeight, flick.height)
 
             property real initialWidth
             property real initialHeight
 
-            pinch.minimumRotation: 0
-            pinch.maximumRotation: 0
             pinch.minimumScale: 1
             pinch.maximumScale: 10
 
@@ -38,13 +34,18 @@ Ui.BaseContent {
             }
 
             onPinchUpdated: {
-                // adjust content pos due to drag
-                flick.contentX += pinch.previousCenter.x - pinch.center.x
-                flick.contentY += pinch.previousCenter.y - pinch.center.y
 
-                // resize content
-                flick.resizeContent(initialWidth * pinch.scale,
-                                    initialHeight * pinch.scale, pinch.center)
+                // Resize content only when the scaled size is bigger to root width
+                if (initialWidth * pinch.scale > root.width) {
+
+                    // Adjust content pos due to drag
+                    flick.contentX += pinch.previousCenter.x - pinch.center.x
+                    flick.contentY += pinch.previousCenter.y - pinch.center.y
+
+                    flick.resizeContent(initialWidth * pinch.scale,
+                                        initialHeight * pinch.scale,
+                                        pinch.center)
+                }
             }
 
             onPinchFinished: {
@@ -52,19 +53,30 @@ Ui.BaseContent {
                 flick.returnToBounds()
             }
 
-            Item {
+            Pane {
                 width: flick.contentWidth
                 height: flick.contentHeight
+                topPadding: 16
+                bottomPadding: 16
+
+                background: null
                 Image {
                     id: setupImage
                     anchors.fill: parent
-                    fillMode: Image.PreserveAspectCrop
+                    fillMode: Image.PreserveAspectFit
                     source: "qrc:/assets/volf_setup_01.png"
                     MouseArea {
                         anchors.fill: parent
                         onDoubleClicked: {
-                            flick.contentWidth = flick.width
-                            flick.contentHeight = flick.height - 32
+                            // Resize content of Flickable only when it is bigger than root dims
+                            if (flick.contentWidth > root.width) {
+
+                                flick.contentHeight = flick.height
+                                flick.contentWidth = flick.width
+
+                                flick.contentX = pinch.x
+                                flick.contentY = pinch.y
+                            }
                         }
                     }
                 }
