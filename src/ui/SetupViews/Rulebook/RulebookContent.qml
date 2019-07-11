@@ -69,7 +69,7 @@ Ui.BaseContent {
             preferredHighlightBegin: searchMargin
             preferredHighlightEnd: searchMargin + 80
 
-            function ensureVisible(oritem) {
+            function ensureVisible(or, item) {
                 var r = flick.contentItem.mapFromItem(item, or.x, or.y,
                                                       or.width, or.height)
 
