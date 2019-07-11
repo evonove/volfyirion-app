@@ -23,13 +23,7 @@ QtObject {
      * The only parameter is the text string that needs to be searched */
     function search(searchText) {
         // Removes selection if there is one active
-        root.deselectCurrent();
-
-        // Before any search we reset the count, the results list
-        // ant current index
-        root.count = 0
-        root.results = []
-        root.currentIndex = -1
+        root.reset();
 
         let text = searchText.trim();
         // Avoid triggering a search if string is blank
@@ -108,5 +102,16 @@ QtObject {
             root.currentIndex = root.count - 1
         }
         root.selectCurrent()
+    }
+
+    function reset() {
+        // Removes selection if there is one active
+        root.deselectCurrent();
+
+        // Before any search we reset the count, the results list
+        // ant current index
+        root.count = 0
+        root.results = []
+        root.currentIndex = -1
     }
 }
