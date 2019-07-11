@@ -13,11 +13,14 @@ Ui.BaseContent {
 
     title: qsTr("rulebook")
 
-    isLoading: !(StackView.status === StackView.Active && _contentLoader.status === Loader.Ready)
+    isLoading: !(StackView.status === StackView.Active
+                 && _contentLoader.status === Loader.Ready)
     opacity: isLoading ? 0.0 : 1.0
 
     Behavior on opacity {
-        NumberAnimation { duration: 100 }
+        NumberAnimation {
+            duration: 100
+        }
     }
 
     Ui.Search {
@@ -37,6 +40,7 @@ Ui.BaseContent {
         onSearch: _search.search(text)
         onPrevious: _search.prev()
         onNext: _search.next()
+        onReset: _search.reset()
 
         enabled: _contentLoader.status === Loader.Ready
     }
@@ -65,13 +69,13 @@ Ui.BaseContent {
             preferredHighlightBegin: searchMargin
             preferredHighlightEnd: searchMargin + 80
 
-            function ensureVisible(or, item) {
-                let r = flick.contentItem.mapFromItem(item, or.x, or.y, or.width, or.height)
+            function ensureVisible(oritem) {
+                var r = flick.contentItem.mapFromItem(item, or.x, or.y,
+                                                      or.width, or.height)
 
                 //console.log(contentY, height, r)
                 //console.log(contentY + _searchBar.height, r.y, r.y - _searchBar.height)
                 //console.log(contentY + height, r.y + r.height, r.y + r.height - height)
-
                 if (contentY + _searchBar.height >= r.y)
                     contentY = r.y - _searchBar.height
                 else if (contentY + height <= r.y + r.height)

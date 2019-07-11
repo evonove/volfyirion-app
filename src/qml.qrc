@@ -86,5 +86,6 @@
         <file>music/growl_A.mp3</file>
         <file>music/growl_B.mp3</file>
         <file>music/growl_C.mp3</file>
+        <file>assets/clear_icon.svg</file>
     </qresource>
 </RCC>

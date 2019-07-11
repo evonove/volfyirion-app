@@ -12,6 +12,7 @@ ToolBar {
     signal search(string text)
     signal previous
     signal next
+    signal reset
 
     topInset: 15
     topPadding: 15
@@ -46,28 +47,35 @@ ToolBar {
     RowLayout {
         anchors.fill: parent
 
-        TextField {
-            leftPadding: _searchIcon.x * 2 + _searchIcon.width
+        ToolButton {
+            id: _searchIcon
+            icon.source: _p.showNavigation ? "qrc:/assets/clear_icon.svg" : "qrc:/assets/search_icon.svg"
+            enabled: _p.showNavigation
+            width: 21
+            height: 21
 
-            Image {
-                id: _searchIcon
-                x: 12
-                width: 21
-                height: 21
-                anchors.verticalCenter: parent.verticalCenter
-                source: "qrc:/assets/search_icon.svg"
-                sourceSize.height: height
-                sourceSize.width: height
-                smooth: false
+            smooth: false
+
+            Layout.preferredHeight: 40
+            Layout.preferredWidth: 40
+
+            onClicked: {
+                root.reset()
+
+                _searchField.clear()
+                _p.showNavigation = false
             }
+        }
+
+        TextField {
+            id: _searchField
+            verticalAlignment: TextInput.AlignVCenter
+            font.pixelSize: 18
+            placeholderText: qsTr("Search")
 
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.maximumWidth: 280
-
-            verticalAlignment: TextInput.AlignVCenter
-            font.pixelSize: 18
-            placeholderText: qsTr("Search")
 
             onAccepted: {
                 root.search(text)
