@@ -63,7 +63,7 @@ android {
     }
 
     # To upgrade the version change the following variable
-    VERSION = 1.0.2
+    VERSION = 1.0.3
 
     ANDROID_VERSION_NAME = $$VERSION
     ANDROID_VERSION_CODE = $$droidVersionCode($$ANDROID_VERSION_NAME)
