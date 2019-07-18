@@ -12,6 +12,9 @@ Ui.BasePage {
         id: gameContent
         GameContent {
             hasToolbar: false
+
+            onPriorityClicked: console.log("Priority")
+            onPointsCounterClicked: console.log("Points Counter")
         }
     }
 }

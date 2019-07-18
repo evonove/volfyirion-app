@@ -6,6 +6,11 @@ import Volfy.Controls 1.0
 import "../" as Ui
 
 Ui.BaseContent {
+    id: root
+
+    signal priorityClicked
+    signal pointsCounterClicked
+
     background: Image {
         source:"qrc:/assets/rulebook_page_background.png"
         fillMode: Image.PreserveAspectCrop
@@ -26,11 +31,15 @@ Ui.BaseContent {
         Button {
             text: qsTr("Priority");
 
+            onClicked: root.priorityClicked()
+
             Layout.preferredWidth: 277
             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
         }
         Button {
             text: qsTr("Points Counter");
+
+            onClicked: root.pointsCounterClicked()
 
             Layout.preferredWidth: 277
             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
