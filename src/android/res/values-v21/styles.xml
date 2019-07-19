@@ -1,0 +1,16 @@
+<resources>
+    <style name="SplashTheme" parent="@android:style/Theme.NoTitleBar">
+        <!-- this is set to windowBackground instead of background as a workaround
+             on Android 8.0, otherwise splash screen do not disappear -->
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/back</item>
+        <item name="android:navigationBarColor">@color/back</item>
+    </style>
+
+    <style name="VolfyTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/darkred</item>
+        <item name="android:navigationBarColor">@color/back</item>
+    </style>
+</resources>

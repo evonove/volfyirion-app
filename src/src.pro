@@ -26,24 +26,28 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+# To upgrade the version change the following variable
+VERSION = 1.0.3
 
 android {
     QT += androidextras
 
-    DISTFILES += \
-        android/AndroidManifest.xml \
-        android/build.gradle \
-        android/gradle/wrapper/gradle-wrapper.jar \
-        android/gradle/wrapper/gradle-wrapper.properties \
-        android/gradlew \
-        android/gradlew.bat \
-        android/res/values/* \
-        android/res/mipmap-hdpi/* \
-        android/res/mipmap-mdpi/* \
-        android/res/mipmap-xhdpi/* \
-        android/res/mipmap-xxhdpi/* \
-        android/res/mipmap-xxxhdpi/* \
-        android/res/drawable/*
+    OTHER_FILES += \
+        $$PWD/android/src/it/evonove/qt5/* \
+        $$PWD/android/AndroidManifest.xml \
+        $$PWD/android/build.gradle \
+        $$PWD/android/gradle/wrapper/gradle-wrapper.jar \
+        $$PWD/android/gradle/wrapper/gradle-wrapper.properties \
+        $$PWD/android/gradlew \
+        $$PWD/android/gradlew.bat \
+        $$PWD/android/res/values/* \
+        $$PWD/android/res/values-v21/* \
+        $$PWD/android/res/mipmap-hdpi/* \
+        $$PWD/android/res/mipmap-mdpi/* \
+        $$PWD/android/res/mipmap-xhdpi/* \
+        $$PWD/android/res/mipmap-xxhdpi/* \
+        $$PWD/android/res/mipmap-xxxhdpi/* \
+        $$PWD/android/res/drawable/*
 
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
@@ -62,9 +66,6 @@ android {
         return($$first(vCode)$$first(suffix))
     }
 
-    # To upgrade the version change the following variable
-    VERSION = 1.0.3
-
     ANDROID_VERSION_NAME = $$VERSION
     ANDROID_VERSION_CODE = $$droidVersionCode($$ANDROID_VERSION_NAME)
 }
@@ -72,8 +73,6 @@ android {
 ios {
     QMAKE_TARGET_BUNDLE_PREFIX = it.evonove
     QMAKE_BUNDLE = volfyirion
-
-    QT += svg
 
     QMAKE_INFO_PLIST = $${PWD}/ios/Info.plist
 
