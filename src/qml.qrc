@@ -89,5 +89,6 @@
         <file>assets/clear_icon.svg</file>
         <file>ui/GameViews/GamePage.qml</file>
         <file>ui/GameViews/GameContent.qml</file>
+        <file>assets/volfyirion_bg.jpeg</file>
     </qresource>
 </RCC>

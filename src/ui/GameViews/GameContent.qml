@@ -12,7 +12,7 @@ Ui.BaseContent {
     signal pointsCounterClicked
 
     background: Image {
-        source:"qrc:/assets/rulebook_page_background.png"
+        source:"qrc:/assets/volfyirion_bg.jpeg"
         fillMode: Image.PreserveAspectCrop
 
         Rectangle {
