@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.12
 import System 1.0
 
 import "ui/SetupViews" as SetupViews
+import "ui/GameViews" as GameViews
 import "ui" as Ui
 
 ApplicationWindow {
@@ -74,6 +75,12 @@ ApplicationWindow {
         SetupViews.SetupPage {
             safeTopMargin: root.safeTopMargin
         }
+
+        GameViews.GamePage {
+            safeTopMargin: root.safeTopMargin
+        }
+
+
     }
 
     footer: TabBar {
@@ -90,7 +97,6 @@ ApplicationWindow {
             text: qsTr("Game")
             icon.source: this.down || this.checked ? _tabIcons.gameFilled : _tabIcons.game
             onClicked: history.push(TabBar.index)
-            enabled: false
         }
         TabButton {
             text: qsTr("Artwork")
