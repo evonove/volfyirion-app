@@ -19,7 +19,6 @@ Ui.BaseContent {
             opacity: 0.7
         }
     }
-
     MultiPointTouchArea {
         id: multiTouch
         anchors.fill: parent
@@ -34,9 +33,26 @@ Ui.BaseContent {
             }
         ]
 
+        Label {
+            id: rulesPriorityGame
+            anchors.fill: parent
+            text: qsTr("Each player holds a finger on screen")
+            font.pixelSize: 36
+            font.capitalization: Font.AllUppercase
+            font.letterSpacing: 0.05
+
+            wrapMode: Text.WordWrap
+
+            verticalAlignment: Qt.AlignVCenter
+            horizontalAlignment: Qt.AlignHCenter
+            anchors.leftMargin: 84
+            anchors.rightMargin: 84
+        }
+
         onPressed: {
             if (player1.pressed && player2.pressed) {
                 console.log("both pressed")
+                rulesPriorityGame.visible = false
                 pawn1.state = "loading"
                 pawn2.state = "loading"
                 timer.start()
@@ -75,7 +91,7 @@ Ui.BaseContent {
             // To get a random number between a range we use that formula
             // Math.random() * (max - min) + min
             //In our case max = 2 and min = 1.
-            var winner = Math.floor(Math.random() * 2) + 1;
+            var winner = Math.floor(Math.random() * 2) + 1
             console.log(winner)
 
             switch (winner) {

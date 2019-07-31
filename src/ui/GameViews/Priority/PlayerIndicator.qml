@@ -41,6 +41,9 @@ Rectangle {
             when: !pressedPlayer
             PropertyChanges {
                 target: pawn
+                width: 0
+                height: 0
+                color: pawn.playerColor
                 visible: false
             }
         },
@@ -79,6 +82,33 @@ Rectangle {
                 radius: 135
                 color: pawn.playerColor
                 border.color: "transparent"
+            }
+        }
+    ]
+
+    transitions: [
+        Transition {
+            from: "winner"
+            to: "hidden"
+            enabled: pawn.state === "winner"
+            SequentialAnimation {
+                alwaysRunToEnd: true
+
+                NumberAnimation {
+                    properties: "radius"
+                    from: pawn.radius
+                    to: 0
+                }
+                NumberAnimation {
+                    properties: "scale"
+                    to: 0
+                    duration: 2000
+                }
+                NumberAnimation {
+                    property: "visible"
+                    to: 0
+                    duration: 2000
+                }
             }
         }
     ]
