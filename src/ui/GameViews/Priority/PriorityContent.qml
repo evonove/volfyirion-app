@@ -9,6 +9,8 @@ Ui.BaseContent {
     id: control
     title: qsTr("priority")
 
+    signal transitionFinished
+
     background: Image {
         source: "qrc:/assets/priority_background.png"
         fillMode: Image.PreserveAspectCrop
@@ -24,6 +26,7 @@ Ui.BaseContent {
         anchors.fill: parent
         maximumTouchPoints: 2
         mouseEnabled: false
+
         touchPoints: [
             TouchPoint {
                 id: player1
@@ -41,6 +44,8 @@ Ui.BaseContent {
             font.capitalization: Font.AllUppercase
             font.letterSpacing: 0.05
 
+            visible: !pawn1.visible && !pawn2.visible
+
             wrapMode: Text.WordWrap
 
             verticalAlignment: Qt.AlignVCenter
@@ -51,8 +56,6 @@ Ui.BaseContent {
 
         onPressed: {
             if (player1.pressed && player2.pressed) {
-                console.log("both pressed")
-                rulesPriorityGame.visible = false
                 pawn1.state = "loading"
                 pawn2.state = "loading"
                 timer.start()
@@ -60,8 +63,9 @@ Ui.BaseContent {
         }
 
         onReleased: {
-            // Reset default properties to pawns
             timer.stop()
+            pawn1.state = player1.pressed ? "normal" : "hidden"
+            pawn2.state = player2.pressed ? "normal" : "hidden"
         }
     }
 
@@ -87,12 +91,10 @@ Ui.BaseContent {
         id: timer
         interval: 2000
         onTriggered: {
-
             // To get a random number between a range we use that formula
             // Math.random() * (max - min) + min
             //In our case max = 2 and min = 1.
             var winner = Math.floor(Math.random() * 2) + 1
-            console.log(winner)
 
             switch (winner) {
             case 1:

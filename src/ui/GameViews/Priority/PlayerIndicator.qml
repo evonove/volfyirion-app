@@ -102,14 +102,27 @@ Rectangle {
                 NumberAnimation {
                     properties: "scale"
                     to: 0
-                    duration: 2000
                 }
                 NumberAnimation {
                     property: "visible"
                     to: 0
-                    duration: 2000
                 }
             }
+        },
+        Transition {
+            from: "loading"
+            to: "normal"
+            PropertyAnimation {
+                properties: "radius, scale, color"
+            }
+        },
+        Transition {
+            from: "winner"
+            to: "normal"
+            PropertyAnimation {
+                properties: "radius, scale, color"
+            }
         }
+
     ]
 }
