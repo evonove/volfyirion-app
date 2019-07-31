@@ -92,5 +92,6 @@
         <file>assets/volfyirion_bg.jpeg</file>
         <file>ui/GameViews/Priority/PriorityContent.qml</file>
         <file>assets/priority_background.png</file>
+        <file>ui/GameViews/Priority/PlayerIndicator.qml</file>
     </qresource>
 </RCC>
