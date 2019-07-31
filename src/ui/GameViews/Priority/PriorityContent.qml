@@ -20,67 +20,74 @@ Ui.BaseContent {
         }
     }
 
-    ColumnLayout {
+    MultiPointTouchArea {
+        id: multiTouch
         anchors.fill: parent
-
-        MultiPointTouchArea {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            maximumTouchPoints: 2
-            mouseEnabled: false
-
-            touchPoints: [
-                TouchPoint {
-                    id: player1
-                },
-                TouchPoint {
-                    id: player2
-                }
-
-            ]
-
-            Rectangle {
-                id:pawn1
-                width: 100
-                height: 100
-                radius: 50
-                border.color: "#49C5B1"
-                border.width: 8
-                color: "transparent"
-                x: player1.x - (pawn1.width/2)
-                y: player1.y - (pawn1.height/2)
-                visible: player1.pressed
+        maximumTouchPoints: 2
+        mouseEnabled: false
+        touchPoints: [
+            TouchPoint {
+                id: player1
+            },
+            TouchPoint {
+                id: player2
             }
+        ]
 
-            Rectangle {
-                id:pawn2
-                width: 100
-                height: 100
-                radius: 50
-                color: palette.mid
-                x: player2.x - (pawn2.width/2)
-                y: player2.y - (pawn2.height/2)
-                visible: player2.pressed
-            }
-
-            onPressed: {
-                if(player1.pressed && player2.pressed) {
-                    pawn1.width = 136;
-                    pawn1.height = 136;
-                    pawn1.radius = 68;
-                    pawn1.color = pawn1.border.color;
-                    pawn2.width = 136;
-                    pawn2.height = 136;
-                    pawn2.radius = 68;
-                    pawn2.color = pawn2.border.color;
-
-                }
-            }
-
-            onReleased: {
-                console.log("released");
+        onPressed: {
+            if (player1.pressed && player2.pressed) {
+                console.log("both pressed")
+                pawn1.state = "loading"
+                pawn2.state = "loading"
+                timer.start()
             }
         }
 
+        onReleased: {
+            // Reset default properties to pawns
+            timer.stop()
+        }
+    }
+
+    PlayerIndicator {
+        id: pawn1
+        playerColor: palette.mid
+        xTouch: player1.x
+        yTouch: player1.y
+
+        pressedPlayer: player1.pressed
+    }
+
+    PlayerIndicator {
+        id: pawn2
+        playerColor: palette.dark
+        xTouch: player2.x
+        yTouch: player2.y
+
+        pressedPlayer: player2.pressed
+    }
+
+    Timer {
+        id: timer
+        interval: 2000
+        onTriggered: {
+
+            // To get a random number between a range we use that formula
+            // Math.random() * (max - min) + min
+            //In our case max = 2 and min = 1.
+            var winner = Math.floor(Math.random() * 2) + 1;
+            console.log(winner)
+
+            switch (winner) {
+            case 1:
+                pawn2.state = "hidden"
+                pawn1.state = "winner"
+                break
+            case 2:
+                pawn1.state = "hidden"
+                pawn2.state = "winner"
+                break
+            }
+        }
     }
 }
