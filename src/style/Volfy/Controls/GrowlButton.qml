@@ -8,6 +8,7 @@ T.Button {
     id: control
 
     property bool running: false
+    property bool squared: false
 
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
                             implicitContentWidth + leftPadding + rightPadding)
@@ -25,7 +26,7 @@ T.Button {
                                          && !control.down ? (control.visualFocus ? control.palette.highlight : control.palette.windowText) : control.palette.buttonText
 
     font.capitalization: Font.AllUppercase
-    font.pixelSize: 13
+    font.pixelSize: control.squared ? 20 : 13
 
     states: State {
         name: "control-down"
@@ -59,8 +60,8 @@ T.Button {
     }
 
     background: Item {
-        implicitHeight: 76
-        implicitWidth: 76
+        implicitHeight: control.squared ? 72 : 76
+        implicitWidth: control.squared ? 373 : 76
 
         opacity: 0.8
 
@@ -70,7 +71,7 @@ T.Button {
             color: "transparent"
             border.color: "#FFFFFF"
             border.width: 2
-            radius: 50
+            radius: control.squared ? 4 : 50
 
             SequentialAnimation on border.width {
                 running: control.running
@@ -88,7 +89,7 @@ T.Button {
                 height: parent.height - 10
 
                 fillMode: Image.PreserveAspectFit
-                source: "qrc:/assets/growl-button-background.png"
+                source: control.squared ? "qrc:/assets/square_growl_background.png" : "qrc:/assets/growl-button-background.png"
             }
 
             Rectangle {
@@ -99,7 +100,7 @@ T.Button {
                 color: "transparent"
                 border.color: "#FFFFFF"
                 border.width: 2
-                radius: 50
+                radius: control.squared ? 2 : 50
             }
         }
     }
