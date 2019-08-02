@@ -2,6 +2,7 @@
 #define POINTSMODEL_H
 
 #include <QObject>
+#include <QSettings>
 
 class PointsModel : public QObject
 {
@@ -9,7 +10,9 @@ class PointsModel : public QObject
     Q_PROPERTY(int knowledge READ knowledge WRITE setKnowledge NOTIFY knowledgeChanged)
     Q_PROPERTY(int battle READ battle WRITE setBattle NOTIFY battleChanged)
     Q_PROPERTY(int command READ command WRITE setCommand NOTIFY commandChanged)
+
 public:
+    PointsModel(QObject* parent = nullptr);
 
     // getter methods
     int knowledge();
@@ -31,9 +34,11 @@ signals:
 public slots:
 
 private:
-    int m_knowledge = 0;
-    int m_battle = 0;
-    int m_command = 0;
+    int m_knowledge;
+    int m_battle;
+    int m_command;
+
+    QSettings m_settings;
 };
 
 #endif // POINTSMODEL_H
