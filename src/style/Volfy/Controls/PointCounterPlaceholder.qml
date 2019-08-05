@@ -5,7 +5,7 @@ import QtQuick.Templates 2.12 as T
 import QtGraphicalEffects 1.0
 import QtQuick.Layouts 1.12
 
-Rectangle {
+Item {
     id: control
 
     property alias backgroundUrl: img.source
@@ -16,29 +16,48 @@ Rectangle {
     signal decrementScore
     signal incrementScore
 
+
     implicitHeight: 153
     implicitWidth: 363
-    radius: 3
 
+    SequentialAnimation on scale {
+        running: incrementButton.pressed || decrementButton.pressed
+        loops: Animation.Infinite
+        alwaysRunToEnd: true
 
-    states: State {
-        name: "control-down"
-        when: control.down
-        PropertyChanges {
-            target: iconLabel
-            explicit: true
-            y: iconLabel.y + 2
+        ParallelAnimation {
+            PropertyAnimation {
+                target: iconPoint
+                properties: "width, height"
+                to: 84
+                duration: 100
+            }
+
+            PropertyAnimation {
+                target: scoreLabel
+                properties: "font.pixelSize"
+                to: 30
+                duration: 150
+            }
         }
-        PropertyChanges {
-            target: background
-            y: 2
+
+        ParallelAnimation {
+            PropertyAnimation {
+                target: iconPoint
+                properties: "width, height"
+                to: 74
+                duration: 100
+            }
+
+            PropertyAnimation {
+                target: scoreLabel
+                properties: "font.pixelSize"
+                to: 24
+                duration: 150
+            }
         }
-        PropertyChanges {
-            target: dropShadow
-            verticalOffset: 1
-        }
+
     }
-
 
     // background
     Image {
@@ -46,8 +65,19 @@ Rectangle {
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
 
-        height: 74
-        width: 74
+        layer.enabled: true
+        layer.effect: OpacityMask {
+            maskSource: Item {
+                width: img.width
+                height: img.height
+                Rectangle {
+                    anchors.centerIn: parent
+                    width:  img.width
+                    height: img.height
+                    radius: 4
+                }
+            }
+        }
 
         Rectangle {
             anchors.fill: parent
@@ -57,35 +87,22 @@ Rectangle {
     }
 
     // content
-    Row {
+    RowLayout {
         anchors.fill: parent
-        T.Button {
-            Image {
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left: parent.left
-                anchors.leftMargin: 24
-                source: "qrc:/assets/minus_icon.svg"
 
-                height: 24
-                width: 24
-
-                fillMode: Image.PreserveAspectFit
-            }
-
-            height: parent.height
-            width: parent.width / 3
+        RoundButton {
+            id: decrementButton
+            icon.source: "qrc:/assets/minus_icon.svg"
 
             enabled: control.score > 0
-
             onClicked: control.decrementScore()
+
+            Layout.preferredWidth: 57
         }
 
         Item {
-            anchors.bottomMargin: 40
-            anchors.topMargin: 40
-
-            height: parent.height
-            width: parent.width / 3
+            Layout.fillHeight: true
+            Layout.fillWidth: true
 
             Image {
                 id: iconPoint
@@ -96,8 +113,8 @@ Rectangle {
                 fillMode: Image.PreserveAspectFit
             }
 
-
             Label {
+                id: scoreLabel
                 width: parent.width
                 height: parent.height
                 horizontalAlignment: Text.AlignHCenter
@@ -110,29 +127,15 @@ Rectangle {
                 color: control.color
                 background: null
             }
-
         }
 
-        T.Button {
-            id: plusButton
-            Image {
-                id: plusIcon
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.right: parent.right
-                anchors.rightMargin: 24
-                source: "qrc:/assets/plus_icon.svg"
-
-                height: 24
-                width: 24
-
-                fillMode: Image.PreserveAspectFit
-            }
-
-
-            height: parent.height
-            width: parent.width / 3
+        RoundButton {
+            id: incrementButton
+            icon.source: "qrc:/assets/plus_icon.svg"
 
             onClicked: control.incrementScore()
+
+            Layout.preferredWidth: 57
         }
     }
 }

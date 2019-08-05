@@ -43,6 +43,7 @@ Ui.BaseContent {
         id: buttons
         anchors.fill: parent
         spacing: 6
+
         PointCounterPlaceholder {
             backgroundUrl: "qrc:/assets/knowledge.png"
             iconPointUrl: "qrc:/assets/knowledge_icon.png"
@@ -62,6 +63,7 @@ Ui.BaseContent {
                 pointsModel.knowledge = value
             }
         }
+
         PointCounterPlaceholder {
             backgroundUrl: "qrc:/assets/battle.png"
             iconPointUrl: "qrc:/assets/battle_icon.png"
@@ -80,6 +82,7 @@ Ui.BaseContent {
                 pointsModel.battle = value
             }
         }
+
         PointCounterPlaceholder {
             backgroundUrl: "qrc:/assets/command.png"
             iconPointUrl: "qrc:/assets/command_icon.png"
