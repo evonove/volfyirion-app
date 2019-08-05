@@ -88,7 +88,7 @@ T.Button {
                 width: parent.width - 10
                 height: parent.height - 10
 
-                fillMode: Image.PreserveAspectFit
+                fillMode: Image.PreserveAspectCrop
                 source: control.squared ? "qrc:/assets/square_growl_background.png" : "qrc:/assets/growl-button-background.png"
             }
 
