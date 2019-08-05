@@ -7,6 +7,7 @@
 #endif
 
 #include "system.h"
+#include "models/pointsmodel.h"
 
 static QObject *
 system_manager_singletontype_provider(QQmlEngine *engine,
@@ -33,6 +34,8 @@ int main(int argc, char *argv[])
         system_manager_singletontype_provider);
 
     engine.addImportPath("qrc:/style");
+
+    qmlRegisterType<PointsModel>("PointsModel", 1, 0, "PointsModel");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
