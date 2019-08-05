@@ -101,5 +101,7 @@
         <file>assets/minus_icon.svg</file>
         <file>assets/plus_icon.svg</file>
         <file>assets/reset_icon.svg</file>
+        <file>ui/GameViews/PointsCounter/PointsCounterContent.qml</file>
+        <file>style/Volfy/Controls/PointCounterPlaceholder.qml</file>
     </qresource>
 </RCC>
