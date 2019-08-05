@@ -35,8 +35,7 @@ int main(int argc, char *argv[])
 
     engine.addImportPath("qrc:/style");
 
-    PointsModel pointsModel;
-    engine.rootContext()->setContextProperty("pointsModel", &pointsModel);
+    qmlRegisterType<PointsModel>("PointsModel", 1, 0, "PointsModel");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
