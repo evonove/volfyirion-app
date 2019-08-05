@@ -7,7 +7,7 @@
 #endif
 
 #include "system.h"
-#include "ui/GameViews/PointsCounter/Models/pointsmodel.h"
+#include "models/pointsmodel.h"
 
 static QObject *
 system_manager_singletontype_provider(QQmlEngine *engine,

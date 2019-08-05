@@ -9,11 +9,11 @@ DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs depr
 SOURCES += \
         main.cpp \
         system.cpp \
-        ui/GameViews/PointsCounter/Models/pointsmodel.cpp
+        models/pointsmodel.cpp
 
 HEADERS += \
     system.h \
-    ui/GameViews/PointsCounter/Models/pointsmodel.h
+    models/pointsmodel.h
 
 RESOURCES += qml.qrc
 

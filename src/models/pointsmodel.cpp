@@ -1,5 +1,3 @@
-#include <QDebug>
-
 #include "pointsmodel.h"
 
 PointsModel::PointsModel(QObject * parent) : QObject (parent) {
