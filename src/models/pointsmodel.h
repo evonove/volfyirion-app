@@ -20,9 +20,9 @@ public:
     int command();
 
     // setter methods
-    Q_INVOKABLE void setKnowledge(const int &value);
-    Q_INVOKABLE void setBattle(const int &value);
-    Q_INVOKABLE void setCommand(const int &value);
+    void setKnowledge(const int &value);
+    void setBattle(const int &value);
+    void setCommand(const int &value);
 
     Q_INVOKABLE void resetPoints();
 

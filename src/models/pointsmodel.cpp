@@ -17,19 +17,25 @@ int PointsModel::command(){
 }
 
 void PointsModel::setKnowledge(const int &value){
-    m_knowledge = value;
-    m_settings.setValue("knowledge", value);
-    emit knowledgeChanged();
+    if(m_knowledge != value) {
+        m_knowledge = value;
+        m_settings.setValue("knowledge", value);
+        emit knowledgeChanged();
+    }
 }
 void PointsModel::setBattle(const int &value){
-    m_battle = value;
-    m_settings.setValue("battle", value);
-    emit battleChanged();
+    if(m_battle != value) {
+        m_battle = value;
+        m_settings.setValue("battle", value);
+        emit battleChanged();
+    }
 }
 void PointsModel::setCommand(const int &value){
-    m_command = value;
-    m_settings.setValue("command", value);
-    emit commandChanged();
+    if(m_command != value) {
+        m_command = value;
+        m_settings.setValue("command", value);
+        emit commandChanged();
+    }
 }
 
 void PointsModel::resetPoints() {
