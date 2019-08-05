@@ -44,7 +44,7 @@ Ui.BaseContent {
             font.capitalization: Font.AllUppercase
             font.letterSpacing: 0.05
 
-            visible: !pawn1.visible && !pawn2.visible
+            visible: pawn1.state === "hidden" && pawn2.state === "hidden"
 
             wrapMode: Text.WordWrap
 

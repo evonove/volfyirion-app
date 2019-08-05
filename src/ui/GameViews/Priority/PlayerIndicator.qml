@@ -43,8 +43,10 @@ Rectangle {
                 target: pawn
                 width: 0
                 height: 0
-                color: pawn.playerColor
-                visible: false
+                radius: 135
+                color: "transparent"
+                border.width: 8
+                border.color: pawn.playerColor
             }
         },
         State {
@@ -52,8 +54,6 @@ Rectangle {
             when: pressedPlayer
             PropertyChanges {
                 target: pawn
-                visible: true
-
                 width: 100
                 height: 100
                 radius: 50
@@ -103,9 +103,9 @@ Rectangle {
                     properties: "scale"
                     to: 0
                 }
-                NumberAnimation {
+                PropertyAction {
                     property: "visible"
-                    to: 0
+                    value: false
                 }
             }
         },
