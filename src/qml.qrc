@@ -90,6 +90,8 @@
         <file>ui/GameViews/GamePage.qml</file>
         <file>ui/GameViews/GameContent.qml</file>
         <file>assets/volfyirion_bg.jpeg</file>
-        <file>assets/square_growl_background.png</file>
+        <file>ui/GameViews/Priority/PriorityContent.qml</file>
+        <file>assets/priority_background.png</file>
+        <file>ui/GameViews/Priority/PlayerIndicator.qml</file>
     </qresource>
 </RCC>
