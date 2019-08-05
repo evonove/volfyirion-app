@@ -43,7 +43,6 @@ android {
         $$PWD/android/gradlew \
         $$PWD/android/gradlew.bat \
         $$PWD/android/res/values/* \
-        $$PWD/android/res/values-v21/* \
         $$PWD/android/res/mipmap-hdpi/* \
         $$PWD/android/res/mipmap-mdpi/* \
         $$PWD/android/res/mipmap-xhdpi/* \
