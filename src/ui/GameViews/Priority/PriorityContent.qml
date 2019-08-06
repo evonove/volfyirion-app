@@ -71,7 +71,7 @@ Ui.BaseContent {
 
     PlayerIndicator {
         id: pawn1
-        playerColor: palette.mid
+        playerColor: "#59BCAD" // light blue
         xTouch: player1.x
         yTouch: player1.y
 
@@ -80,7 +80,7 @@ Ui.BaseContent {
 
     PlayerIndicator {
         id: pawn2
-        playerColor: palette.dark
+        playerColor: "#B289BD" // light violet
         xTouch: player2.x
         yTouch: player2.y
 
