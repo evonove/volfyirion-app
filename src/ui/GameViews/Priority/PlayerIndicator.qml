@@ -3,7 +3,7 @@ import QtQuick 2.0
 Rectangle {
     id: pawn
 
-    property color playerColor: null
+    property color playerColor: "transparent"
     property int xTouch: -1
     property int yTouch: -1
 
