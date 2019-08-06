@@ -26,7 +26,7 @@ T.Button {
                                          && !control.down ? (control.visualFocus ? control.palette.highlight : control.palette.windowText) : control.palette.buttonText
 
     font.capitalization: Font.AllUppercase
-    font.pixelSize: control.squared ? 20 : 13
+    font.pixelSize: 20
 
     states: State {
         name: "control-down"
@@ -60,10 +60,10 @@ T.Button {
     }
 
     background: Item {
-        implicitHeight: control.squared ? 72 : 76
-        implicitWidth: control.squared ? 373 : 76
+        implicitHeight: control.squared ? 72 : 126
+        implicitWidth: control.squared ? 373 : 126
 
-        opacity: 0.8
+        opacity: 0.5
 
         Rectangle {
             id: externalEllipse
@@ -71,7 +71,7 @@ T.Button {
             color: "transparent"
             border.color: "#FFFFFF"
             border.width: 2
-            radius: control.squared ? 4 : 50
+            radius: control.squared ? 4 : 100
 
             SequentialAnimation on border.width {
                 running: control.running
@@ -100,7 +100,7 @@ T.Button {
                 color: "transparent"
                 border.color: "#FFFFFF"
                 border.width: 2
-                radius: control.squared ? 2 : 50
+                radius: control.squared ? 2 : 100
             }
         }
     }
