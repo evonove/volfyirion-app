@@ -1,0 +1,6 @@
+#ifndef VIBRATORSERVICE_H
+#define VIBRATORSERVICE_H
+
+void iOSVibrate();
+
+#endif // VIBRATORSERVICE_H

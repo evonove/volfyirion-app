@@ -8,6 +8,7 @@
 
 #include "system.h"
 #include "models/pointsmodel.h"
+#include "vibrator.h"
 
 static QObject *
 system_manager_singletontype_provider(QQmlEngine *engine,
@@ -17,6 +18,15 @@ system_manager_singletontype_provider(QQmlEngine *engine,
   auto system = new System();
 
   return system;
+}
+static QObject *
+vibrator_manager_singletontype_provider(QQmlEngine *engine,
+                                      QJSEngine *scriptEngine) {
+  Q_UNUSED(scriptEngine)
+  Q_UNUSED(engine)
+  auto vibrator = new Vibrator();
+
+  return vibrator;
 }
 
 int main(int argc, char *argv[])
@@ -32,6 +42,10 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonType<System>(
         "System", 1, 0, "System",
         system_manager_singletontype_provider);
+
+    qmlRegisterSingletonType<Vibrator>(
+        "Vibrator", 1, 0, "Vibrator",
+        vibrator_manager_singletontype_provider);
 
     engine.addImportPath("qrc:/style");
 

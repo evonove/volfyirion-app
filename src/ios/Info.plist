@@ -38,5 +38,9 @@
 
     <key>NSCameraUsageDescription</key>
     <string>App would like to access the camera.</string>
+
+    <key>UNNotificationContentExtension</key>
+    <string>com.apple.usernotifications.content-extension</string>
+
 </dict>
 </plist>

@@ -9,11 +9,13 @@ DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs depr
 SOURCES += \
         main.cpp \
         system.cpp \
-        models/pointsmodel.cpp
+        models/pointsmodel.cpp \
+        vibrator.cpp
 
 HEADERS += \
     system.h \
-    models/pointsmodel.h
+    models/pointsmodel.h \
+    vibrator.h
 
 RESOURCES += qml.qrc
 
@@ -74,6 +76,9 @@ android {
 ios {
     QMAKE_TARGET_BUNDLE_PREFIX = it.evonove
     QMAKE_BUNDLE = volfyirion
+
+    OBJECTIVE_SOURCES += ios/service/vibratorservice.mm
+    OBJECTIVE_HEADERS += ios/service/vibratorservice.h
 
     QMAKE_INFO_PLIST = $${PWD}/ios/Info.plist
 

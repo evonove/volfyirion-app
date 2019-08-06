@@ -3,9 +3,14 @@ package it.evonove.qt5;
 import it.evonove.volfyirion.R;
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+import android.content.Context;
+
 
 public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
 {
+
     public VolfyActivity()
     {
         // here we override the default theme with our own
@@ -21,4 +26,9 @@ public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
         setTheme(R.style.VolfyTheme);
         super.onCreate(savedInstanceState);
     }
+
+    public void vibrate() {
+        ((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(VibrationEffect.createOneShot(500, 255));
+    }
+
 }
