@@ -77,6 +77,9 @@ ios {
     QMAKE_TARGET_BUNDLE_PREFIX = it.evonove
     QMAKE_BUNDLE = volfyirion
 
+    OBJECTIVE_SOURCES += ios/service/vibratorservice.mm
+    OBJECTIVE_HEADERS += ios/service/vibratorservice.h
+
     QMAKE_INFO_PLIST = $${PWD}/ios/Info.plist
 
     OTHER_FILES += \
