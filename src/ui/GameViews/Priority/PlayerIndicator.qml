@@ -35,10 +35,11 @@ Rectangle {
         }
     }
 
+    state: "hidden"
+
     states: [
         State {
             name: "hidden"
-            when: !pressedPlayer
             PropertyChanges {
                 target: pawn
                 width: 0
@@ -51,7 +52,6 @@ Rectangle {
         },
         State {
             name: "normal"
-            when: pressedPlayer
             PropertyChanges {
                 target: pawn
                 width: 100
@@ -123,6 +123,5 @@ Rectangle {
                 properties: "radius, scale, color"
             }
         }
-
     ]
 }

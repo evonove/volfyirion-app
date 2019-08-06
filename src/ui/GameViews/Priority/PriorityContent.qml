@@ -6,10 +6,12 @@ import Volfy.Controls 1.0
 import "../../" as Ui
 
 Ui.BaseContent {
-    id: control
+    id: root
     title: qsTr("priority")
+    enabled: true
 
     signal transitionFinished
+    signal winnerChoosen
 
     background: Image {
         source: "qrc:/assets/priority_background.png"
@@ -55,10 +57,14 @@ Ui.BaseContent {
         }
 
         onPressed: {
+
             if (player1.pressed && player2.pressed) {
                 pawn1.state = "loading"
                 pawn2.state = "loading"
                 timer.start()
+            } else {
+                pawn1.state = player1.pressed ? "normal" : "hidden"
+                pawn2.state = player2.pressed ? "normal" : "hidden"
             }
         }
 
@@ -106,6 +112,30 @@ Ui.BaseContent {
                 pawn2.state = "winner"
                 break
             }
+        }
+    }
+
+    Timer {
+        id: changeScopeTimer
+        interval: 1000
+        running: false
+
+        onTriggered: {
+            console.log("cambiamoooo")
+            root.winnerChoosen()
+        }
+    }
+
+    states: State {
+        name: "winner"
+        when: pawn1.state === "winner" || pawn2.state === "winner"
+        PropertyChanges {
+            target: root
+            enabled: false
+        }
+        PropertyChanges {
+            target: changeScopeTimer
+            running: true
         }
     }
 }

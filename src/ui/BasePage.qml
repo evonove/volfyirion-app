@@ -21,10 +21,14 @@ Page {
         _stack.forceActiveFocus()
     }
 
+    function replace(component) {
+        _stack.replace(component)
+        _stack.forceActiveFocus()
+    }
+
     BusyIndicator {
         anchors.centerIn: parent
         running: _stack.currentItem.isLoading
-
     }
 
     Header {
@@ -45,7 +49,9 @@ Page {
         enabled: _stack.currentItem.hasToolbar
 
         Behavior on opacity {
-            NumberAnimation { duration: 200 }
+            NumberAnimation {
+                duration: 200
+            }
         }
     }
 

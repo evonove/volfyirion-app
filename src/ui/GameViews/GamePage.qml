@@ -7,7 +7,6 @@ import "../" as Ui
 import "./Priority" as Priority
 import "./PointsCounter" as PointsCounter
 
-
 Ui.BasePage {
     id: root
 
@@ -38,6 +37,10 @@ Ui.BasePage {
             hasToolbar: true
 
             leftAction: _backAction
+
+            onWinnerChoosen: {
+                root.replace(pointsCounterContent)
+            }
         }
     }
 

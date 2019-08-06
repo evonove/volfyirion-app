@@ -12,7 +12,7 @@ Ui.BaseContent {
     signal pointsCounterClicked
 
     background: Image {
-        source:"qrc:/assets/volfyirion_bg.jpeg"
+        source: "qrc:/assets/volfyirion_bg.jpeg"
         fillMode: Image.PreserveAspectCrop
 
         Rectangle {
@@ -29,7 +29,7 @@ Ui.BaseContent {
         spacing: 75
 
         Button {
-            text: qsTr("Priority");
+            text: qsTr("Priority")
 
             onClicked: root.priorityClicked()
 
@@ -37,13 +37,12 @@ Ui.BaseContent {
             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
         }
         Button {
-            text: qsTr("Points Counter");
+            text: qsTr("Points Counter")
 
             onClicked: root.pointsCounterClicked()
 
             Layout.preferredWidth: 277
             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
         }
-
     }
 }
