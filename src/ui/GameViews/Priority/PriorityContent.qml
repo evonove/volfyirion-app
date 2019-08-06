@@ -5,6 +5,8 @@ import Volfy.Controls 1.0
 
 import "../../" as Ui
 
+import Vibrator 1.0
+
 Ui.BaseContent {
     id: control
     title: qsTr("priority")
@@ -21,6 +23,7 @@ Ui.BaseContent {
             opacity: 0.7
         }
     }
+
     MultiPointTouchArea {
         id: multiTouch
         anchors.fill: parent
@@ -106,6 +109,8 @@ Ui.BaseContent {
                 pawn2.state = "winner"
                 break
             }
+
+            Vibrator.vibrate();
         }
     }
 }
