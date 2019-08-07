@@ -85,6 +85,11 @@ ObjectModel {
             text: qsTr("Download area")
             onClicked: root.downloadAreaClicked()
 
+            icon.source: "qrc:/assets/right_arrow.svg"
+
+            LayoutMirroring.enabled: true
+            LayoutMirroring.childrenInherit: true
+
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: userImg.bottom
             anchors.topMargin: 36
