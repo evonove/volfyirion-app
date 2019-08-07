@@ -81,4 +81,5 @@ ios {
 }
 
 DISTFILES += \
-    ui/SetupViews/Rulebook/DownloadAreaContent.qml
+    ui/SetupViews/Rulebook/DownloadAreaContent.qml \
+    ui/SetupViews/Rulebook/Models/RulebookDownloadModel.qml

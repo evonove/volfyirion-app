@@ -107,5 +107,6 @@
         <file>style/Volfy/Controls/PointCounterPlaceholder.qml</file>
         <file>style/Volfy/RoundButton.qml</file>
         <file>ui/SetupViews/Rulebook/DownloadAreaContent.qml</file>
+        <file>ui/SetupViews/Rulebook/Models/RulebookDownloadModel.qml</file>
     </qresource>
 </RCC>
