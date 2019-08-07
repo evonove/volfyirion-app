@@ -34,26 +34,13 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 # To upgrade the version change the following variable
-VERSION = 1.0.3
+VERSION = 1.1.0
 
 android {
     QT += androidextras
 
     OTHER_FILES += \
-        $$PWD/android/src/it/evonove/qt5/* \
-        $$PWD/android/AndroidManifest.xml \
-        $$PWD/android/build.gradle \
-        $$PWD/android/gradle/wrapper/gradle-wrapper.jar \
-        $$PWD/android/gradle/wrapper/gradle-wrapper.properties \
-        $$PWD/android/gradlew \
-        $$PWD/android/gradlew.bat \
-        $$PWD/android/res/values/* \
-        $$PWD/android/res/mipmap-hdpi/* \
-        $$PWD/android/res/mipmap-mdpi/* \
-        $$PWD/android/res/mipmap-xhdpi/* \
-        $$PWD/android/res/mipmap-xxhdpi/* \
-        $$PWD/android/res/mipmap-xxxhdpi/* \
-        $$PWD/android/res/drawable/*
+        $$files($$PWD/android/*, true)
 
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
@@ -86,8 +73,7 @@ ios {
     QMAKE_INFO_PLIST = $${PWD}/ios/Info.plist
 
     OTHER_FILES += \
-        $$PWD/ios/Images.xcassets/AppIcon.appiconset/* \
-        $$PWD/ios/Images.xcassets/LaunchImage.launchimage/*
+        $$files($$PWD/ios/*, true)
 
     QMAKE_ASSET_CATALOGS = $${PWD}/ios/Images.xcassets
     QMAKE_ASSET_CATALOGS_APP_ICON = "AppIcon"
