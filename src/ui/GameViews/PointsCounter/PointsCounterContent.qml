@@ -45,8 +45,8 @@ Ui.BaseContent {
         spacing: 6
 
         PointCounterPlaceholder {
-            backgroundUrl: "qrc:/assets/knowledge.png"
-            iconPointUrl: "qrc:/assets/knowledge_icon.png"
+            backgroundUrl: "qrc:/assets/points_counter/knowledge.png"
+            iconPointUrl: "qrc:/assets/points_counter/knowledge_icon.png"
             score: pointsModel.knowledge
             color: "#B289BD"
 
@@ -65,8 +65,8 @@ Ui.BaseContent {
         }
 
         PointCounterPlaceholder {
-            backgroundUrl: "qrc:/assets/battle.png"
-            iconPointUrl: "qrc:/assets/battle_icon.png"
+            backgroundUrl: "qrc:/assets/points_counter/battle.png"
+            iconPointUrl: "qrc:/assets/points_counter/battle_icon.png"
             score: pointsModel.battle
             color: "#B32013"
 
@@ -84,8 +84,8 @@ Ui.BaseContent {
         }
 
         PointCounterPlaceholder {
-            backgroundUrl: "qrc:/assets/command.png"
-            iconPointUrl: "qrc:/assets/command_icon.png"
+            backgroundUrl: "qrc:/assets/points_counter/command.png"
+            iconPointUrl: "qrc:/assets/points_counter/command_icon.png"
             score: pointsModel.command
             color: "#59BCAD"
 

@@ -17,6 +17,9 @@ HEADERS += \
     models/pointsmodel.h \
     vibrator.h
 
+OTHER_FILES += \
+    $$files($$PWD/*.qml, true)
+
 RESOURCES += qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model

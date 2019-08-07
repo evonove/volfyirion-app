@@ -94,10 +94,12 @@
         <file>assets/priority_background.png</file>
         <file>ui/GameViews/Priority/PlayerIndicator.qml</file>
         <file>assets/square_growl_background.png</file>
-        <file>assets/battle.png</file>
-        <file>assets/battle_icon.png</file>
-        <file>assets/knowledge.png</file>
-        <file>assets/knowledge_icon.png</file>
+        <file>assets/points_counter/battle.png</file>
+        <file>assets/points_counter/battle_icon.png</file>
+        <file>assets/points_counter/knowledge.png</file>
+        <file>assets/points_counter/knowledge_icon.png</file>
+        <file>assets/points_counter/command.png</file>
+        <file>assets/points_counter/command_icon.png</file>
         <file>assets/minus_icon.svg</file>
         <file>assets/plus_icon.svg</file>
         <file>assets/reset_icon.svg</file>

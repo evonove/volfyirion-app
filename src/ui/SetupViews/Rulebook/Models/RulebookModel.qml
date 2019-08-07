@@ -290,15 +290,21 @@ ObjectModel {
 
             Image {
                source: "qrc:/assets/troop_icon.png"
-               sourceSize.width: 30
+               fillMode: Image.PreserveAspectFit
+               Layout.preferredWidth: 30
+               Layout.preferredHeight: 30
             }
             Image {
                source: "qrc:/assets/building_icon.png"
-               sourceSize.width: 30
+               fillMode: Image.PreserveAspectFit
+               Layout.preferredWidth: 30
+               Layout.preferredHeight: 30
             }
             Image {
                source: "qrc:/assets/command_icon.png"
-               sourceSize.width: 30
+               fillMode: Image.PreserveAspectFit
+               Layout.preferredWidth: 30
+               Layout.preferredHeight: 30
             }
         }
 
@@ -313,7 +319,9 @@ ObjectModel {
 
             Image {
                source: "qrc:/assets/wonder_icon.png"
-               sourceSize.width: 30
+               fillMode: Image.PreserveAspectFit
+               Layout.preferredWidth: 30
+               Layout.preferredHeight: 30
             }
         }
 
@@ -448,7 +456,9 @@ ObjectModel {
 
             Image {
                source: "qrc:/assets/command.png"
-               sourceSize.width: 114
+               fillMode: Image.PreserveAspectFit
+               Layout.preferredWidth: 114
+               Layout.preferredHeight: 114
             }
         }
 
