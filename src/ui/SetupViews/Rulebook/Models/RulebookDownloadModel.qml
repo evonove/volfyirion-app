@@ -47,7 +47,7 @@ ListModel {
 
     ListElement {
         language: "Italiano"
-        downloadUrl: "https://s3-eu-west-1.amazonaws.com/mysthea/Rulebooks/rulebook_IT_web_v1.pdf"
+        downloadUrl: "https://volfyirion.s3-eu-west-1.amazonaws.com/rulebooks/Volfyirion_Rulebook_ITA.pdf"
         type: "base mode"
     }
 
