@@ -79,7 +79,3 @@ ios {
     QMAKE_ASSET_CATALOGS_APP_ICON = "AppIcon"
     QMAKE_ASSET_CATALOGS_LAUNCH_IMAGE = "LaunchImage"
 }
-
-DISTFILES += \
-    ui/SetupViews/Rulebook/DownloadAreaContent.qml \
-    ui/SetupViews/Rulebook/Models/RulebookDownloadModel.qml
