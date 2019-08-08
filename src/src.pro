@@ -77,5 +77,7 @@ ios {
 
     QMAKE_ASSET_CATALOGS = $${PWD}/ios/Images.xcassets
     QMAKE_ASSET_CATALOGS_APP_ICON = "AppIcon"
-    QMAKE_ASSET_CATALOGS_LAUNCH_IMAGE = "LaunchImage"
+#    QMAKE_ASSET_CATALOGS_LAUNCH_IMAGE = "LaunchImage"
+    app_launch_images.files = $$PWD/ios/LaunchScreen.storyboard
+    QMAKE_BUNDLE_DATA += app_launch_images
 }
