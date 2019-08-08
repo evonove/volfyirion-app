@@ -8,6 +8,7 @@ import ".."
 
 ObjectModel {
     id: root
+    signal downloadAreaClicked()
 
     property var searchable: initSearchable()
 
@@ -63,17 +64,35 @@ ObjectModel {
             source: "qrc:/assets/logo.png"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
-            anchors.topMargin: 80
+            anchors.topMargin: 72
         }
 
         Image {
-            width: 193
+            id: userImg
+            width: 119
             fillMode: Image.PreserveAspectFit
 
             source: "qrc:/assets/rulebook_user.png"
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 40
+            anchors.top: _logo.bottom
+            anchors.topMargin: 89
+        }
+
+        Button {
+            width: 277
+            height: 50
+
+            text: qsTr("Download area")
+            onClicked: root.downloadAreaClicked()
+
+            icon.source: "qrc:/assets/right_arrow.svg"
+
+            LayoutMirroring.enabled: true
+            LayoutMirroring.childrenInherit: true
+
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: userImg.bottom
+            anchors.topMargin: 36
         }
     }
 

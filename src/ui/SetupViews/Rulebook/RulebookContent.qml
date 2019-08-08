@@ -7,6 +7,10 @@ import "../../" as Ui
 import "./Models" as Models
 
 Ui.BaseContent {
+    id: root
+
+    signal downloadAreaClicked()
+
     function scrollTo(element) {
         _contentLoader.item.positionViewAtIndex(element, ListView.SnapPosition)
     }
@@ -88,6 +92,8 @@ Ui.BaseContent {
             model: Models.RulebookModel {
                 id: _model
                 width: flick.width
+
+                onDownloadAreaClicked: root.downloadAreaClicked()
             }
         }
     }

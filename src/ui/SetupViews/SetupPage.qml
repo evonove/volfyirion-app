@@ -64,6 +64,8 @@ Ui.BasePage {
                 target: root
                 onOpenSection: scrollTo(element)
             }
+
+            onDownloadAreaClicked: root.push(downloadAreaPage)
         }
     }
 
@@ -80,6 +82,18 @@ Ui.BasePage {
                 root.openSection(element)
                 root.pop()
             }
+        }
+    }
+
+    Component {
+        id: downloadAreaPage
+
+        Rulebook.DownloadAreaContent {
+            topPadding: root.headerHeight
+            hasToolbar: true
+
+            leftAction: _backAction
+
         }
     }
 }
