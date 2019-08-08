@@ -18,28 +18,28 @@ Ui.BaseContent {
         id: _languageListView
         anchors.fill: parent
         clip: true
-        spacing: 18
+        spacing: 0
         model: _rulebooksModel
-
         bottomMargin: 32
+
+        boundsBehavior: Flickable.StopAtBounds
+        maximumFlickVelocity: 10000
 
         section.property: "type"
         section.delegate: ColumnLayout {
             width: parent.width
-            anchors.leftMargin: 24
-            anchors.rightMargin: 24
-
             spacing: 0
 
             Rectangle {
-                color: palette.mid
                 height: 1
-                implicitWidth: 327
-
+                color: palette.mid
                 visible: section !== "base mode"
 
                 Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
                 Layout.topMargin: 28
+                Layout.leftMargin: 24
+                Layout.rightMargin: 24
             }
 
             Label {
@@ -54,32 +54,23 @@ Ui.BaseContent {
         }
 
         delegate: ItemDelegate {
-            padding: 0
+            width: parent.width
+
             contentItem: RowLayout {
-                anchors.fill: parent
-                spacing: 0
                 Label {
                     id: textLabel
                     color: "white"
                     font.pixelSize: 22
                     font.letterSpacing: 0.5
+                    font.underline: true
                     padding: 0
                     text: language
-
-                    background: Rectangle {
-                        width: parent.width
-                        height: 1
-                        color: "white"
-                        anchors.bottom: parent.bottom
-                    }
 
                     Layout.alignment: Qt.AlignHCenter
                 }
             }
 
             onClicked: Qt.openUrlExternally(downloadUrl)
-
-            anchors.horizontalCenter: parent.horizontalCenter
         }
     }
 }
