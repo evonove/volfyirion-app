@@ -33,11 +33,11 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-# To upgrade the version change the following variable
-VERSION = 1.1.2
-
 android {
     QT += androidextras
+
+    # To upgrade the version change the following variable
+    VERSION = 1.1.2
 
     OTHER_FILES += \
         $$files($$PWD/android/*, true)
@@ -64,6 +64,11 @@ android {
 }
 
 ios {
+    # To upgrade the version change the following variable
+    # For iOS the value of ShortVersionString must contain a higher version
+    # than that of the previosly approved version.
+    VERSION = 1.2.0
+
     QMAKE_TARGET_BUNDLE_PREFIX = it.evonove
     QMAKE_BUNDLE = volfyirion
 
