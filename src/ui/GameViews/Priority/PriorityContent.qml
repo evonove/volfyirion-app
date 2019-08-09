@@ -126,7 +126,6 @@ Ui.BaseContent {
         running: false
 
         onTriggered: {
-            console.log("cambiamoooo")
             root.winnerChoosen()
         }
     }
