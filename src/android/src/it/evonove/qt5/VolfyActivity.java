@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.content.Context;
+import android.os.Build;
 
 
 public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
@@ -28,7 +29,15 @@ public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
     }
 
     public void vibrate() {
-        ((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(VibrationEffect.createOneShot(500, 255));
+        // Check android SDK version to call correct vibrate functions
+        // For android API level > 25
+        if(android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.N_MR1){
+            ((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(VibrationEffect.createOneShot(500, 255));
+        }
+        else {
+        // For android API level <= 25
+            ((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(500);
+        }
     }
 
 }
