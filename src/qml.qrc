@@ -98,6 +98,8 @@
         <file>ui/LoreViews/LoreIndexContent.qml</file>
         <file>ui/LoreViews/Models/LoreIndexModel.qml</file>
         <file>assets/background_lore_index.webp</file>
+        <file>ui/ArtworkViews/ArtworkPage.qml</file>
+        <file>ui/ArtworkViews/ArtworkContent.qml</file>
         <file>assets/rulebook/00_game-conditions-main-ruleb.svg</file>
         <file>assets/rulebook/logo.png</file>
         <file>assets/rulebook/logo@2x.png</file>
