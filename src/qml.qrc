@@ -33,8 +33,8 @@
         <file>ui/SetupViews/Rulebook/Models/RulebookIndexModel.qml</file>
         <file>ui/SetupViews/SetupPage.qml</file>
         <file>ui/SetupViews/SetupContent.qml</file>
-        <file>assets/artwork_icon.svg</file>
-        <file>assets/artwork_icon_filled.svg</file>
+        <file>assets/lore_icon.svg</file>
+        <file>assets/lore_icon_filled.svg</file>
         <file>assets/back_icon.svg</file>
         <file>assets/forward_icon.svg</file>
         <file>assets/game_icon.svg</file>
@@ -109,5 +109,6 @@
         <file>ui/SetupViews/Rulebook/DownloadAreaContent.qml</file>
         <file>ui/SetupViews/Rulebook/Models/RulebookDownloadModel.qml</file>
         <file>assets/right_arrow.svg</file>
+        <file>assets/artwork_icon.svg</file>
     </qresource>
 </RCC>

@@ -99,6 +99,11 @@ ApplicationWindow {
             onClicked: history.push(TabBar.index)
         }
         TabButton {
+            text: qsTr("Lore")
+            icon.source: this.down || this.checked ? _tabIcons.loreFilled : _tabIcons.lore
+            onClicked: console.log("Lore")
+        }
+        TabButton {
             text: qsTr("Artwork")
             icon.source: this.down || this.checked ? _tabIcons.artworkFilled : _tabIcons.artwork
             onClicked: history.push(TabBar.index)
@@ -109,6 +114,8 @@ ApplicationWindow {
     QtObject {
         id: _tabIcons
 
+        property url lore: "qrc:/assets/lore_icon.svg"
+        property url loreFilled: "qrc:/assets/lore_icon_filled.svg"
         property url artwork: "qrc:/assets/artwork_icon.svg"
         property url artworkFilled: "qrc:/assets/artwork_icon_filled.svg"
         property url game: "qrc:/assets/game_icon.svg"
