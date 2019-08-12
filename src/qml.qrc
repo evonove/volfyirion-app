@@ -110,5 +110,6 @@
         <file>ui/SetupViews/Rulebook/Models/RulebookDownloadModel.qml</file>
         <file>assets/right_arrow.svg</file>
         <file>assets/artwork_icon.svg</file>
+        <file>assets/artwork_icon_filled.svg</file>
     </qresource>
 </RCC>

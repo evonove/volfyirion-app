@@ -106,8 +106,7 @@ ApplicationWindow {
         TabButton {
             text: qsTr("Artwork")
             icon.source: this.down || this.checked ? _tabIcons.artworkFilled : _tabIcons.artwork
-            onClicked: history.push(TabBar.index)
-            enabled: false
+            onClicked: console.log("Artwork")
         }
     }
 
