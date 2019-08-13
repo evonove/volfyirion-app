@@ -12,11 +12,7 @@ Ui.BasePage {
         id: artworkContent
         ArtworkContent {
             hasToolbar: true
-            leftAction: Action {
-                id: _backAction
-                icon.source: "qrc:/assets/back_icon.svg"
-                onTriggered: root.pop()
-            }
+            topPadding: root.headerHeight
         }
     }
 }
