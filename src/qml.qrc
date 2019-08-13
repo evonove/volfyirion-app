@@ -122,5 +122,7 @@
         <file>assets/lore/lore_5.jpg</file>
         <file>assets/lore/lore_6.jpg</file>
         <file>assets/lore/lore_7.jpg</file>
+        <file>ui/LoreViews/LoreIndexContent.qml</file>
+        <file>ui/LoreViews/Models/LoreIndexModel.qml</file>
     </qresource>
 </RCC>

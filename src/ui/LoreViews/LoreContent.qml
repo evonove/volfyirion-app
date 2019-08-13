@@ -8,11 +8,13 @@ Ui.BaseContent {
     id: root
 
     title: qsTr("lore")
-    background: Rectangle {
-        color: "#3B3A3A"
+
+    function scrollTo(element) {
+        _listView.positionViewAtIndex(element, ListView.SnapPosition)
     }
 
     ListView {
+        id: _listView
         anchors.fill: parent
         boundsBehavior: Flickable.StopAtBounds
 

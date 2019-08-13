@@ -8,10 +8,18 @@ import "../" as Ui
 Ui.BasePage {
     id: root
 
+    signal openSection(int element)
+
     width: 600
     height: 400
 
     initialItem: loreContent
+
+    Action {
+        id: _backAction
+        icon.source: "qrc:/assets/back_icon.svg"
+        onTriggered: root.pop()
+    }
 
     Component {
         id: loreContent
@@ -22,7 +30,27 @@ Ui.BasePage {
 
             rightAction: Action {
                 icon.source: "qrc:/assets/index_icon.svg"
-                onTriggered: console.log("open index")
+                onTriggered: root.push(loreIndex)
+            }
+
+            Connections {
+                target: root
+                onOpenSection: scrollTo(element)
+            }
+        }
+    }
+
+    Component {
+        id: loreIndex
+        LoreIndexContent {
+            hasToolbar: true
+            topPadding: root.headerHeight
+            leftAction: _backAction
+
+
+            onOpenSection: {
+                root.openSection(element)
+                root.pop()
             }
         }
     }
