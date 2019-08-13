@@ -12,9 +12,22 @@ Ui.BaseContent {
 
     title: qsTr("index")
 
+    isLoading: !(StackView.status === StackView.Active
+                 && _image.status === Image.Ready)
+    opacity: isLoading ? 0 : 1
+
+    Behavior on opacity {
+        NumberAnimation {
+            duration: 400
+        }
+    }
+
     background: Image {
+        id: _image
         source: "qrc:/assets/background_lore_index.webp"
         fillMode: Image.PreserveAspectCrop
+        asynchronous: true
+
         Rectangle {
             anchors.fill: parent
             color: "#2C2B2B"
@@ -25,32 +38,17 @@ Ui.BaseContent {
     ListView {
         anchors.fill: parent
         anchors.margins: 24
-        spacing: 24
 
         boundsBehavior: Flickable.StopAtBounds
         maximumFlickVelocity: 10000
 
-        model: Models.LoreIndexModel {}
+        model: Models.LoreIndexModel {
+        }
 
         delegate: ItemDelegate {
-
-            contentItem:  RowLayout {
-                width: parent.width
-                Label {
-                    text: model.chapter
-                    font.pixelSize: 19
-                    font.bold: true
-                    font.letterSpacing: 0.5
-                    leftPadding: 30
-                }
-                Label {
-                    text: model.chapterTitle
-                    font.pixelSize: 19
-                    font.capitalization: Font.AllUppercase
-                    font.letterSpacing: 0.5
-                    rightPadding: 30
-                }
-            }
+            text: "<b>%1</b>: %2".arg(model.chapter).arg(model.chapterTitle)
+            font.pixelSize: 19
+            font.letterSpacing: 0.5
 
             onClicked: {
                 root.openSection(index)
