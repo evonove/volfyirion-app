@@ -22,6 +22,7 @@ Ui.BasePage {
 
             rightAction: Action {
                 icon.source: "qrc:/assets/index_icon.svg"
+                onTriggered: console.log("open index")
             }
         }
     }
