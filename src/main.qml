@@ -6,6 +6,7 @@ import System 1.0
 
 import "ui/SetupViews" as SetupViews
 import "ui/GameViews" as GameViews
+import "ui/LoreViews" as LoreViews
 import "ui" as Ui
 
 ApplicationWindow {
@@ -80,6 +81,9 @@ ApplicationWindow {
             safeTopMargin: root.safeTopMargin
         }
 
+        LoreViews.LorePage {
+            safeTopMargin: root.safeTopMargin
+        }
 
     }
 
@@ -101,7 +105,7 @@ ApplicationWindow {
         TabButton {
             text: qsTr("Lore")
             icon.source: this.down || this.checked ? _tabIcons.loreFilled : _tabIcons.lore
-            onClicked: console.log("Lore")
+            onClicked: history.push(TabBar.index)
         }
         TabButton {
             text: qsTr("Artwork")
