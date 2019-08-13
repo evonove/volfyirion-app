@@ -54,6 +54,7 @@ ObjectModel {
                 + "forces</b>, they persisted for the moment in a kind of truce while recovering from the previous"
                 + "conflict, and preparing for the inevitable <b>great war between them to come</b>."
             font.pixelSize: 18
+            font.letterSpacing: 0.5
 
             textFormat: Text.RichText
             wrapMode: Text.Wrap
@@ -107,6 +108,7 @@ ObjectModel {
                   + "Administration of the provinces was delegated to the <b>King’s trustworthy ex-military commanders</b> who"
                   + "had showed ability in the field."
             font.pixelSize: 18
+            font.letterSpacing: 0.5
 
             textFormat: Text.RichText
             wrapMode: Text.Wrap
@@ -139,6 +141,7 @@ ObjectModel {
                 + "ensure they would never play clever tricks on him. So, he established that <b>each province should act as "
                 + "a watchdog of its neighbors</b>, reporting directly to him in the event of any unusual whispers of trouble."
             font.pixelSize: 18
+            font.letterSpacing: 0.5
 
             textFormat: Text.RichText
             wrapMode: Text.Wrap
@@ -195,6 +198,7 @@ ObjectModel {
                 + "the study of <b>Qoam manipulation</b>. Every province, being built around Kyradar, managed one aspect of the "
                 + "Kingdom, defining the lives of the citizens and their daily activities."
             font.pixelSize: 18
+            font.letterSpacing: 0.5
 
             textFormat: Text.RichText
             wrapMode: Text.Wrap
@@ -256,6 +260,7 @@ ObjectModel {
                 + "<b>Two Houses</b> were assigned to manage these lands: The <b>Volarees House</b> and the <b>Rorius House</b>, "
                 + "each one with <b>three cities under their control</b>. "
             font.pixelSize: 18
+            font.letterSpacing: 0.5
 
             textFormat: Text.RichText
             wrapMode: Text.Wrap
@@ -319,6 +324,7 @@ ObjectModel {
                 + "The two Houses <b>clashed into war</b>, trying to stop the other from gaining control of the <b>dreadful Volfyirion</b>. "
 
             font.pixelSize: 18
+            font.letterSpacing: 0.5
 
             textFormat: Text.RichText
             wrapMode: Text.Wrap
@@ -382,6 +388,7 @@ ObjectModel {
                 + "actively manage the territories."
 
             font.pixelSize: 18
+            font.letterSpacing: 0.5
 
             textFormat: Text.RichText
             wrapMode: Text.Wrap
@@ -442,6 +449,7 @@ ObjectModel {
                 + "The King, being an intelligent and visionary man, <b>determined shortly after to codify and empower other guilds</b>, taking "
                 + "care that Volarees would not be the only powerful force inside his kingdom."
             font.pixelSize: 18
+            font.letterSpacing: 0.5
 
             textFormat: Text.RichText
             wrapMode: Text.Wrap

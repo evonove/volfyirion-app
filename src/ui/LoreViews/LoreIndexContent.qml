@@ -13,9 +13,8 @@ Ui.BaseContent {
     title: qsTr("index")
 
     background: Image {
-        source: "qrc:/assets/rulebook_page_background.png"
+        source: "qrc:/assets/background_lore_index.webp"
         fillMode: Image.PreserveAspectCrop
-
         Rectangle {
             anchors.fill: parent
             color: "#2C2B2B"
@@ -41,12 +40,14 @@ Ui.BaseContent {
                     text: model.chapter
                     font.pixelSize: 19
                     font.bold: true
+                    font.letterSpacing: 0.5
                     leftPadding: 30
                 }
                 Label {
                     text: model.chapterTitle
                     font.pixelSize: 19
                     font.capitalization: Font.AllUppercase
+                    font.letterSpacing: 0.5
                     rightPadding: 30
                 }
             }
