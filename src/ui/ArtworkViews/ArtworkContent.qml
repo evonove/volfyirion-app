@@ -14,80 +14,91 @@ Ui.BaseContent {
     readonly property int currentCellWidth: Math.floor(
                                                 root.availableWidth / root.numElementsInRow)
 
-    Models.ArtworksModel {
-        id: artModel
+    isLoading: contentLoader.status === Loader.Loading
+    opacity: isLoading ? 0.0 : 1.0
+
+    Loader {
+        id: contentLoader
+        anchors.fill: parent
+        asynchronous: true
+
+        sourceComponent: content
     }
 
-    ColumnLayout {
-        anchors.fill: parent
+    Component {
+        id: content
+        ColumnLayout {
+            anchors.fill: parent
 
-        TabBar {
-            currentIndex: swipe.currentIndex
-
-            background: Rectangle {
-                color: palette.dark
+            Models.ArtworksModel {
+                id: artModel
             }
 
-            Layout.fillWidth: true
-            Layout.bottomMargin: 16
-            Layout.topMargin: 16
 
-            TabButton {
-                anchors.verticalCenter: parent.verticalCenter
-                height: parent.height
+            TabBar {
+                currentIndex: swipe.currentIndex
 
-                icon.source: this.down
-                             || this.checked ? "qrc:/assets/griglia_filled.svg" : "qrc:/assets/griglia.svg"
-                icon.height: 35
-                icon.width: 35
+                background: Rectangle {
+                    color: palette.dark
+                }
 
-                onClicked: {
-                    swipe.currentIndex = 0
+                Layout.fillWidth: true
+                Layout.bottomMargin: 16
+                Layout.topMargin: 16
+
+                TabButton {
+                    anchors.verticalCenter: parent.verticalCenter
+                    height: parent.height
+
+                    icon.source: this.down
+                                 || this.checked ? "qrc:/assets/griglia_filled.svg" : "qrc:/assets/griglia.svg"
+
+                    onClicked: {
+                        swipe.currentIndex = 0
+                    }
+                }
+
+                TabButton {
+                    anchors.verticalCenter: parent.verticalCenter
+                    height: parent.height
+
+                    icon.source: this.down
+                                 || this.checked ? "qrc:/assets/listing_filled.svg" : "qrc:/assets/listing.svg"
+
+                    onClicked: {
+                        swipe.currentIndex = 1
+                    }
                 }
             }
 
-            TabButton {
-                anchors.verticalCenter: parent.verticalCenter
-                height: parent.height
-                icon.height: 35
-                icon.width: 35
+            SwipeView {
+                id: swipe
+                currentIndex: 0
+                clip: true
 
-                icon.source: this.down
-                             || this.checked ? "qrc:/assets/listing_filled.svg" : "qrc:/assets/listing.svg"
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Item {
+                    id: grid
+                    height: parent.height
 
-                onClicked: {
-                    swipe.currentIndex = 1
+                    ArtworkGridView {
+                        artModel: artModel
+
+                        implicitHeight: Math.ceil(
+                                            artModel.count / root.numElementsInRow) * cellHeight
+                        cellHeight: 166
+                        cellWidth: root.currentCellWidth
+                    }
                 }
-            }
-        }
 
-        SwipeView {
-            id: swipe
-            currentIndex: 0
-            clip: true
+                Item {
+                    id: list
 
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Item {
-                id: grid
-                height: parent.height
-
-                ArtworkGridView {
-                    artModel: artModel
-
-                    implicitHeight: Math.ceil(
-                                        artModel.count / root.numElementsInRow) * cellHeight
-                    cellHeight: 166
-                    cellWidth: root.currentCellWidth
-                }
-            }
-
-            Item {
-                id: list
-
-                ArtworkListView {
-                    anchors.fill: parent
-                    artModel: artModel
+                    ArtworkListView {
+                        anchors.fill: parent
+                        artModel: artModel
+                    }
                 }
             }
         }

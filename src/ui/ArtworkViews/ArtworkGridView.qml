@@ -8,6 +8,8 @@ GridView {
 
     property ListModel artModel
 
+    signal artworkClicked(string url, string name)
+
     width: parent.width
     height: parent.height
     bottomMargin: 45
@@ -40,10 +42,11 @@ GridView {
                 Layout.alignment: Qt.AlignHCenter
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+                clip: true
 
                 Image {
                     id: img
-                    fillMode: Image.PreserveAspectFit
+                    fillMode: Image.PreserveAspectCrop
                     source: model.url
                     asynchronous: true
 
@@ -56,6 +59,7 @@ GridView {
             anchors.fill: parent
             onClicked: {
                 // Unfocuses search field so that keyboard is hidden
+                root.artworkClicked(model.url, model.title)
                 console.log(model.title)
             }
         }
