@@ -14,6 +14,9 @@ Ui.BaseContent {
     readonly property int currentCellWidth: Math.floor(
                                                 root.availableWidth / root.numElementsInRow)
 
+
+    signal artworkDetailClicked(string url, string name)
+
     isLoading: contentLoader.status === Loader.Loading
     opacity: isLoading ? 0.0 : 1.0
 
@@ -29,11 +32,11 @@ Ui.BaseContent {
         id: content
         ColumnLayout {
             anchors.fill: parent
+            signal artwokClicked(string url, string name)
 
             Models.ArtworksModel {
                 id: artModel
             }
-
 
             TabBar {
                 currentIndex: swipe.currentIndex
@@ -89,6 +92,10 @@ Ui.BaseContent {
                                             artModel.count / root.numElementsInRow) * cellHeight
                         cellHeight: 166
                         cellWidth: root.currentCellWidth
+
+                        onArtworkClicked:{
+                            artworkDetailClicked(url, name)
+                        }
                     }
                 }
 

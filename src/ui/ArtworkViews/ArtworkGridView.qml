@@ -60,7 +60,6 @@ GridView {
             onClicked: {
                 // Unfocuses search field so that keyboard is hidden
                 root.artworkClicked(model.url, model.title)
-                console.log(model.title)
             }
         }
     }
