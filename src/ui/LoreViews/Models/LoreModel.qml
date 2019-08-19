@@ -17,7 +17,7 @@ ObjectModel {
 
             horizontalAlignment: Text.AlignHCenter
             Layout.fillWidth: true
-            Layout.topMargin: 84
+            Layout.topMargin: 42
         }
         Label {
             text: "A past tinted with blood"
