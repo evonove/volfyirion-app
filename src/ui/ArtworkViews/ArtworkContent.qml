@@ -8,25 +8,77 @@ import "../" as Ui
 Ui.BaseContent {
     id: root
     title: qsTr("Artwork")
+    ColumnLayout {
+        anchors.fill: parent
 
-    RowLayout {
-        width: parent.width
-        height: 80
-        TabButton {
-            icon.source: this.down || this.checked ? "qrc:/assets/griglia_filled.svg" : "qrc:/assets/griglia.svg"
+       TabBar {
+           Layout.fillWidth: true
+           implicitHeight: 75
 
-            onClicked: console.log("griglia")
+           currentIndex: swipe.currentIndex
 
+            TabButton {
+                anchors.verticalCenter: parent.verticalCenter
+                height: parent.height
+
+                icon.source: this.down
+                             || this.checked ? "qrc:/assets/griglia_filled.svg" : "qrc:/assets/griglia.svg"
+
+                onClicked: {
+                    swipe.currentIndex = 0
+                    console.log("griglia")
+                }
+            }
+
+            TabButton {
+                anchors.verticalCenter: parent.verticalCenter
+                height: parent.height
+
+                icon.source: this.down
+                             || this.checked ? "qrc:/assets/listing_filled.svg" : "qrc:/assets/listing.svg"
+
+                onClicked: {
+                    swipe.currentIndex = 1
+                    console.log("lista")
+                }
+            }
+        }
+
+        SwipeView {
+            id: swipe
+            currentIndex: 0
             Layout.fillWidth: true
             Layout.fillHeight: true
-        }
-        TabButton {
-            icon.source: this.down || this.checked ? "qrc:/assets/listing_filled.svg" : "qrc:/assets/listing.svg"
 
-            onClicked: console.log("lista")
+            Item {
+                id: grid
 
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+                Label {
+                    text: "griglia"
+                }
+
+                Rectangle {
+                    color: "transparent"
+                    border.color: "red"
+                    border.width: 2
+                }
+            }
+
+            Item {
+                id: list
+
+                Label {
+                    text: "lista"
+                }
+
+                Rectangle {
+                    color: "transparent"
+                    border.color: "red"
+                    border.width: 2
+                }
+            }
+
         }
+
     }
 }
