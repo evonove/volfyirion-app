@@ -9,9 +9,6 @@ Ui.BasePage {
     id: root
     initialItem: artworkContent
 
-    property string name: ""
-    property string url: ""
-
     Component {
         id: artworkContent
         ArtworkContent {
@@ -19,16 +16,14 @@ Ui.BasePage {
             topPadding: root.headerHeight
 
             onArtworkDetailClicked: {
-                root.name = name
-                root.url = url
-                root.push(artworkDetail)}
+                root.push(artworkDetail, {"title": name, "url": url})
+            }
         }
     }
 
     Component {
         id: artworkDetail
-        Ui.BaseContent {
-            id: ciao
+        ArtworkDetailContent {
             hasToolbar: true
             topPadding: root.headerHeight + 30
 
@@ -37,18 +32,6 @@ Ui.BasePage {
                 icon.source: "qrc:/assets/back_icon.svg"
                 onTriggered: root.pop()
             }
-
-            title: root.name
-
-            Image {
-                anchors.topMargin: 100
-
-                width: parent.width
-                source: root.url
-                fillMode: Image.PreserveAspectFit
-            }
-
-
         }
     }
 }

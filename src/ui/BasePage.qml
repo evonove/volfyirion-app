@@ -11,8 +11,8 @@ Page {
 
     property real headerHeight: 58 + root.safeTopMargin
 
-    function push(component) {
-        _stack.push(component)
+    function push(component, properties) {
+        _stack.push(component, properties)
         _stack.forceActiveFocus()
     }
 

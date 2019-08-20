@@ -107,6 +107,7 @@
         <file>ui/ArtworkViews/Models/ArtworksModel.qml</file>
         <file>ui/ArtworkViews/ArtworkGridView.qml</file>
         <file>ui/ArtworkViews/ArtworkListView.qml</file>
+        <file>ui/ArtworkViews/ArtworkDetailContent.qml</file>
         <file>assets/rulebook/00_game-conditions-main-ruleb.svg</file>
         <file>assets/rulebook/logo.png</file>
         <file>assets/rulebook/logo@2x.png</file>

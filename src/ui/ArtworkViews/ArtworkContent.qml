@@ -14,7 +14,6 @@ Ui.BaseContent {
     readonly property int currentCellWidth: Math.floor(
                                                 root.availableWidth / root.numElementsInRow)
 
-
     signal artworkDetailClicked(string url, string name)
 
     isLoading: contentLoader.status === Loader.Loading
@@ -93,7 +92,7 @@ Ui.BaseContent {
                         cellHeight: 166
                         cellWidth: root.currentCellWidth
 
-                        onArtworkClicked:{
+                        onArtworkClicked: {
                             artworkDetailClicked(url, name)
                         }
                     }
