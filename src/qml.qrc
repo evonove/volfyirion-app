@@ -45,26 +45,9 @@
         <file>assets/setup_icon_filled.svg</file>
         <file>assets/growl-button-background.png</file>
         <file>assets/background.png</file>
-        <file>assets/logo.png</file>
         <file>assets/game_setup.png</file>
         <file>assets/volf_setup_01.png</file>
-        <file>assets/rulebook_page_background.png</file>
-        <file>assets/rulebook_user.png</file>
         <file>assets/rulebook_section_header.svg</file>
-        <file>assets/00_contents.png</file>
-        <file>assets/01_contents.png</file>
-        <file>assets/02_contents.png</file>
-        <file>assets/03_contents.png</file>
-        <file>assets/04_contents.png</file>
-        <file>assets/05_contents.png</file>
-        <file>assets/06_contents.png</file>
-        <file>assets/07_contents.png</file>
-        <file>assets/00_extra.png</file>
-        <file>assets/01_extra.png</file>
-        <file>assets/02_extra.png</file>
-        <file>assets/03_extra.png</file>
-        <file>assets/04_extra.png</file>
-        <file>assets/05_extra.png</file>
         <file>assets/tap_icon.png</file>
         <file>assets/building_icon.png</file>
         <file>assets/command_icon.png</file>
@@ -125,5 +108,119 @@
         <file>ui/LoreViews/LoreIndexContent.qml</file>
         <file>ui/LoreViews/Models/LoreIndexModel.qml</file>
         <file>assets/background_lore_index.webp</file>
+        <file>assets/rulebook/00_game-conditions-main-ruleb.svg</file>
+        <file>assets/rulebook/logo.png</file>
+        <file>assets/rulebook/logo@2x.png</file>
+        <file>assets/rulebook/logo@3x.png</file>
+        <file>assets/rulebook/logo@4x.png</file>
+        <file>assets/rulebook/rulebook_page_background.png</file>
+        <file>assets/rulebook/rulebook_page_background@2x.png</file>
+        <file>assets/rulebook/rulebook_page_background@3x.png</file>
+        <file>assets/rulebook/rulebook_page_background@4x.png</file>
+        <file>assets/rulebook/01_contents/BL12_building-card.png</file>
+        <file>assets/rulebook/01_contents/BL12_building-card@2x.png</file>
+        <file>assets/rulebook/01_contents/BL12_building-card@3x.png</file>
+        <file>assets/rulebook/01_contents/BL12_building-card@4x.png</file>
+        <file>assets/rulebook/01_contents/C21_command-card.png</file>
+        <file>assets/rulebook/01_contents/C21_command-card@2x.png</file>
+        <file>assets/rulebook/01_contents/C21_command-card@3x.png</file>
+        <file>assets/rulebook/01_contents/C21_command-card@4x.png</file>
+        <file>assets/rulebook/01_contents/SC19_starting-card.png</file>
+        <file>assets/rulebook/01_contents/SC19_starting-card@2x.png</file>
+        <file>assets/rulebook/01_contents/SC19_starting-card@3x.png</file>
+        <file>assets/rulebook/01_contents/SC19_starting-card@4x.png</file>
+        <file>assets/rulebook/01_contents/TR15_troop-card.png</file>
+        <file>assets/rulebook/01_contents/TR15_troop-card@2x.png</file>
+        <file>assets/rulebook/01_contents/TR15_troop-card@3x.png</file>
+        <file>assets/rulebook/01_contents/TR15_troop-card@4x.png</file>
+        <file>assets/rulebook/01_contents/TY01_city-card.png</file>
+        <file>assets/rulebook/01_contents/TY01_city-card@2x.png</file>
+        <file>assets/rulebook/01_contents/TY01_city-card@3x.png</file>
+        <file>assets/rulebook/01_contents/TY01_city-card@4x.png</file>
+        <file>assets/rulebook/01_contents/VL01_volf-lair.png</file>
+        <file>assets/rulebook/01_contents/VL01_volf-lair@2x.png</file>
+        <file>assets/rulebook/01_contents/VL01_volf-lair@3x.png</file>
+        <file>assets/rulebook/01_contents/VL01_volf-lair@4x.png</file>
+        <file>assets/rulebook/01_contents/volfyirion-token.svg</file>
+        <file>assets/rulebook/01_contents/WN23_wonder-card.png</file>
+        <file>assets/rulebook/01_contents/WN23_wonder-card@2x.png</file>
+        <file>assets/rulebook/01_contents/WN23_wonder-card@3x.png</file>
+        <file>assets/rulebook/01_contents/WN23_wonder-card@4x.png</file>
+        <file>assets/rulebook/02_extra-cards/AP01_ascension-path.png</file>
+        <file>assets/rulebook/02_extra-cards/AP01_ascension-path@2x.png</file>
+        <file>assets/rulebook/02_extra-cards/AP01_ascension-path@3x.png</file>
+        <file>assets/rulebook/02_extra-cards/AP01_ascension-path@4x.png</file>
+        <file>assets/rulebook/02_extra-cards/continuum-card.png</file>
+        <file>assets/rulebook/02_extra-cards/continuum-card@2x.png</file>
+        <file>assets/rulebook/02_extra-cards/continuum-card@3x.png</file>
+        <file>assets/rulebook/02_extra-cards/continuum-card@4x.png</file>
+        <file>assets/rulebook/02_extra-cards/MR03_mercenary-troop.png</file>
+        <file>assets/rulebook/02_extra-cards/MR03_mercenary-troop@2x.png</file>
+        <file>assets/rulebook/02_extra-cards/MR03_mercenary-troop@3x.png</file>
+        <file>assets/rulebook/02_extra-cards/MR03_mercenary-troop@4x.png</file>
+        <file>assets/rulebook/02_extra-cards/PK03_perk-card.png</file>
+        <file>assets/rulebook/02_extra-cards/PK03_perk-card@2x.png</file>
+        <file>assets/rulebook/02_extra-cards/PK03_perk-card@3x.png</file>
+        <file>assets/rulebook/02_extra-cards/PK03_perk-card@4x.png</file>
+        <file>assets/rulebook/02_extra-cards/PL04_ploy-card.png</file>
+        <file>assets/rulebook/02_extra-cards/PL04_ploy-card@2x.png</file>
+        <file>assets/rulebook/02_extra-cards/PL04_ploy-card@3x.png</file>
+        <file>assets/rulebook/02_extra-cards/PL04_ploy-card@4x.png</file>
+        <file>assets/rulebook/02_extra-cards/SB01_saboteur-card.png</file>
+        <file>assets/rulebook/02_extra-cards/SB01_saboteur-card@2x.png</file>
+        <file>assets/rulebook/02_extra-cards/SB01_saboteur-card@3x.png</file>
+        <file>assets/rulebook/02_extra-cards/SB01_saboteur-card@4x.png</file>
+        <file>assets/rulebook/03_game-setup/building-icon.png</file>
+        <file>assets/rulebook/03_game-setup/building-icon@2x.png</file>
+        <file>assets/rulebook/03_game-setup/building-icon@3x.png</file>
+        <file>assets/rulebook/03_game-setup/building-icon@4x.png</file>
+        <file>assets/rulebook/03_game-setup/command-icon.png</file>
+        <file>assets/rulebook/03_game-setup/command-icon@2x.png</file>
+        <file>assets/rulebook/03_game-setup/command-icon@3x.png</file>
+        <file>assets/rulebook/03_game-setup/command-icon@4x.png</file>
+        <file>assets/rulebook/03_game-setup/game-setup_composition.png</file>
+        <file>assets/rulebook/03_game-setup/game-setup_composition@2x.png</file>
+        <file>assets/rulebook/03_game-setup/game-setup_composition@3x.png</file>
+        <file>assets/rulebook/03_game-setup/game-setup_composition@4x.png</file>
+        <file>assets/rulebook/03_game-setup/troop-icon.png</file>
+        <file>assets/rulebook/03_game-setup/troop-icon@2x.png</file>
+        <file>assets/rulebook/03_game-setup/troop-icon@3x.png</file>
+        <file>assets/rulebook/03_game-setup/troop-icon@4x.png</file>
+        <file>assets/rulebook/03_game-setup/wonders-icon.png</file>
+        <file>assets/rulebook/03_game-setup/wonders-icon@2x.png</file>
+        <file>assets/rulebook/03_game-setup/wonders-icon@3x.png</file>
+        <file>assets/rulebook/03_game-setup/wonders-icon@4x.png</file>
+        <file>assets/rulebook/04_cards_chpt/attack-big_1.png</file>
+        <file>assets/rulebook/04_cards_chpt/attack-big_1@2x.png</file>
+        <file>assets/rulebook/04_cards_chpt/attack-big_1@3x.png</file>
+        <file>assets/rulebook/04_cards_chpt/attack-big_1@4x.png</file>
+        <file>assets/rulebook/04_cards_chpt/city.png</file>
+        <file>assets/rulebook/04_cards_chpt/city@2x.png</file>
+        <file>assets/rulebook/04_cards_chpt/city@3x.png</file>
+        <file>assets/rulebook/04_cards_chpt/city@4x.png</file>
+        <file>assets/rulebook/04_cards_chpt/command-big_1.png</file>
+        <file>assets/rulebook/04_cards_chpt/command-big_1@2x.png</file>
+        <file>assets/rulebook/04_cards_chpt/command-big_1@3x.png</file>
+        <file>assets/rulebook/04_cards_chpt/command-big_1@4x.png</file>
+        <file>assets/rulebook/04_cards_chpt/command-b-t-cards.png</file>
+        <file>assets/rulebook/04_cards_chpt/command-b-t-cards@2x.png</file>
+        <file>assets/rulebook/04_cards_chpt/command-b-t-cards@3x.png</file>
+        <file>assets/rulebook/04_cards_chpt/command-b-t-cards@4x.png</file>
+        <file>assets/rulebook/04_cards_chpt/experience-big_1.png</file>
+        <file>assets/rulebook/04_cards_chpt/experience-big_1@2x.png</file>
+        <file>assets/rulebook/04_cards_chpt/experience-big_1@3x.png</file>
+        <file>assets/rulebook/04_cards_chpt/experience-big_1@4x.png</file>
+        <file>assets/rulebook/04_cards_chpt/flags.png</file>
+        <file>assets/rulebook/04_cards_chpt/flags@2x.png</file>
+        <file>assets/rulebook/04_cards_chpt/flags@3x.png</file>
+        <file>assets/rulebook/04_cards_chpt/flags@4x.png</file>
+        <file>assets/rulebook/04_cards_chpt/wonder.png</file>
+        <file>assets/rulebook/04_cards_chpt/wonder@2x.png</file>
+        <file>assets/rulebook/04_cards_chpt/wonder@3x.png</file>
+        <file>assets/rulebook/04_cards_chpt/wonder@4x.png</file>
+        <file>assets/rulebook/04_cards_chpt/WONDER-DISCAR-ICON.png</file>
+        <file>assets/rulebook/04_cards_chpt/WONDER-DISCAR-ICON@2x.png</file>
+        <file>assets/rulebook/04_cards_chpt/WONDER-DISCAR-ICON@3x.png</file>
+        <file>assets/rulebook/04_cards_chpt/WONDER-DISCAR-ICON@4x.png</file>
     </qresource>
 </RCC>

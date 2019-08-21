@@ -31,7 +31,7 @@ Ui.BaseContent {
         spacing: 0
 
         Image {
-            source: "qrc:/assets/logo.png"
+            source: "qrc:/assets/rulebook/logo.png"
             fillMode: Image.PreserveAspectFit
             smooth: false
             asynchronous: true

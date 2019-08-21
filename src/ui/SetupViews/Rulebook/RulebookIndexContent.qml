@@ -13,7 +13,7 @@ Ui.BaseContent {
     title: qsTr("index")
 
     background: Image {
-        source: "qrc:/assets/rulebook_page_background.png"
+        source: "qrc:/assets/rulebook/rulebook_page_background.png"
         fillMode: Image.PreserveAspectCrop
 
         Rectangle {
