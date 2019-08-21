@@ -243,17 +243,14 @@ ObjectModel {
                       + "spent to deploy strategic assets and to attack. Players gain resources "
                       + "and take actions by playing cards from their personal decks, which are "
                       + "upgraded with additional cards during the course of a game.")
-
-            Layout.bottomMargin: 20
         }
 
-        RulebookSubtitle {
-            Layout.preferredWidth: 216
-            Layout.preferredHeight: 45
-            Layout.alignment: Qt.AlignCenter
-            Layout.bottomMargin: 20
-
+        RulebookText {
             text: qsTr("how to win")
+            font.bold: true
+            font.capitalization: Font.AllUppercase
+
+            Layout.fillWidth: true
         }
 
         RulebookText {
@@ -293,7 +290,7 @@ ObjectModel {
         }
 
         Image {
-            source: "qrc:/assets/starting_composition.png"
+            source: "qrc:/assets/rulebook/03_game-setup/game-setup_composition.png"
             fillMode: Image.PreserveAspectFit
 
             Layout.preferredHeight: 127
@@ -304,31 +301,7 @@ ObjectModel {
 
         RulebookText {
             text: qsTr("Both players shuffle their own House Deck then place it in front of themselves.")
-            Layout.bottomMargin: 15
             Layout.fillWidth: true
-        }
-
-        RowLayout {
-            Layout.alignment: Qt.AlignHCenter
-
-            Image {
-                source: "qrc:/assets/troop_icon.png"
-                fillMode: Image.PreserveAspectFit
-                Layout.preferredWidth: 30
-                Layout.preferredHeight: 30
-            }
-            Image {
-                source: "qrc:/assets/building_icon.png"
-                fillMode: Image.PreserveAspectFit
-                Layout.preferredWidth: 30
-                Layout.preferredHeight: 30
-            }
-            Image {
-                source: "qrc:/assets/command_icon.png"
-                fillMode: Image.PreserveAspectFit
-                Layout.preferredWidth: 30
-                Layout.preferredHeight: 30
-            }
         }
 
         RulebookText {
@@ -337,22 +310,110 @@ ObjectModel {
             Layout.fillWidth: true
         }
 
-        RowLayout {
+        GridLayout {
+            columns: 3
+            columnSpacing: 30
+
+            Layout.leftMargin: 30
+            Layout.rightMargin: 30
             Layout.alignment: Qt.AlignHCenter
 
             Image {
-                source: "qrc:/assets/wonder_icon.png"
+                source: "qrc:/assets/rulebook/03_game-setup/troop-icon.png"
                 fillMode: Image.PreserveAspectFit
-                Layout.preferredWidth: 30
-                Layout.preferredHeight: 30
+                Layout.preferredWidth: 1
+
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignHCenter
+            }
+
+            Image {
+                source: "qrc:/assets/rulebook/03_game-setup/building-icon.png"
+                fillMode: Image.PreserveAspectFit
+                Layout.preferredWidth: 1
+
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignHCenter
+            }
+
+            Image {
+                source: "qrc:/assets/rulebook/03_game-setup/command-icon.png"
+                fillMode: Image.PreserveAspectFit
+                Layout.preferredWidth: 1
+
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignHCenter
+            }
+
+            Label {
+                text: qsTr("troop card")
+                font.pixelSize: 18
+                font.capitalization: Font.AllUppercase
+                wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignHCenter
+
+                Layout.fillWidth: true
+                Layout.preferredWidth: 1
+            }
+
+            Label {
+                text: qsTr("building card")
+                font.pixelSize: 18
+                font.capitalization: Font.AllUppercase
+                wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignHCenter
+
+                Layout.fillWidth: true
+                Layout.preferredWidth: 1
+            }
+
+            Label {
+                text: qsTr("command card")
+                font.pixelSize: 18
+                font.capitalization: Font.AllUppercase
+                wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignHCenter
+
+                Layout.fillWidth: true
+                Layout.preferredWidth: 1
             }
         }
 
         RulebookText {
-            text: qsTr("Shuffle all Wonder Cards together to form the Wonder Deck. "
-                       + "Asset and Wonder Decks are shared between players.")
+            text: qsTr("Shuffle all Wonder Cards together to form the Wonder Deck. Asset and Wonder Decks are shared between players.")
             Layout.bottomMargin: 15
             Layout.fillWidth: true
+        }
+
+        ColumnLayout {
+            Layout.fillWidth: true
+            Layout.leftMargin: 30
+            Layout.rightMargin: 30
+            Layout.alignment: Qt.AlignHCenter
+
+            Image {
+                id: img
+                source: "qrc:/assets/rulebook/03_game-setup/wonders-icon.png"
+                fillMode: Image.PreserveAspectFit
+                Layout.preferredWidth: 43
+                Layout.preferredHeight: 43
+
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignHCenter
+            }
+
+            Label {
+                id: wonder
+                text: qsTr("wonder card")
+                font.pixelSize: 18
+                font.capitalization: Font.AllUppercase
+
+                wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignHCenter
+
+                Layout.preferredWidth: 83
+                Layout.alignment: Qt.AlignHCenter
+            }
         }
 
         RulebookText {
@@ -365,15 +426,18 @@ ObjectModel {
         RulebookText {
             text: qsTr("NOTE: To add a bit more of unpredictability to the game, keep "
                        + "the Asset Deck’s top card face down during the game.")
+            font.letterSpacing: 0.05
+            wrapMode: Text.WordWrap
 
             background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 40
                 color: "#eeeeee"
                 opacity: 0.3
+                radius: 12
             }
 
-            Layout.bottomMargin: 15
+            Layout.bottomMargin: 27
             Layout.fillWidth: true
         }
 
@@ -381,7 +445,7 @@ ObjectModel {
             inputMethodHints: Qt.ImhMultiLine
             text: qsTr("Draw the top five cards from the Asset Deck and place them face"
                        + " up in a row to form the “Asset Row”.")
-            Layout.bottomMargin: 15
+            Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
 
@@ -389,17 +453,24 @@ ObjectModel {
             text: qsTr(
                       "Place the Volfyirion’s Lair Card face up at the end of the Asset Row. "
                       + "Put the Volfyirion Token on the Volfyirion’s Lair Card. ")
-            Layout.bottomMargin: 15
+            Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr(
                       "Place the Wonder Deck face down next to the Volfyirion’s Lair Card. "
-                      + "Draw cards until you reveal two that cost no more than 3 Battle Points each, "
+                      )
+            Layout.bottomMargin: 10
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr(
+                      "Draw cards until you reveal two that cost no more than 3 Battle Points each, "
                       + "then place them on the spaces of the Volfyirion’s Lair Card, face up. "
                       + "Put the other revealed cards, if any, on the bottom of the Wonder Deck.")
-            Layout.bottomMargin: 15
+            Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
 
@@ -407,7 +478,7 @@ ObjectModel {
             text: qsTr(
                       "Each player has three City Cards which represent vital strategic points to defend." + " Cities have a Defence Value of 8, 9, and 10. Players arrange their three Cities "
                       + "in a line in front of them, which forms the “Cities Area”.")
-            Layout.bottomMargin: 15
+            Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
 
@@ -415,7 +486,7 @@ ObjectModel {
             text: qsTr(
                       "The two players have both a “Discard Area” and a “Playing Area”. Discarded Cards "
                       + "are stacked in a Pile in the respective Discard Area. ")
-            Layout.bottomMargin: 15
+            Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
 
@@ -423,15 +494,17 @@ ObjectModel {
             text: qsTr(
                       "NOTE: In Volfyirion, “Discard” and “Remove” are two different operations. "
                       + "Removed cards (and tokens) leave the game and are put back into the box.")
+            wrapMode: Text.WordWrap
 
             background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 40
                 color: "#eeeeee"
                 opacity: 0.3
+                radius: 12
             }
 
-            Layout.bottomMargin: 15
+            Layout.bottomMargin: 32
             Layout.fillWidth: true
         }
     }
