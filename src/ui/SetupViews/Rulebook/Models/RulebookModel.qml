@@ -765,49 +765,50 @@ ObjectModel {
             fillMode: Image.PreserveAspectFit
 
             Layout.preferredWidth: 287
+            Layout.bottomMargin: 27
             Layout.alignment: Qt.AlignHCenter
         }
 
-        Pane {
-            Layout.fillWidth: true
-            Layout.topMargin: 28
-            Layout.bottomMargin: 28
-            padding: 0
 
-            background: Rectangle {
-                implicitWidth: 323
-                implicitHeight: 258
-                color: "#eeeeee"
-                opacity: 0.3
-                radius: 12
-            }
+        RulebookText {
+            text: qsTr(
+                      "The banner in the upper left corner represents the color of a Minor House. " +
+                      "The grey banner represents cards that are considered neutral.")
 
-            Image {
-                id: _flagsImg
-                anchors.topMargin: 0
+            topPadding: _flagsImg.height
+            leftPadding: 28
+            rightPadding: 28
+            bottomPadding: 21
 
-                width: parent.width
-                source: "qrc:/assets/rulebook/04_cards_chpt/flags.png"
-                fillMode: Image.PreserveAspectFit
+            background: Item {
+                implicitWidth: 100
+                implicitHeight: 100
 
-                verticalAlignment: Qt.AlignTop
+                Rectangle {
+                    implicitWidth: parent.width
+                    implicitHeight: parent.height
+                    color: "#eeeeee"
+                    opacity: 0.3
+                    radius: 12
+                }
+                Image {
+                    id: _flagsImg
+                    anchors.topMargin: 0
+                    anchors.top: parent.top
+                    anchors.horizontalCenter: parent.horizontalCenter
+
+                    source: "qrc:/assets/rulebook/04_cards_chpt/flags.png"
+                    fillMode: Image.PreserveAspectFit
+                }
             }
 
             RulebookText {
-                id: firstBannerText
-                anchors.top: _flagsImg.bottom
-                anchors.bottomMargin: 15
-
-                width: parent.width
-                text: qsTr("The banner in the upper left corner represents the color of a Minor House.")
-
+                text: qsTr("Command and Building Cards grant you Points via their Main Ability.")
+                Layout.bottomMargin: 15
+                Layout.fillWidth: true
             }
 
-            RulebookText {
-                anchors.top: firstBannerText.bottom
-                width: parent.width
-                text: qsTr("The grey banner represents cards that are considered neutral.")
-            }
+            Layout.bottomMargin: 32
         }
 
         RulebookText {
@@ -1064,28 +1065,24 @@ ObjectModel {
             Layout.fillWidth: true
         }
 
-        Pane {
-            Layout.fillWidth: true
-            Layout.bottomMargin: 18
+
+        RulebookText {
+            text: qsTr(
+                      " NOTE: Only on their first turn, a player may decide to "
+                      + "shuffle their starting hand back into the House Deck, then "
+                      + "Draw five new cards.")
+            wrapMode: Text.WordWrap
 
             background: Rectangle {
-                implicitWidth: 323
-                implicitHeight: 139
+                implicitWidth: 200
+                implicitHeight: 40
                 color: "#eeeeee"
                 opacity: 0.3
                 radius: 12
             }
 
-            RulebookText {
-                width: parent.width
-                text: qsTr(
-                          " NOTE: Only on their first turn, a player may decide to "
-                          + "shuffle their starting hand back into the House Deck, then "
-                          + "Draw five new cards.")
-                wrapMode: Text.WordWrap
-
-                Layout.bottomMargin: 15
-            }
+            Layout.bottomMargin: 32
+            Layout.fillWidth: true
         }
 
         RulebookText {
@@ -1112,25 +1109,22 @@ ObjectModel {
             Layout.bottomMargin: 15
         }
 
-        Pane {
-            Layout.fillWidth: true
-            Layout.bottomMargin: 60
+        RulebookText {
+            text: qsTr(
+                      " NOTE: Acquired cards are always put onto the Discard Pile."
+                      + " When shuffled back they enhance your House Deck.")
+            wrapMode: Text.WordWrap
 
             background: Rectangle {
-                implicitWidth: 323
-                implicitHeight: 139
+                implicitWidth: 200
+                implicitHeight: 40
                 color: "#eeeeee"
                 opacity: 0.3
                 radius: 12
             }
 
-            RulebookText {
-                width: parent.width
-                text: qsTr(
-                          " NOTE: Acquired cards are always put onto the Discard Pile."
-                          + " When shuffled back they enhance your House Deck.")
-                wrapMode: Text.WordWrap
-            }
+            Layout.bottomMargin: 32
+            Layout.fillWidth: true
         }
     }
 }
