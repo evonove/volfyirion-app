@@ -38,17 +38,32 @@ ListModel {
     }
     ListElement {
         title: qsTr("Command, Building and Troop Cards")
-        element: 14
-        subitem: true
-    }
-    ListElement {
-        title: qsTr("Actions")
         element: 15
         subitem: true
     }
     ListElement {
-        title: qsTr("Extra Cards")
+        title: qsTr("Wonder Cards")
         element: 17
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("City Cards")
+        element: 19
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("In-Play Cards")
+        element: 21
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("How to play")
+        element: 23
         subitem: false
+    }
+    ListElement {
+        title: qsTr("Draw phase")
+        element: 25
+        subitem: true
     }
 }

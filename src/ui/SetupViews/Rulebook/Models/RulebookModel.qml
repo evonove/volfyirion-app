@@ -33,7 +33,7 @@ ObjectModel {
         }
     }
 
-    // 0
+    // element: 0
     Item {
         width: root.width
         height: _background.paintedHeight
@@ -96,7 +96,12 @@ ObjectModel {
         }
     }
 
-    // 2
+    // element: 1
+    Item {
+        height: 48
+    }
+
+    // element: 2 - Introduction
     ColumnLayout {
         id: _introduction
         width: root.width
@@ -104,8 +109,7 @@ ObjectModel {
 
         RulebookTitle {
             Layout.fillWidth: true
-            Layout.topMargin: 60
-            Layout.bottomMargin: 35
+            Layout.bottomMargin: 27
 
             text: qsTr("introduction")
         }
@@ -125,22 +129,22 @@ ObjectModel {
         }
     }
 
-    // 3
+    // element: 3
     Item {
         height: 48
     }
 
-    // 4
+    // element: 4 - Contents Card
     ColumnLayout {
         id: _contents
         width: root.width
         spacing: 0
 
         RulebookSubtitle {
-            Layout.preferredWidth: 317
+            Layout.preferredWidth: 216
             Layout.preferredHeight: 45
             Layout.alignment: Qt.AlignCenter
-            Layout.bottomMargin: 48
+            Layout.bottomMargin: 16
 
             text: qsTr("contents")
         }
@@ -148,6 +152,9 @@ ObjectModel {
         GridLayout {
             id: _contentsGrid
             columns: 2
+            columnSpacing: 0
+            rowSpacing: 0
+
             Layout.fillWidth: true
 
             Repeater {
@@ -167,22 +174,22 @@ ObjectModel {
         }
     }
 
-    // 5
+    // element: 5
     Item {
         height: 48
     }
 
-    // 6
+    // element: 6 - Extra Cards
     ColumnLayout {
         id: _extra
         width: root.width
         spacing: 0
 
         RulebookSubtitle {
-            Layout.preferredWidth: 317
+            Layout.preferredWidth: 216
             Layout.preferredHeight: 45
             Layout.alignment: Qt.AlignCenter
-            Layout.bottomMargin: 48
+            Layout.bottomMargin: 16
 
             text: qsTr("extra cards")
         }
@@ -190,6 +197,8 @@ ObjectModel {
         GridLayout {
             id: _extraGrid
             columns: 2
+            rowSpacing: 0
+            columnSpacing: 0
             Layout.fillWidth: true
 
             Repeater {
@@ -209,12 +218,12 @@ ObjectModel {
         }
     }
 
-    // 7
+    // element: 7
     Item {
         height: 48
     }
 
-    // 8
+    // element: 8
     ColumnLayout {
         id: _gameOverview
         width: root.width
@@ -222,7 +231,7 @@ ObjectModel {
 
         RulebookTitle {
             Layout.fillWidth: true
-            Layout.bottomMargin: 48
+            Layout.bottomMargin: 27
 
             text: qsTr("game overview")
         }
@@ -253,16 +262,15 @@ ObjectModel {
             wrapMode: Text.WordWrap
 
             Layout.fillWidth: true
-            Layout.bottomMargin: 20
         }
     }
 
-    // 9
+    // element: 9
     Item {
-        height: 28
+        height: 48
     }
 
-    // 10
+    // element: 10
     ColumnLayout {
         id: _gameSetup
         width: root.width
@@ -270,7 +278,7 @@ ObjectModel {
 
         RulebookTitle {
             Layout.fillWidth: true
-            Layout.bottomMargin: 35
+            Layout.bottomMargin: 27
 
             text: qsTr("game setup")
         }
@@ -301,7 +309,6 @@ ObjectModel {
             wrapMode: Text.WordWrap
 
             Layout.fillWidth: true
-            Layout.bottomMargin: 15
         }
 
         RulebookText {
@@ -314,10 +321,10 @@ ObjectModel {
 
         GridLayout {
             columns: 3
-            columnSpacing: 30
+            columnSpacing: 20
 
-            Layout.leftMargin: 30
-            Layout.rightMargin: 30
+            Layout.leftMargin: 26
+            Layout.rightMargin: 26
             Layout.alignment: Qt.AlignHCenter
 
             Image {
@@ -347,9 +354,8 @@ ObjectModel {
                 Layout.alignment: Qt.AlignHCenter
             }
 
-            Label {
+            RulebookText {
                 text: qsTr("troop card")
-                font.pixelSize: 18
                 font.capitalization: Font.AllUppercase
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
@@ -358,9 +364,8 @@ ObjectModel {
                 Layout.preferredWidth: 1
             }
 
-            Label {
+            RulebookText {
                 text: qsTr("building card")
-                font.pixelSize: 18
                 font.capitalization: Font.AllUppercase
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
@@ -369,9 +374,8 @@ ObjectModel {
                 Layout.preferredWidth: 1
             }
 
-            Label {
+            RulebookText {
                 text: qsTr("command card")
-                font.pixelSize: 18
                 font.capitalization: Font.AllUppercase
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
@@ -392,8 +396,8 @@ ObjectModel {
 
         ColumnLayout {
             Layout.fillWidth: true
-            Layout.leftMargin: 30
-            Layout.rightMargin: 30
+            Layout.leftMargin: 26
+            Layout.rightMargin: 26
             Layout.alignment: Qt.AlignHCenter
 
             Image {
@@ -407,10 +411,9 @@ ObjectModel {
                 Layout.alignment: Qt.AlignHCenter
             }
 
-            Label {
+            RulebookText {
                 id: wonder
                 text: qsTr("wonder card")
-                font.pixelSize: 18
                 font.capitalization: Font.AllUppercase
 
                 wrapMode: Text.WordWrap
@@ -435,6 +438,9 @@ ObjectModel {
                        + "the Asset Deck’s top card face down during the game.")
             font.letterSpacing: 0.05
             wrapMode: Text.WordWrap
+            leftPadding: 28
+            rightPadding: 28
+            bottomPadding: 21
 
             background: Rectangle {
                 implicitWidth: 200
@@ -444,7 +450,7 @@ ObjectModel {
                 radius: 12
             }
 
-            Layout.bottomMargin: 27
+            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
@@ -454,7 +460,6 @@ ObjectModel {
                        + " up in a row to form the “Asset Row”.")
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
 
@@ -464,7 +469,6 @@ ObjectModel {
                       + "Put the Volfyirion Token on the Volfyirion’s Lair Card. ")
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
 
@@ -474,7 +478,6 @@ ObjectModel {
                       )
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
 
@@ -485,7 +488,6 @@ ObjectModel {
                       + "Put the other revealed cards, if any, on the bottom of the Wonder Deck.")
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
 
@@ -495,7 +497,6 @@ ObjectModel {
                       + "in a line in front of them, which forms the “Cities Area”.")
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
 
@@ -505,7 +506,7 @@ ObjectModel {
                       + "are stacked in a Pile in the respective Discard Area. ")
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 10
+            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
@@ -514,6 +515,9 @@ ObjectModel {
                       "NOTE: In Volfyirion, “Discard” and “Remove” are two different operations. "
                       + "Removed cards (and tokens) leave the game and are put back into the box.")
             wrapMode: Text.WordWrap
+            leftPadding: 28
+            rightPadding: 28
+            bottomPadding: 21
 
             background: Rectangle {
                 implicitWidth: 200
@@ -523,17 +527,16 @@ ObjectModel {
                 radius: 12
             }
 
-            Layout.bottomMargin: 32
             Layout.fillWidth: true
         }
     }
 
-    // 11
+    // element: 11
     Item {
-        height: 28
+        height: 48
     }
 
-    // 12
+    // element: 12
     ColumnLayout {
         id: _cards
         width: root.width
@@ -541,13 +544,13 @@ ObjectModel {
 
         RulebookTitle {
             Layout.fillWidth: true
-            Layout.bottomMargin: 35
+            Layout.bottomMargin: 27
 
             text: qsTr("cards")
         }
     }
 
-    // 13
+    // element: 13
     ColumnLayout {
         id: _commandBattlePoints
         width: root.width
@@ -557,11 +560,11 @@ ObjectModel {
             Layout.preferredWidth: 317
             Layout.preferredHeight: 45
             Layout.alignment: Qt.AlignCenter
-            Layout.bottomMargin: 20
+            Layout.bottomMargin: 16
 
             text: qsTr("command, battle and knowledge points")
             wrapMode: Text.WordWrap
-            font.pixelSize: 14
+            font.pixelSize: 16
         }
 
         RulebookText {
@@ -574,8 +577,10 @@ ObjectModel {
 
         // Command
         ColumnLayout {
+            width: root.width
+            spacing: 0
+
             Layout.alignment: Qt.AlignHCenter
-            Layout.bottomMargin: 12
 
             Image {
                 source: "qrc:/assets/rulebook/04_cards_chpt/command-big_1.png"
@@ -585,11 +590,13 @@ ObjectModel {
 
                 Layout.alignment: Qt.AlignHCenter
             }
-            Label {
+            RulebookText {
                 text: qsTr("command points")
                 font.capitalization: Font.AllUppercase
-                font.pixelSize: 18
+                horizontalAlignment: Text.AlignHCenter
+                padding: 0
 
+                Layout.fillWidth: false
                 Layout.alignment: Qt.AlignHCenter
             }
         }
@@ -597,23 +604,29 @@ ObjectModel {
         RulebookText {
             text: qsTr("Command Points are used by players to:")
             wrapMode: Text.WordWrap
+            padding: 0
 
             Layout.fillWidth: true
+            Layout.bottomMargin: 15
         }
 
         RulebookText {
             text: qsTr("- Acquire cards from the Asset Row")
             wrapMode: Text.WordWrap
+            padding: 0
 
             Layout.fillWidth: true
+            Layout.bottomMargin: 0
         }
 
         RulebookText {
             text: qsTr("- Redeploy Troops between Cities.")
             wrapMode: Text.WordWrap
+            padding: 0
 
-            Layout.bottomMargin: 15
             Layout.fillWidth: true
+            Layout.topMargin: 0
+            Layout.bottomMargin: 15
         }
 
         RulebookText {
@@ -622,14 +635,16 @@ ObjectModel {
                       + "In-Play cards such as Building Cards and Wonder Cards.")
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 28
+            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
         // Battle
         ColumnLayout {
+            width: root.width
+            spacing: 0
+
             Layout.alignment: Qt.AlignHCenter
-            Layout.bottomMargin: 12
 
             Image {
                 source: "qrc:/assets/rulebook/04_cards_chpt/attack-big_1.png"
@@ -639,10 +654,10 @@ ObjectModel {
 
                 Layout.alignment: Qt.AlignHCenter
             }
-            Label {
+            RulebookText {
                 text: qsTr("battle points")
                 font.capitalization: Font.AllUppercase
-                font.pixelSize: 18
+                horizontalAlignment: Text.AlignHCenter
 
                 Layout.alignment: Qt.AlignHCenter
             }
@@ -653,11 +668,13 @@ ObjectModel {
             wrapMode: Text.WordWrap
 
             Layout.fillWidth: true
+            Layout.bottomMargin: 15
         }
 
         RulebookText {
             text: qsTr("- Acquire Wonder Cards from Volfyirion’s Lair")
             wrapMode: Text.WordWrap
+            padding: 0
 
             Layout.fillWidth: true
         }
@@ -665,6 +682,7 @@ ObjectModel {
         RulebookText {
             text: qsTr("- Attack a City")
             wrapMode: Text.WordWrap
+            padding: 0
 
             Layout.bottomMargin: 15
             Layout.fillWidth: true
@@ -676,14 +694,16 @@ ObjectModel {
                       + " In-Play cards such as Building Cards, Troop Cards, and Wonder Cards.")
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 28
+            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
         // Knowledge
         ColumnLayout {
+            width: root.width
+            spacing: 0
+
             Layout.alignment: Qt.AlignHCenter
-            Layout.bottomMargin: 12
 
             Image {
                 source: "qrc:/assets/rulebook/04_cards_chpt/experience-big_1.png"
@@ -693,10 +713,10 @@ ObjectModel {
 
                 Layout.alignment: Qt.AlignHCenter
             }
-            Label {
+            RulebookText {
                 text: qsTr("Knowledge points")
                 font.capitalization: Font.AllUppercase
-                font.pixelSize: 18
+                horizontalAlignment: Text.AlignHCenter
 
                 Layout.alignment: Qt.AlignHCenter
             }
@@ -707,11 +727,13 @@ ObjectModel {
             wrapMode: Text.WordWrap
 
             Layout.fillWidth: true
+            Layout.bottomMargin: 15
         }
 
         RulebookText {
             text: qsTr("- Seal/Unseal Wonder Cards in both Playing Areas")
             wrapMode: Text.WordWrap
+            padding: 0
 
             Layout.fillWidth: true
         }
@@ -719,6 +741,7 @@ ObjectModel {
         RulebookText {
             text: qsTr("- Replace a card in the Asset Row with a new one")
             wrapMode: Text.WordWrap
+            padding: 0
 
             Layout.fillWidth: true
         }
@@ -738,12 +761,16 @@ ObjectModel {
                       + "through In-Play cards such as Building Cards, Troop Cards, and Wonder Cards.")
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 60
             Layout.fillWidth: true
         }
     }
 
-    // 14
+    // element: 14
+    Item {
+        height: 48
+    }
+
+    // element: 15
     ColumnLayout {
         id: _commandBuildingTroop
         width: root.width
@@ -753,11 +780,11 @@ ObjectModel {
             Layout.preferredWidth: 317
             Layout.preferredHeight: 45
             Layout.alignment: Qt.AlignCenter
-            Layout.bottomMargin: 20
+            Layout.bottomMargin: 16
 
             text: qsTr("command, building and troop cards")
             wrapMode: Text.Wrap
-            font.pixelSize: 14
+            font.pixelSize: 16
         }
 
         Image {
@@ -780,6 +807,8 @@ ObjectModel {
             rightPadding: 28
             bottomPadding: 21
 
+            Layout.bottomMargin: 15
+
             background: Item {
                 implicitWidth: 100
                 implicitHeight: 100
@@ -801,25 +830,15 @@ ObjectModel {
                     fillMode: Image.PreserveAspectFit
                 }
             }
-
-            RulebookText {
-                text: qsTr("Command and Building Cards grant you Points via their Main Ability.")
-                Layout.bottomMargin: 15
-                Layout.fillWidth: true
-            }
-
-            Layout.bottomMargin: 32
         }
 
         RulebookText {
             text: qsTr("Command and Building Cards grant you Points via their Main Ability.")
-            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("The majority of cards also have a Secondary Ability (explained later).")
-            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
@@ -829,7 +848,6 @@ ObjectModel {
                       + "in a City (see City Cards) to place the card. If there is already "
                       + "another Building Card on the Building slot, the previously placed Building "
                       + "Card is removed from the game and replaced by the new one.")
-            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
@@ -839,19 +857,22 @@ ObjectModel {
                       + "City to place the card. If there is already another Troop Card on the Troop "
                       + "slot, the previously placed Troop Card is removed from the game and replaced "
                       + "by the new one.")
-            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr(
                       "A Troop Card adds its Defence to the Defence Value of the City where it is placed.")
-            Layout.bottomMargin: 60
             Layout.fillWidth: true
         }
     }
 
-    // 15
+    // element: 16
+    Item {
+        height: 48
+    }
+
+    // element: 17
     ColumnLayout {
         id: _wonder
         width: root.width
@@ -873,13 +894,12 @@ ObjectModel {
            fillMode: Image.PreserveAspectFit
 
            Layout.preferredWidth: 218
-           Layout.bottomMargin: 28
+           Layout.bottomMargin: 15
            Layout.alignment: Qt.AlignHCenter
        }
 
         RulebookText {
             text: qsTr("Wonder Cards do not have House colors.")
-            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
@@ -889,7 +909,6 @@ ObjectModel {
                       + "the game another card from your Discard Pile, from your hand (no Points "
                       + "will be gained from it), or from your Playing Area (after having gained "
                       + "the card Points).")
-            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
@@ -904,12 +923,16 @@ ObjectModel {
             fillMode: Image.PreserveAspectFit
 
             Layout.preferredWidth: 61
-            Layout.bottomMargin: 60
             Layout.alignment: Qt.AlignHCenter
         }
     }
 
-    // 16
+    // element: 18
+    Item {
+        height: 48
+    }
+
+    // element: 19
     ColumnLayout {
         id: _cityCards
         width: root.width
@@ -930,7 +953,7 @@ ObjectModel {
             fillMode: Image.PreserveAspectFit
 
             Layout.preferredWidth: 248
-            Layout.bottomMargin: 28
+            Layout.bottomMargin: 15
             Layout.alignment: Qt.AlignHCenter
         }
 
@@ -943,22 +966,26 @@ ObjectModel {
             text: qsTr(
                       "The slot for Troop Cards is on the bottom left, the slot for Building "
                       + "Cards is on the bottom right.")
-            Layout.bottomMargin: 60
             Layout.fillWidth: true
         }
     }
 
-    // 17
+    // element: 20
+    Item {
+        height: 48
+    }
+
+    // element: 21
     ColumnLayout {
         id: _inPlayCards
-        Layout.fillWidth: true
+        width: root.width
         spacing: 0
 
         RulebookSubtitle {
             Layout.preferredWidth: 317
             Layout.preferredHeight: 45
             Layout.alignment: Qt.AlignCenter
-            Layout.bottomMargin: 20
+            Layout.bottomMargin: 35
 
             text: qsTr("in-play cards")
             wrapMode: Text.WordWrap
@@ -972,7 +999,6 @@ ObjectModel {
                        + "long as they are not destroyed or sealed.")
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
@@ -982,13 +1008,16 @@ ObjectModel {
                       + "requirements are met they may be triggered every turn.")
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 60
             Layout.fillWidth: true
         }
     }
 
+    // element: 22
+    Item {
+        height: 48
+    }
 
-    // How To Play section
+    // element: 23
     ColumnLayout {
         id: _howToPlay
         width: root.width
@@ -1006,7 +1035,6 @@ ObjectModel {
             wrapMode: Text.WordWrap
 
             Layout.fillWidth: true
-            Layout.bottomMargin: 15
         }
 
         RulebookText {
@@ -1015,7 +1043,6 @@ ObjectModel {
             wrapMode: Text.WordWrap
 
             Layout.fillWidth: true
-            Layout.bottomMargin: 15
         }
 
         RulebookText {
@@ -1037,10 +1064,14 @@ ObjectModel {
             wrapMode: Text.WordWrap
 
             Layout.fillWidth: true
-            Layout.bottomMargin: 60
         }
     }
 
+    // element: 24
+    Item {
+        height: 48
+    }
+    // element: 25
     ColumnLayout {
         id: _drawPhase
         width: root.width
@@ -1061,8 +1092,8 @@ ObjectModel {
                       "Draw five cards from your House Deck.")
             wrapMode: Text.WordWrap
 
-            Layout.bottomMargin: 15
             Layout.fillWidth: true
+            Layout.bottomMargin: 15
         }
 
 
@@ -1072,6 +1103,9 @@ ObjectModel {
                       + "shuffle their starting hand back into the House Deck, then "
                       + "Draw five new cards.")
             wrapMode: Text.WordWrap
+            leftPadding: 28
+            rightPadding: 28
+            bottomPadding: 21
 
             background: Rectangle {
                 implicitWidth: 200
@@ -1081,7 +1115,7 @@ ObjectModel {
                 radius: 12
             }
 
-            Layout.bottomMargin: 32
+            Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
@@ -1094,7 +1128,6 @@ ObjectModel {
             wrapMode: Text.WordWrap
 
             Layout.fillWidth: true
-            Layout.bottomMargin: 15
         }
 
         RulebookText {
@@ -1114,6 +1147,9 @@ ObjectModel {
                       " NOTE: Acquired cards are always put onto the Discard Pile."
                       + " When shuffled back they enhance your House Deck.")
             wrapMode: Text.WordWrap
+            leftPadding: 28
+            rightPadding: 28
+            bottomPadding: 21
 
             background: Rectangle {
                 implicitWidth: 200
@@ -1122,9 +1158,12 @@ ObjectModel {
                 opacity: 0.3
                 radius: 12
             }
-
-            Layout.bottomMargin: 32
             Layout.fillWidth: true
         }
+    }
+
+    // element: 26
+    Item {
+        height: 48
     }
 }
