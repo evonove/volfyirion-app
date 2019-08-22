@@ -69,7 +69,7 @@ ObjectModel {
 
         Image {
             id: userImg
-            width: 119
+            width: 193
             fillMode: Image.PreserveAspectFit
 
             source: "qrc:/assets/rulebook/00_game-conditions-main-ruleb.svg"
@@ -96,11 +96,6 @@ ObjectModel {
         }
     }
 
-    // 1
-    Item {
-        height: 144
-    }
-
     // 2
     ColumnLayout {
         id: _introduction
@@ -109,7 +104,8 @@ ObjectModel {
 
         RulebookTitle {
             Layout.fillWidth: true
-            Layout.bottomMargin: 48
+            Layout.topMargin: 60
+            Layout.bottomMargin: 35
 
             text: qsTr("introduction")
         }
@@ -125,6 +121,7 @@ ObjectModel {
                        + "civilians build anew what was destroyed, and scholars research forbidden tomes. However, the war "
                        + "is far from being over, because as long as a single enemy City is still standing, neither House"
                        + " will ever surrender. ")
+            wrapMode: Text.WordWrap
         }
     }
 
@@ -140,7 +137,7 @@ ObjectModel {
         spacing: 0
 
         RulebookSubtitle {
-            Layout.preferredWidth: 216
+            Layout.preferredWidth: 317
             Layout.preferredHeight: 45
             Layout.alignment: Qt.AlignCenter
             Layout.bottomMargin: 48
@@ -148,26 +145,24 @@ ObjectModel {
             text: qsTr("contents")
         }
 
-        GridView {
-            id: _grid
-
-            cellWidth: root.width / 2
-            cellHeight: 200
-
-            Layout.preferredHeight: Math.ceil(_contentsModel.count / 2) * 200
+        GridLayout {
+            id: _contentsGrid
+            columns: 2
             Layout.fillWidth: true
 
-            model: RulebookContentsModel {
-                id: _contentsModel
-            }
+            Repeater {
+                model: RulebookContentsModel {
+                    id: _contentsModel
+                }
 
-            delegate: RulebookCardDelegate {
-                width: _grid.cellWidth
-                height: _grid.cellHeight
+                delegate: RulebookCardDelegate {
+                    source: model.source
+                    title: model.title
+                    description: model.description
 
-                source: model.source
-                title: model.title
-                description: model.description
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 200
+                }
             }
         }
     }
@@ -184,7 +179,7 @@ ObjectModel {
         spacing: 0
 
         RulebookSubtitle {
-            Layout.preferredWidth: 216
+            Layout.preferredWidth: 317
             Layout.preferredHeight: 45
             Layout.alignment: Qt.AlignCenter
             Layout.bottomMargin: 48
@@ -192,26 +187,24 @@ ObjectModel {
             text: qsTr("extra cards")
         }
 
-        GridView {
+        GridLayout {
             id: _extraGrid
-
-            cellWidth: root.width / 2
-            cellHeight: 200
-
-            Layout.preferredHeight: Math.ceil(_extraCardsModel.count / 2) * 200
+            columns: 2
             Layout.fillWidth: true
 
-            model: RulebookExtraCardsModel {
-                id: _extraCardsModel
-            }
+            Repeater {
+                model: RulebookExtraCardsModel {
+                    id: _extraCardsModel
+                }
 
-            delegate: RulebookCardDelegate {
-                width: _extraGrid.cellWidth
-                height: _extraGrid.cellHeight
+                delegate: RulebookCardDelegate {
+                    source: model.source
+                    title: model.title
+                    description: model.description
 
-                source: model.source
-                title: model.title
-                description: model.description
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 200
+                }
             }
         }
     }
@@ -243,10 +236,12 @@ ObjectModel {
                       + "spent to deploy strategic assets and to attack. Players gain resources "
                       + "and take actions by playing cards from their personal decks, which are "
                       + "upgraded with additional cards during the course of a game.")
+            wrapMode: Text.WordWrap
         }
 
         RulebookText {
             text: qsTr("how to win")
+            wrapMode: Text.WordWrap
             font.bold: true
             font.capitalization: Font.AllUppercase
 
@@ -255,6 +250,7 @@ ObjectModel {
 
         RulebookText {
             text: qsTr("A player immediately wins the game after destroying all enemy Cities.")
+            wrapMode: Text.WordWrap
 
             Layout.fillWidth: true
             Layout.bottomMargin: 20
@@ -274,7 +270,7 @@ ObjectModel {
 
         RulebookTitle {
             Layout.fillWidth: true
-            Layout.bottomMargin: 48
+            Layout.bottomMargin: 35
 
             text: qsTr("game setup")
         }
@@ -284,9 +280,10 @@ ObjectModel {
                       "Players sit across from each other. A player’s deck is called House Deck."
                       + " At the start of the game it is composed of ten Command Cards: eight "
                       + "Prospector, one Captain, and one Diviner.")
+            wrapMode: Text.WordWrap
 
             Layout.fillWidth: true
-            Layout.bottomMargin: 20
+            Layout.bottomMargin: 15
         }
 
         Image {
@@ -296,16 +293,21 @@ ObjectModel {
             Layout.preferredHeight: 127
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            Layout.bottomMargin: 20
+            Layout.bottomMargin: 15
         }
 
         RulebookText {
             text: qsTr("Both players shuffle their own House Deck then place it in front of themselves.")
+            wrapMode: Text.WordWrap
+
             Layout.fillWidth: true
+            Layout.bottomMargin: 15
         }
 
         RulebookText {
             text: qsTr("Shuffle all Troop, Building and the remaining Command Cards to form the Asset Deck.")
+            wrapMode: Text.WordWrap
+
             Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
@@ -381,8 +383,11 @@ ObjectModel {
 
         RulebookText {
             text: qsTr("Shuffle all Wonder Cards together to form the Wonder Deck. Asset and Wonder Decks are shared between players.")
-            Layout.bottomMargin: 15
+            wrapMode: Text.WordWrap
+
+
             Layout.fillWidth: true
+            Layout.bottomMargin: 15
         }
 
         ColumnLayout {
@@ -419,8 +424,10 @@ ObjectModel {
         RulebookText {
             text: qsTr("Place the Asset Deck face down on the side of the gaming area. "
                        + "Asset Deck’s top card is always flipped face up.")
-            Layout.bottomMargin: 15
+            wrapMode: Text.WordWrap
+
             Layout.fillWidth: true
+            Layout.bottomMargin: 15
         }
 
         RulebookText {
@@ -445,6 +452,8 @@ ObjectModel {
             inputMethodHints: Qt.ImhMultiLine
             text: qsTr("Draw the top five cards from the Asset Deck and place them face"
                        + " up in a row to form the “Asset Row”.")
+            wrapMode: Text.WordWrap
+
             Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
@@ -453,6 +462,8 @@ ObjectModel {
             text: qsTr(
                       "Place the Volfyirion’s Lair Card face up at the end of the Asset Row. "
                       + "Put the Volfyirion Token on the Volfyirion’s Lair Card. ")
+            wrapMode: Text.WordWrap
+
             Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
@@ -461,6 +472,8 @@ ObjectModel {
             text: qsTr(
                       "Place the Wonder Deck face down next to the Volfyirion’s Lair Card. "
                       )
+            wrapMode: Text.WordWrap
+
             Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
@@ -470,6 +483,8 @@ ObjectModel {
                       "Draw cards until you reveal two that cost no more than 3 Battle Points each, "
                       + "then place them on the spaces of the Volfyirion’s Lair Card, face up. "
                       + "Put the other revealed cards, if any, on the bottom of the Wonder Deck.")
+            wrapMode: Text.WordWrap
+
             Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
@@ -478,6 +493,8 @@ ObjectModel {
             text: qsTr(
                       "Each player has three City Cards which represent vital strategic points to defend." + " Cities have a Defence Value of 8, 9, and 10. Players arrange their three Cities "
                       + "in a line in front of them, which forms the “Cities Area”.")
+            wrapMode: Text.WordWrap
+
             Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
@@ -486,6 +503,8 @@ ObjectModel {
             text: qsTr(
                       "The two players have both a “Discard Area” and a “Playing Area”. Discarded Cards "
                       + "are stacked in a Pile in the respective Discard Area. ")
+            wrapMode: Text.WordWrap
+
             Layout.bottomMargin: 10
             Layout.fillWidth: true
         }
@@ -522,7 +541,7 @@ ObjectModel {
 
         RulebookTitle {
             Layout.fillWidth: true
-            Layout.bottomMargin: 48
+            Layout.bottomMargin: 35
 
             text: qsTr("cards")
         }
@@ -535,48 +554,65 @@ ObjectModel {
         spacing: 0
 
         RulebookSubtitle {
-            Layout.preferredWidth: 216
+            Layout.preferredWidth: 317
             Layout.preferredHeight: 45
             Layout.alignment: Qt.AlignCenter
             Layout.bottomMargin: 20
 
-            text: qsTr("command, battle and\nknowledge points")
-            wrapMode: Text.Wrap
+            text: qsTr("command, battle and knowledge points")
+            wrapMode: Text.WordWrap
             font.pixelSize: 14
         }
 
         RulebookText {
             text: qsTr("Cards in the game provide three resources that can be used in multiple ways.")
+            wrapMode: Text.WordWrap
+
             Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
-        RowLayout {
+        // Command
+        ColumnLayout {
             Layout.alignment: Qt.AlignHCenter
+            Layout.bottomMargin: 12
 
             Image {
-                source: "qrc:/assets/command.png"
+                source: "qrc:/assets/rulebook/04_cards_chpt/command-big_1.png"
                 fillMode: Image.PreserveAspectFit
-                Layout.preferredWidth: 114
-                Layout.preferredHeight: 114
+                Layout.preferredWidth: 61
+                Layout.preferredHeight: 61
+
+                Layout.alignment: Qt.AlignHCenter
+            }
+            Label {
+                text: qsTr("command points")
+                font.capitalization: Font.AllUppercase
+                font.pixelSize: 18
+
+                Layout.alignment: Qt.AlignHCenter
             }
         }
 
         RulebookText {
             text: qsTr("Command Points are used by players to:")
+            wrapMode: Text.WordWrap
+
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Acquire cards from the Asset Row")
-            Layout.leftMargin: 8
+            wrapMode: Text.WordWrap
+
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Redeploy Troops between Cities.")
+            wrapMode: Text.WordWrap
+
             Layout.bottomMargin: 15
-            Layout.leftMargin: 8
             Layout.fillWidth: true
         }
 
@@ -584,7 +620,125 @@ ObjectModel {
             text: qsTr(
                       "Players Gain Command Points by Playing Command Cards or through "
                       + "In-Play cards such as Building Cards and Wonder Cards.")
+            wrapMode: Text.WordWrap
+
             Layout.bottomMargin: 28
+            Layout.fillWidth: true
+        }
+
+        // Battle
+        ColumnLayout {
+            Layout.alignment: Qt.AlignHCenter
+            Layout.bottomMargin: 12
+
+            Image {
+                source: "qrc:/assets/rulebook/04_cards_chpt/attack-big_1.png"
+                fillMode: Image.PreserveAspectFit
+                Layout.preferredWidth: 61
+                Layout.preferredHeight: 61
+
+                Layout.alignment: Qt.AlignHCenter
+            }
+            Label {
+                text: qsTr("battle points")
+                font.capitalization: Font.AllUppercase
+                font.pixelSize: 18
+
+                Layout.alignment: Qt.AlignHCenter
+            }
+        }
+
+        RulebookText {
+            text: qsTr("Battle Points are used by players to:")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Acquire Wonder Cards from Volfyirion’s Lair")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Attack a City")
+            wrapMode: Text.WordWrap
+
+            Layout.bottomMargin: 15
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr(
+                      "Players Gain Battle Points by Playing Command Cards or through"
+                      + " In-Play cards such as Building Cards, Troop Cards, and Wonder Cards.")
+            wrapMode: Text.WordWrap
+
+            Layout.bottomMargin: 28
+            Layout.fillWidth: true
+        }
+
+        // Knowledge
+        ColumnLayout {
+            Layout.alignment: Qt.AlignHCenter
+            Layout.bottomMargin: 12
+
+            Image {
+                source: "qrc:/assets/rulebook/04_cards_chpt/experience-big_1.png"
+                fillMode: Image.PreserveAspectFit
+                Layout.preferredWidth: 61
+                Layout.preferredHeight: 61
+
+                Layout.alignment: Qt.AlignHCenter
+            }
+            Label {
+                text: qsTr("Knowledge points")
+                font.capitalization: Font.AllUppercase
+                font.pixelSize: 18
+
+                Layout.alignment: Qt.AlignHCenter
+            }
+        }
+
+        RulebookText {
+            text: qsTr("Knowledge Points are used by players to:")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Seal/Unseal Wonder Cards in both Playing Areas")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Replace a card in the Asset Row with a new one")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Move the Volfyirion Token from the Lair Card to an enemy "
+                       + "City or from an owned City to the Lair Card")
+            wrapMode: Text.WordWrap
+
+            Layout.bottomMargin: 15
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr(
+                      "Players Gain Knowledge Points by Playing Command Cards or "
+                      + "through In-Play cards such as Building Cards, Troop Cards, and Wonder Cards.")
+            wrapMode: Text.WordWrap
+
+            Layout.bottomMargin: 60
             Layout.fillWidth: true
         }
     }
@@ -596,52 +750,63 @@ ObjectModel {
         spacing: 0
 
         RulebookSubtitle {
-            Layout.preferredWidth: 216
+            Layout.preferredWidth: 317
             Layout.preferredHeight: 45
             Layout.alignment: Qt.AlignCenter
             Layout.bottomMargin: 20
 
-            text: qsTr("command, building and\ntroop cards")
+            text: qsTr("command, building and troop cards")
             wrapMode: Text.Wrap
             font.pixelSize: 14
         }
 
-        RulebookText {
-            text: qsTr("The banner in the upper left corner represents the color of a Minor House.")
-            Layout.bottomMargin: 15
-            Layout.fillWidth: true
+        Image {
+            source: "qrc:/assets/rulebook/04_cards_chpt/command-b-t-cards.png"
+            fillMode: Image.PreserveAspectFit
+
+            Layout.preferredWidth: 287
+            Layout.alignment: Qt.AlignHCenter
         }
 
-        RulebookText {
-            text: qsTr("The grey banner represents cards that are considered neutral.")
+        Pane {
             Layout.fillWidth: true
-        }
+            Layout.topMargin: 28
+            Layout.bottomMargin: 28
+            padding: 0
 
-        RowLayout {
-            spacing: 0
-            Image {
-                source: "qrc:/assets/flag_red.png"
-                fillMode: Image.PreserveAspectFit
-                Layout.fillWidth: true
-                Layout.preferredHeight: 333
+            background: Rectangle {
+                implicitWidth: 323
+                implicitHeight: 258
+                color: "#eeeeee"
+                opacity: 0.3
+                radius: 12
             }
+
             Image {
-                source: "qrc:/assets/flag_blue.png"
+                id: _flagsImg
+                anchors.topMargin: 0
+
+                width: parent.width
+                source: "qrc:/assets/rulebook/04_cards_chpt/flags.png"
                 fillMode: Image.PreserveAspectFit
-                Layout.fillWidth: true
-                Layout.preferredHeight: 333
+
+                verticalAlignment: Qt.AlignTop
             }
-            Image {
-                source: "qrc:/assets/flag_purple.png"
-                fillMode: Image.PreserveAspectFit
-                Layout.fillWidth: true
-                Layout.preferredHeight: 333
+
+            RulebookText {
+                id: firstBannerText
+                anchors.top: _flagsImg.bottom
+                anchors.bottomMargin: 15
+
+                width: parent.width
+                text: qsTr("The banner in the upper left corner represents the color of a Minor House.")
+
             }
-            Image {
-                source: "qrc:/assets/flag_grey.png"
-                fillMode: Image.PreserveAspectFit
-                Layout.fillWidth: true
-                Layout.preferredHeight: 333
+
+            RulebookText {
+                anchors.top: firstBannerText.bottom
+                width: parent.width
+                text: qsTr("The grey banner represents cards that are considered neutral.")
             }
         }
 
@@ -652,7 +817,7 @@ ObjectModel {
         }
 
         RulebookText {
-            text: qsTr("The majority of cards also have a Secondary Ability (explained at p. 27).")
+            text: qsTr("The majority of cards also have a Secondary Ability (explained later).")
             Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
@@ -660,7 +825,8 @@ ObjectModel {
         RulebookText {
             text: qsTr(
                       "Whenever you Play a Building Card, you need to choose the relative slot "
-                      + "in a City (see City Cards at p. 14) to place the card. If there is already " + "another Building Card on the Building slot, the previously placed Building "
+                      + "in a City (see City Cards) to place the card. If there is already "
+                      + "another Building Card on the Building slot, the previously placed Building "
                       + "Card is removed from the game and replaced by the new one.")
             Layout.bottomMargin: 15
             Layout.fillWidth: true
@@ -669,356 +835,302 @@ ObjectModel {
         RulebookText {
             text: qsTr(
                       "Whenever you Play a Troop Card, you need to choose the relative slot in a "
-                      + "City to place the card. If there is already another Troop Card on the Troop " + "slot, the previously placed Troop Card is removed from the game and replaced " + "by the new one.")
-            Layout.bottomMargin: 28
+                      + "City to place the card. If there is already another Troop Card on the Troop "
+                      + "slot, the previously placed Troop Card is removed from the game and replaced "
+                      + "by the new one.")
+            Layout.bottomMargin: 15
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr(
+                      "A Troop Card adds its Defence to the Defence Value of the City where it is placed.")
+            Layout.bottomMargin: 60
             Layout.fillWidth: true
         }
     }
 
     // 15
     ColumnLayout {
-        id: _actions
+        id: _wonder
         width: root.width
         spacing: 0
 
+
         RulebookSubtitle {
-            Layout.preferredWidth: 216
+            Layout.preferredWidth: 317
             Layout.preferredHeight: 45
             Layout.alignment: Qt.AlignCenter
-            Layout.bottomMargin: 20
+            Layout.bottomMargin: 35
 
-            text: qsTr("actions")
-            wrapMode: Text.Wrap
+            text: qsTr("wonder cards")
+            wrapMode: Text.WordWrap
         }
 
-        RulebookText {
-            text: qsTr("acquire a wonder card")
-            font.capitalization: Font.AllUppercase
-            font.bold: true
-            font.pixelSize: 18
-            font.letterSpacing: 1
-            horizontalAlignment: Text.AlignHCenter
-            Layout.fillWidth: true
-        }
+       Image {
+           source: "qrc:/assets/rulebook/04_cards_chpt/wonder.png"
+           fillMode: Image.PreserveAspectFit
+
+           Layout.preferredWidth: 218
+           Layout.bottomMargin: 28
+           Layout.alignment: Qt.AlignHCenter
+       }
 
         RulebookText {
-            text: qsTr(
-                      "To Acquire a Wonder Card from the Volfyirion’s Lair, you must pay the amount " + "of Battle Points depicted on the Wonder Card’s Cost icon. The newly acquired " + "card is immediately moved to your Discard Pile. The empty space on the Volfyirion’s "
-                      + "Lair Card is not refilled until the End of a Turn Phase.")
+            text: qsTr("Wonder Cards do not have House colors.")
             Layout.bottomMargin: 15
             Layout.fillWidth: true
         }
 
-        Image {
-            source: "qrc:/assets/volf_display_app_2.png"
-            fillMode: Image.PreserveAspectFit
-
-            Layout.preferredHeight: 320
-            Layout.fillWidth: true
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            Layout.bottomMargin: 20
-        }
-
-        Image {
-            source: "qrc:/assets/volf_display_app_3.png"
-            fillMode: Image.PreserveAspectFit
-
-            Layout.preferredHeight: 320
-            Layout.fillWidth: true
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            Layout.bottomMargin: 20
-        }
-
         RulebookText {
             text: qsTr(
-                      "Following the example from p. 19, Player 1 places the Elite Trooper Card "
-                      + "and the Apothecary Card [A] in two of their cities [B]. Then decides to "
-                      + "Acquire cards by spending the Points they just gained. With 5 Command Points, "
-                      + "they Acquire Suicide Mission for 3CP [C] and Hidden Cache for 2CP [D]. "
-                      + "For 2 Battle Points, they Acquire Sharp Qoam [E]. These new cards are put "
-                      + "directly onto the Discard Pile [F]. The player is left with 1 Battle Point "
-                      + "and 6 Knowledge Points to spend for other actions.")
-            Layout.bottomMargin: 28
-            Layout.fillWidth: true
-        }
-
-        RulebookText {
-            text: qsTr("seal/unseal a wonder card")
-            font.capitalization: Font.AllUppercase
-            font.bold: true
-            font.pixelSize: 18
-            font.letterSpacing: 1
-            horizontalAlignment: Text.AlignHCenter
-            Layout.fillWidth: true
-        }
-
-        RulebookText {
-            text: qsTr(
-                      "You may Seal or Unseal a Wonder Card in either Playing Area by paying the "
-                      + "equivalent of the card’s Cost in Knowledge Points, as reminded by the icon " + "on each Wonder Card.")
-            Layout.fillWidth: true
-        }
-
-        RowLayout {
+                      "Whenever you Acquire a Wonder Card you may immediately remove from "
+                      + "the game another card from your Discard Pile, from your hand (no Points "
+                      + "will be gained from it), or from your Playing Area (after having gained "
+                      + "the card Points).")
             Layout.bottomMargin: 15
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr(
+                      "This is indicated by the following icon:")
+            Layout.fillWidth: true
+        }
+
+        Image {
+            source: "qrc:/assets/rulebook/04_cards_chpt/WONDER-DISCAR-ICON.png"
+            fillMode: Image.PreserveAspectFit
+
+            Layout.preferredWidth: 61
+            Layout.bottomMargin: 60
             Layout.alignment: Qt.AlignHCenter
-
-            Image {
-                source: "qrc:/assets/tap_icon.png"
-                fillMode: Image.PreserveAspectFit
-                Layout.preferredWidth: 30
-                Layout.preferredHeight: 30
-            }
-        }
-
-        RulebookText {
-            text: qsTr(
-                      "When you Seal a card, rotate it on one side. When a Wonder is sealed, "
-                      + "neither of its Abilities may be used until it is unsealed. You may only "
-                      + "Unseal cards that are sealed. Rotate them back to vertical position to "
-                      + "represent this.")
-            Layout.bottomMargin: 15
-            Layout.fillWidth: true
-        }
-
-        RulebookText {
-            text: qsTr("All Wonders are put into play “Unsealed”.")
-            Layout.bottomMargin: 15
-            Layout.fillWidth: true
-        }
-
-        Pane {
-            Layout.fillWidth: true
-            Layout.bottomMargin: 15
-
-            background: Rectangle {
-                color: "#90433b"
-                opacity: 0.3
-            }
-
-            ColumnLayout {
-                spacing: 0
-                anchors.fill: parent
-
-                RulebookText {
-                    text: qsTr("Unsealed wonder")
-                    horizontalAlignment: Text.AlignHCenter
-                    font.bold: true
-                    font.underline: true
-                    font.pixelSize: 20
-
-                    Layout.fillWidth: true
-                    Layout.bottomMargin: 15
-                }
-
-                Image {
-                    source: "qrc:/assets/wn02.png"
-                    fillMode: Image.PreserveAspectFit
-
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 153
-                    Layout.bottomMargin: 15
-                }
-
-                RulebookText {
-                    text: qsTr("Sealed wonder")
-                    horizontalAlignment: Text.AlignHCenter
-                    font.bold: true
-                    font.underline: true
-                    font.pixelSize: 20
-
-                    Layout.fillWidth: true
-                    Layout.bottomMargin: 15
-                }
-
-                Image {
-                    source: "qrc:/assets/wn02.png"
-                    fillMode: Image.PreserveAspectFit
-                    rotation: 90
-
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 153
-                }
-            }
-        }
-
-        ColumnLayout {
-            spacing: 0
-
-            RulebookText {
-                text: qsTr("secondary abilities effects are listed below")
-                wrapMode: Text.Wrap
-                font.capitalization: Font.AllUppercase
-                font.bold: true
-                font.pixelSize: 18
-                font.letterSpacing: 1
-                horizontalAlignment: Text.AlignHCenter
-
-                Layout.fillWidth: true
-                Layout.bottomMargin: 15
-            }
-
-            RulebookText {
-                text: qsTr("Draw a card")
-                horizontalAlignment: Text.AlignHCenter
-                font.bold: true
-                font.underline: true
-                font.pixelSize: 20
-
-                Layout.fillWidth: true
-                Layout.bottomMargin: 15
-            }
-
-            Image {
-                source: "qrc:/assets/icon_draw_card.png"
-                fillMode: Image.PreserveAspectFit
-
-                Layout.alignment: Qt.AlignHCenter
-                Layout.fillWidth: true
-                Layout.preferredHeight: 105
-                Layout.bottomMargin: 15
-            }
-
-            RulebookText {
-                text: qsTr("Remove a card")
-                horizontalAlignment: Text.AlignHCenter
-                font.bold: true
-                font.underline: true
-                font.pixelSize: 20
-
-                Layout.fillWidth: true
-                Layout.bottomMargin: 15
-            }
-
-            Image {
-                source: "qrc:/assets/icon_remove_card.png"
-                fillMode: Image.PreserveAspectFit
-
-                Layout.alignment: Qt.AlignHCenter
-                Layout.fillWidth: true
-                Layout.preferredHeight: 105
-                Layout.bottomMargin: 20
-            }
         }
     }
 
     // 16
-    Item {
-        height: 28
+    ColumnLayout {
+        id: _cityCards
+        width: root.width
+        spacing: 0
+
+        RulebookSubtitle {
+            Layout.preferredWidth: 317
+            Layout.preferredHeight: 45
+            Layout.alignment: Qt.AlignCenter
+            Layout.bottomMargin: 35
+
+            text: qsTr("city cards")
+            wrapMode: Text.WordWrap
+        }
+
+        Image {
+            source: "qrc:/assets/rulebook/04_cards_chpt/city.png"
+            fillMode: Image.PreserveAspectFit
+
+            Layout.preferredWidth: 248
+            Layout.bottomMargin: 28
+            Layout.alignment: Qt.AlignHCenter
+        }
+
+        RulebookText {
+            text: qsTr("City Cards’ Defence Value is displayed in the upper right corner.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr(
+                      "The slot for Troop Cards is on the bottom left, the slot for Building "
+                      + "Cards is on the bottom right.")
+            Layout.bottomMargin: 60
+            Layout.fillWidth: true
+        }
     }
 
     // 17
     ColumnLayout {
-        id: _extraCards
+        id: _inPlayCards
+        Layout.fillWidth: true
+        spacing: 0
+
+        RulebookSubtitle {
+            Layout.preferredWidth: 317
+            Layout.preferredHeight: 45
+            Layout.alignment: Qt.AlignCenter
+            Layout.bottomMargin: 20
+
+            text: qsTr("in-play cards")
+            wrapMode: Text.WordWrap
+        }
+
+        RulebookText {
+            text: qsTr("Most cards you play are usually discarded onto the Discard Pile "
+                       + "by the End of a Turn. Some cards though are not discarded: Building, "
+                       + "Troop, and Wonder Cards remain In-Play and continue to provide you "
+                       + "their Main Ability Points during each of your turns’ Main Phases, as "
+                       + "long as they are not destroyed or sealed.")
+            wrapMode: Text.WordWrap
+
+            Layout.bottomMargin: 15
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr(
+                      "Secondary Abilities do also benefit from this same rule and if the "
+                      + "requirements are met they may be triggered every turn.")
+            wrapMode: Text.WordWrap
+
+            Layout.bottomMargin: 60
+            Layout.fillWidth: true
+        }
+    }
+
+
+    // How To Play section
+    ColumnLayout {
+        id: _howToPlay
         width: root.width
         spacing: 0
 
         RulebookTitle {
             Layout.fillWidth: true
-            Layout.bottomMargin: 48
+            Layout.bottomMargin: 35
 
-            text: qsTr("extra cards")
+            text: qsTr("how to play")
         }
 
-        RulebookSubtitle {
-            Layout.preferredWidth: 216
-            Layout.preferredHeight: 45
-            Layout.alignment: Qt.AlignCenter
-            Layout.bottomMargin: 28
+        RulebookText {
+            text: qsTr("The player who has most recently seen a dragon, real or fictional, goes first.")
+            wrapMode: Text.WordWrap
 
-            text: qsTr("game variants")
-        }
-
-        Pane {
             Layout.fillWidth: true
-            Layout.bottomMargin: 28
-            clip: true
-
-            background: Item {
-                opacity: 0.3
-
-                Image {
-                    anchors.fill: parent
-                    source: "qrc:/assets/veteran_background.png"
-                    fillMode: Image.PreserveAspectCrop
-                }
-            }
-
-            ColumnLayout {
-                anchors.fill: parent
-
-                RulebookText {
-                    text: qsTr("mercenary troop cards (x4)")
-                    horizontalAlignment: Text.AlignHCenter
-                    font.capitalization: Font.AllUppercase
-                    font.bold: true
-                    font.underline: true
-                    font.pixelSize: 20
-                    color: "#FACDAA"
-
-                    Layout.fillWidth: true
-                    Layout.bottomMargin: 15
-                }
-
-                RulebookText {
-                    text: qsTr(
-                              "During setup, shuffle them into the Asset Deck. "
-                              + "Just like a standard Troop, a Mercenary Card adds its Defence Value "
-                              + "to the one of the City it is guarding. If a legit Attack a City "
-                              + "action is performed against a City guarded by a Mercenary, first "
-                              + "shuffle the Mercenary Troop Card back into the Asset Deck, then destroy the City.")
-
-                    Layout.fillWidth: true
-                }
-            }
+            Layout.bottomMargin: 15
         }
 
-        Pane {
+        RulebookText {
+            text: qsTr(" Each player’s turn has 3 Phases. When these 3 Phases are completed,"
+                       + " the other player may take their turn. The 3 Phases are:")
+            wrapMode: Text.WordWrap
+
             Layout.fillWidth: true
-            clip: true
+            Layout.bottomMargin: 15
+        }
 
-            background: Item {
-                opacity: 0.3
+        RulebookText {
+            text: qsTr("1. Draw Phase")
+            wrapMode: Text.WordWrap
 
-                Image {
-                    anchors.fill: parent
-                    source: "qrc:/assets/event_background.png"
-                    fillMode: Image.PreserveAspectCrop
-                }
-            }
+            Layout.fillWidth: true
+        }
 
-            ColumnLayout {
-                anchors.fill: parent
+        RulebookText {
+            text: qsTr("2. Main Phase")
+            wrapMode: Text.WordWrap
 
-                RulebookText {
-                    text: qsTr("ascension path wonder cards (x2)")
-                    horizontalAlignment: Text.AlignHCenter
-                    font.capitalization: Font.AllUppercase
-                    font.bold: true
-                    font.underline: true
-                    font.pixelSize: 20
-                    color: "#FACDAA"
+            Layout.fillWidth: true
+        }
 
-                    Layout.fillWidth: true
-                    Layout.bottomMargin: 15
-                }
+        RulebookText {
+            text: qsTr("3. End of a Turn")
+            wrapMode: Text.WordWrap
 
-                RulebookText {
-                    text: qsTr(
-                              "During setup, shuffle them into the Wonder Deck. Ascension Path "
-                              + "cannot be Sealed by any means. You may pay to move the Card from "
-                              + "your opponent’s Playing Area to yours, gaining control of it.")
-
-                    Layout.fillWidth: true
-                }
-            }
+            Layout.fillWidth: true
+            Layout.bottomMargin: 60
         }
     }
 
-    // 18
-    Item {
-        height: 28
+    ColumnLayout {
+        id: _drawPhase
+        width: root.width
+        spacing: 0
+
+        RulebookSubtitle {
+            Layout.preferredWidth: 317
+            Layout.preferredHeight: 45
+            Layout.alignment: Qt.AlignCenter
+            Layout.bottomMargin: 35
+
+            text: qsTr("draw phase")
+            wrapMode: Text.Wrap
+        }
+
+        RulebookText {
+            text: qsTr(
+                      "Draw five cards from your House Deck.")
+            wrapMode: Text.WordWrap
+
+            Layout.bottomMargin: 15
+            Layout.fillWidth: true
+        }
+
+        Pane {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 18
+
+            background: Rectangle {
+                implicitWidth: 323
+                implicitHeight: 139
+                color: "#eeeeee"
+                opacity: 0.3
+                radius: 12
+            }
+
+            RulebookText {
+                width: parent.width
+                text: qsTr(
+                          " NOTE: Only on their first turn, a player may decide to "
+                          + "shuffle their starting hand back into the House Deck, then "
+                          + "Draw five new cards.")
+                wrapMode: Text.WordWrap
+
+                Layout.bottomMargin: 15
+            }
+        }
+
+        RulebookText {
+            text: qsTr(
+                      "During a game, there will often be no cards left to Draw "
+                      + "from the House Deck, both during Draw and/or Main Phases. In either "
+                      + "Phase, when this happens, shuffle back your Discard Pile into a new "
+                      + "House Deck, then Draw the cards you need.")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        RulebookText {
+            text: qsTr(
+                      "During a turn Main Phase, if you played all of your cards and "
+                      + "there are no more cards left in both the House Deck and the Discard "
+                      + "Pile, you will have to continue your turn only with the cards currently"
+                      + " in the Playing Area and Cities Area.")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        Pane {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 60
+
+            background: Rectangle {
+                implicitWidth: 323
+                implicitHeight: 139
+                color: "#eeeeee"
+                opacity: 0.3
+                radius: 12
+            }
+
+            RulebookText {
+                width: parent.width
+                text: qsTr(
+                          " NOTE: Acquired cards are always put onto the Discard Pile."
+                          + " When shuffled back they enhance your House Deck.")
+                wrapMode: Text.WordWrap
+            }
+        }
     }
 }
