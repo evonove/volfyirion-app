@@ -3249,7 +3249,7 @@ ObjectModel {
 
         Pane {
             Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight + Layout.margins
+            Layout.preferredHeight: contentHeight
             Layout.bottomMargin: 15
 
             background: Rectangle {
@@ -3257,7 +3257,7 @@ ObjectModel {
                 radius: 12
             }
 
-            contentItem: ColumnLayout {
+            ColumnLayout {
                 width: parent.width
                 anchors.margins: 16
                 spacing: 0
@@ -3283,15 +3283,33 @@ ObjectModel {
                 }
 
                 RulebookText {
-                    text: qsTr("All downloadable Volfyirion rulebooks (PDF) available at: "
-                               + "\https://tabula.games/extrarules/volfyirion")
+                    text: qsTr("All downloadable Volfyirion rulebooks (PDF) available at: ")
                     font.letterSpacing: 0.5
                     wrapMode: Text.WordWrap
                     horizontalAlignment: Qt.AlignHCenter
 
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 16
                 }
+
+                Label {
+                    id: _link
+                    text: qsTr("https://mysthea.tabula.games/volfyirion/extra-rules")
+                    font.pixelSize: 18
+                    font.underline: true
+                    wrapMode: Text.WordWrap
+
+                     horizontalAlignment: Qt.AlignHCenter
+
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                    Layout.bottomMargin: 16
+
+                    MouseArea {
+                        anchors.fill: _link
+                        onClicked: Qt.openUrlExternally("https://mysthea.tabula.games/volfyirion/extra-rules")
+                    }
+                }
+
             }
         }
     }
