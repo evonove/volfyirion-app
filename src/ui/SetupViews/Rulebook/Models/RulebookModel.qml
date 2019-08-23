@@ -2528,4 +2528,773 @@ ObjectModel {
 
     }
 
+    // element: 32
+    Item {
+        height: 48
+    }
+
+    // element: 33
+    ColumnLayout {
+        id: _extraCards
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+
+            text: qsTr("extra cards")
+        }
+    }
+
+    // element: 34
+    ColumnLayout {
+        id: _gameVariants
+        width: root.width
+        spacing: 0
+
+        RulebookSubtitle {
+            Layout.preferredWidth: 317
+            Layout.preferredHeight: 45
+            Layout.alignment: Qt.AlignCenter
+            Layout.bottomMargin: 16
+
+            text: qsTr("game variants")
+            wrapMode: Text.WordWrap
+            font.pixelSize: 16
+        }
+
+        RulebookText {
+            text: qsTr("Here is a list of additional cards to provide players with further layers "
+                       + "of challenge. We highly recommend to add these variants only once you "
+                       + "have mastered the classic game.")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Each set of cards come with its own rules and is independent from the "
+                       + "others. Feel free to combine more than one to enhance your experience.")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        // MERCENARY TROOP CARDS
+        Pane {
+            Layout.fillWidth: true
+            Layout.preferredHeight: contentHeight
+            Layout.alignment: Qt.AlignHCenter
+            Layout.bottomMargin: 15
+
+            background: Image {
+                source: "qrc:/assets/veteran_background.png"
+                fillMode: Image.PreserveAspectCrop
+
+                layer.enabled: true
+                layer.effect: OpacityMask {
+                    maskSource: Item {
+                        width: background.width
+                        height: background.height
+                        Rectangle {
+                            anchors.centerIn: parent
+                            width:  background.width
+                            height: background.height
+                            color:"#FACDAA"
+                            opacity: 0.3
+                            radius: 4
+                        }
+                    }
+                }
+            }
+
+            contentItem: ColumnLayout {
+                width: parent.width
+                anchors.margins: 16
+                spacing: 0
+
+                RulebookText {
+                    text: qsTr("MERCENARY TROOP CARDS (x4)")
+                    font.capitalization: Font.AllUppercase
+                    font.pixelSize: 23
+                    font.bold: true
+
+                    color: "#FACDAA"
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("During setup, shuffle them into the Asset Deck.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Just like a standard Troop, a Mercenary Card adds "
+                               + "its Defence Value to the one of the City it is guarding.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("If a legit Attack a City action is performed against a City "
+                               + "guarded by a Mercenary, first shuffle the Mercenary Troop "
+                               + "Card back into the Asset Deck, then destroy the City.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 21
+                }
+            }
+        }
+
+        // ASCENSION PATH WONDER CARDS
+        Pane {
+            Layout.fillWidth: true
+            Layout.preferredHeight: contentHeight
+            Layout.alignment: Qt.AlignHCenter
+            Layout.bottomMargin: 15
+
+            background: Image {
+                // TODO: change background source
+                source: "qrc:/assets/veteran_background.png"
+                fillMode: Image.PreserveAspectCrop
+
+                layer.enabled: true
+                layer.effect: OpacityMask {
+                    maskSource: Item {
+                        width: background.width
+                        height: background.height
+                        Rectangle {
+                            anchors.centerIn: parent
+                            width:  background.width
+                            height: background.height
+                            color:"#FACDAA"
+                            opacity: 0.3
+                            radius: 4
+                        }
+                    }
+                }
+            }
+
+            contentItem: ColumnLayout {
+                width: parent.width
+                anchors.margins: 16
+
+                RulebookText {
+                    text: qsTr("ASCENSION PATH WONDER CARDS (x2)")
+                    font.capitalization: Font.AllUppercase
+                    font.pixelSize: 23
+                    font.bold: true
+
+                    color: "#FACDAA"
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("During setup, shuffle them into the Wonder Deck. Ascension Path cannot be Sealed"
+                               + " by any means.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("You may pay")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                // TODO: Add image
+
+                RulebookText {
+                    text: qsTr("to move the Card from your opponent’s Playing Area to yours, gaining control of it.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 21
+                }
+            }
+        }
+
+        // SABOTEUR COMMAND CARDS (x2)
+        Pane {
+            Layout.fillWidth: true
+            Layout.preferredHeight: contentHeight
+            Layout.alignment: Qt.AlignHCenter
+            Layout.bottomMargin: 15
+
+            background: Image {
+                // TODO: change background source
+                source: "qrc:/assets/veteran_background.png"
+                fillMode: Image.PreserveAspectCrop
+
+                layer.enabled: true
+                layer.effect: OpacityMask {
+                    maskSource: Item {
+                        width: background.width
+                        height: background.height
+                        Rectangle {
+                            anchors.centerIn: parent
+                            width:  background.width
+                            height: background.height
+                            color:"#FACDAA"
+                            opacity: 0.3
+                            radius: 4
+                        }
+                    }
+                }
+            }
+
+            contentItem: ColumnLayout {
+                width: parent.width
+                anchors.margins: 16
+                spacing: 0
+
+                RulebookText {
+                    text: qsTr("SABOTEUR COMMAND CARDS (x2)")
+                    font.capitalization: Font.AllUppercase
+                    font.pixelSize: 23
+                    font.bold: true
+
+                    color: "#FACDAA"
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("During setup, shuffle them into the Asset Deck.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("When you Acquire a Saboteur Card from the Asset Row, place it onto "
+                               + "the opponent’s Discard Pile.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Saboteur Cards are unremovable by other cards’ effects "
+                               + "(e.g.: Wonders).")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 21
+                }
+            }
+        }
+
+        // PERK CARDS
+        Pane {
+            Layout.fillWidth: true
+            Layout.preferredHeight: contentHeight
+            Layout.alignment: Qt.AlignHCenter
+            Layout.bottomMargin: 15
+
+            background: Image {
+                // TODO: change background source
+                source: "qrc:/assets/veteran_background.png"
+                fillMode: Image.PreserveAspectCrop
+
+                layer.enabled: true
+                layer.effect: OpacityMask {
+                    maskSource: Item {
+                        width: background.width
+                        height: background.height
+                        Rectangle {
+                            anchors.centerIn: parent
+                            width:  background.width
+                            height: background.height
+                            color:"#FACDAA"
+                            opacity: 0.3
+                            radius: 4
+                        }
+                    }
+                }
+            }
+
+            contentItem: ColumnLayout {
+                width: parent.width
+                anchors.margins: 16
+                spacing: 0
+
+                RulebookText {
+                    text: qsTr("PERK CARDS (x4)")
+                    font.capitalization: Font.AllUppercase
+                    font.pixelSize: 23
+                    font.bold: true
+
+                    color: "#FACDAA"
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Perk Cards are meant to provide an asymmetrical experience.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("During setup, shuffle them and randomly deal one to each player. Both cards"
+                               + " are immediately revealed and placed aside the respective Playing Areas.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Perk Cards provide ongoing effects for an entire game, and are unremovable"
+                               + " by any means.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("QOAM ARMORY")
+                    font.capitalization: Font.AllUppercase
+                    font.bold: true
+                    bottomPadding: 0
+
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("You may perform the Defeat Volfyirion action by spending just 14 Battle Points.")
+                    wrapMode: Text.WordWrap
+                    topPadding: 0
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("ANOMALY COLLIDER")
+                    font.capitalization: Font.AllUppercase
+                    font.bold: true
+
+                    wrapMode: Text.WordWrap
+                    bottomPadding: 0
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Once per turn you may Seal one of your Wonder Cards to immediately "
+                               + "Gain Knowledge Points equal to the Wonder Card’s cost.")
+                    wrapMode: Text.WordWrap
+                    topPadding: 0
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("QOAM ORACLE")
+                    font.capitalization: Font.AllUppercase
+                    font.bold: true
+                    bottomPadding: 0
+
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("You may Acquire the top card of the Asset Deck as if it were part "
+                               + "of the Asset Row.")
+                    wrapMode: Text.WordWrap
+                    topPadding: 0
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("HEROES PARTY")
+                    font.capitalization: Font.AllUppercase
+                    font.bold: true
+                    bottomPadding: 0
+
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("You may spend 4 Battle Points to Acquire the Wonder Deck’s top card "
+                               + "without paying its cost.")
+                    wrapMode: Text.WordWrap
+                    topPadding: 0
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 21
+                }
+            }
+        }
+
+        // PLOY CARDS
+        Pane {
+            Layout.fillWidth: true
+            Layout.preferredHeight: contentHeight
+            Layout.alignment: Qt.AlignHCenter
+            Layout.bottomMargin: 15
+
+            background: Image {
+                // TODO: change background source
+                source: "qrc:/assets/veteran_background.png"
+                fillMode: Image.PreserveAspectCrop
+
+                layer.enabled: true
+                layer.effect: OpacityMask {
+                    maskSource: Item {
+                        width: background.width
+                        height: background.height
+                        Rectangle {
+                            anchors.centerIn: parent
+                            width:  background.width
+                            height: background.height
+                            color:"#FACDAA"
+                            opacity: 0.3
+                            radius: 4
+                        }
+                    }
+                }
+            }
+
+            contentItem: ColumnLayout {
+                width: parent.width
+                anchors.margins: 16
+                spacing: 0
+
+                RulebookText {
+                    text: qsTr("PLOY CARDS (x6)")
+                    font.capitalization: Font.AllUppercase
+                    font.pixelSize: 23
+                    font.bold: true
+
+                    color: "#FACDAA"
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Ploy Cards are meant to provide an asymmetrical experience.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("During setup, shuffle them and randomly deal one to each "
+                               + "player. Keep your card secret from your opponent. ")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("A Ploy Card is immediately triggered upon meeting a certain condition, "
+                               + "even during your opponent’s turn. As soon as the requirement is met, "
+                               + "reveal the card and resolve its effect. After that, remove the triggered "
+                               + "Ploy Card from the game.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 10
+                }
+
+                RulebookText {
+                    text: qsTr("MIRAGE CITY")
+                    font.capitalization: Font.AllUppercase
+                    font.bold: true
+                    bottomPadding: 0
+
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Requirement: The opponent Moves Volfyirion over one of your Cities.")
+                    wrapMode: Text.WordWrap
+                    topPadding: 0
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Effect: Immediately Move Volfyirion back to the Volfyirion’s Lair Card.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("DOUBLE SHIFT")
+                    font.capitalization: Font.AllUppercase
+                    font.bold: true
+                    bottomPadding: 0
+
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Requirement: The opponent performs their first Attack action against "
+                               + "one of your Cities. Effect: For this turn, raise the Defence of your"
+                               + " City by 2 Defence Points. Battle Points spent by your opponent "
+                               + "are lost.")
+                    wrapMode: Text.WordWrap
+                    topPadding: 0
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 10
+                }
+
+                RulebookText {
+                    text: qsTr("QOAM INSTABILITY")
+                    font.capitalization: Font.AllUppercase
+                    font.bold: true
+                    bottomPadding: 0
+
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Requirement: There are two In-Play Buildings Cards across the two Cities Areas.")
+                    wrapMode: Text.WordWrap
+                    topPadding: 0
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Effect: Immediately destroy both Buildings currently In-Play.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("AFTERTHOUGHT")
+                    font.capitalization: Font.AllUppercase
+                    font.bold: true
+                    bottomPadding: 0
+
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Requirement: There are two In-Play Troop Cards across the two Cities Areas.")
+                    wrapMode: Text.WordWrap
+                    topPadding: 0
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Effect: Immediately destroy both Troops currently In-Play.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("CRYSTALLIZATION")
+                    font.capitalization: Font.AllUppercase
+                    font.bold: true
+                    bottomPadding: 0
+
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Requirement: There are three In-Play Wonder Cards across the two Playing Areas.")
+                    wrapMode: Text.WordWrap
+                    topPadding: 0
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Effect: Immediately destroy all three Wonder Cards currently In-Play.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("SECOND CHANCE")
+                    font.capitalization: Font.AllUppercase
+                    font.bold: true
+                    bottomPadding: 0
+
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Requirement: Your opponent uses the Remove Ability of a Troop Card"
+                               + " to Attack one of your Cities.")
+                    wrapMode: Text.WordWrap
+                    topPadding: 0
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Effect: You may immediately recover that Troop Card and place it "
+                               + "onto one of your Cities.")
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 21
+                }
+            }
+        }
+    }
+
+    // element: 35
+    Item {
+        height: 48
+    }
+
+    // element: 36
+    ColumnLayout {
+        id: _extraRules
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+
+            text: qsTr("extra rules")
+        }
+
+        RulebookText {
+            text: qsTr("EXTENDED GAME MODE - REBUILDING CITIES")
+            font.capitalization: Font.AllUppercase
+            font.bold: true
+
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+            Layout.preferredWidth: 323
+        }
+
+        RulebookText {
+            text: qsTr("To rebuild a City, spend the amount of Points shown on its destroyed side, "
+                       + "then flip the City Card on its pristine side. If that City gets destroyed "
+                       + "a second time, remove that City Card from the game.")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+        }
+        RulebookText {
+            text: qsTr("Finally, end your turn.")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("VOLFYIRION - BACK")
+            font.capitalization: Font.AllUppercase
+            font.bold: true
+
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+            Layout.preferredWidth: 323
+        }
+
+        RulebookText {
+            text: qsTr("Use the backside of the Volfyirion’s Lair Card when playing the 2vs2 "
+                       + "Team mode. Please consider that this mode requires two copies of "
+                       + "the game.")
+            wrapMode: Text.WordWrap
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        // TODO: Add separator image
+
+        Pane {
+            Layout.fillWidth: true
+            Layout.preferredHeight: contentHeight + Layout.margins
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                opacity: 0.1
+                radius: 12
+            }
+
+            contentItem: ColumnLayout {
+                width: parent.width
+                anchors.margins: 16
+                spacing: 0
+
+                RulebookText {
+                    text: qsTr("If you want to expand your gameplay experience, try one of the special rules below!")
+                    font.letterSpacing: 0.5
+                    wrapMode: Text.WordWrap
+                    horizontalAlignment: Qt.AlignHCenter
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Face Volfyirion alone in Solo Play, ask a friend for help with the Co-op mode, "
+                               + "join forces with the 2vs2 Team mode, or experiment with all the other extra "
+                               + "rules available! ")
+                    font.letterSpacing: 0.5
+                    wrapMode: Text.WordWrap
+                    horizontalAlignment: Qt.AlignHCenter
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("All downloadable Volfyirion rulebooks (PDF) available at: "
+                               + "\https://tabula.games/extrarules/volfyirion")
+                    font.letterSpacing: 0.5
+                    wrapMode: Text.WordWrap
+                    horizontalAlignment: Qt.AlignHCenter
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 16
+                }
+            }
+        }
+    }
+
+
 }

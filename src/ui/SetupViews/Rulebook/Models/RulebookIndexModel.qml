@@ -81,4 +81,19 @@ ListModel {
         element: 31
         subitem: true
     }
+    ListElement {
+        title: qsTr("Extra Cards")
+        element: 33
+        subitem: false
+    }
+    ListElement {
+        title: qsTr("Game variants")
+        element: 34
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Extra Rules")
+        element: 36
+        subitem: false
+    }
 }
