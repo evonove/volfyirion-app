@@ -212,5 +212,61 @@
         <file>assets/rulebook/04_cards_chpt/WONDER-DISCAR-ICON@2x.png</file>
         <file>assets/rulebook/04_cards_chpt/WONDER-DISCAR-ICON@3x.png</file>
         <file>assets/rulebook/04_cards_chpt/WONDER-DISCAR-ICON@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_move_volf-b.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_move_volf-b@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_move_volf-b@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_move_volf-b@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_raw1card-b.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_raw1card-b@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_raw1card-b@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_raw1card-b@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_1card.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_1card@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_1card@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_1card@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_building.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_building@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_building@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_building@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_troop.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_troop@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_troop@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/icon_remove_troop@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/MOVE-VOLFYIRION.png</file>
+        <file>assets/rulebook/05_how-to-play/MOVE-VOLFYIRION@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/MOVE-VOLFYIRION@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/MOVE-VOLFYIRION@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/points-card.png</file>
+        <file>assets/rulebook/05_how-to-play/points-card@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/points-card@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/points-card@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/seal-unseal.png</file>
+        <file>assets/rulebook/05_how-to-play/seal-unseal@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/seal-unseal@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/seal-unseal@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/SEAL-WONDER.png</file>
+        <file>assets/rulebook/05_how-to-play/SEAL-WONDER@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/SEAL-WONDER@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/SEAL-WONDER@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/SINERGY_1.png</file>
+        <file>assets/rulebook/05_how-to-play/SINERGY_1@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/SINERGY_1@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/SINERGY_1@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/SINERGY_2.png</file>
+        <file>assets/rulebook/05_how-to-play/SINERGY_2@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/SINERGY_2@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/SINERGY_2@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/sinergy_3.png</file>
+        <file>assets/rulebook/05_how-to-play/sinergy_3@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/sinergy_3@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/sinergy_3@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/volf_display_app_2.png</file>
+        <file>assets/rulebook/05_how-to-play/volf_display_app_2@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/volf_display_app_2@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/volf_display_app_2@4x.png</file>
+        <file>assets/rulebook/05_how-to-play/volf_display_app_3.png</file>
+        <file>assets/rulebook/05_how-to-play/volf_display_app_3@2x.png</file>
+        <file>assets/rulebook/05_how-to-play/volf_display_app_3@3x.png</file>
+        <file>assets/rulebook/05_how-to-play/volf_display_app_3@4x.png</file>
     </qresource>
 </RCC>

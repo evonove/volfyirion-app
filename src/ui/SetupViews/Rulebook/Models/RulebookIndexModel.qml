@@ -66,4 +66,19 @@ ListModel {
         element: 25
         subitem: true
     }
+    ListElement {
+        title: qsTr("Main phase")
+        element: 27
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Actions")
+        element: 29
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("End of a turn")
+        element: 31
+        subitem: true
+    }
 }
