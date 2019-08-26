@@ -3558,7 +3558,7 @@ ObjectModel {
 
     // element: 42
     ColumnLayout {
-        id: _rulesSection
+        id: _rulesSoloSection
         width: root.width
         spacing: 0
 
@@ -3957,7 +3957,7 @@ ObjectModel {
 
     // element: 44
     ColumnLayout {
-        id: _victorySection
+        id: _victorySoloSection
         width: root.width
         spacing: 0
 
@@ -3990,7 +3990,7 @@ ObjectModel {
 
     // element: 46
     ColumnLayout {
-        id: _difficultySettingSection
+        id: _difficultySettingSoloSection
         width: root.width
         spacing: 0
 
@@ -4017,5 +4017,473 @@ ObjectModel {
             Layout.alignment: Qt.AlignHCenter
         }
 
+    }
+
+    // element: 47
+    Item {
+        height: 48
+    }
+
+    // element: 48
+    ColumnLayout {
+        id: _teamMode
+        width: root.width
+        spacing: 0
+
+        ModeLabel {
+            width: parent.width
+            userConditionUrl: "qrc:/assets/rulebook/00_game-conditions-main-ruleb.svg"
+            playMode: qsTr("team mode")
+
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("Before attempting a Team Versus game, we highly recommend the players to first play some "
+                       + "games of the standard mode, mastering the bases of Volfyirion: Card Game.")
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        // TODO: add separator
+
+        RulebookText {
+            text: qsTr("To play a Team Versus game of Volfyirion you and your friends will need two "
+                       + "copies of the game, one for each team. ")
+
+            Layout.fillWidth: true
+            Layout.topMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("In this game-mode, a team wins when all enemy Strongholds are destroyed.")
+            Layout.fillWidth: true
+        }
+
+    }
+
+    // element: 49
+    Item {
+        height: 48
+    }
+
+    // element: 50
+    ColumnLayout {
+        id: _teamModeSetup
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("setup")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("The setup is similar to the standard game. Teammates sit one next to each other, facing their opponents.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("With one copy of the game, set up on one side of the table two House Decks, an Asset "
+                       + "Deck with its Row, a Lair with two Wonders, and a Wonder Deck. Use the Volfyirion’s "
+                       + "Lair Card four-player side in this mode.")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        RulebookText {
+            text: qsTr("NOTE: Extra Cards are not used in this mode.")
+            leftPadding: 15
+            rightPadding: 15
+
+            background: Rectangle {
+                implicitHeight: 58
+                implicitWidth: 300
+                color: "#eeeeee"
+                opacity: 0.3
+                radius: 12
+            }
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        RulebookText {
+            text: qsTr("Rotate and combine the six City Cards in pairs to assemble three Strongholds, each with "
+                       + "18 Defence Value (10+8, 9+9, and 8+10). Each Stronghold is considered as a City "
+                       + "when applying rules and effects.")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        RulebookText {
+            text: qsTr("ASYMMETRIC VARIANT: Each team may decide how to combine City Cards into Strongholds.")
+            leftPadding: 15
+            rightPadding: 15
+
+            background: Rectangle {
+                implicitHeight: 112
+                implicitWidth: 300
+                color: "#4C2628"
+                radius: 12
+            }
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        // TODO: Add separator
+
+        RulebookText {
+            text: qsTr("With the second copy of the game, set up on the other side of the table in a mirrored manner.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("During setup, place a single Volfyirion Token away from the two Lair Cards. Put back "
+                       + "into the box the other token, as you will only need one.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("A setup example of one team follows on the next two pages.")
+
+            Layout.fillWidth: true
+        }
+
+        Pane {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                implicitHeight: 769
+                implicitWidth: 347
+                color: "#4C2628"
+                radius: 12
+            }
+
+            // TODO: Add image
+
+            ColumnLayout {
+                width: parent.width
+                spacing: 0
+
+                RulebookText {
+                    text: qsTr(
+                              "Player area close-up")
+                    wrapMode: Text.WordWrap
+                    padding: 0
+
+                    font.capitalization: Font.AllUppercase
+                    horizontalAlignment: Text.AlignHCenter
+
+                    background: Rectangle {
+                        implicitHeight: 40
+                        implicitWidth: 300
+                        color: "#eeeeee"
+                        opacity: 0.3
+                        radius: 12
+                    }
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 15
+                }
+
+                // TODO: Add image
+            }
+        }
+
+
+    }
+
+    // element: 51
+    Item {
+        height: 48
+    }
+
+    // element: 52
+    ColumnLayout {
+        id: _rulesTeamSection
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("rules")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("The Team Versus mode follows the standard game rules, aside from the changes listed below.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("The middle Stronghold is shared between teammates, while the other two Strongholds are "
+                       + "each own by the player on their respective side. Players can play Troops and Buildings "
+                       + "as normal in their own Stronghold. As for the shared Stronghold, no Building can be played "
+                       + "in it while players can deploy Troops following standard rules. ")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Whenever a player Plays a card, its Secondary Abilities requirements are met only by other "
+                       + "cards played from their hand, from cards on the Stronghold they own or from Troop "
+                       + "Cards on the shared Stronghold.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Turns are not individual, teammates perform their turn altogether, and they can freely discuss"
+                       + " their preferences on cards to Acquire or to Play.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Players Gain and spend Command Points individually.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Players Gain and spend Battle and Knowledge Points as a team. Players are free to spend "
+                       + "them as they please to perform actions, following standard game rules. ")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Allied players share the same Asset Row, Asset Deck, Volfyirion Lair’s Card, and Wonder Deck.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Whenever a card from the Asset Row is acquired, its space is immediately refilled.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("The same applies for the Wonders on the Volfyirion Lair’s Card.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("When acquiring a Wonder Card, teammates may decide which of them benefits "
+                       + "of the Wonder Card removal bonus.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Seal/Unseal mechanic is now extended to the opponent team’s Asset Row.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("If you, as a team, pay Knowledge Points equal to a card’s cost on the enemy "
+                       + "Asset Row, you may Seal that card (rotate it on its side).")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Players can neither Acquire nor Replace a sealed card in the Asset Row"
+                       + " until they pay Knowledge Points equal to its cost to Unseal it (rotate it back to represent this).")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Move Volfyrion")
+            font.capitalization: Font.AllUppercase
+            font.bold: true
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Volfyirion enters the game the very first time any of the teams performs a Move Volfyirion action. "
+                       + "In this case, Volfyirion starts its movement from the playing team Lair Card.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("A team may pay 9 Knowledge Points to Move the Volfyirion Token onto the enemy team’s Lair Card.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("A team may pay 9 Knowledge Points to Move the Volfyirion Token from the enemy Lair onto "
+                       + "an enemy Stronghold.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("A team may pay 16 Knowledge Points to Move the Volfyirion Token from any location onto "
+                       + "an enemy Stronghold.")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        Pane {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                color: "#4C2628"
+                radius: 12
+            }
+            ColumnLayout {
+                width: parent.width
+                spacing: 0
+                // TODO: Add image
+
+                RulebookText {
+                    text: qsTr(
+                              "Team 1’s middle Stronghold is being besieged by Volfyirion. They could spend 16 Knowledge "
+                              + "Points to send it onto an enemy Stronghold but they do not have enough points. By spending "
+                              + "just 9 Knowledge Points they at least manage to repel Volfyirion onto the opponents’ "
+                              + "Lair Card.")
+                    wrapMode: Text.WordWrap
+                    padding: 0
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 15
+                }
+            }
+        }
+
+        Pane {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                color: "#eeeeee"
+                radius: 12
+                opacity: 0.1
+            }
+            ColumnLayout {
+                width: parent.width
+                spacing: 0
+                // TODO: Add image
+
+                RulebookText {
+                    text: qsTr(
+                              "Following the previous example: Team 2 players decide to spend 9 Knowledge Points and move "
+                              + "Volfyirion from their Lair Card onto the enemy’s one.")
+                    wrapMode: Text.WordWrap
+                    padding: 0
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 15
+                }
+            }
+        }
+
+        RulebookText {
+            text: qsTr("VOLFYIRION’S CLUTCH")
+            font.capitalization: Font.AllUppercase
+            font.bold: true
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("As long as Volfyirion is guarding a Lair on one side of the table, the corresponding team needs to "
+                       + "pay 2 additional Battle Points to Acquire a Wonder from that Lair.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("DEFEAT VOLFYIRION")
+            font.capitalization: Font.AllUppercase
+            font.bold: true
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Defeating Volfyirion costs 32 Battle Points.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("The team which achieves this feat gets all Wonder Cards present on their Lair Card. "
+                       + "Decide how to distribute the Wonder Cards, then immediately put them in play.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Both teammates get to thin their decks by removing a single card (apply Wonder "
+                       + "Cards removal ability).")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr(" Then both Lairs crumble to the ground: remove from the game both Volfyirion’s Lair "
+                       + "Cards, any Wonder Cards still present on them, and both Wonder Decks. ")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("The Volfyirion Token is removed from the game and all actions related to it become unavailable.")
+
+            Layout.fillWidth: true
+        }
+    }
+
+    // element: 53
+    Item {
+        height: 48
+    }
+
+    // element: 54
+    ColumnLayout {
+        id: _victoryTeamSection
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("victory")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("A team immediately wins the game after destroying all three enemy Strongholds.")
+
+            Layout.fillWidth: true
+        }
+    }
+
+    // element: 54
+    Item {
+        height: 48
     }
 }

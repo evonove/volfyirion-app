@@ -121,4 +121,24 @@ ListModel {
         element: 46
         subitem: true
     }
+    ListElement {
+        title: qsTr("Team mode")
+        element: 48
+        subitem: false
+    }
+    ListElement {
+        title: qsTr("Setup")
+        element: 50
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Rules")
+        element: 52
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Victory")
+        element: 54
+        subitem: true
+    }
 }
