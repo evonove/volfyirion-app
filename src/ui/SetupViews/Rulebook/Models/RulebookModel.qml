@@ -298,7 +298,7 @@ ObjectModel {
             source: "qrc:/assets/rulebook/03_game-setup/game-setup_composition.png"
             fillMode: Image.PreserveAspectFit
 
-            Layout.preferredHeight: 127
+            Layout.preferredHeight: 141
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
             Layout.bottomMargin: 15
@@ -438,9 +438,10 @@ ObjectModel {
                        + "the Asset Deck’s top card face down during the game.")
             font.letterSpacing: 0.05
             wrapMode: Text.WordWrap
-            leftPadding: 28
-            rightPadding: 28
-            bottomPadding: 21
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
 
             background: Rectangle {
                 implicitWidth: 200
@@ -515,9 +516,10 @@ ObjectModel {
                       "NOTE: In Volfyirion, “Discard” and “Remove” are two different operations. "
                       + "Removed cards (and tokens) leave the game and are put back into the box.")
             wrapMode: Text.WordWrap
-            leftPadding: 28
-            rightPadding: 28
-            bottomPadding: 21
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
 
             background: Rectangle {
                 implicitWidth: 200
@@ -594,7 +596,6 @@ ObjectModel {
                 text: qsTr("command points")
                 font.capitalization: Font.AllUppercase
                 horizontalAlignment: Text.AlignHCenter
-                padding: 0
 
                 Layout.fillWidth: false
                 Layout.alignment: Qt.AlignHCenter
@@ -604,7 +605,6 @@ ObjectModel {
         RulebookText {
             text: qsTr("Command Points are used by players to:")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
             Layout.bottomMargin: 15
@@ -613,7 +613,6 @@ ObjectModel {
         RulebookText {
             text: qsTr("- Acquire cards from the Asset Row")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
             Layout.bottomMargin: 0
@@ -622,7 +621,6 @@ ObjectModel {
         RulebookText {
             text: qsTr("- Redeploy Troops between Cities.")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
             Layout.topMargin: 0
@@ -674,7 +672,6 @@ ObjectModel {
         RulebookText {
             text: qsTr("- Acquire Wonder Cards from Volfyirion’s Lair")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -682,7 +679,6 @@ ObjectModel {
         RulebookText {
             text: qsTr("- Attack a City")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.bottomMargin: 15
             Layout.fillWidth: true
@@ -733,7 +729,6 @@ ObjectModel {
         RulebookText {
             text: qsTr("- Seal/Unseal Wonder Cards in both Playing Areas")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -741,7 +736,6 @@ ObjectModel {
         RulebookText {
             text: qsTr("- Replace a card in the Asset Row with a new one")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -803,9 +797,9 @@ ObjectModel {
                       "The grey banner represents cards that are considered neutral.")
 
             topPadding: _flagsImg.height
-            leftPadding: 28
-            rightPadding: 28
-            bottomPadding: 21
+            leftPadding: 17
+            rightPadding: 17
+            bottomPadding: 15
 
             Layout.bottomMargin: 15
 
@@ -1038,7 +1032,7 @@ ObjectModel {
         }
 
         RulebookText {
-            text: qsTr(" Each player’s turn has 3 Phases. When these 3 Phases are completed,"
+            text: qsTr("Each player’s turn has 3 Phases. When these 3 Phases are completed,"
                        + " the other player may take their turn. The 3 Phases are:")
             wrapMode: Text.WordWrap
 
@@ -1103,9 +1097,10 @@ ObjectModel {
                       + "shuffle their starting hand back into the House Deck, then "
                       + "Draw five new cards.")
             wrapMode: Text.WordWrap
-            leftPadding: 28
-            rightPadding: 28
-            bottomPadding: 21
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
 
             background: Rectangle {
                 implicitWidth: 200
@@ -1147,9 +1142,10 @@ ObjectModel {
                       " NOTE: Acquired cards are always put onto the Discard Pile."
                       + " When shuffled back they enhance your House Deck.")
             wrapMode: Text.WordWrap
-            leftPadding: 28
-            rightPadding: 28
-            bottomPadding: 21
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
 
             background: Rectangle {
                 implicitWidth: 200
