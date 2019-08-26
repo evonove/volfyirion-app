@@ -2590,7 +2590,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Image {
-                source: "qrc:/assets/veteran_background.png"
+                source: "qrc:/assets/rulebook/06_extra-cards/mercenary-troop_BG.png"
                 fillMode: Image.PreserveAspectCrop
 
                 layer.enabled: true
@@ -2656,14 +2656,15 @@ ObjectModel {
 
         // ASCENSION PATH WONDER CARDS
         Pane {
+            implicitHeight: 336
+
             Layout.fillWidth: true
             Layout.preferredHeight: contentHeight
             Layout.alignment: Qt.AlignHCenter
             Layout.bottomMargin: 15
 
             background: Image {
-                // TODO: change background source
-                source: "qrc:/assets/veteran_background.png"
+                source: "qrc:/assets/rulebook/06_extra-cards/ascension-path_BG.png"
                 fillMode: Image.PreserveAspectCrop
 
                 layer.enabled: true
@@ -2714,7 +2715,13 @@ ObjectModel {
                     Layout.fillWidth: true
                 }
 
-                // TODO: Add image
+                Image {
+                    source: "qrc:/assets/rulebook/06_extra-cards/ASCENSION-PATH-ICON.png"
+
+                    Layout.preferredWidth: 61
+                    Layout.preferredHeight: 61
+                    Layout.alignment: Qt.AlignHCenter
+                }
 
                 RulebookText {
                     text: qsTr("to move the Card from your opponent’s Playing Area to yours, gaining control of it.")
@@ -2734,8 +2741,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Image {
-                // TODO: change background source
-                source: "qrc:/assets/veteran_background.png"
+                source: "qrc:/assets/rulebook/06_extra-cards/saboteur_BG.png"
                 fillMode: Image.PreserveAspectCrop
 
                 layer.enabled: true
@@ -2800,14 +2806,15 @@ ObjectModel {
 
         // PERK CARDS
         Pane {
+            implicitHeight: 828
+
             Layout.fillWidth: true
             Layout.preferredHeight: contentHeight
             Layout.alignment: Qt.AlignHCenter
             Layout.bottomMargin: 15
 
             background: Image {
-                // TODO: change background source
-                source: "qrc:/assets/veteran_background.png"
+                source: "qrc:/assets/rulebook/06_extra-cards/perk-cards_BG.png"
                 fillMode: Image.PreserveAspectCrop
 
                 layer.enabled: true
@@ -2951,14 +2958,15 @@ ObjectModel {
 
         // PLOY CARDS
         Pane {
+            implicitHeight: 1365
+
             Layout.fillWidth: true
             Layout.preferredHeight: contentHeight
             Layout.alignment: Qt.AlignHCenter
             Layout.bottomMargin: 15
 
             background: Image {
-                // TODO: change background source
-                source: "qrc:/assets/veteran_background.png"
+                source: "qrc:/assets/rulebook/06_extra-cards/ploy-cards_BG.png"
                 fillMode: Image.PreserveAspectCrop
 
                 layer.enabled: true
@@ -3242,10 +3250,16 @@ ObjectModel {
             wrapMode: Text.WordWrap
 
             Layout.fillWidth: true
-            Layout.bottomMargin: 27
+            Layout.bottomMargin: 15
         }
 
-        // TODO: Add separator image
+        Image {
+            source: "qrc:/assets/rulebook/divider_final.png"
+            fillMode: Image.PreserveAspectFit
+
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignHCenter
+        }
 
         Pane {
             Layout.fillWidth: true
