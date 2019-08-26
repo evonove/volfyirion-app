@@ -102,18 +102,23 @@ ListModel {
         subitem: false
     }
     ListElement {
-        title: qsTr("setup")
+        title: qsTr("Setup")
         element: 40
         subitem: true
     }
     ListElement {
-        title: qsTr("rules")
+        title: qsTr("Rules")
         element: 42
         subitem: true
     }
     ListElement {
-        title: qsTr("victory")
+        title: qsTr("Victory")
         element: 44
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Difficulty settings")
+        element: 46
         subitem: true
     }
 }
