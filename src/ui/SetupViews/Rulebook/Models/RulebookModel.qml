@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.0
 
 import ".."
+import Volfy.Controls 1.0
 
 ObjectModel {
     id: root
@@ -1998,6 +1999,7 @@ ObjectModel {
 
             Layout.fillWidth: true
         }
+
         ColumnLayout {
             Layout.fillWidth: true
             Layout.bottomMargin: 15
@@ -3410,5 +3412,528 @@ ObjectModel {
         }
     }
 
+    // element: 37
+    Item {
+        height: 48
+    }
 
+    // element: 38
+    ColumnLayout {
+        id: _soloMode
+        width: root.width
+        spacing: 0
+
+        ModeLabel {
+            width: parent.width
+            userConditionUrl: "qrc:/assets/rulebook/00_game-conditions-main-ruleb.svg"
+            playMode: qsTr("solo mode")
+
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("Before attempting a Solo game, we highly recommend the player to first "
+                       + "play some games of the standard mode, mastering the bases of Volfyirion: "
+                       + "Card Game.")
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        // TODO: add separator
+
+        RulebookText {
+            text: qsTr("In the Solo Mode of the game, you confront Volfyirion itself in a race "
+                       + "against time. The mighty creature will unleash its fury on you as soon as "
+                       + "given the chance. Never forget to keep an eye on it, as you may find "
+                       + "yourself cornered in no time.")
+
+            Layout.fillWidth: true
+            Layout.topMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("Your goal is to either defeat or subjugate the dreadful dragon.")
+            Layout.fillWidth: true
+        }
+
+    }
+
+    // element: 39
+    Item {
+        height: 48
+    }
+
+    // element: 40
+    ColumnLayout {
+        id: _soloModeSetup
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("setup")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("The setup for the Solo Play is similar to the standard game.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Place three Cities in front of you, each with a different Defence Value. "
+                       + "Put back into the box the three Cities left. Remove from the game every "
+                       + "card that contains a “Move Volfyirion” Secondary Ability.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Perk, Ploy, and other Extra Cards are not used in this mode.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Assemble, shuffle and place both the Asset Deck and Wonder Deck face down."
+                       + " Prepare the Asset Row and Volfyirion’s Lair as usual.")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        Pane {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                color: "#eeeeee"
+                radius: 12
+                opacity: 0.1
+            }
+            ColumnLayout {
+                width: parent.width
+                spacing: 0
+                // TODO: Add image
+
+                RulebookText {
+                    text: qsTr(
+                              "Please consider this image as a reference for setup.")
+                    wrapMode: Text.WordWrap
+                    padding: 0
+                    horizontalAlignment: Text.AlignHCenter
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 15
+                    Layout.leftMargin: 65
+                    Layout.rightMargin: 65
+                }
+            }
+        }
+    }
+
+    // element: 41
+    Item {
+        height: 48
+    }
+
+    // element: 42
+    ColumnLayout {
+        id: _rulesSection
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("rules")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("You may only perform the following actions from the core game:")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Play a card from your hand")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Gain Points from a card")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Use Command Points to Acquire an Asset Card")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Use Command Points to Redeploy a Troop")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Use Battle Points to Acquire a Wonder Card")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Use Knowledge Points to Replace a card in the Asset Row")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Activate a card’s Secondary Ability")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Spend 16 Battle Points to Attack Volfyirion")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("At the beginning of each of your turns and whenever you "
+                       + "Play a card that remains In-Play (Wonder, Building, Troop),"
+                       + " draw a card from the Asset Deck without revealing it, then "
+                       + "place it face down in front of you to form what will be "
+                       + "called henceforth the Rage Pile. All these cards are always "
+                       + "added to the bottom of the Rage Pile.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("During a turn, whenever you need to shuffle back your Discard "
+                       + "Pile as the House Deck, move the Volfyirion Token from the "
+                       + "Volfyirion’s Lair close to the Rage Pile as a reminder.")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        Pane {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                color: "#eeeeee"
+                radius: 12
+                opacity: 0.1
+            }
+            ColumnLayout {
+                width: parent.width
+                spacing: 0
+                // TODO: Add image
+
+                RulebookText {
+                    text: qsTr(
+                              "Example: The player has just played a Wonder Card, thus they are forced "
+                              + "to draw a card from the Asset Deck and add it to the bottom of the Rage "
+                              + "Pile [A].")
+                    wrapMode: Text.WordWrap
+                    padding: 0
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 15
+                }
+            }
+        }
+
+        Pane {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                color: "#eeeeee"
+                radius: 12
+                opacity: 0.1
+            }
+            ColumnLayout {
+                width: parent.width
+                spacing: 0
+                // TODO: Add image
+
+                RulebookText {
+                    text: qsTr(
+                              "Following the previous example: At the beginning of their next turn, "
+                              + "the player adds another card to the Rage Pile [B]. Then they have to "
+                              + "reshuffle their Discard Pile into a new House Deck in order to draw. "
+                              + "This triggers Volfyirion, which is moved next to the Rage Pile [C]. "
+                              + "By the end of the turn, Volfyirion will attack.")
+                    wrapMode: Text.WordWrap
+                    padding: 0
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 15
+                }
+            }
+        }
+
+        RulebookText {
+            text: qsTr("At the End of a Turn phase (after you have followed the main game instructions),"
+                       + " if the Volfyirion Token is away from its Lair, Volfyirion attacks. ")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Reveal all cards from the Rage Pile, then follow these steps in order:")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("1. For each Troop Card revealed, choose a Troop you currently have In-Play "
+                       + "to be removed from the game. Then put all revealed Troop Cards aside.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("2. For each Building Card revealed, choose a Building you currently have "
+                       + "In-Play to be removed from the game. Then put all revealed Building Cards aside.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("3. If Command Cards are revealed, sum up all their Command Point costs, then add "
+                       + "1 point for each destroyed City. That number represents Volfyirion’s Battle "
+                       + "Points for the current turn. If it is equal or greater than the Defence Value "
+                       + "of one of your Cities (plus stationing Troops), the creature destroys the City. "
+                       + "Volfyirion may destroy multiple Cities in the same turn, provided it has enough "
+                       + "Battle Points to spend for each City. If possible, Volfyirion always destroys the "
+                       + "City with the highest Defence Value between those available. Exceeding Points are "
+                       + "lost.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("4. If Command Cards were revealed at the previous step, sum up all Knowledge Points "
+                       + "from their Main Abilities. Volfyirion spends those points to Seal your Wonders "
+                       + "In-Play from the most expensive to the less expensive. Exceeding Points are lost.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("5. Put aside all Command Cards revealed from the Rage Pile, except the one with the "
+                       + "highest value. Put that one card face up, as the first of a new Rage Pile — "
+                       + "following cards will be put beneath it.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("6. Volfyirion has unleashed its rage and it’s now done playing with you. "
+                       + "To represent this, move the Volfyirion Token back onto the Volfyirion’s Lair. "
+                       + "The turn has now ended and you may start over with the next turn.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("If your last City is destroyed during step 3, you lose the game.")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        Pane {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                color: "#eeeeee"
+                radius: 12
+                opacity: 0.1
+            }
+            ColumnLayout {
+                width: parent.width
+                spacing: 0
+                // TODO: Add image
+
+                RulebookText {
+                    text: qsTr(
+                              "Following the previous example:")
+                    wrapMode: Text.WordWrap
+                    padding: 0
+
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr(
+                              "The cards in the Rage Pile are revealed. There is a Troop Card, a Building "
+                              + "Card, and two Command Cards. At step 1, the Troop stationing the City "
+                              + "gets destroyed [D] and the revealed Troop Card is put aside. Since the "
+                              + "player owns no Buildings, step 2 is not resolved, but the revealed Building"
+                              + " Card is put aside as well. At step 3, the combined Command Points of the "
+                              + "two Command Cards are equal to 9, enough to destroy the 9 Defense Points "
+                              + "City [E]. At step 4, the Command Cards’ 3 Knowledge Points are used to "
+                              + "Seal the player’s Wonder [F].")
+                    wrapMode: Text.WordWrap
+                    padding: 0
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 15
+                }
+            }
+        }
+
+        Pane {
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                color: "#eeeeee"
+                radius: 12
+                opacity: 0.1
+            }
+            ColumnLayout {
+                width: parent.width
+                spacing: 0
+                // TODO: Add image
+
+                RulebookText {
+                    text: qsTr(
+                              "At step 5, the revealed Command Card with the highest cost is kept as the first card of a new "
+                              + "Rage Pile [G], while the other Command Card is put aside along with the others [H]. At step 6, "
+                              + "Volfyirion’s Token is moved back onto the Lair Card [I].")
+                    wrapMode: Text.WordWrap
+                    padding: 0
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: 15
+                }
+            }
+        }
+
+        RulebookText {
+            text: qsTr("To face Volfyirion, you may perform new actions:")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        RulebookText {
+            text: qsTr("- Spend 6 Knowledge Points to put aside the top card of the Rage Pile ")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Spend 6 Battle Points to put aside the top card of the Rage Pile")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Spend 16 Knowledge Points to Subjugate Volfyirion")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("In the rare case that no more cards are left to draw from the Asset Deck, take the cards you "
+                       + "put aside during the game and shuffle them back to form a new Asset Deck.")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        RulebookText {
+            text: qsTr("NOTE: Cards that were removed from the game are not put back into the deck.")
+
+            background: Rectangle {
+                implicitWidth: 200
+                implicitHeight: 80
+                color: "#eeeeee"
+                opacity: 0.3
+                radius: 12
+            }
+
+            Layout.fillWidth: true
+            Layout.margins: 15
+        }
+    }
+
+    // element: 43
+    Item {
+        height: 48
+    }
+
+    // element: 44
+    ColumnLayout {
+        id: _victorySection
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("victory")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("If you manage to gather enough Battle Points to Attack Volfyirion you ward off the creature and get to "
+                       + "live another day, immediately winning the game.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("If you manage to gather enough Knowledge Points to Subjugate Volfyirion you put the creature under your "
+                       + "control, immediately winning the game.")
+
+            Layout.fillWidth: true
+        }
+    }
+
+    // element: 45
+    Item {
+        height: 48
+    }
+
+    // element: 46
+    ColumnLayout {
+        id: _difficultySettingSection
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("difficulty settings")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("If you want to increase or decrease the level of challenge, consider the table "
+                       + "below when resolving step 3 of Volfyirion’s attack.")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        // TODO: Add image
+
+    }
 }

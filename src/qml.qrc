@@ -268,6 +268,7 @@
         <file>assets/rulebook/05_how-to-play/volf_display_app_3@2x.png</file>
         <file>assets/rulebook/05_how-to-play/volf_display_app_3@3x.png</file>
         <file>assets/rulebook/05_how-to-play/volf_display_app_3@4x.png</file>
+        <file>style/Volfy/Controls/ModeLabel.qml</file>
         <file>assets/rulebook/divider_final.png</file>
         <file>assets/rulebook/divider_final@2x.png</file>
         <file>assets/rulebook/divider_final@3x.png</file>

@@ -2,3 +2,4 @@ module Volfy.Controls
 ButtonShape 1.0 ButtonShape.qml
 GrowlButton 1.0 GrowlButton.qml
 PointCounterPlaceholder 1.0 PointCounterPlaceholder.qml
+ModeLabel 1.0 ModeLabel.qml
