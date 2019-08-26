@@ -1194,7 +1194,6 @@ ObjectModel {
             text: qsTr(
                       "- Play a card from your hand")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -1203,7 +1202,6 @@ ObjectModel {
             text: qsTr(
                       "- Gain Points from a card")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -1212,7 +1210,6 @@ ObjectModel {
             text: qsTr(
                       "- Use Command Points to Acquire an Asset Card*")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -1221,7 +1218,6 @@ ObjectModel {
             text: qsTr(
                       "- Use Command Points to Redeploy a Troop")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -1230,7 +1226,6 @@ ObjectModel {
             text: qsTr(
                       "- Use Battle Points to Attack a City")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -1239,7 +1234,6 @@ ObjectModel {
             text: qsTr(
                       "- Use Battle Points to Acquire a Wonder Card*")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -1248,7 +1242,6 @@ ObjectModel {
             text: qsTr(
                       "-Use Knowledge Points to Seal/Unseal a Wonder Card")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -1257,7 +1250,6 @@ ObjectModel {
             text: qsTr(
                       "- Use Knowledge Points to Replace a card in the Asset Row")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -1266,7 +1258,6 @@ ObjectModel {
             text: qsTr(
                       "- Use Knowledge Points to Move Volfyirion")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -1275,7 +1266,6 @@ ObjectModel {
             text: qsTr(
                       "- Activate a card’s Secondary Ability")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
             Layout.bottomMargin: 15
@@ -1285,7 +1275,6 @@ ObjectModel {
             text: qsTr(
                       "*Acquired cards are always put on top of your Discard Pile.")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
             Layout.bottomMargin: 15
@@ -1295,8 +1284,6 @@ ObjectModel {
             text: qsTr(
                       "As special action, once per game, one of the players may be able to:")
             wrapMode: Text.WordWrap
-            padding: 0
-
             Layout.fillWidth: true
             Layout.bottomMargin: 15
         }
@@ -1305,7 +1292,6 @@ ObjectModel {
             text: qsTr(
                       "- Use Battle Points to Defeat Volfyirion")
             wrapMode: Text.WordWrap
-            padding: 0
 
             Layout.fillWidth: true
         }
@@ -1416,6 +1402,11 @@ ObjectModel {
 
         Pane {
             id: _noteSection
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 17
+            rightPadding: 17
+
             Layout.fillWidth: true
             Layout.bottomMargin: 15
 
@@ -1441,7 +1432,6 @@ ObjectModel {
                     text: qsTr(
                               " 1. Play a card that triggers a Building’s Secondary Ability.")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
                 }
@@ -1450,7 +1440,6 @@ ObjectModel {
                     text: qsTr(
                               "2. Gain all bonuses (from both cards).")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
                 }
@@ -1459,8 +1448,6 @@ ObjectModel {
                     text: qsTr(
                               "3. Put In-Play a new Building (removing the old one from the game while doing so).")
                     wrapMode: Text.WordWrap
-                    padding: 0
-
                     Layout.fillWidth: true
                 }
 
@@ -1468,7 +1455,6 @@ ObjectModel {
                     text: qsTr(
                               " 4. Gain all bonuses from the new Building.")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
                 }
@@ -1477,6 +1463,11 @@ ObjectModel {
 
         Pane {
             id: _secondNoteSection
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 17
+            rightPadding: 17
+
             Layout.fillWidth: true
             Layout.bottomMargin: 15
 
@@ -1506,7 +1497,6 @@ ObjectModel {
                               "Player 1 has played five cards and gains the following Points "
                               + "from the Main Abilities: ")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
                     Layout.bottomMargin: 15
@@ -1517,7 +1507,7 @@ ObjectModel {
                               "- 5 Command Points - 1 from Prospector, 1 from Diviner, "
                               + "1 from Apothecary, 2 from Flawless Deploy.")
                     wrapMode: Text.WordWrap
-                    padding: 0
+                    bottomPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -1526,7 +1516,8 @@ ObjectModel {
                     text: qsTr(
                               "- 3 Battle Points - 3 from Flawless Deploy.")
                     wrapMode: Text.WordWrap
-                    padding: 0
+                    topPadding: 0
+                    bottomPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -1535,7 +1526,8 @@ ObjectModel {
                     text: qsTr(
                               "- 6 Knowledge Points - 3 from Diviner, 1 from Apothecary, 2 from Flawless Deploy.")
                     wrapMode: Text.WordWrap
-                    padding: 0
+                    topPadding: 0
+                    bottomPadding: 0
 
                     Layout.fillWidth: true
                     Layout.bottomMargin: 15
@@ -1545,7 +1537,6 @@ ObjectModel {
                     text: qsTr(
                               "No Secondary Abilities’ Synergy Chains are triggered.")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
                 }
@@ -1577,8 +1568,12 @@ ObjectModel {
 
         Pane {
             id: _acquireNoteSection
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 17
+            rightPadding: 17
+
             Layout.fillWidth: true
-            Layout.bottomMargin: 15
 
             background: Rectangle {
                 color: "#eeeeee"
@@ -1587,18 +1582,14 @@ ObjectModel {
             }
             ColumnLayout {
                 width: parent.width
-                anchors.leftMargin: 16
-                anchors.rightMargin: 16
                 spacing: 0
 
                 RulebookText {
                     text: qsTr(
                               "NOTE: Only during their first turn and before acquiring any card:")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 15
                 }
 
                 RulebookText {
@@ -1607,10 +1598,8 @@ ObjectModel {
                               + "the Asset Row to the bottom of the Asset Deck, then refill the Asset "
                               + "Row with the card at the top of the Deck.")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 15
                 }
 
                 RulebookText {
@@ -1619,7 +1608,6 @@ ObjectModel {
                               + " Row to the bottom of the Asset Deck, then refill the Asset Row with "
                               + "another five cards from the top of the Deck.")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
                 }
@@ -1696,9 +1684,11 @@ ObjectModel {
                 opacity: 0.3
             }
 
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 17
+            rightPadding: 17
             wrapMode: Text.WordWrap
-            leftPadding: 16
-            rightPadding: 16
 
             Layout.fillWidth: true
             Layout.bottomMargin: 15
@@ -1767,7 +1757,6 @@ ObjectModel {
                               + "cards by spending the Points they just gained.")
                     wrapMode: Text.WordWrap
                     topPadding: 5
-                    padding: 0
 
                     Layout.fillWidth: true
                 }
@@ -1777,8 +1766,6 @@ ObjectModel {
                               "With 5 Command Points, they Acquire Suicide Mission for 3CP [C] and Hidden "
                               + "Cache for 2CP [D].")
                     wrapMode: Text.WordWrap
-                    padding: 0
-
                     Layout.fillWidth: true
                 }
 
@@ -1786,7 +1773,6 @@ ObjectModel {
                     text: qsTr(
                               "For 2 Battle Points, they Acquire Sharp Qoam [E].")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
                 }
@@ -1795,7 +1781,6 @@ ObjectModel {
                     text: qsTr(
                               "These new cards are put directly onto the Discard Pile [F].")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
                 }
@@ -1805,7 +1790,6 @@ ObjectModel {
                               "The player is left with 1 Battle Point and 6 Knowledge Points to spend for "
                               + "other actions.")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
                 }
@@ -2153,8 +2137,10 @@ ObjectModel {
             text: qsTr(
                       "NOTE: A card’s color does not count for its own Synergy Chain.")
             wrapMode: Text.WordWrap
-            leftPadding: 26
-            rightPadding: 26
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 17
+            rightPadding: 17
 
             background:Rectangle {
                 implicitHeight: 82
@@ -2265,8 +2251,10 @@ ObjectModel {
                       "NOTE: You may decide to only partially gain the depicted bonus or to completely ignore"
                       + " the bonus offered by a card.")
             wrapMode: Text.WordWrap
-            leftPadding: 26
-            rightPadding: 26
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 17
+            rightPadding: 17
 
             background:Rectangle {
                 implicitHeight: 82
@@ -2458,8 +2446,10 @@ ObjectModel {
             text: qsTr(
                       "NOTE: Buildings and Troops are in the Cities Area.")
             wrapMode: Text.WordWrap
-            leftPadding: 16
-            rightPadding: 16
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 17
+            rightPadding: 17
 
             background: Rectangle {
                 implicitHeight: 84
@@ -2477,6 +2467,7 @@ ObjectModel {
             text: qsTr(
                       "- Discard all unplayed cards from your hand.")
             wrapMode: Text.WordWrap
+            topPadding: 0
             bottomPadding: 0
 
             Layout.fillWidth: true
