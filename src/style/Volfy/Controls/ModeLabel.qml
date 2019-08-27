@@ -41,8 +41,8 @@ ColumnLayout {
         smooth: false
 
         Layout.fillWidth: true
-        Layout.preferredWidth: 180
         Layout.preferredHeight: 69
+        sourceSize.height: 69
         Layout.alignment: Qt.AlignHCenter
     }
 }

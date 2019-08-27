@@ -309,5 +309,6 @@
         <file>assets/rulebook/solo-mode/solo-setup_2@2x.png</file>
         <file>assets/rulebook/solo-mode/solo-setup_2@3x.png</file>
         <file>assets/rulebook/solo-mode/solo-setup_2@4x.png</file>
+        <file>assets/rulebook/solo-mode/game-condition-SOLO.svg</file>
     </qresource>
 </RCC>
