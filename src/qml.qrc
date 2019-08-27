@@ -272,29 +272,9 @@
         <file>assets/rulebook/divider_final@2x.png</file>
         <file>assets/rulebook/divider_final@3x.png</file>
         <file>assets/rulebook/divider_final@4x.png</file>
-        <file>assets/rulebook/06_extra-cards/ascension-path_BG.png</file>
-        <file>assets/rulebook/06_extra-cards/ascension-path_BG@2x.png</file>
-        <file>assets/rulebook/06_extra-cards/ascension-path_BG@3x.png</file>
-        <file>assets/rulebook/06_extra-cards/ascension-path_BG@4x.png</file>
         <file>assets/rulebook/06_extra-cards/ASCENSION-PATH-ICON.png</file>
         <file>assets/rulebook/06_extra-cards/ASCENSION-PATH-ICON@2x.png</file>
         <file>assets/rulebook/06_extra-cards/ASCENSION-PATH-ICON@3x.png</file>
         <file>assets/rulebook/06_extra-cards/ASCENSION-PATH-ICON@4x.png</file>
-        <file>assets/rulebook/06_extra-cards/mercenary-troop_BG.png</file>
-        <file>assets/rulebook/06_extra-cards/mercenary-troop_BG@2x.png</file>
-        <file>assets/rulebook/06_extra-cards/mercenary-troop_BG@3x.png</file>
-        <file>assets/rulebook/06_extra-cards/mercenary-troop_BG@4x.png</file>
-        <file>assets/rulebook/06_extra-cards/perk-cards_BG.png</file>
-        <file>assets/rulebook/06_extra-cards/perk-cards_BG@2x.png</file>
-        <file>assets/rulebook/06_extra-cards/perk-cards_BG@3x.png</file>
-        <file>assets/rulebook/06_extra-cards/perk-cards_BG@4x.png</file>
-        <file>assets/rulebook/06_extra-cards/ploy-cards_BG.png</file>
-        <file>assets/rulebook/06_extra-cards/ploy-cards_BG@2x.png</file>
-        <file>assets/rulebook/06_extra-cards/ploy-cards_BG@3x.png</file>
-        <file>assets/rulebook/06_extra-cards/ploy-cards_BG@4x.png</file>
-        <file>assets/rulebook/06_extra-cards/saboteur_BG.png</file>
-        <file>assets/rulebook/06_extra-cards/saboteur_BG@2x.png</file>
-        <file>assets/rulebook/06_extra-cards/saboteur_BG@3x.png</file>
-        <file>assets/rulebook/06_extra-cards/saboteur_BG@4x.png</file>
     </qresource>
 </RCC>
