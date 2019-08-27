@@ -277,5 +277,37 @@
         <file>assets/rulebook/06_extra-cards/ASCENSION-PATH-ICON@2x.png</file>
         <file>assets/rulebook/06_extra-cards/ASCENSION-PATH-ICON@3x.png</file>
         <file>assets/rulebook/06_extra-cards/ASCENSION-PATH-ICON@4x.png</file>
+        <file>assets/rulebook/background/BG-END.png</file>
+        <file>assets/rulebook/background/BG-END@2x.png</file>
+        <file>assets/rulebook/background/BG-END@3x.png</file>
+        <file>assets/rulebook/background/BG-END@4x.png</file>
+        <file>assets/rulebook/background/BG-MODE.png</file>
+        <file>assets/rulebook/background/BG-MODE@2x.png</file>
+        <file>assets/rulebook/background/BG-MODE@3x.png</file>
+        <file>assets/rulebook/background/BG-MODE@4x.png</file>
+        <file>assets/rulebook/solo-mode/difficulty-table-2.png</file>
+        <file>assets/rulebook/solo-mode/difficulty-table-2@2x.png</file>
+        <file>assets/rulebook/solo-mode/difficulty-table-2@3x.png</file>
+        <file>assets/rulebook/solo-mode/difficulty-table-2@4x.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_3.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_3@2x.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_3@3x.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_3@4x.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_4.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_4@2x.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_4@3x.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_4@4x.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_5.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_5@2x.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_5@3x.png</file>
+        <file>assets/rulebook/solo-mode/soloplay-setup_5@4x.png</file>
+        <file>assets/rulebook/solo-mode/solo-setup.png</file>
+        <file>assets/rulebook/solo-mode/solo-setup@2x.png</file>
+        <file>assets/rulebook/solo-mode/solo-setup@3x.png</file>
+        <file>assets/rulebook/solo-mode/solo-setup@4x.png</file>
+        <file>assets/rulebook/solo-mode/solo-setup_2.png</file>
+        <file>assets/rulebook/solo-mode/solo-setup_2@2x.png</file>
+        <file>assets/rulebook/solo-mode/solo-setup_2@3x.png</file>
+        <file>assets/rulebook/solo-mode/solo-setup_2@4x.png</file>
     </qresource>
 </RCC>

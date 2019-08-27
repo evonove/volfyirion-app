@@ -3439,7 +3439,13 @@ ObjectModel {
             Layout.bottomMargin: 27
         }
 
-        // TODO: add separator
+        Image {
+            source: "qrc:/assets/rulebook/divider_final.png"
+            fillMode: Image.PreserveAspectFit
+
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignHCenter
+        }
 
         RulebookText {
             text: qsTr("In the Solo Mode of the game, you confront Volfyirion itself in a race "
@@ -3505,6 +3511,11 @@ ObjectModel {
         }
 
         Pane {
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
+
             Layout.fillWidth: true
             Layout.bottomMargin: 15
 
@@ -3516,7 +3527,13 @@ ObjectModel {
             ColumnLayout {
                 width: parent.width
                 spacing: 0
-                // TODO: Add image
+
+                Image {
+                    source: "qrc:/assets/rulebook/solo-mode/solo-setup.png"
+
+                    fillMode: Image.PreserveAspectFit
+                    Layout.fillWidth: true
+                }
 
                 RulebookText {
                     text: qsTr(
@@ -3657,7 +3674,13 @@ ObjectModel {
             ColumnLayout {
                 width: parent.width
                 spacing: 0
-                // TODO: Add image
+
+                Image {
+                    source: "qrc:/assets/rulebook/solo-mode/solo-setup_2.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                }
 
                 RulebookText {
                     text: qsTr(
@@ -3688,7 +3711,13 @@ ObjectModel {
             ColumnLayout {
                 width: parent.width
                 spacing: 0
-                // TODO: Add image
+
+                Image {
+                    source: "qrc:/assets/rulebook/solo-mode/soloplay-setup_3.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                }
 
                 RulebookText {
                     text: qsTr(
@@ -3792,7 +3821,13 @@ ObjectModel {
             ColumnLayout {
                 width: parent.width
                 spacing: 0
-                // TODO: Add image
+
+                Image {
+                    source: "qrc:/assets/rulebook/solo-mode/soloplay-setup_4.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                }
 
                 RulebookText {
                     text: qsTr(
@@ -3836,8 +3871,13 @@ ObjectModel {
             ColumnLayout {
                 width: parent.width
                 spacing: 0
-                // TODO: Add image
 
+                Image {
+                    source: "qrc:/assets/rulebook/solo-mode/soloplay-setup_5.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                }
                 RulebookText {
                     text: qsTr(
                               "At step 5, the revealed Command Card with the highest cost is kept as the first card of a new "
@@ -3967,7 +4007,13 @@ ObjectModel {
             Layout.bottomMargin: 15
         }
 
-        // TODO: Add image
+        Image {
+            source: "qrc:/assets/rulebook/solo-mode/difficulty-table-2.png"
+            fillMode: Image.PreserveAspectFit
+
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignHCenter
+        }
 
     }
 }

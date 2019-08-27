@@ -9,21 +9,21 @@ ColumnLayout {
     property alias playMode: _mode.text
     spacing: 15
     Item {
-        height: _backgroundSolo.paintedHeight
+        implicitHeight: _backgroundSolo.paintedHeight
         Layout.fillWidth: true
 
         Image {
             id: _backgroundSolo
-            height: 437
-            source: "qrc:/assets/rulebook/rulebook_page_background.png"
-            fillMode: Image.PreserveAspectFit
+
+            source: "qrc:/assets/rulebook/background/BG-MODE.png"
+            fillMode: Image.PreserveAspectCrop
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         Rectangle {
             anchors.fill: _backgroundSolo
-            color: "#80000000"
-            opacity: 0.6
+            color: "#2C2B2B"
+            opacity: 0.1
         }
 
         RulebookElement.RulebookTitle {
