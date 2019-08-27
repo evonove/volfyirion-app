@@ -7,11 +7,10 @@ import "../../../ui/SetupViews/Rulebook" as RulebookElement
 ColumnLayout {
     property alias userConditionUrl: _userConditionUrl.source
     property alias playMode: _mode.text
-//    width: root.width
     spacing: 15
     Item {
-        width: root.width
         height: _backgroundSolo.paintedHeight
+        Layout.fillWidth: true
 
         Image {
             id: _backgroundSolo
@@ -29,13 +28,17 @@ ColumnLayout {
 
         RulebookElement.RulebookTitle {
             id: _mode
+            width: parent.width
             anchors.bottom: _backgroundSolo.bottom
+
+            horizontalAlignment: Qt.AlignHCenter
         }
     }
 
     Image {
         id: _userConditionUrl
         fillMode: Image.PreserveAspectFit
+        smooth: false
 
         Layout.fillWidth: true
         Layout.preferredWidth: 180

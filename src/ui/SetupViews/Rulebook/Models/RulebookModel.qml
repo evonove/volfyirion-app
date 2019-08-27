@@ -3522,13 +3522,13 @@ ObjectModel {
                     text: qsTr(
                               "Please consider this image as a reference for setup.")
                     wrapMode: Text.WordWrap
-                    padding: 0
+
+                    leftPadding: 65
+                    rightPadding: 65
+
                     horizontalAlignment: Text.AlignHCenter
 
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 15
-                    Layout.leftMargin: 65
-                    Layout.rightMargin: 65
                 }
             }
         }
@@ -3560,48 +3560,62 @@ ObjectModel {
 
         RulebookText {
             text: qsTr("- Play a card from your hand")
+            bottomPadding: 0
 
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Gain Points from a card")
+            topPadding: 0
+            bottomPadding: 0
 
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Use Command Points to Acquire an Asset Card")
+            topPadding: 0
+            bottomPadding: 0
 
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Use Command Points to Redeploy a Troop")
+            topPadding: 0
+            bottomPadding: 0
 
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Use Battle Points to Acquire a Wonder Card")
+            topPadding: 0
+            bottomPadding: 0
 
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Use Knowledge Points to Replace a card in the Asset Row")
+            topPadding: 0
+            bottomPadding: 0
 
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Activate a card’s Secondary Ability")
+            topPadding: 0
+            bottomPadding: 0
 
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Spend 16 Battle Points to Attack Volfyirion")
+            topPadding: 0
 
             Layout.fillWidth: true
         }
@@ -3627,6 +3641,11 @@ ObjectModel {
         }
 
         Pane {
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
+
             Layout.fillWidth: true
             Layout.bottomMargin: 15
 
@@ -3646,15 +3665,18 @@ ObjectModel {
                               + "to draw a card from the Asset Deck and add it to the bottom of the Rage "
                               + "Pile [A].")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 15
                 }
             }
         }
 
         Pane {
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
+
             Layout.fillWidth: true
             Layout.bottomMargin: 15
 
@@ -3676,10 +3698,8 @@ ObjectModel {
                               + "This triggers Volfyirion, which is moved next to the Rage Pile [C]. "
                               + "By the end of the turn, Volfyirion will attack.")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 15
                 }
             }
         }
@@ -3756,6 +3776,11 @@ ObjectModel {
         }
 
         Pane {
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
+
             Layout.fillWidth: true
             Layout.bottomMargin: 15
 
@@ -3773,7 +3798,6 @@ ObjectModel {
                     text: qsTr(
                               "Following the previous example:")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
                 }
@@ -3789,15 +3813,18 @@ ObjectModel {
                               + "City [E]. At step 4, the Command Cards’ 3 Knowledge Points are used to "
                               + "Seal the player’s Wonder [F].")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 15
                 }
             }
         }
 
         Pane {
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
+
             Layout.fillWidth: true
             Layout.bottomMargin: 15
 
@@ -3817,10 +3844,8 @@ ObjectModel {
                               + "Rage Pile [G], while the other Command Card is put aside along with the others [H]. At step 6, "
                               + "Volfyirion’s Token is moved back onto the Lair Card [I].")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 15
                 }
             }
         }
@@ -3835,17 +3860,24 @@ ObjectModel {
         RulebookText {
             text: qsTr("- Spend 6 Knowledge Points to put aside the top card of the Rage Pile ")
 
+            bottomPadding: 0
+
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Spend 6 Battle Points to put aside the top card of the Rage Pile")
 
+            topPadding: 0
+            bottomPadding: 0
+
             Layout.fillWidth: true
         }
 
         RulebookText {
             text: qsTr("- Spend 16 Knowledge Points to Subjugate Volfyirion")
+
+            topPadding: 0
 
             Layout.fillWidth: true
         }
@@ -3859,6 +3891,11 @@ ObjectModel {
         }
 
         RulebookText {
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
+
             text: qsTr("NOTE: Cards that were removed from the game are not put back into the deck.")
 
             background: Rectangle {
@@ -3868,9 +3905,6 @@ ObjectModel {
                 opacity: 0.3
                 radius: 12
             }
-
-            Layout.fillWidth: true
-            Layout.margins: 15
         }
     }
 
