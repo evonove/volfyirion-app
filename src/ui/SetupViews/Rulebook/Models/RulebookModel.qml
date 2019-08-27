@@ -1719,8 +1719,12 @@ ObjectModel {
 
         Pane {
             id: _acquirWonderSection
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 17
+            rightPadding: 17
+
             Layout.fillWidth: true
-            Layout.bottomMargin: 15
 
             background: Rectangle {
                 color: "#eeeeee"
@@ -1729,8 +1733,6 @@ ObjectModel {
             }
             ColumnLayout {
                 width: parent.width
-                anchors.leftMargin: 16
-                anchors.rightMargin: 16
                 spacing: 8
 
                 Image {
@@ -1898,8 +1900,12 @@ ObjectModel {
 
         Pane {
             id: _sealSection
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 17
+            rightPadding: 17
+
             Layout.fillWidth: true
-            Layout.bottomMargin: 15
 
             background: Rectangle {
                 color: "#eeeeee"
@@ -1909,8 +1915,6 @@ ObjectModel {
 
             ColumnLayout {
                 width: parent.width
-                anchors.leftMargin: 16
-                anchors.rightMargin: 16
                 spacing: 0
 
                 Image {
@@ -2584,35 +2588,25 @@ ObjectModel {
 
         // MERCENARY TROOP CARDS
         Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 22
+            rightPadding: 22
+
             Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
+            Layout.preferredHeight: contentHeight + topPadding + bottomPadding
             Layout.alignment: Qt.AlignHCenter
+
             Layout.bottomMargin: 15
 
-            background: Image {
-                source: "qrc:/assets/rulebook/06_extra-cards/mercenary-troop_BG.png"
-                fillMode: Image.PreserveAspectCrop
-
-                layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: Item {
-                        width: background.width
-                        height: background.height
-                        Rectangle {
-                            anchors.centerIn: parent
-                            width:  background.width
-                            height: background.height
-                            color:"#FACDAA"
-                            opacity: 0.3
-                            radius: 4
-                        }
-                    }
-                }
+            background: Rectangle {
+                color: "#B58022"
+                opacity: 0.2
+                radius: 12
             }
 
             contentItem: ColumnLayout {
                 width: parent.width
-                anchors.margins: 16
                 spacing: 0
 
                 RulebookText {
@@ -2620,6 +2614,8 @@ ObjectModel {
                     font.capitalization: Font.AllUppercase
                     font.pixelSize: 23
                     font.bold: true
+
+                    leftPadding: 0
 
                     color: "#FACDAA"
                     wrapMode: Text.WordWrap
@@ -2631,6 +2627,9 @@ ObjectModel {
                     text: qsTr("During setup, shuffle them into the Asset Deck.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
                 }
 
@@ -2638,6 +2637,9 @@ ObjectModel {
                     text: qsTr("Just like a standard Troop, a Mercenary Card adds "
                                + "its Defence Value to the one of the City it is guarding.")
                     wrapMode: Text.WordWrap
+
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -2648,51 +2650,45 @@ ObjectModel {
                                + "Card back into the Asset Deck, then destroy the City.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 21
                 }
             }
         }
 
         // ASCENSION PATH WONDER CARDS
         Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 22
+            rightPadding: 22
+
             implicitHeight: 336
 
             Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
+            Layout.preferredHeight: contentHeight + topPadding + bottomPadding
             Layout.alignment: Qt.AlignHCenter
+
             Layout.bottomMargin: 15
 
-            background: Image {
-                source: "qrc:/assets/rulebook/06_extra-cards/ascension-path_BG.png"
-                fillMode: Image.PreserveAspectCrop
-
-                layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: Item {
-                        width: background.width
-                        height: background.height
-                        Rectangle {
-                            anchors.centerIn: parent
-                            width:  background.width
-                            height: background.height
-                            color:"#FACDAA"
-                            opacity: 0.3
-                            radius: 4
-                        }
-                    }
-                }
+            background: Rectangle {
+                color: "#B58022"
+                opacity: 0.2
+                radius: 12
             }
 
             contentItem: ColumnLayout {
                 width: parent.width
-                anchors.margins: 16
-
                 RulebookText {
                     text: qsTr("ASCENSION PATH WONDER CARDS (x2)")
                     font.capitalization: Font.AllUppercase
                     font.pixelSize: 23
                     font.bold: true
+
+                    leftPadding: 0
+                    rightPadding: 0
 
                     color: "#FACDAA"
                     wrapMode: Text.WordWrap
@@ -2705,12 +2701,18 @@ ObjectModel {
                                + " by any means.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
                 }
 
                 RulebookText {
                     text: qsTr("You may pay")
                     wrapMode: Text.WordWrap
+
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -2727,43 +2729,34 @@ ObjectModel {
                     text: qsTr("to move the Card from your opponent’s Playing Area to yours, gaining control of it.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 21
                 }
             }
         }
 
         // SABOTEUR COMMAND CARDS (x2)
         Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 22
+            rightPadding: 22
+
             Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
+            Layout.preferredHeight: contentHeight + topPadding + bottomPadding
             Layout.alignment: Qt.AlignHCenter
+
             Layout.bottomMargin: 15
 
-            background: Image {
-                source: "qrc:/assets/rulebook/06_extra-cards/saboteur_BG.png"
-                fillMode: Image.PreserveAspectCrop
-
-                layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: Item {
-                        width: background.width
-                        height: background.height
-                        Rectangle {
-                            anchors.centerIn: parent
-                            width:  background.width
-                            height: background.height
-                            color:"#FACDAA"
-                            opacity: 0.3
-                            radius: 4
-                        }
-                    }
-                }
+            background: Rectangle {
+                color: "#B58022"
+                opacity: 0.2
+                radius: 12
             }
-
             contentItem: ColumnLayout {
                 width: parent.width
-                anchors.margins: 16
                 spacing: 0
 
                 RulebookText {
@@ -2771,6 +2764,9 @@ ObjectModel {
                     font.capitalization: Font.AllUppercase
                     font.pixelSize: 23
                     font.bold: true
+
+                    leftPadding: 0
+                    rightPadding: 0
 
                     color: "#FACDAA"
                     wrapMode: Text.WordWrap
@@ -2782,6 +2778,9 @@ ObjectModel {
                     text: qsTr("During setup, shuffle them into the Asset Deck.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
                 }
 
@@ -2789,6 +2788,9 @@ ObjectModel {
                     text: qsTr("When you Acquire a Saboteur Card from the Asset Row, place it onto "
                                + "the opponent’s Discard Pile.")
                     wrapMode: Text.WordWrap
+
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -2798,45 +2800,37 @@ ObjectModel {
                                + "(e.g.: Wonders).")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 21
                 }
             }
         }
 
         // PERK CARDS
         Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 22
+            rightPadding: 22
+
             implicitHeight: 828
 
             Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
+            Layout.preferredHeight: contentHeight + topPadding + bottomPadding
             Layout.alignment: Qt.AlignHCenter
+
             Layout.bottomMargin: 15
 
-            background: Image {
-                source: "qrc:/assets/rulebook/06_extra-cards/perk-cards_BG.png"
-                fillMode: Image.PreserveAspectCrop
-
-                layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: Item {
-                        width: background.width
-                        height: background.height
-                        Rectangle {
-                            anchors.centerIn: parent
-                            width:  background.width
-                            height: background.height
-                            color:"#FACDAA"
-                            opacity: 0.3
-                            radius: 4
-                        }
-                    }
-                }
+            background: Rectangle {
+                color: "#B58022"
+                opacity: 0.2
+                radius: 12
             }
 
             contentItem: ColumnLayout {
                 width: parent.width
-                anchors.margins: 16
                 spacing: 0
 
                 RulebookText {
@@ -2844,6 +2838,9 @@ ObjectModel {
                     font.capitalization: Font.AllUppercase
                     font.pixelSize: 23
                     font.bold: true
+
+                    leftPadding: 0
+                    rightPadding: 0
 
                     color: "#FACDAA"
                     wrapMode: Text.WordWrap
@@ -2855,6 +2852,9 @@ ObjectModel {
                     text: qsTr("Perk Cards are meant to provide an asymmetrical experience.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
                 }
 
@@ -2862,6 +2862,9 @@ ObjectModel {
                     text: qsTr("During setup, shuffle them and randomly deal one to each player. Both cards"
                                + " are immediately revealed and placed aside the respective Playing Areas.")
                     wrapMode: Text.WordWrap
+
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -2871,6 +2874,9 @@ ObjectModel {
                                + " by any means.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
                 }
 
@@ -2878,7 +2884,10 @@ ObjectModel {
                     text: qsTr("QOAM ARMORY")
                     font.capitalization: Font.AllUppercase
                     font.bold: true
+
                     bottomPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     wrapMode: Text.WordWrap
 
@@ -2888,7 +2897,10 @@ ObjectModel {
                 RulebookText {
                     text: qsTr("You may perform the Defeat Volfyirion action by spending just 14 Battle Points.")
                     wrapMode: Text.WordWrap
+
                     topPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -2899,7 +2911,10 @@ ObjectModel {
                     font.bold: true
 
                     wrapMode: Text.WordWrap
+
                     bottomPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -2908,7 +2923,10 @@ ObjectModel {
                     text: qsTr("Once per turn you may Seal one of your Wonder Cards to immediately "
                                + "Gain Knowledge Points equal to the Wonder Card’s cost.")
                     wrapMode: Text.WordWrap
+
                     topPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -2917,7 +2935,10 @@ ObjectModel {
                     text: qsTr("QOAM ORACLE")
                     font.capitalization: Font.AllUppercase
                     font.bold: true
+
                     bottomPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     wrapMode: Text.WordWrap
 
@@ -2928,7 +2949,10 @@ ObjectModel {
                     text: qsTr("You may Acquire the top card of the Asset Deck as if it were part "
                                + "of the Asset Row.")
                     wrapMode: Text.WordWrap
+
                     topPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -2937,7 +2961,10 @@ ObjectModel {
                     text: qsTr("HEROES PARTY")
                     font.capitalization: Font.AllUppercase
                     font.bold: true
+
                     bottomPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     wrapMode: Text.WordWrap
 
@@ -2948,47 +2975,37 @@ ObjectModel {
                     text: qsTr("You may spend 4 Battle Points to Acquire the Wonder Deck’s top card "
                                + "without paying its cost.")
                     wrapMode: Text.WordWrap
+
                     topPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 21
                 }
             }
         }
 
         // PLOY CARDS
         Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 22
+            rightPadding: 22
+
             implicitHeight: 1365
 
             Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
+            Layout.preferredHeight: contentHeight + topPadding + bottomPadding
             Layout.alignment: Qt.AlignHCenter
-            Layout.bottomMargin: 15
 
-            background: Image {
-                source: "qrc:/assets/rulebook/06_extra-cards/ploy-cards_BG.png"
-                fillMode: Image.PreserveAspectCrop
-
-                layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: Item {
-                        width: background.width
-                        height: background.height
-                        Rectangle {
-                            anchors.centerIn: parent
-                            width:  background.width
-                            height: background.height
-                            color:"#FACDAA"
-                            opacity: 0.3
-                            radius: 4
-                        }
-                    }
-                }
+            background: Rectangle {
+                color: "#B58022"
+                opacity: 0.2
+                radius: 12
             }
 
             contentItem: ColumnLayout {
                 width: parent.width
-                anchors.margins: 16
                 spacing: 0
 
                 RulebookText {
@@ -2996,6 +3013,9 @@ ObjectModel {
                     font.capitalization: Font.AllUppercase
                     font.pixelSize: 23
                     font.bold: true
+
+                    leftPadding: 0
+                    rightPadding: 0
 
                     color: "#FACDAA"
                     wrapMode: Text.WordWrap
@@ -3007,6 +3027,9 @@ ObjectModel {
                     text: qsTr("Ploy Cards are meant to provide an asymmetrical experience.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
                 }
 
@@ -3014,6 +3037,9 @@ ObjectModel {
                     text: qsTr("During setup, shuffle them and randomly deal one to each "
                                + "player. Keep your card secret from your opponent. ")
                     wrapMode: Text.WordWrap
+
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -3025,6 +3051,9 @@ ObjectModel {
                                + "Ploy Card from the game.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
                     Layout.bottomMargin: 10
                 }
@@ -3033,7 +3062,10 @@ ObjectModel {
                     text: qsTr("MIRAGE CITY")
                     font.capitalization: Font.AllUppercase
                     font.bold: true
+
                     bottomPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     wrapMode: Text.WordWrap
 
@@ -3043,7 +3075,10 @@ ObjectModel {
                 RulebookText {
                     text: qsTr("Requirement: The opponent Moves Volfyirion over one of your Cities.")
                     wrapMode: Text.WordWrap
+
                     topPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -3052,6 +3087,9 @@ ObjectModel {
                     text: qsTr("Effect: Immediately Move Volfyirion back to the Volfyirion’s Lair Card.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
                 }
 
@@ -3059,7 +3097,10 @@ ObjectModel {
                     text: qsTr("DOUBLE SHIFT")
                     font.capitalization: Font.AllUppercase
                     font.bold: true
+
                     bottomPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     wrapMode: Text.WordWrap
 
@@ -3072,7 +3113,10 @@ ObjectModel {
                                + " City by 2 Defence Points. Battle Points spent by your opponent "
                                + "are lost.")
                     wrapMode: Text.WordWrap
+
                     topPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                     Layout.bottomMargin: 10
@@ -3082,7 +3126,10 @@ ObjectModel {
                     text: qsTr("QOAM INSTABILITY")
                     font.capitalization: Font.AllUppercase
                     font.bold: true
+
                     bottomPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     wrapMode: Text.WordWrap
 
@@ -3092,7 +3139,10 @@ ObjectModel {
                 RulebookText {
                     text: qsTr("Requirement: There are two In-Play Buildings Cards across the two Cities Areas.")
                     wrapMode: Text.WordWrap
+
                     topPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -3101,6 +3151,9 @@ ObjectModel {
                     text: qsTr("Effect: Immediately destroy both Buildings currently In-Play.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
                 }
 
@@ -3108,7 +3161,10 @@ ObjectModel {
                     text: qsTr("AFTERTHOUGHT")
                     font.capitalization: Font.AllUppercase
                     font.bold: true
+
                     bottomPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     wrapMode: Text.WordWrap
 
@@ -3118,7 +3174,10 @@ ObjectModel {
                 RulebookText {
                     text: qsTr("Requirement: There are two In-Play Troop Cards across the two Cities Areas.")
                     wrapMode: Text.WordWrap
+
                     topPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -3127,6 +3186,9 @@ ObjectModel {
                     text: qsTr("Effect: Immediately destroy both Troops currently In-Play.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
                 }
 
@@ -3134,7 +3196,10 @@ ObjectModel {
                     text: qsTr("CRYSTALLIZATION")
                     font.capitalization: Font.AllUppercase
                     font.bold: true
+
                     bottomPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     wrapMode: Text.WordWrap
 
@@ -3144,7 +3209,10 @@ ObjectModel {
                 RulebookText {
                     text: qsTr("Requirement: There are three In-Play Wonder Cards across the two Playing Areas.")
                     wrapMode: Text.WordWrap
+
                     topPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -3153,6 +3221,9 @@ ObjectModel {
                     text: qsTr("Effect: Immediately destroy all three Wonder Cards currently In-Play.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
                 }
 
@@ -3160,7 +3231,10 @@ ObjectModel {
                     text: qsTr("SECOND CHANCE")
                     font.capitalization: Font.AllUppercase
                     font.bold: true
+
                     bottomPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     wrapMode: Text.WordWrap
 
@@ -3171,7 +3245,10 @@ ObjectModel {
                     text: qsTr("Requirement: Your opponent uses the Remove Ability of a Troop Card"
                                + " to Attack one of your Cities.")
                     wrapMode: Text.WordWrap
+
                     topPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -3181,8 +3258,10 @@ ObjectModel {
                                + "onto one of your Cities.")
                     wrapMode: Text.WordWrap
 
+                    leftPadding: 0
+                    rightPadding: 0
+
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 21
                 }
             }
         }
@@ -3262,8 +3341,13 @@ ObjectModel {
         }
 
         Pane {
+            leftPadding: 15
+            rightPadding: 15
+            topPadding: 17
+            bottomPadding: 17
+
             Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
+            Layout.preferredHeight: contentHeight + topPadding + bottomPadding
             Layout.bottomMargin: 15
 
             background: Rectangle {
@@ -3273,7 +3357,6 @@ ObjectModel {
 
             ColumnLayout {
                 width: parent.width
-                anchors.margins: 16
                 spacing: 0
 
                 RulebookText {
@@ -3316,7 +3399,6 @@ ObjectModel {
 
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignHCenter
-                    Layout.bottomMargin: 16
 
                     MouseArea {
                         anchors.fill: _link
