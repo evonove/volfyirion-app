@@ -86,7 +86,3 @@ ios {
     app_launch_images.files = $$PWD/ios/LaunchScreen.storyboard
     QMAKE_BUNDLE_DATA += app_launch_images
 }
-
-
-
-

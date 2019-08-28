@@ -6,6 +6,7 @@ import Volfy.Controls 1.0
 import "../" as Ui
 import "./GameSetup" as GameSetup
 import "./Rulebook" as Rulebook
+import "./Rulebook/Models" as Models
 
 Ui.BasePage {
     id: root
@@ -16,6 +17,12 @@ Ui.BasePage {
     height: 400
 
     initialItem: setupContent
+
+    Models.RulebookModel {
+        id: _rulebookModel
+
+        onDownloadAreaClicked: root.push(downloadAreaPage)
+    }
 
     Action {
         id: _backAction
@@ -54,6 +61,8 @@ Ui.BasePage {
             topPadding: root.headerHeight
             hasToolbar: true
 
+            rulebookModel: _rulebookModel
+
             leftAction: _backAction
             rightAction: Action {
                 icon.source: "qrc:/assets/index_icon.svg"
@@ -64,8 +73,6 @@ Ui.BasePage {
                 target: root
                 onOpenSection: scrollTo(element)
             }
-
-            onDownloadAreaClicked: root.push(downloadAreaPage)
         }
     }
 

@@ -14,7 +14,7 @@ ApplicationWindow {
     visible: true
     width: 375
     height: 667
-    title: qsTr("Tabs")
+    title: qsTr("Volfyirion")
     flags: Qt.Window | Qt.MaximizeUsingFullscreenGeometryHint
 
     // A top margin added to various components so that they're not covered

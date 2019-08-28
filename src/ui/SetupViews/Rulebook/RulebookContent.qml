@@ -9,7 +9,7 @@ import "./Models" as Models
 Ui.BaseContent {
     id: root
 
-    signal downloadAreaClicked()
+    property Models.RulebookModel rulebookModel: null
 
     function scrollTo(element) {
         _contentLoader.item.positionViewAtIndex(element, ListView.SnapPosition)
@@ -18,8 +18,9 @@ Ui.BaseContent {
     title: qsTr("rulebook")
 
     isLoading: !(StackView.status === StackView.Active
-                 && _contentLoader.status === Loader.Ready)
-    opacity: isLoading ? 0.0 : 1.0
+                 && _contentLoader.status === Loader.Ready
+                 && root.rulebookModel.status === Loader.Ready)
+    opacity: root.isLoading ? 0.0 : 1.0
 
     Behavior on opacity {
         NumberAnimation {
@@ -29,7 +30,7 @@ Ui.BaseContent {
 
     Ui.Search {
         id: _search
-        searchable: _contentLoader.item.model.searchable
+        searchable: root.rulebookModel.searchable
         onSelectionAt: _contentLoader.item.ensureVisible(cursorRectangle, item)
     }
 
@@ -58,6 +59,19 @@ Ui.BaseContent {
         asynchronous: true
 
         sourceComponent: _listView
+
+        property date started: new Date()
+
+        onStatusChanged: {
+            if (status === Loader.Loading) {
+                started = new Date()
+            }
+            if (status === Loader.Ready) {
+                let finished = new Date()
+                let elapsed = finished - started
+                console.log("Elapsed: " + elapsed)
+            }
+        }
     }
 
     Component {
@@ -89,11 +103,12 @@ Ui.BaseContent {
             spacing: 0
             cacheBuffer: 1000000
 
-            model: Models.RulebookModel {
-                id: _model
-                width: flick.width
-
-                onDownloadAreaClicked: root.downloadAreaClicked()
+            model: root.rulebookModel.model
+            onModelChanged: {
+                // this is needed in order to set the internal width of the
+                // components of the object model to the size of the
+                // list view
+                root.rulebookModel.width = flick.width
             }
         }
     }
