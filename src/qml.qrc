@@ -323,5 +323,50 @@
         <file>assets/rulebook/team-mode/TEAM-SETUP_3@2x.png</file>
         <file>assets/rulebook/team-mode/TEAM-SETUP_3@3x.png</file>
         <file>assets/rulebook/team-mode/TEAM-SETUP_3@4x.png</file>
+        <file>assets/rulebook/coop-mode/COOP-SETUP.png</file>
+        <file>assets/rulebook/coop-mode/COOP-SETUP@2x.png</file>
+        <file>assets/rulebook/coop-mode/COOP-SETUP@3x.png</file>
+        <file>assets/rulebook/coop-mode/COOP-SETUP@4x.png</file>
+        <file>assets/rulebook/coop-mode/game-condition-COOP.svg</file>
+        <file>assets/rulebook/coop-mode/INFO1.png</file>
+        <file>assets/rulebook/coop-mode/INFO1@2x.png</file>
+        <file>assets/rulebook/coop-mode/INFO1@3x.png</file>
+        <file>assets/rulebook/coop-mode/INFO1@4x.png</file>
+        <file>assets/rulebook/coop-mode/INFO2.png</file>
+        <file>assets/rulebook/coop-mode/INFO2@2x.png</file>
+        <file>assets/rulebook/coop-mode/INFO2@3x.png</file>
+        <file>assets/rulebook/coop-mode/INFO2@4x.png</file>
+        <file>assets/rulebook/coop-mode/INFO3.png</file>
+        <file>assets/rulebook/coop-mode/INFO3@2x.png</file>
+        <file>assets/rulebook/coop-mode/INFO3@3x.png</file>
+        <file>assets/rulebook/coop-mode/INFO3@4x.png</file>
+        <file>assets/rulebook/coop-mode/INFO4.png</file>
+        <file>assets/rulebook/coop-mode/INFO4@2x.png</file>
+        <file>assets/rulebook/coop-mode/INFO4@3x.png</file>
+        <file>assets/rulebook/coop-mode/INFO4@4x.png</file>
+        <file>assets/rulebook/coop-mode/INFO5.png</file>
+        <file>assets/rulebook/coop-mode/INFO5@2x.png</file>
+        <file>assets/rulebook/coop-mode/INFO5@3x.png</file>
+        <file>assets/rulebook/coop-mode/INFO5@4x.png</file>
+        <file>assets/rulebook/coop-mode/INFO6.png</file>
+        <file>assets/rulebook/coop-mode/INFO6@2x.png</file>
+        <file>assets/rulebook/coop-mode/INFO6@3x.png</file>
+        <file>assets/rulebook/coop-mode/INFO6@4x.png</file>
+        <file>assets/rulebook/coop-mode/INFO7.png</file>
+        <file>assets/rulebook/coop-mode/INFO7@2x.png</file>
+        <file>assets/rulebook/coop-mode/INFO7@3x.png</file>
+        <file>assets/rulebook/coop-mode/INFO7@4x.png</file>
+        <file>assets/rulebook/coop-mode/INFO8.png</file>
+        <file>assets/rulebook/coop-mode/INFO8@2x.png</file>
+        <file>assets/rulebook/coop-mode/INFO8@3x.png</file>
+        <file>assets/rulebook/coop-mode/INFO8@4x.png</file>
+        <file>assets/rulebook/coop-mode/TAB.png</file>
+        <file>assets/rulebook/coop-mode/TAB@2x.png</file>
+        <file>assets/rulebook/coop-mode/TAB@3x.png</file>
+        <file>assets/rulebook/coop-mode/TAB@4x.png</file>
+        <file>assets/rulebook/coop-mode/TAB_2.png</file>
+        <file>assets/rulebook/coop-mode/TAB_2@2x.png</file>
+        <file>assets/rulebook/coop-mode/TAB_2@3x.png</file>
+        <file>assets/rulebook/coop-mode/TAB_2@4x.png</file>
     </qresource>
 </RCC>
