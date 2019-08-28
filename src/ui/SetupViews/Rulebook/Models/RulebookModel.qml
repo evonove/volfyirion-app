@@ -9,6 +9,8 @@ import Volfy.Controls 1.0
 
 ObjectModel {
     id: root
+    property real contentMargins: 0
+
     signal downloadAreaClicked()
 
     property var searchable: initSearchable()
@@ -3424,10 +3426,13 @@ ObjectModel {
         spacing: 0
 
         ModeLabel {
-            width: parent.width
+//            width: root.width
+//            availableWidthContent: availableWidth
+            contentMargins: root.contentMargins
             userConditionUrl: "qrc:/assets/rulebook/solo-mode/game-condition-SOLO.svg"
             playMode: qsTr("solo mode")
 
+            Layout.fillWidth: true
             Layout.bottomMargin: 27
         }
 
@@ -4031,10 +4036,11 @@ ObjectModel {
         spacing: 0
 
         ModeLabel {
-            width: parent.width
-            userConditionUrl: "qrc:/assets/rulebook/00_game-conditions-main-ruleb.svg"
+            contentMargins: root.contentMargins
+            userConditionUrl: "qrc:/assets/rulebook/team-mode/game-condition-TEAM.svg"
             playMode: qsTr("team mode")
 
+            Layout.fillWidth: true
             Layout.bottomMargin: 27
         }
 
@@ -4045,7 +4051,13 @@ ObjectModel {
             Layout.bottomMargin: 27
         }
 
-        // TODO: add separator
+        Image {
+            source: "qrc:/assets/rulebook/divider_final.png"
+            fillMode: Image.PreserveAspectFit
+
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignHCenter
+        }
 
         RulebookText {
             text: qsTr("To play a Team Versus game of Volfyirion you and your friends will need two "
@@ -4097,8 +4109,10 @@ ObjectModel {
 
         RulebookText {
             text: qsTr("NOTE: Extra Cards are not used in this mode.")
-            leftPadding: 15
-            rightPadding: 15
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
 
             background: Rectangle {
                 implicitHeight: 58
@@ -4123,8 +4137,10 @@ ObjectModel {
 
         RulebookText {
             text: qsTr("ASYMMETRIC VARIANT: Each team may decide how to combine City Cards into Strongholds.")
-            leftPadding: 15
-            rightPadding: 15
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
 
             background: Rectangle {
                 implicitHeight: 112
@@ -4134,10 +4150,16 @@ ObjectModel {
             }
 
             Layout.fillWidth: true
-            Layout.bottomMargin: 15
+            Layout.bottomMargin: 27
         }
 
-        // TODO: Add separator
+        Image {
+            source: "qrc:/assets/rulebook/divider_final.png"
+            fillMode: Image.PreserveAspectFit
+
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignHCenter
+        }
 
         RulebookText {
             text: qsTr("With the second copy of the game, set up on the other side of the table in a mirrored manner.")
@@ -4156,11 +4178,16 @@ ObjectModel {
             text: qsTr("A setup example of one team follows on the next two pages.")
 
             Layout.fillWidth: true
+            Layout.bottomMargin: 15
         }
 
         Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 12
+            rightPadding: 12
+
             Layout.fillWidth: true
-            Layout.bottomMargin: 15
 
             background: Rectangle {
                 implicitHeight: 769
@@ -4169,38 +4196,15 @@ ObjectModel {
                 radius: 12
             }
 
-            // TODO: Add image
-
-            ColumnLayout {
+            Image {
                 width: parent.width
-                spacing: 0
 
-                RulebookText {
-                    text: qsTr(
-                              "Player area close-up")
-                    wrapMode: Text.WordWrap
-                    padding: 0
+                source: "qrc:/assets/rulebook/team-mode/team-setup.png"
+                fillMode: Image.PreserveAspectFit
 
-                    font.capitalization: Font.AllUppercase
-                    horizontalAlignment: Text.AlignHCenter
-
-                    background: Rectangle {
-                        implicitHeight: 40
-                        implicitWidth: 300
-                        color: "#eeeeee"
-                        opacity: 0.3
-                        radius: 12
-                    }
-
-                    Layout.fillWidth: true
-                    Layout.bottomMargin: 15
-                }
-
-                // TODO: Add image
+                horizontalAlignment: Qt.AlignHCenter
             }
         }
-
-
     }
 
     // element: 51
@@ -4346,6 +4350,11 @@ ObjectModel {
         }
 
         Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 12
+            rightPadding: 12
+
             Layout.fillWidth: true
             Layout.bottomMargin: 15
 
@@ -4355,8 +4364,15 @@ ObjectModel {
             }
             ColumnLayout {
                 width: parent.width
-                spacing: 0
-                // TODO: Add image
+                spacing: 15
+
+                Image {
+                    source: "qrc:/assets/rulebook/team-mode/team-setup_2.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                }
 
                 RulebookText {
                     text: qsTr(
@@ -4365,15 +4381,18 @@ ObjectModel {
                               + "just 9 Knowledge Points they at least manage to repel Volfyirion onto the opponents’ "
                               + "Lair Card.")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 15
                 }
             }
         }
 
         Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 12
+            rightPadding: 12
+
             Layout.fillWidth: true
             Layout.bottomMargin: 15
 
@@ -4384,18 +4403,23 @@ ObjectModel {
             }
             ColumnLayout {
                 width: parent.width
-                spacing: 0
-                // TODO: Add image
+                spacing: 15
+
+                Image {
+                    source: "qrc:/assets/rulebook/team-mode/TEAM-SETUP_3.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                }
 
                 RulebookText {
                     text: qsTr(
                               "Following the previous example: Team 2 players decide to spend 9 Knowledge Points and move "
                               + "Volfyirion from their Lair Card onto the enemy’s one.")
                     wrapMode: Text.WordWrap
-                    padding: 0
 
                     Layout.fillWidth: true
-                    Layout.bottomMargin: 15
                 }
             }
         }

@@ -310,5 +310,18 @@
         <file>assets/rulebook/solo-mode/solo-setup_2@3x.png</file>
         <file>assets/rulebook/solo-mode/solo-setup_2@4x.png</file>
         <file>assets/rulebook/solo-mode/game-condition-SOLO.svg</file>
+        <file>assets/rulebook/team-mode/game-condition-TEAM.svg</file>
+        <file>assets/rulebook/team-mode/team-setup.png</file>
+        <file>assets/rulebook/team-mode/team-setup@2x.png</file>
+        <file>assets/rulebook/team-mode/team-setup@3x.png</file>
+        <file>assets/rulebook/team-mode/team-setup@4x.png</file>
+        <file>assets/rulebook/team-mode/team-setup_2.png</file>
+        <file>assets/rulebook/team-mode/team-setup_2@2x.png</file>
+        <file>assets/rulebook/team-mode/team-setup_2@3x.png</file>
+        <file>assets/rulebook/team-mode/team-setup_2@4x.png</file>
+        <file>assets/rulebook/team-mode/TEAM-SETUP_3.png</file>
+        <file>assets/rulebook/team-mode/TEAM-SETUP_3@2x.png</file>
+        <file>assets/rulebook/team-mode/TEAM-SETUP_3@3x.png</file>
+        <file>assets/rulebook/team-mode/TEAM-SETUP_3@4x.png</file>
     </qresource>
 </RCC>

@@ -92,7 +92,7 @@ Ui.BaseContent {
             model: Models.RulebookModel {
                 id: _model
                 width: flick.width
-
+                contentMargins: _contentLoader.anchors.leftMargin + _contentLoader.anchors.rightMargin
                 onDownloadAreaClicked: root.downloadAreaClicked()
             }
         }

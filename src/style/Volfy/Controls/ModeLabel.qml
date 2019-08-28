@@ -5,6 +5,8 @@ import QtQuick.Controls 2.12
 import "../../../ui/SetupViews/Rulebook" as RulebookElement
 
 ColumnLayout {
+    id: root
+    property real contentMargins
     property alias userConditionUrl: _userConditionUrl.source
     property alias playMode: _mode.text
     spacing: 15
@@ -14,7 +16,7 @@ ColumnLayout {
 
         Image {
             id: _backgroundSolo
-
+            width: parent.width + root.contentMargins
             source: "qrc:/assets/rulebook/background/BG-MODE.png"
             fillMode: Image.PreserveAspectCrop
             anchors.horizontalCenter: parent.horizontalCenter
