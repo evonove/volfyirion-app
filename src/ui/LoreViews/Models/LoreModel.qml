@@ -59,7 +59,6 @@ ObjectModel {
             textFormat: Text.RichText
             wrapMode: Text.Wrap
 
-            horizontalAlignment: Text.AlignJustify
             Layout.fillWidth: true
             Layout.leftMargin: 26
             Layout.rightMargin: 26
@@ -113,7 +112,6 @@ ObjectModel {
             textFormat: Text.RichText
             wrapMode: Text.Wrap
 
-            horizontalAlignment: Text.AlignJustify
             Layout.fillWidth: true
             Layout.bottomMargin: 24
             Layout.leftMargin: 26
@@ -146,7 +144,6 @@ ObjectModel {
             textFormat: Text.RichText
             wrapMode: Text.Wrap
 
-            horizontalAlignment: Text.AlignJustify
             Layout.fillWidth: true
             Layout.leftMargin: 26
             Layout.rightMargin: 26
@@ -203,7 +200,6 @@ ObjectModel {
             textFormat: Text.RichText
             wrapMode: Text.Wrap
 
-            horizontalAlignment: Text.AlignJustify
             Layout.fillWidth: true
             Layout.leftMargin: 26
             Layout.rightMargin: 26
@@ -265,7 +261,6 @@ ObjectModel {
             textFormat: Text.RichText
             wrapMode: Text.Wrap
 
-            horizontalAlignment: Text.AlignJustify
             Layout.fillWidth: true
             Layout.leftMargin: 26
             Layout.rightMargin: 26
@@ -329,7 +324,6 @@ ObjectModel {
             textFormat: Text.RichText
             wrapMode: Text.Wrap
 
-            horizontalAlignment: Text.AlignJustify
             Layout.fillWidth: true
             Layout.leftMargin: 26
             Layout.rightMargin: 26
@@ -393,7 +387,6 @@ ObjectModel {
             textFormat: Text.RichText
             wrapMode: Text.Wrap
 
-            horizontalAlignment: Text.AlignJustify
             Layout.fillWidth: true
             Layout.leftMargin: 26
             Layout.rightMargin: 26
@@ -454,7 +447,6 @@ ObjectModel {
             textFormat: Text.RichText
             wrapMode: Text.Wrap
 
-            horizontalAlignment: Text.AlignJustify
             Layout.fillWidth: true
             Layout.bottomMargin: 60
             Layout.leftMargin: 26
