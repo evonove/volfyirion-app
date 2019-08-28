@@ -3833,6 +3833,7 @@ ObjectModel {
                     text: qsTr(
                               "Following the previous example:")
                     wrapMode: Text.WordWrap
+                    bottomPadding: 0
 
                     Layout.fillWidth: true
                 }
@@ -3848,6 +3849,7 @@ ObjectModel {
                               + "City [E]. At step 4, the Command Cards’ 3 Knowledge Points are used to "
                               + "Seal the player’s Wonder [F].")
                     wrapMode: Text.WordWrap
+                    topPadding: 0
 
                     Layout.fillWidth: true
                 }
