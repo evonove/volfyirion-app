@@ -9,6 +9,12 @@ import Volfy.Controls 1.0
 
 ObjectModel {
     id: root
+
+    // Default color
+    readonly property string primaryNotePaneColor: "#eeeeee"
+    readonly property string secondaryNotePaneColor: "#4C2628"
+    readonly property string extraCardsPaneColor: "#B58022"
+
     property real contentMargins: 0
 
     signal downloadAreaClicked()
@@ -449,7 +455,7 @@ ObjectModel {
             background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 40
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 opacity: 0.3
                 radius: 12
             }
@@ -527,7 +533,7 @@ ObjectModel {
             background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 40
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 opacity: 0.3
                 radius: 12
             }
@@ -813,7 +819,7 @@ ObjectModel {
                 Rectangle {
                     implicitWidth: parent.width
                     implicitHeight: parent.height
-                    color: "#eeeeee"
+                    color: root.primaryNotePaneColor
                     opacity: 0.3
                     radius: 12
                 }
@@ -1109,7 +1115,7 @@ ObjectModel {
             background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 40
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 opacity: 0.3
                 radius: 12
             }
@@ -1154,7 +1160,7 @@ ObjectModel {
             background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 40
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 opacity: 0.3
                 radius: 12
             }
@@ -1414,7 +1420,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.3
             }
@@ -1475,7 +1481,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.1
             }
@@ -1579,7 +1585,7 @@ ObjectModel {
             Layout.fillWidth: true
 
             background: Rectangle {
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.3
             }
@@ -1682,7 +1688,7 @@ ObjectModel {
             background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 40
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.3
             }
@@ -1730,7 +1736,7 @@ ObjectModel {
             Layout.fillWidth: true
 
             background: Rectangle {
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.1
             }
@@ -1911,7 +1917,7 @@ ObjectModel {
             Layout.fillWidth: true
 
             background: Rectangle {
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.1
             }
@@ -2153,7 +2159,7 @@ ObjectModel {
             background:Rectangle {
                 implicitHeight: 82
                 implicitWidth: 323
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 opacity: 0.3
                 radius: 12
             }
@@ -2267,7 +2273,7 @@ ObjectModel {
             background:Rectangle {
                 implicitHeight: 82
                 implicitWidth: 323
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 opacity: 0.3
                 radius: 12
             }
@@ -2462,7 +2468,7 @@ ObjectModel {
             background: Rectangle {
                 implicitHeight: 84
                 implicitWidth: 323
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 opacity: 0.3
                 radius: 12
             }
@@ -2604,7 +2610,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#B58022"
+                color: root.extraCardsPaneColor
                 opacity: 0.2
                 radius: 12
             }
@@ -2678,7 +2684,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#B58022"
+                color: root.extraCardsPaneColor
                 opacity: 0.2
                 radius: 12
             }
@@ -2755,7 +2761,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#B58022"
+                color: root.extraCardsPaneColor
                 opacity: 0.2
                 radius: 12
             }
@@ -2828,7 +2834,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#B58022"
+                color: root.extraCardsPaneColor
                 opacity: 0.2
                 radius: 12
             }
@@ -3003,7 +3009,7 @@ ObjectModel {
             Layout.alignment: Qt.AlignHCenter
 
             background: Rectangle {
-                color: "#B58022"
+                color: root.extraCardsPaneColor
                 opacity: 0.2
                 radius: 12
             }
@@ -3523,7 +3529,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.1
             }
@@ -3670,7 +3676,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.1
             }
@@ -3707,7 +3713,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.1
             }
@@ -3817,7 +3823,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.1
             }
@@ -3869,7 +3875,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.1
             }
@@ -3946,7 +3952,7 @@ ObjectModel {
             background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 80
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 opacity: 0.3
                 radius: 12
             }
@@ -4115,7 +4121,7 @@ ObjectModel {
             background: Rectangle {
                 implicitHeight: 58
                 implicitWidth: 300
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 opacity: 0.3
                 radius: 12
             }
@@ -4143,7 +4149,7 @@ ObjectModel {
             background: Rectangle {
                 implicitHeight: 112
                 implicitWidth: 300
-                color: "#4C2628"
+                color: root.secondaryNotePaneColor
                 radius: 12
             }
 
@@ -4190,7 +4196,7 @@ ObjectModel {
             background: Rectangle {
                 implicitHeight: 769
                 implicitWidth: 347
-                color: "#4C2628"
+                color: root.secondaryNotePaneColor
                 radius: 12
             }
 
@@ -4357,7 +4363,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#4C2628"
+                color: root.secondaryNotePaneColor
                 radius: 12
             }
             ColumnLayout {
@@ -4395,7 +4401,7 @@ ObjectModel {
             Layout.bottomMargin: 15
 
             background: Rectangle {
-                color: "#eeeeee"
+                color: root.primaryNotePaneColor
                 radius: 12
                 opacity: 0.1
             }
@@ -4504,8 +4510,818 @@ ObjectModel {
         }
     }
 
-    // element: 54
+    // element: 55
     Item {
         height: 48
+    }
+
+    // element: 56
+    ColumnLayout {
+        id: _coopMode
+        width: root.width
+        spacing: 0
+
+        ModeLabel {
+            contentMargins: root.contentMargins
+            userConditionUrl: "qrc:/assets/rulebook/coop-mode/game-condition-COOP.svg"
+            playMode: qsTr("coop mode")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("Before attempting a Coop game, we highly recommend the players "
+                       + "to first play some games of the standard mode, mastering the "
+                       + "bases of Volfyirion: Card Game.")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        Image {
+            source: "qrc:/assets/rulebook/divider_final.png"
+            fillMode: Image.PreserveAspectFit
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+            Layout.alignment: Qt.AlignHCenter
+        }
+
+        RulebookText {
+            text: qsTr("In Volfyirion Coop Mode, House Volarees and House Rorius join "
+                       + "forces to prevent Volfyirion, which is on a rampage, from "
+                       + "destroying the entire region.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Your goal is to either defeat or subjugate the dreadful dragon. "
+                       + "When the last City standing is destroyed, you lose the game.")
+
+            Layout.fillWidth: true
+        }
+    }
+
+    // element: 57
+    Item {
+        height: 48
+    }
+
+    // element: 58
+    ColumnLayout {
+        id: _coopSetup
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("setup")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("Setup all six City Cards in a circle, where Cities with the same Defence Value "
+                       + "stand opposite to each other. Place the Volfyirion Token on a City with a "
+                       + "Defence Value of 8.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Just like the Standard mode, each player owns three Cities with different "
+                       + "Defence Values. ")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Remove from the game every card that contains a “Move Volfyirion” Secondary "
+                       + "Ability, except for the two Emerald Horn Wonder Cards.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Perk Cards, Ploy Cards, and all the other Extra Cards are not used in this mode.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Put back inside the box the Volfyirion’s Lair Card, as you will not need it.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Shuffle all Wonder Cards face down and put them in the center of the table, as "
+                       + "the Rage Deck. In this mode, Wonders are not available to the players.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr(" Setup the Asset Row, Asset Deck, and House Decks as in the standard game "
+                       + "for both players.")
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 26
+            rightPadding: 26
+
+            Layout.fillWidth: true
+
+            background: Rectangle {
+                implicitHeight: 597
+                implicitWidth: 347
+                color: root.secondaryNotePaneColor
+                radius: 12
+            }
+
+            Image {
+                width: parent.width
+                source: "qrc:/assets/rulebook/coop-mode/COOP-SETUP.png"
+                fillMode: Image.PreserveAspectFit
+                horizontalAlignment: Qt.AlignHCenter
+            }
+        }
+    }
+
+    // element: 59
+    Item {
+        height: 48
+    }
+
+    // element: 60
+    ColumnLayout {
+        id: _coopRules
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("rules")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("The two of you perform actions individually, but during the same Main Phase.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("You both may perform the following actions as normal:")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Play a card from your hand")
+            bottomPadding: 0
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Gain Points from a card")
+            topPadding: 0
+            bottomPadding: 0
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Use Command Points to Acquire an Asset Card")
+            topPadding: 0
+            bottomPadding: 0
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Use Command Points to Redeploy a Troop")
+            topPadding: 0
+            bottomPadding: 0
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Use Knowledge Points to Replace a card in the Asset Row")
+            topPadding: 0
+            bottomPadding: 0
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Activate a card’s Secondary Ability")
+            topPadding: 0
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("In this mode, you both act within the same turn.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("When you are done performing actions, and Volfyirion’s Attack "
+                       + "has been resolved, the turn ends and a new one begins.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("You and your ally may freely discuss how to spend points "
+                       + "and what actions to take in order to achieve victory.")
+            Layout.fillWidth: true
+        }
+    }
+
+    // element: 61
+    Item {
+        height: 48
+    }
+
+    // element: 62
+    ColumnLayout {
+        id: _attackMechanicCoop
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("Attack mechanic")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("Volfyirion’s attack value is determined by the combined cost of the "
+                       + "cards drawn from the Rage Deck.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("1. At the beginning of each turn, draw and reveal three cards from "
+                       + "the Rage Deck, one after another.")
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        RulebookText {
+            text: qsTr("NOTE: At the beginning of the very first turn, draw only two "
+                       + "cards instead.")
+
+            background: Rectangle {
+                implicitHeight: 83
+                implicitWidth: 323
+                color: root.primaryNotePaneColor
+                opacity: 0.3
+                radius: 12
+            }
+
+            leftPadding: 17
+            rightPadding: 17
+            topPadding: 15
+            bottomPadding: 15
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        RulebookText {
+            text: qsTr("When you reveal cards from the Rage Deck arrange them in a two column "
+                       + "grid like this:")
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        Image {
+            source: "qrc:/assets/rulebook/coop-mode/TAB.png"
+            fillMode: Image.PreserveAspectFit
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+            Layout.alignment: Qt.AlignHCenter
+        }
+
+        RulebookText {
+            text: qsTr("Revealed Wonder Cards remain In-Play as long as Volfyirion does not attack.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("If there are no cards left, shuffle back the appropriate Discard Pile.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("2. Move Volfyirion clockwise of as many City Cards as the first revealed "
+                       + "card’s cost.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Destroyed Cities are ignored when Volfyirion moves, as it just continues "
+                       + "its movement onto the next one. Only count standing Cities when moving "
+                       + "Volfyirion.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("3. At the end of each turn, multiply the Wonder Card costs on the first row.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("If that value is not enough to destroy the City Volfyirion is laying siege "
+                       + "to, add the cost of the first card of the next row. If even that is not "
+                       + "enough, instead of adding the value of the third card, multiply the cards "
+                       + "costs on the second row, then sum all rows totals. If only a single card "
+                       + "is present on a row, multiply its value by 1.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("Continue to count the available cards from all rows until the value is "
+                       + "equal to the City’s Defence. The total sum represents the Attack Value "
+                       + "of Volfyirion.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("If this value equals the Defence of the City Volfyirion is currently on, "
+                       + "that City is immediately destroyed by the creature’s attack. Remember "
+                       + "that Troop Cards increase the defence of the City they’re stationing as "
+                       + "usual.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("If there are not enough cards to match the City’s Defence, Volfyirion’s "
+                       + "attack fails.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("When a player’s last City standing is destroyed, they’re out of the "
+                       + "game and cannot play any cards.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("When the very last City standing is destroyed, you lose the game.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("For each destroyed City, add +1 to Volfyirion’s final Attack Value.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("If the final value is not enough to trigger a valid attack by "
+                       + "Volfyirion, ignore step 4) and end the turn. The City is safe, "
+                       + "for now.")
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("4. Discard all Wonder Cards from the grid but the one with the "
+                       + "highest cost among those that were not actually needed to "
+                       + "destroy the City.")
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 12
+            rightPadding: 12
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                implicitHeight: 818
+                implicitWidth: 347
+                color: root.secondaryNotePaneColor
+                radius: 12
+            }
+
+            ColumnLayout {
+                width: parent.width
+                spacing: 15
+
+                Image {
+                    source: "qrc:/assets/rulebook/coop-mode/INFO1.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
+                RulebookText {
+                    text: qsTr("Example: Volfyirion is laying siege to a City with a Defence "
+                               + "Value of 8.")
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("The first row generates 4 Attack Points [A], which is not "
+                               + "enough to destroy the City.")
+                    Layout.fillWidth: true
+                }
+
+                RulebookText {
+                    text: qsTr("Simply adding the 3rd card is not enough as well (+3) so the "
+                               + "second row must be multiplied (12 points) [B] and then "
+                               + "summed to the previous row for a total of 16 points, enough "
+                               + "to destroy the City.")
+                    Layout.fillWidth: true
+                }
+            }
+        }
+
+        Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 12
+            rightPadding: 12
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                implicitHeight: 399
+                implicitWidth: 347
+                color: root.secondaryNotePaneColor
+                radius: 12
+            }
+
+            ColumnLayout {
+                width: parent.width
+                spacing: 15
+
+                Image {
+                    source: "qrc:/assets/rulebook/coop-mode/INFO2.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
+                RulebookText {
+                    text: qsTr("All grid’s cards are now discarded, but between those unused "
+                               + "(Emerald Horn and Glowing Fungii), the card with the highest "
+                               + "value is kept [C].")
+                    Layout.fillWidth: true
+                }
+            }
+        }
+    }
+
+    // element: 63
+    Item {
+        height: 48
+    }
+
+    // element: 64
+    ColumnLayout {
+        id: _actionsCoop
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("actions")
+
+            Layout.fillWidth:true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("To face Volfyirion, both players may perform new actions during a turn:")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Spend Battle Points equal to an In-Play Wonder Card cost to discard "
+                       + "it onto its Discard Pile. May be used multiple times.")
+            bottomPadding: 0
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Spend Knowledge Points equal to an In-Play Wonder Card cost to Seal "
+                       + "it until next turn Draw Phase. A Sealed card is not considered when "
+                       + "resolving Volfyirion’s attacks. May be used multiple times.")
+            topPadding: 0
+            bottomPadding: 0
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Spend 8 Knowledge Points to Move Volfyirion of one City Card clockwise "
+                       + "or counterclockwise. May be used multiple times.")
+            topPadding: 0
+            bottomPadding: 0
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Spend 3 Knowledge Points to remove a card from your hand, from played "
+                       + "cards, or from the Discard Pile (similar to Wonder Cards). May be used "
+                       + "only once per turn by each player.")
+            topPadding: 0
+            bottomPadding: 0
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- Together, players may spend a total of 30 Battle Points to Attack "
+                       + "Volfyirion or 30 Knowledge Points to Subjugate Volfyirion.")
+            topPadding: 0
+            bottomPadding: 0
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("- A player may single-handedly spend a total of 20 Battle Points to "
+                       + "Attack Volfyirion or 20 Knowledge Points to Subjugate Volfyirion.")
+            topPadding: 0
+            bottomPadding: 0
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("The turn of the players follows the standard game rules, as usual.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("When playing a Troop or Building Card, it can be assigned to the other "
+                       + "player’s Cities to help them out, but consider that only owned Cities "
+                       + "benefit a player with the Abilities and colors of the cards they hold.")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 12
+            rightPadding: 12
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                implicitHeight: 733
+                implicitWidth: 347
+                color: root.secondaryNotePaneColor
+                radius: 12
+            }
+
+            ColumnLayout {
+                width: parent.width
+                spacing: 15
+
+                Image {
+                    source: "qrc:/assets/rulebook/coop-mode/INFO3.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
+                RulebookText {
+                    text: qsTr("Example: At the beginning of the turn Emerald Horn, Living Knife, "
+                               + "and Divining Petals are drawn from the Rage Deck. Volfyirion "
+                               + "moves of six spaces landing onto a City with 10 defence Points. "
+                               + "It is ready to deliver a massive attack. ")
+                    Layout.fillWidth: true
+                }
+            }
+        }
+
+        Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 12
+            rightPadding: 12
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                implicitHeight: 633
+                implicitWidth: 347
+                color: root.secondaryNotePaneColor
+                radius: 12
+            }
+
+            ColumnLayout {
+                width: parent.width
+                spacing: 15
+
+                Image {
+                    source: "qrc:/assets/rulebook/coop-mode/INFO4.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
+                RulebookText {
+                    text: qsTr("Player 1 decides to spend 4 Battle Points to remove Void Fluid [A], "
+                               + "while Player 2 decides to spend 4 Battle Points to remove Black "
+                               + "Spores [B]. Player 2 also spends 6 Knowledge Points to seal "
+                               + "Emerald Horn for the time being [C].")
+                    Layout.fillWidth: true
+                }
+            }
+        }
+
+        Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 12
+            rightPadding: 12
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                implicitHeight: 470
+                implicitWidth: 347
+                color: root.secondaryNotePaneColor
+                radius: 12
+            }
+
+            ColumnLayout {
+                width: parent.width
+                spacing: 15
+
+                Image {
+                    source: "qrc:/assets/rulebook/coop-mode/INFO5.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
+                RulebookText {
+                    text: qsTr("By the end of the turn, Volfyirion’s attack is equal to 9 (3 from "
+                               + "the first row plus 6 from the third row), not enough to destroy "
+                               + "the City.")
+                    Layout.fillWidth: true
+                }
+            }
+        }
+
+        Pane {
+            topPadding: 15
+            bottomPadding: 15
+            leftPadding: 12
+            rightPadding: 12
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+
+            background: Rectangle {
+                implicitHeight: 1565
+                implicitWidth: 347
+                color: root.secondaryNotePaneColor
+                radius: 12
+            }
+
+            ColumnLayout {
+                width: parent.width
+                spacing: 15
+
+                RulebookText {
+                    text: qsTr("Following the general rule, the cards are then rearranged to fill the "
+                               + "gaps by being pushed upwards, starting from the left column. If a "
+                               + "card gets stuck on the right column, and the space on its left is "
+                               + "empty, the card is thus moved onto the left column. The example is "
+                               + "split in three phases.")
+                    Layout.fillWidth: true
+                }
+
+
+                Image {
+                    source: "qrc:/assets/rulebook/coop-mode/INFO6.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
+                Image {
+                    source: "qrc:/assets/rulebook/coop-mode/INFO7.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
+                Image {
+                    source: "qrc:/assets/rulebook/coop-mode/INFO8.png"
+                    fillMode: Image.PreserveAspectFit
+
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                }
+            }
+        }
+    }
+
+    // element: 65
+    Item {
+        height: 48
+    }
+
+    // element: 66
+    ColumnLayout {
+        id: _victoryCoop
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("victory")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("If the two of you manage to gather enough Points and Attack Volfyirion, "
+                       + "you defeat the creature by warding it off the region – immediately "
+                       + "winning the game.")
+
+            Layout.fillWidth: true
+        }
+
+        RulebookText {
+            text: qsTr("If the two of you manage to gather enough Knowledge Points to Subjugate "
+                       + "Volfyirion, you put the creature under your control – immediately winning "
+                       + "the game.")
+
+            Layout.fillWidth: true
+        }
+    }
+
+    // element: 69
+    Item {
+        height: 48
+    }
+
+    // element: 70
+    ColumnLayout {
+        id: _difficultySettingCoop
+        anchors.bottomMargin: 222
+        width: root.width
+        spacing: 0
+
+        RulebookTitle {
+            text: qsTr("difficulty setting")
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 27
+        }
+
+        RulebookText {
+            text: qsTr("If you want to increase or decrease the level of challenge, consider the chart "
+                       + "below when resolving step 3) of Volfyirion’s attack.")
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+
+        Image {
+            source: "qrc:/assets/rulebook/coop-mode/TAB_2.png"
+            fillMode: Image.PreserveAspectFit
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: 15
+        }
+    }
+
+
+    Image {
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        source: "qrc:/assets/rulebook/background/BG-END.png"
+        fillMode: Image.PreserveAspectCrop
+        width: root.width + root.contentMargins
+
+        verticalAlignment: Qt.AlignBottom
+        horizontalAlignment: Qt.AlignHCenter
     }
 }
