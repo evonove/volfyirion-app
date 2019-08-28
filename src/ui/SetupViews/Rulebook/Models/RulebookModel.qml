@@ -3426,8 +3426,6 @@ ObjectModel {
         spacing: 0
 
         ModeLabel {
-//            width: root.width
-//            availableWidthContent: availableWidth
             contentMargins: root.contentMargins
             userConditionUrl: "qrc:/assets/rulebook/solo-mode/game-condition-SOLO.svg"
             playMode: qsTr("solo mode")
