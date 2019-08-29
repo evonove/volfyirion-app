@@ -58,7 +58,7 @@ ListModel {
     }
 
     ListElement {
-        language: "Połysk"
+        language: "Polski"
         downloadUrl: "https://volfyirion.s3-eu-west-1.amazonaws.com/rulebooks/Volfyirion_Rulebook_POLISH.pdf"
         type: "base mode"
     }
