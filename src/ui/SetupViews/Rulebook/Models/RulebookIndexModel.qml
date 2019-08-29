@@ -121,4 +121,59 @@ ListModel {
         element: 46
         subitem: true
     }
+    ListElement {
+        title: qsTr("Team mode")
+        element: 48
+        subitem: false
+    }
+    ListElement {
+        title: qsTr("Setup")
+        element: 50
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Rules")
+        element: 52
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Victory")
+        element: 54
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Coop mode")
+        element: 56
+        subitem: false
+    }
+    ListElement {
+        title: qsTr("Setup")
+        element: 58
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Rules")
+        element: 60
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Attack mechanic")
+        element: 62
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Actions")
+        element: 64
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Victory")
+        element: 66
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Difficulty setting")
+        element: 68
+        subitem: true
+    }
 }

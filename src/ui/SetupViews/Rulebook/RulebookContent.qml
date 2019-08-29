@@ -109,6 +109,7 @@ Ui.BaseContent {
                 // components of the object model to the size of the
                 // list view
                 root.rulebookModel.width = flick.width
+                root.rulebookModel.contentMargins = _contentLoader.anchors.leftMargin + _contentLoader.anchors.rightMargin
             }
         }
     }
