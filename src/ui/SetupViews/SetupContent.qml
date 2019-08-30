@@ -18,6 +18,13 @@ Ui.BaseContent {
         source:"qrc:/assets/background.png"
         fillMode: Image.PreserveAspectCrop
         asynchronous: true
+        opacity: Image.Ready ? 1.0 : 0.0
+
+        Behavior on opacity {
+            NumberAnimation {
+                duration: 100
+            }
+        }
 
         Rectangle {
             anchors.fill: parent

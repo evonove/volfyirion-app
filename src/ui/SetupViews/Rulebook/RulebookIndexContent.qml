@@ -26,7 +26,7 @@ Ui.BaseContent {
     ListView {
         anchors.fill: parent
         anchors.margins: 24
-        spacing: 24
+        spacing: 8
 
         boundsBehavior: Flickable.StopAtBounds
         maximumFlickVelocity: 10000
