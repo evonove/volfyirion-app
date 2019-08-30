@@ -69,6 +69,7 @@ Item {
 
                 Image {
                     id: _background
+                    asynchronous: true
                     height: 437
                     source: "qrc:/assets/rulebook/rulebook_page_background.png"
                     fillMode: Image.PreserveAspectFit
@@ -87,6 +88,7 @@ Item {
 
                 Image {
                     id: _logo
+                    asynchronous: true
                     width: 226
                     fillMode: Image.PreserveAspectFit
 
@@ -98,6 +100,7 @@ Item {
 
                 Image {
                     id: userImg
+                    asynchronous: true
                     width: 193
                     fillMode: Image.PreserveAspectFit
 
@@ -326,6 +329,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/03_game-setup/game-setup_composition.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.preferredHeight: 141
@@ -359,6 +363,7 @@ Item {
 
                     Image {
                         source: "qrc:/assets/rulebook/03_game-setup/troop-icon.png"
+                        asynchronous: true
                         fillMode: Image.PreserveAspectFit
                         Layout.preferredWidth: 1
 
@@ -368,6 +373,7 @@ Item {
 
                     Image {
                         source: "qrc:/assets/rulebook/03_game-setup/building-icon.png"
+                        asynchronous: true
                         fillMode: Image.PreserveAspectFit
                         Layout.preferredWidth: 1
 
@@ -377,6 +383,7 @@ Item {
 
                     Image {
                         source: "qrc:/assets/rulebook/03_game-setup/command-icon.png"
+                        asynchronous: true
                         fillMode: Image.PreserveAspectFit
                         Layout.preferredWidth: 1
 
@@ -432,6 +439,7 @@ Item {
 
                     Image {
                         id: img
+                        asynchronous: true
                         source: "qrc:/assets/rulebook/03_game-setup/wonders-icon.png"
                         fillMode: Image.PreserveAspectFit
                         Layout.preferredWidth: 43
@@ -616,6 +624,7 @@ Item {
 
                     Image {
                         source: "qrc:/assets/rulebook/04_cards_chpt/command-big_1.png"
+                        asynchronous: true
                         fillMode: Image.PreserveAspectFit
                         Layout.preferredWidth: 61
                         Layout.preferredHeight: 61
@@ -676,6 +685,7 @@ Item {
 
                     Image {
                         source: "qrc:/assets/rulebook/04_cards_chpt/attack-big_1.png"
+                        asynchronous: true
                         fillMode: Image.PreserveAspectFit
                         Layout.preferredWidth: 61
                         Layout.preferredHeight: 61
@@ -733,6 +743,7 @@ Item {
 
                     Image {
                         source: "qrc:/assets/rulebook/04_cards_chpt/experience-big_1.png"
+                        asynchronous: true
                         fillMode: Image.PreserveAspectFit
                         Layout.preferredWidth: 61
                         Layout.preferredHeight: 61
@@ -813,6 +824,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/04_cards_chpt/command-b-t-cards.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.preferredWidth: 287
@@ -846,6 +858,7 @@ Item {
                         }
                         Image {
                             id: _flagsImg
+                            asynchronous: true
                             anchors.topMargin: 0
                             anchors.top: parent.top
                             anchors.horizontalCenter: parent.horizontalCenter
@@ -915,6 +928,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/04_cards_chpt/wonder.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.preferredWidth: 218
@@ -944,6 +958,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/04_cards_chpt/WONDER-DISCAR-ICON.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.preferredWidth: 61
@@ -974,6 +989,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/04_cards_chpt/city.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.preferredWidth: 248
@@ -1512,6 +1528,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/05_how-to-play/points-card.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -1767,6 +1784,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/05_how-to-play/volf_display_app_3.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -1775,6 +1793,7 @@ Item {
                         }
                         Image {
                             source: "qrc:/assets/rulebook/05_how-to-play/volf_display_app_2.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -1893,6 +1912,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/05_how-to-play/SEAL-WONDER.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -1949,6 +1969,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/05_how-to-play/seal-unseal.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -2103,6 +2124,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/05_how-to-play/MOVE-VOLFYIRION.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -2191,6 +2213,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/05_how-to-play/SINERGY_1.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -2211,6 +2234,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/05_how-to-play/SINERGY_2.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -2252,6 +2276,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/05_how-to-play/sinergy_3.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -2313,6 +2338,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/05_how-to-play/icon_raw1card-b.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -2338,6 +2364,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/05_how-to-play/icon_remove_1card.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -2364,6 +2391,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/05_how-to-play/icon_remove_troop.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -2390,6 +2418,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/05_how-to-play/icon_remove_building.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -2416,6 +2445,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/05_how-to-play/icon_move_volf-b.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -2750,6 +2780,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/06_extra-cards/ASCENSION-PATH-ICON.png"
+                            asynchronous: true
 
                             Layout.preferredWidth: 61
                             Layout.preferredHeight: 61
@@ -3365,6 +3396,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/divider_final.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -3472,6 +3504,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/divider_final.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -3561,6 +3594,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/solo-mode/solo-setup.png"
+                            asynchronous: true
 
                             fillMode: Image.PreserveAspectFit
                             Layout.fillWidth: true
@@ -3708,6 +3742,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/solo-mode/solo-setup_2.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -3745,6 +3780,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/solo-mode/soloplay-setup_3.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -3855,6 +3891,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/solo-mode/soloplay-setup_4.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -3907,6 +3944,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/solo-mode/soloplay-setup_5.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -4042,6 +4080,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/solo-mode/difficulty-table-2.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -4079,6 +4118,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/divider_final.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -4181,6 +4221,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/divider_final.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -4224,6 +4265,7 @@ Item {
 
                     Image {
                         width: parent.width
+                        asynchronous: true
 
                         source: "qrc:/assets/rulebook/team-mode/team-setup.png"
                         fillMode: Image.PreserveAspectFit
@@ -4394,6 +4436,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/team-mode/team-setup_2.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -4433,6 +4476,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/team-mode/TEAM-SETUP_3.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -4563,6 +4607,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/divider_final.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -4663,6 +4708,7 @@ Item {
 
                     Image {
                         width: parent.width
+                        asynchronous: true
                         source: "qrc:/assets/rulebook/coop-mode/COOP-SETUP.png"
                         fillMode: Image.PreserveAspectFit
                         horizontalAlignment: Qt.AlignHCenter
@@ -4817,6 +4863,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/coop-mode/TAB.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -4935,6 +4982,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/coop-mode/INFO1.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -4985,6 +5033,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/coop-mode/INFO2.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -5117,6 +5166,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/coop-mode/INFO3.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -5155,6 +5205,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/coop-mode/INFO4.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -5193,6 +5244,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/coop-mode/INFO5.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -5240,6 +5292,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/coop-mode/INFO6.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -5248,6 +5301,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/coop-mode/INFO7.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -5256,6 +5310,7 @@ Item {
 
                         Image {
                             source: "qrc:/assets/rulebook/coop-mode/INFO8.png"
+                            asynchronous: true
                             fillMode: Image.PreserveAspectFit
 
                             Layout.fillWidth: true
@@ -5328,6 +5383,7 @@ Item {
 
                 Image {
                     source: "qrc:/assets/rulebook/coop-mode/TAB_2.png"
+                    asynchronous: true
                     fillMode: Image.PreserveAspectFit
 
                     Layout.fillWidth: true
@@ -5337,6 +5393,7 @@ Item {
 
             Image {
                 anchors.horizontalCenter: _difficultySettingCoop.horizontalCenter
+                asynchronous: true
                 source: "qrc:/assets/rulebook/background/BG-END.png"
                 fillMode: Image.PreserveAspectCrop
                 width: root.width + root.contentMargins

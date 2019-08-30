@@ -17,6 +17,7 @@ Ui.BaseContent {
     background: Image {
         source:"qrc:/assets/background.png"
         fillMode: Image.PreserveAspectCrop
+        asynchronous: true
 
         Rectangle {
             anchors.fill: parent

@@ -14,6 +14,7 @@ Ui.BaseContent {
     background: Image {
         source: "qrc:/assets/volfyirion_bg.jpeg"
         fillMode: Image.PreserveAspectCrop
+        asynchronous: true
 
         Rectangle {
             anchors.fill: parent
