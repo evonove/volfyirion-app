@@ -34,7 +34,8 @@ ObjectModel {
             source: "qrc:/assets/lore/lore_0.jpg"
             fillMode: Image.PreserveAspectFit
 
-            sourceSize.width: parent.width
+            Layout.preferredWidth: parent.width
+            Layout.preferredHeight: Math.ceil(implicitHeight * parent.width / implicitWidth)
             Layout.fillWidth: true
             Layout.bottomMargin: 24
         }
@@ -91,8 +92,9 @@ ObjectModel {
             source: "qrc:/assets/lore/lore_1.jpg"
             fillMode: Image.PreserveAspectFit
 
+            Layout.preferredWidth: parent.width
+            Layout.preferredHeight: Math.ceil(implicitHeight * parent.width / implicitWidth)
             Layout.fillWidth: true
-            sourceSize.width: parent.width
             Layout.bottomMargin: 24
         }
 
@@ -122,8 +124,9 @@ ObjectModel {
             source: "qrc:/assets/lore/lore_2.jpg"
             fillMode: Image.PreserveAspectFit
 
+            Layout.preferredWidth: parent.width
+            Layout.preferredHeight: Math.ceil(implicitHeight * parent.width / implicitWidth)
             Layout.fillWidth: true
-            sourceSize.width: parent.width
             Layout.bottomMargin: 24
         }
 
@@ -176,7 +179,8 @@ ObjectModel {
             source: "qrc:/assets/lore/lore_3.jpg"
             fillMode: Image.PreserveAspectFit
 
-            sourceSize.width: parent.width
+            Layout.preferredWidth: parent.width
+            Layout.preferredHeight: Math.ceil(implicitHeight * parent.width / implicitWidth)
             Layout.fillWidth: true
             Layout.bottomMargin: 24
         }
@@ -224,6 +228,7 @@ ObjectModel {
             font.bold: true
 
             horizontalAlignment: Text.AlignHCenter
+            Layout.preferredWidth: parent.width
             Layout.fillWidth: true
             Layout.bottomMargin: 24
         }
@@ -232,7 +237,8 @@ ObjectModel {
             source: "qrc:/assets/lore/lore_4.jpg"
             fillMode: Image.PreserveAspectFit
 
-            sourceSize.width: parent.width
+            Layout.preferredWidth: parent.width
+            Layout.preferredHeight: Math.ceil(implicitHeight * parent.width / implicitWidth)
             Layout.fillWidth: true
             Layout.bottomMargin: 24
         }
@@ -293,7 +299,8 @@ ObjectModel {
             source: "qrc:/assets/lore/lore_5.jpg"
             fillMode: Image.PreserveAspectFit
 
-            sourceSize.width: parent.width
+            Layout.preferredWidth: parent.width
+            Layout.preferredHeight: Math.ceil(implicitHeight * parent.width / implicitWidth)
             Layout.fillWidth: true
             Layout.bottomMargin: 24
         }
@@ -356,7 +363,8 @@ ObjectModel {
             source: "qrc:/assets/lore/lore_6.jpg"
             fillMode: Image.PreserveAspectFit
 
-            sourceSize.width: parent.width
+            Layout.preferredWidth: parent.width
+            Layout.preferredHeight: Math.ceil(implicitHeight * parent.width / implicitWidth)
             Layout.fillWidth: true
             Layout.bottomMargin: 24
         }
@@ -419,7 +427,8 @@ ObjectModel {
             source: "qrc:/assets/lore/lore_7.jpg"
             fillMode: Image.PreserveAspectFit
 
-            sourceSize.width: parent.width
+            Layout.preferredWidth: parent.width
+            Layout.preferredHeight: Math.ceil(implicitHeight * parent.width / implicitWidth)
             Layout.fillWidth: true
             Layout.bottomMargin: 24
         }
