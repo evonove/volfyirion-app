@@ -16,7 +16,7 @@ Ui.BasePage {
             topPadding: root.headerHeight
 
             onArtworkDetailClicked: {
-                root.push(artworkDetail, {"title": name, "url": url})
+                root.push(artworkDetail, {"url": url})
             }
         }
     }
@@ -25,7 +25,7 @@ Ui.BasePage {
         id: artworkDetail
         ArtworkDetailContent {
             hasToolbar: true
-            topPadding: root.headerHeight + 30
+            topPadding: root.headerHeight
 
             leftAction: Action {
                 id: _backAction

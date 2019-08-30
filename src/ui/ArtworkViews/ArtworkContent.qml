@@ -14,7 +14,7 @@ Ui.BaseContent {
     readonly property int currentCellWidth: Math.floor(
                                                 root.availableWidth / root.numElementsInRow)
 
-    signal artworkDetailClicked(string url, string name)
+    signal artworkDetailClicked(string url)
 
     isLoading: contentLoader.status === Loader.Loading
     opacity: isLoading ? 0.0 : 1.0
@@ -31,7 +31,7 @@ Ui.BaseContent {
         id: content
         ColumnLayout {
             anchors.fill: parent
-            signal artwokClicked(string url, string name)
+            signal artwokClicked(string url)
 
             Models.ArtworksModel {
                 id: artModel
@@ -93,7 +93,7 @@ Ui.BaseContent {
                         cellWidth: root.currentCellWidth
 
                         onArtworkClicked: {
-                            artworkDetailClicked(url, name)
+                            artworkDetailClicked(url)
                         }
                     }
                 }

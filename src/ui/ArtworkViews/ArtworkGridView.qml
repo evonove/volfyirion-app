@@ -8,7 +8,7 @@ GridView {
 
     property ListModel artModel
 
-    signal artworkClicked(string url, string name)
+    signal artworkClicked(string url)
 
     width: parent.width
     height: parent.height
@@ -47,7 +47,7 @@ GridView {
                 Image {
                     id: img
                     fillMode: Image.PreserveAspectCrop
-                    source: model.url
+                    source: model.thumbUrl
                     asynchronous: true
 
                     anchors.fill: parent
@@ -59,7 +59,7 @@ GridView {
             anchors.fill: parent
             onClicked: {
                 // Unfocuses search field so that keyboard is hidden
-                root.artworkClicked(model.url, model.title)
+                root.artworkClicked(model.bigUrl)
             }
         }
     }

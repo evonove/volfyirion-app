@@ -8,6 +8,8 @@ Ui.BaseContent {
 
     property alias url: img.source
 
+    title: qsTr("Artwork")
+
     Image {
         id: img
 
