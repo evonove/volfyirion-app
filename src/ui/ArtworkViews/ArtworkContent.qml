@@ -37,15 +37,16 @@ Ui.BaseContent {
             }
 
             TabBar {
+                topPadding: 16
+                bottomPadding: 16
                 currentIndex: swipe.currentIndex
+                z: 1
 
                 background: Rectangle {
                     color: palette.dark
                 }
 
                 Layout.fillWidth: true
-                Layout.bottomMargin: 16
-                Layout.topMargin: 16
 
                 TabButton {
                     anchors.verticalCenter: parent.verticalCenter
@@ -79,12 +80,14 @@ Ui.BaseContent {
 
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+
                 Item {
                     id: grid
                     height: parent.height
 
                     ArtworkGridView {
-                        artModel: artModel
+                        anchors.fill: parent
+                        model: artModel
 
                         implicitHeight: Math.ceil(
                                             artModel.count / root.numElementsInRow) * cellHeight
@@ -102,7 +105,8 @@ Ui.BaseContent {
 
                     ArtworkListView {
                         anchors.fill: parent
-                        artModel: artModel
+
+                        model: artModel
                     }
                 }
             }

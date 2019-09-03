@@ -13,8 +13,8 @@ Ui.BaseContent {
     Image {
         id: img
 
-        width: parent.width
-        fillMode: Image.PreserveAspectFit
+        width: root.width
+        fillMode: Image.PreserveAspectCrop
     }
 
 
