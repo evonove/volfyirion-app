@@ -38,7 +38,7 @@ android {
     QT += androidextras
 
     # To upgrade the version change the following variable
-    VERSION = 1.1.2
+    VERSION = 1.3.0
 
     OTHER_FILES += \
         $$files($$PWD/android/*, true)
@@ -68,7 +68,7 @@ ios {
     # To upgrade the version change the following variable
     # For iOS the value of ShortVersionString must contain a higher version
     # than that of the previosly approved version.
-    VERSION = 1.2.0
+    VERSION = 1.3.0
 
     QMAKE_TARGET_BUNDLE_PREFIX = it.evonove
     QMAKE_BUNDLE = volfyirion
