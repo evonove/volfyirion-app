@@ -20,7 +20,8 @@ HEADERS += \
 OTHER_FILES += \
     $$files($$PWD/*.qml, true)
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+             artworks.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH = $${PWD}/style
