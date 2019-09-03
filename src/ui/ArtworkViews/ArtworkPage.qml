@@ -7,6 +7,10 @@ import "../" as Ui
 
 Ui.BasePage {
     id: root
+
+    width: 600
+    height: 400
+
     initialItem: artworkContent
 
     Component {

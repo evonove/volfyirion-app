@@ -22,7 +22,6 @@ Ui.BaseContent {
     Loader {
         id: contentLoader
         anchors.fill: parent
-        asynchronous: true
 
         sourceComponent: content
     }

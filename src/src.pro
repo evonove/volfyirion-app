@@ -1,7 +1,7 @@
 TARGET = volfyirion
 
 QT += quick svg gui-private multimedia
-CONFIG += c++11
+CONFIG += c++11 resources_big
 
 DEFINES += QT_DEPRECATED_WARNINGS
 DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0

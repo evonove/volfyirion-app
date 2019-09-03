@@ -88,6 +88,7 @@ ApplicationWindow {
 
         ArtworkViews.ArtworkPage {
             safeTopMargin: root.safeTopMargin
+            visible: SwipeView.isCurrentItem
         }
     }
 

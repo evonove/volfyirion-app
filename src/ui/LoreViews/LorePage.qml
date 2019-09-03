@@ -15,12 +15,6 @@ Ui.BasePage {
 
     initialItem: loreContent
 
-    Action {
-        id: _backAction
-        icon.source: "qrc:/assets/back_icon.svg"
-        onTriggered: root.pop()
-    }
-
     Component {
         id: loreContent
         LoreContent {
