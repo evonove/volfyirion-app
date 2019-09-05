@@ -112,7 +112,7 @@ ApplicationWindow {
             onClicked: history.push(TabBar.index)
         }
         TabButton {
-            text: qsTr("Artwork")
+            text: qsTr("Artworks")
             icon.source: this.down || this.checked ? _tabIcons.artworkFilled : _tabIcons.artwork
             onClicked: history.push(TabBar.index)
         }
