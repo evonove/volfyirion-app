@@ -8,7 +8,7 @@ import "Models" as Models
 
 Ui.BaseContent {
     id: root
-    title: qsTr("Artwork")
+    title: qsTr("Artworks")
 
     readonly property int numElementsInRow: 3
     readonly property int currentCellWidth: Math.floor(
