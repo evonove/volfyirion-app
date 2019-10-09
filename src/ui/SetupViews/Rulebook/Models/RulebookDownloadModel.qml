@@ -52,7 +52,7 @@ ListModel {
     }
 
     ListElement {
-        language: "日本人"
+        language: "日本語"
         downloadUrl: "https://volfyirion.s3-eu-west-1.amazonaws.com/rulebooks/Volfyirion_Rulebook_JAPANESE.pdf"
         type: "base mode"
     }
@@ -106,7 +106,7 @@ ListModel {
     }
 
     ListElement {
-        language: "日本人"
+        language: "日本語"
         downloadUrl: "https://volfyirion.s3-eu-west-1.amazonaws.com/rulebooks/extra/JP/COOP-MODE-JP.pdf"
         type: "coop mode"
     }
@@ -142,7 +142,7 @@ ListModel {
     }
 
     ListElement {
-        language: "日本人"
+        language: "日本語"
         downloadUrl: "https://volfyirion.s3-eu-west-1.amazonaws.com/rulebooks/extra/JP/SOLO-MODE-JP.pdf"
         type: "solo mode"
     }
@@ -178,7 +178,7 @@ ListModel {
     }
 
     ListElement {
-        language: "日本人"
+        language: "日本語"
         downloadUrl: "https://volfyirion.s3-eu-west-1.amazonaws.com/rulebooks/extra/JP/TEAM-MODE-JP.pdf"
         type: "team mode"
     }
