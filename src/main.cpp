@@ -9,6 +9,7 @@
 #include "system.h"
 #include "models/pointsmodel.h"
 #include "vibrator.h"
+#include "downloader.h"
 
 static QObject *
 system_manager_singletontype_provider(QQmlEngine *engine,
@@ -28,6 +29,15 @@ vibrator_manager_singletontype_provider(QQmlEngine *engine,
 
   return vibrator;
 }
+static QObject *
+downloader_manager_singletontype_provider(QQmlEngine *engine,
+                                      QJSEngine *scriptEngine) {
+  Q_UNUSED(scriptEngine)
+  Q_UNUSED(engine)
+  auto downloader = new Downloader();
+
+  return downloader;
+}
 
 int main(int argc, char *argv[])
 {
@@ -46,6 +56,10 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonType<Vibrator>(
         "Vibrator", 1, 0, "Vibrator",
         vibrator_manager_singletontype_provider);
+
+    qmlRegisterSingletonType<Vibrator>(
+        "Downloader", 1, 0, "Downloader",
+        downloader_manager_singletontype_provider);
 
     engine.addImportPath("qrc:/style");
 

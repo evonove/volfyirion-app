@@ -39,5 +39,4 @@ public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
             ((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(500);
         }
     }
-
 }
