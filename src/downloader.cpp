@@ -6,6 +6,10 @@
 #include <QStandardPaths>
 #include <QFile>
 
+#ifdef Q_OS_ANDROID
+#include <QtAndroidExtras>
+#endif
+
 Downloader::Downloader(QObject *parent) : QObject(parent) {
 
 }
@@ -13,17 +17,31 @@ Downloader::Downloader(QObject *parent) : QObject(parent) {
 void Downloader::downloadArtwork(QString urlImage) {
     qDebug() << "downloadArtwork" << urlImage;
 
-    QString imageName = urlImage.remove(0, 24);
-    qDebug() << "imageName" << imageName;
-
     QImage img;
+    img.load(urlImage.remove(0,3), "JPG");
 
-    QBuffer buffer;
+    qDebug() << "image is null" << img.isNull();
+
+    QByteArray arr;
+    QBuffer buffer(&arr);
     buffer.open(QIODevice::WriteOnly);
-    img.save(&buffer, "JPG");
+    bool savingResult = img.save(&buffer, "JPG");
+    qDebug() << "saving result" << savingResult;
     buffer.close();
 
+    QString imageName = urlImage.remove(0, 21);
+    qDebug() << "imageName" << imageName;
+
+#ifdef Q_OS_ANDROID
+    // Retrive activity
+    QAndroidJniObject activity = QtAndroid::androidActivity();
+    if(activity.isValid()) {
+        activity.callMethod<void>("saveArtworkImageInPictures", "()V");
+    }
+#endif
+
     QString path = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + imageName;
+    qInfo() << "path" << path;
     QFile file(path);
     if(file.open(QIODevice::WriteOnly)) {
         file.write(buffer.buffer());

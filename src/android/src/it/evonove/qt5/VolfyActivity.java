@@ -8,9 +8,14 @@ import android.os.Vibrator;
 import android.content.Context;
 import android.os.Build;
 
+import android.support.v4.content.ContextCompat;
+import android.support.v4.app.ActivityCompat;
+import android.Manifest;
+import android.content.pm.PackageManager;
 
 public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
 {
+    static final int PERMISSION_WRITE_EXTERNAL_STORAGE = 0;
 
     public VolfyActivity()
     {
@@ -37,6 +42,22 @@ public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
         else {
         // For android API level <= 25
             ((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(500);
+        }
+    }
+
+    public void saveArtworkImageInPictures() {
+        // Check for read and write permission.
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            System.out.println("Permission is not granted");
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                System.out.println("ciao");
+
+            } else {
+                ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_WRITE_EXTERNAL_STORAGE);
+            }
+        } else {
+            System.out.println("Permission has already been granted");
         }
     }
 }
