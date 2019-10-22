@@ -24,7 +24,7 @@ ListModel {
 
     ListElement {
         thumbUrl: "qrc:/assets/artworks/thumb/a05_t.jpg"
-        bigUrl: "qrc:/assets/artworks/big/05.jpg"
+        bigUrl: "qrc:/assets/artworks/big/a05.jpg"
     }
 
     ListElement {

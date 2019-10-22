@@ -12,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.app.ActivityCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.widget.Toast;
 
 public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
 {
@@ -43,6 +44,19 @@ public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
         // For android API level <= 25
             ((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(500);
         }
+    }
+
+    public void showToast(String message) {
+        System.out.println("Show toast");
+
+        int duration = Toast.LENGTH_LONG;
+
+        Toast toast = Toast.makeText(getApplicationContext(), message, duration);
+
+        System.out.println("Toast is valid:" + toast);
+        toast.show();
+
+        System.out.println("ShowED toast");
     }
 
 }

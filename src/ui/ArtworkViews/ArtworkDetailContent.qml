@@ -16,7 +16,7 @@ Ui.BaseContent {
         onTriggered: {
             // download artwork image
             console.log("download image", root.url);
-            Downloader.downloadArtwork(root.url);
+            Downloader.saveArtworkInPictures(root.url);
         }
     }
 

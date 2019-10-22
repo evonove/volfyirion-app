@@ -10,8 +10,10 @@ class Downloader : public QObject
 public:
     explicit Downloader(QObject *parent = nullptr);
 
-    Q_INVOKABLE void downloadArtwork(QString urlImage);
-    void saveArtwork(const QString &path, const QBuffer &buffer);
+    Q_INVOKABLE void saveArtworkInPictures(QString urlImage);
+
+    bool checkAndRequiredWritePermission();
+    void showToast(const QString &message);
 
 signals:
 

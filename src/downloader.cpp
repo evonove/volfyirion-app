@@ -14,50 +14,77 @@ Downloader::Downloader(QObject *parent) : QObject(parent) {
 
 }
 
-void Downloader::downloadArtwork(QString urlImage) {
-    qDebug() << "downloadArtwork" << urlImage;
+bool Downloader::checkAndRequiredWritePermission() {
 
-    QImage img;
-    img.load(urlImage.remove(0,3), "JPG");
-
-    qDebug() << "image is null" << img.isNull();
-
-    QByteArray arr;
-    QBuffer buffer(&arr);
-    buffer.open(QIODevice::WriteOnly);
-    bool savingResult = img.save(&buffer, "JPG");
-    qDebug() << "saving result" << savingResult;
-    buffer.close();
-
-    QString imageName = urlImage.remove(0, 21);
-    qDebug() << "imageName" << imageName;
 
 #ifdef Q_OS_ANDROID
     // Retrive activity
     if(QtAndroid::checkPermission("android.permission.WRITE_EXTERNAL_STORAGE") != QtAndroid::PermissionResult::Granted) {
-        qDebug() << "permesso non garantito";
+        // Permission denied.
         QtAndroid::requestPermissionsSync(QStringList("android.permission.WRITE_EXTERNAL_STORAGE"));
     }
 
-    QString path = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + imageName;
-    qInfo() << "path" << path;
-    saveArtwork(path, buffer);
+    return QtAndroid::checkPermission("android.permission.WRITE_EXTERNAL_STORAGE") == QtAndroid::PermissionResult::Granted;
 
 #endif
 
 }
 
+void Downloader::saveArtworkInPictures(QString urlImage) {
 
-void Downloader::saveArtwork(const QString &path, const QBuffer &buffer) {
-    QFile file(path);
-    if(file.open(QIODevice::WriteOnly)) {
-        file.write(buffer.buffer());
-        file.close();
-    }
+    if(checkAndRequiredWritePermission()) {
+        QImage img;
+        // The resource path to retrive artwork image is ":/assets/artworks/big/{image_name}"
+        QString internalPathImage = urlImage.remove(0,3);
+        img.load(internalPathImage, "JPG");
 
-    if(file.error() != QFileDevice::NoError) {
-        qDebug() << QString("Error writing file '%1'").arg(path) << file.errorString();
+        QByteArray arr;
+        QBuffer buffer(&arr);
+        buffer.open(QIODevice::WriteOnly);
+        img.save(&buffer, "JPG");
+        buffer.close();
+
+        QString imageName = urlImage.remove(0, 21);
+
+        // Get the path of Pictures Directory and add the name of image to it.
+        QString path = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + imageName;
+
+        QFile file(path);
+        if(file.open(QIODevice::WriteOnly)) {
+            file.write(buffer.buffer());
+            file.close();
+        }
+
+        if(file.error() != QFileDevice::NoError) {
+            // Error during saving of image.
+            auto messageError = QString("Error writing file '%1'").arg(path) + file.errorString();
+            showToast(messageError);
+        } else {
+            // Image saved correctly in pictures.
+            auto message = QString("Artwork saved in Pictures.");
+            showToast(message);
+        }
     } else {
-        qDebug() << "Image downloaded in Pictures.";
+        // Permission denied.
+        auto messagePermission = QString("Impossible write image in Pictures. Permission denied.");
+        showToast(messagePermission);
     }
+
+}
+
+
+void Downloader::showToast(const QString &message) {
+#ifdef Q_OS_ANDROID
+        int duration = 0;
+
+        QtAndroid::runOnAndroidThread([message, duration] {
+                QAndroidJniObject javaString = QAndroidJniObject::fromString(message);
+                QAndroidJniObject toast = QAndroidJniObject::callStaticObjectMethod("android/widget/Toast", "makeText",
+                                                                                    "(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;",
+                                                                                    QtAndroid::androidActivity().object(),
+                                                                                    javaString.object(),
+                                                                                    jint(duration));
+                toast.callMethod<void>("show");
+        });
+#endif
 }
