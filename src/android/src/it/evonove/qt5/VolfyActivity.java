@@ -45,19 +45,4 @@ public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
         }
     }
 
-    public void saveArtworkImageInPictures() {
-        // Check for read and write permission.
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            System.out.println("Permission is not granted");
-
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                System.out.println("ciao");
-
-            } else {
-                ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_WRITE_EXTERNAL_STORAGE);
-            }
-        } else {
-            System.out.println("Permission has already been granted");
-        }
-    }
 }
