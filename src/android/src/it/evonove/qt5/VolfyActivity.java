@@ -13,10 +13,13 @@ import android.support.v4.app.ActivityCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.widget.Toast;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
 
 public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
 {
     static final int PERMISSION_WRITE_EXTERNAL_STORAGE = 0;
+     private static VolfyActivity m_instance;
 
     public VolfyActivity()
     {
@@ -25,6 +28,7 @@ public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
         // notification bar color
         QT_ANDROID_THEMES = new String[] {"VolfyTheme"};
         QT_ANDROID_DEFAULT_THEME = "VolfyTheme";
+        m_instance = this;
     }
 
     @Override
@@ -46,17 +50,16 @@ public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
         }
     }
 
-    public void showToast(String message) {
-        System.out.println("Show toast");
-
-        int duration = Toast.LENGTH_LONG;
-
-        Toast toast = Toast.makeText(getApplicationContext(), message, duration);
-
-        System.out.println("Toast is valid:" + toast);
-        toast.show();
-
-        System.out.println("ShowED toast");
+    public static void scanFile(String path) {
+        System.out.println("scanFile");
+        MediaScannerConnection.scanFile(m_instance,
+            new String[] { path }, null,
+            new MediaScannerConnection.OnScanCompletedListener() {
+                public void onScanCompleted(String path, Uri uri) {
+                    // No need to do anything on file actually scanned or not
+                }
+            }
+        );
     }
 
 }

@@ -60,6 +60,14 @@ void Downloader::saveArtworkInPictures(QString urlImage) {
             auto messageError = QString("Error writing file '%1'").arg(path) + file.errorString();
             showToast(messageError);
         } else {
+            // Refresh images in Pictures.
+#ifdef Q_OS_ANDROID
+
+            QAndroidJniObject activity = QtAndroid::androidActivity();
+            if(activity.isValid()){
+                activity.callStaticMethod<void>("VolfyActivity", "scanFile", "(Ljava/lang/String;)V", QAndroidJniObject::fromString(path).object<jstring>());
+            }
+#endif
             // Image saved correctly in pictures.
             auto message = QString("Artwork saved in Pictures.");
             showToast(message);
