@@ -95,7 +95,7 @@ Ui.BaseContent {
                         cellWidth: root.currentCellWidth
 
                         onArtworkClicked: {
-                            artworkDetailClicked(url)
+                            root.artworkDetailClicked(url)
                         }
                     }
                 }
@@ -107,6 +107,10 @@ Ui.BaseContent {
                         anchors.fill: parent
 
                         model: artModel
+
+                        onArtworkClicked: {
+                            root.artworkDetailClicked(url)
+                        }
                     }
                 }
             }
