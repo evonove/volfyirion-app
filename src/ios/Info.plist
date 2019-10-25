@@ -44,5 +44,8 @@
     <key>UNNotificationContentExtension</key>
     <string>com.apple.usernotifications.content-extension</string>
 
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app saves images in Photos</string>
+
 </dict>
 </plist>

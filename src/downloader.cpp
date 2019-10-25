@@ -4,10 +4,13 @@
 #include <QImage>
 #include <QStandardPaths>
 #include <QFile>
-#include <QtAndroid>
 
 #ifdef Q_OS_ANDROID
+#include <QtAndroid>
 #include <QtAndroidExtras>
+#endif
+#ifdef Q_OS_IOS
+#include "ios/service/photosaverservice.h"
 #endif
 
 Downloader::Downloader(QObject *parent) : QObject(parent) {
@@ -28,11 +31,19 @@ bool Downloader::checkAndRequiredWritePermission() {
 
 #endif
 
+#ifdef Q_OS_IOS
+    qCritical() << "Check permission to write in Photos. iOS.";
+    bool res = checkWritingPermission();
+    qCritical() << "res" << res;
+    return res;
+#endif
+
 }
 
 void Downloader::saveArtworkInPictures(QString urlImage) {
 
     if(checkAndRequiredWritePermission()) {
+        qCritical() << "Downloader: check permission.";
         QImage img;
         // The resource path to retrive artwork image is ":/assets/artworks/big/{image_name}"
         QString internalPathImage = urlImage.remove(0,3);
@@ -48,10 +59,12 @@ void Downloader::saveArtworkInPictures(QString urlImage) {
 
         // Get the path of Pictures Directory and add the name of image to it.
         QString path = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + imageName;
+        qCritical() << "path: " << path;
 
         QFile file(path);
         if(file.open(QIODevice::WriteOnly)) {
-            file.write(buffer.buffer());
+            bool resultSaving = file.write(buffer.buffer());
+            qCritical() << "saving file: " << resultSaving;
             file.close();
         }
 
@@ -61,27 +74,34 @@ void Downloader::saveArtworkInPictures(QString urlImage) {
             showToast(messageError);
         } else {
             // Refresh images in Pictures.
+            auto message = QString("Artwork saved in Pictures.");
+            qCritical() << message;
 #ifdef Q_OS_ANDROID
 
             QAndroidJniObject activity = QtAndroid::androidActivity();
             if(activity.isValid()){
                 activity.callStaticMethod<void>("VolfyActivity", "scanFile", "(Ljava/lang/String;)V", QAndroidJniObject::fromString(path).object<jstring>());
             }
-#endif
+
             // Image saved correctly in pictures.
             auto message = QString("Artwork saved in Pictures.");
             showToast(message);
+#endif
         }
     } else {
         // Permission denied.
         auto messagePermission = QString("Impossible write image in Pictures. Permission denied.");
+        qCritical() << messagePermission;
+#ifdef Q_OS_ANDROID
         showToast(messagePermission);
+#endif
     }
 
 }
 
 
 void Downloader::showToast(const QString &message) {
+    qCritical() << "toast message: " << message;
 #ifdef Q_OS_ANDROID
         int duration = 0;
 
