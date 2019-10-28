@@ -82,11 +82,19 @@ void PhotoSaverService::saveImageInPhotos(QImage &artwork, QString &urlImage) {
 
         NSString* imageName = urlImage.remove(0, 24).toNSString();
 
-        bool res = true;
-        if (image == nil) {
-            res = false;
+        bool res = false;
+        if (image != nil) {
+            res = true;
+
+            [[PHPhotoLibrary sharedPhotoLibrary] performChanges: ^ {
+                // Request creating an asset from the image.
+                PHAssetChangeRequest* createAssetRequest = [PHAssetChangeRequest creationRequestForAssetFromImage: image];
+                PHObjectPlaceholder* assetPlaceholder = [createAssetRequest placeholderForCreatedAsset];
+
+            } completionHandler:^ (BOOL success, NSError* error) {
+                qCritical() << "Finished adding asset error:" << error;
+            }];
         }
         qCritical() << "image name"  << imageName << "image size" << res;
-
 
 }
