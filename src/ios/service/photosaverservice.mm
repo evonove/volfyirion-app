@@ -1,65 +1,92 @@
 #import "photosaverservice.h"
+
+#include <QDebug>
+
 #import <Photos/Photos.h>
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-bool checkWritingPermission() {
+void PhotoSaverService::showToast(const QString &message) {
+
+    qCritical() << "PHOTO SAVER: showToast() " << message;
+    NSString* messageToast = message.toNSString();
+    qCritical() << messageToast;
+//    [[NSOperationQueue mainQueue] addOperationWithBlock: ^ {
+//        UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+//        UILabel *toastView = [[UILabel alloc] init];
+
+//        toastView.text = messageToast;
+//        toastView.frame = CGRectMake(0.0, 0.0, keyWindow.frame.size.width/2.0, 200.0);
+//        toastView.textAlignment = NSTextAlignmentCenter;
+//        toastView.layer.cornerRadius = 10;
+//        toastView.layer.masksToBounds = YES;
+//        toastView.backgroundColor = [UIColor grayColor];
+//        toastView.textColor = [UIColor whiteColor];
+//        toastView.center = keyWindow.center;
+
+//        [keyWindow addSubview:toastView];
+
+//        [UIView animateWithDuration: 3.0f
+//                          delay: 0.0
+//                        options: UIViewAnimationOptionCurveEaseOut
+//                     animations: ^{
+//                         toastView.alpha = 0.0;
+//                     }
+//                     completion: ^(BOOL finished) {
+//                         [toastView removeFromSuperview];
+//                     }
+//         ];
+//    }];
+
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Artworks"
+//                                                      message: messageToast
+//                                                      preferredStyle: UIAlertControllerStyleActionSheet ];
+
+//        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//                                //button click event
+//                            }];
+//        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+//        [alert addAction:cancel];
+//        [alert addAction:ok];
+//        [alert presentViewController:alert animated:YES completion:nil];
+//    });
+}
+
+bool PhotoSaverService::checkWritingPermission() {
     __block bool result = true;
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
         if(status != PHAuthorizationStatusAuthorized) {
-//            NSString *message = @"Permission not granted to save artwork in Photos";
 
-//            UIAlertView *toast = [[UIAlertView alloc] initWithTitle:nil
-//                                                  message:message
-//                                                  delegate:nil
-//                                                  cancelButtonTitle:nil
-//                                                  otherButtonTitles:nil, nil];
-//            [toast show];
+            QString message = "Permission not granted to save artwork in Photos";
+            result = false;
+            PhotoSaverService::showToast(message);
 
-//            int duration = 3; // duration in seconds
-
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, duration * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-//                [toast dismissWithClickedButtonIndex:0 animated:YES];
-//            });
-             result = false;
             printf("CHECK IOS: Permission not granted.");
+
         } else {
+            QString message = "Permission granted to save artwork in Photos";
+            result = true;
+            PhotoSaverService:showToast(message);
             printf("CHECK IOS: Permission granted.");
-
-            [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^ {
-                // Request creating an asset from the image.
-                UIImage *image = [UIImage imageNamed:@"imageFromBundleOrAsset"];
-                PHAssetChangeRequest *createAssetRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
-
-
-
-                // Request editing the album.
-//                PHAssetCollectionChangeRequest *albumChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection: album];
-                // Get placeholder for the new asset and add it to the album editing request.
-//                PHObjectPlaceholder * assetPlaceholder = [createAssetRequest placeholderForCreatedAsset];
-//                [albumChangeRequest addAssets:@[assetPlaceholder]];
-            } completionHandler: ^(BOOL success, NSError *error) {
-                NSLog(@"Finished adding asset. %@", (success ? @"Success" : error));
-            }];
-
-//            NSString *message = @"Permission granted to save artwork in Photos";
-
-//            UIAlertView *toast = [[UIAlertView alloc] initWithTitle:nil
-//                                                  message:message
-//                                                  delegate:nil
-//                                                  cancelButtonTitle:nil
-//                                                  otherButtonTitles:nil, nil];
-//            [toast show];
-
-//            int duration = 3; // duration in seconds
-
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, duration * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-//                [toast dismissWithClickedButtonIndex:0 animated:YES];
-//            });
-
-            UIImage *image = [UIImage imageNamed:@"someImage.png"];
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
         }
     }];
     return result;
+}
+
+void PhotoSaverService::saveImageInPhotos(QImage &artwork, QString &urlImage) {
+        CGImageRef imageRef = artwork.toCGImage();
+        UIImage* image = [[UIImage alloc] initWithCGImage:imageRef];
+
+        qCritical() << "urlImage" << urlImage;
+
+        NSString* imageName = urlImage.remove(0, 24).toNSString();
+
+        bool res = true;
+        if (image == nil) {
+            res = false;
+        }
+        qCritical() << "image name"  << imageName << "image size" << res;
+
+
 }

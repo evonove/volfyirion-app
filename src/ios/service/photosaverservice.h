@@ -1,7 +1,16 @@
 #ifndef PHOTOSAVERSERVICE_H
 #define PHOTOSAVERSERVICE_H
 
-bool checkWritingPermission ();
-void saveImageInPhotos();
+#include <QString>
+#include <QImage>
+
+class PhotoSaverService {
+
+public:
+    bool checkWritingPermission ();
+    void saveImageInPhotos(QImage &artwork, QString &urlImage);
+    // Function to show a toast to the user
+    static void showToast(const QString &message);
+};
 
 #endif // PHOTOSAVERSERVICE_H

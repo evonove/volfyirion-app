@@ -4,6 +4,10 @@
 #include <QObject>
 #include <QBuffer>
 
+#ifdef Q_OS_IOS
+#include "ios/service/photosaverservice.h"
+#endif
+
 class Downloader : public QObject
 {
     Q_OBJECT
@@ -18,6 +22,8 @@ public:
 signals:
 
 public slots:
+private:
+    PhotoSaverService m_photoSaver;
 };
 
 #endif // DOWNLOADER_H
