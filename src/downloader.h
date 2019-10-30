@@ -22,8 +22,11 @@ public:
 signals:
 
 public slots:
+
 private:
+#ifdef Q_OS_IOS
     PhotoSaverService m_photoSaver;
+#endif
 };
 
 #endif // DOWNLOADER_H

@@ -55,8 +55,8 @@ void Downloader::saveArtworkInPictures(QString urlImage) {
         m_photoSaver.saveImageInPhotos(img,internalPathImage);
 #endif
 
-        QString imageName = urlImage.remove(0, 21);
 #ifdef Q_OS_ANDROID
+        QString imageName = urlImage.remove(0, 21);
         // Get the path of Pictures Directory and add the name of image to it.
         QString path = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + imageName;
         qCritical() << "path: " << path;
@@ -72,14 +72,11 @@ void Downloader::saveArtworkInPictures(QString urlImage) {
             // Error during saving of image.
             auto messageError = QString("Error writing file '%1'").arg(path) + file.errorString();
             qCritical() << messageError;
-#ifdef Q_OS_ANDROID
             showToast(messageError);
-#endif
         } else {
             // Refresh images in Pictures.
             auto message = QString("Artwork saved in Pictures.");
             qCritical() << message;
-#ifdef Q_OS_ANDROID
 
             QAndroidJniObject activity = QtAndroid::androidActivity();
             if(activity.isValid()){
@@ -89,15 +86,12 @@ void Downloader::saveArtworkInPictures(QString urlImage) {
             // Image saved correctly in pictures.
             auto message = QString("Artwork saved in Pictures.");
             showToast(message);
-#endif
         }
     } else {
         // Permission denied.
         auto messagePermission = QString("Impossible write image in Pictures. Permission denied.");
         qCritical() << messagePermission;
-#ifdef Q_OS_ANDROID
         showToast(messagePermission);
-#endif
 #endif
     }
 }
