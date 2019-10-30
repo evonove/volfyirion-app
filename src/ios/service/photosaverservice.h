@@ -9,6 +9,7 @@ class PhotoSaverService {
 public:
     bool checkWritingPermission ();
     void saveImageInPhotos(QImage &artwork, QString &urlImage);
+    void performChangesInPhotosLibrary(QImage &image);
     // Function to show a toast to the user
     static void showToast(const QString &message);
 };
