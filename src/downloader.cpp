@@ -49,7 +49,7 @@ void Downloader::saveArtworkInPictures(QString urlImage) {
     qCritical() << "saving result" << savingResult;
     buffer.close();
 
-    m_photoSaver.saveImageInPhotos(img,internalPathImage);
+    m_photoSaver.saveImageInPhotos(img);
 #endif
 
 #ifdef Q_OS_ANDROID

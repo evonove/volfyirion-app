@@ -74,7 +74,7 @@ bool PhotoSaverService::checkWritingPermission() {
     return result;
 }
 
-void PhotoSaverService::saveImageInPhotos(QImage artwork, QString &urlImage) {
+void PhotoSaverService::saveImageInPhotos(QImage artwork) {
     qCritical() << "PhotoSaverService::saveImageInPhotos image size" << artwork.size();
     // Check permission to write in Photos Library.
     bool hasWritePermission = [PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized;
