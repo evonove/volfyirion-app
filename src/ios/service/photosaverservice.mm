@@ -74,31 +74,7 @@ bool PhotoSaverService::checkWritingPermission() {
     return result;
 }
 
-//void PhotoSaverService::saveImageInPhotos(QImage &artwork, QString &urlImage) {
-//        CGImageRef imageRef = artwork.toCGImage();
-//        UIImage* image = [[UIImage alloc] initWithCGImage:imageRef];
-
-//        qCritical() << "urlImage" << urlImage;
-
-//        NSString* imageName = urlImage.remove(0, 24).toNSString();
-
-//        bool res = false;
-//        if (image != nil) {
-//            res = true;
-
-//            [[PHPhotoLibrary sharedPhotoLibrary] performChanges: ^ {
-//                // Request creating an asset from the image.
-//                PHAssetChangeRequest* createAssetRequest = [PHAssetChangeRequest creationRequestForAssetFromImage: image];
-//                PHObjectPlaceholder* assetPlaceholder = [createAssetRequest placeholderForCreatedAsset];
-
-//            } completionHandler:^ (BOOL success, NSError* error) {
-//                qCritical() << "Finished adding asset error:" << error;
-//            }];
-//        }
-//        qCritical() << "image name"  << imageName << "image size" << res;
-//}
-
-void PhotoSaverService::saveImageInPhotos(QImage &artwork, QString &urlImage) {
+void PhotoSaverService::saveImageInPhotos(QImage artwork, QString &urlImage) {
     qCritical() << "PhotoSaverService::saveImageInPhotos image size" << artwork.size();
     // Check permission to write in Photos Library.
     bool hasWritePermission = [PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized;
@@ -117,21 +93,27 @@ void PhotoSaverService::saveImageInPhotos(QImage &artwork, QString &urlImage) {
                 QString message = "Permission granted to save artwork in Photos";
                 PhotoSaverService:showToast(message);
                 printf("CHECK IOS: Permission granted.");
+
+                qCritical() << "artwork is valid: " << artwork.size();
+
                 performChangesInPhotosLibrary(artwork);
             }
         }];
     }
 }
 
-void PhotoSaverService::performChangesInPhotosLibrary(QImage &artwork){
+void PhotoSaverService::performChangesInPhotosLibrary(QImage artwork){
+    qCritical() << "PhotoSaverService::performChangesInPhotosLibrary image size" << artwork.size();
     // Save images in PhotoLibrary
     // Convert QImage to CGIImage that can be converted to UIImage.
     CGImageRef imageRef = artwork.toCGImage();
     UIImage *image = [[UIImage alloc] initWithCGImage:imageRef];
     bool imageIsValid = image!=nil;
+
     qCritical() << "image is valid" << imageIsValid;
     if(imageIsValid) {
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^(void) {
+
             // Add a request to create an asset from the UIImage.
             PHAssetChangeRequest *createAssetRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
             PHObjectPlaceholder *assetPlaceHolder = [createAssetRequest placeholderForCreatedAsset];
