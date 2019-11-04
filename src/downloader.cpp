@@ -28,7 +28,6 @@ bool Downloader::checkAndRequiredWritePermission() {
 
 void Downloader::saveArtworkInPictures(QString urlImage) {
 
-#ifdef Q_OS_IOS
     QImage img;
     // The resource path to retrive artwork image is ":/assets/artworks/big/{image_name}"
     QString internalPathImage = urlImage.remove(0,3);
@@ -40,30 +39,19 @@ void Downloader::saveArtworkInPictures(QString urlImage) {
     img.save(&buffer, "JPG");
     buffer.close();
 
+#ifdef Q_OS_IOS
     m_photoSaver.saveImageInPhotos(img);
 #endif
 
 #ifdef Q_OS_ANDROID
     if(checkAndRequiredWritePermission()) {
-
-        QImage img;
-        // The resource path to retrive artwork image is ":/assets/artworks/big/{image_name}"
-        QString internalPathImage = urlImage.remove(0,3);
-        img.load(internalPathImage, "JPG");
-
-        QByteArray arr;
-        QBuffer buffer(&arr);
-        buffer.open(QIODevice::WriteOnly);
-        bool savingResult = img.save(&buffer, "JPG");
-        buffer.close();
-
         QString imageName = urlImage.remove(0, 21);
         // Get the path of Pictures Directory and add the name of image to it.
         QString path = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + imageName;
 
         QFile file(path);
         if(file.open(QIODevice::WriteOnly)) {
-            bool resultWriting = file.write(buffer.buffer());
+            file.write(buffer.buffer());
             file.close();
         }
 
@@ -73,8 +61,6 @@ void Downloader::saveArtworkInPictures(QString urlImage) {
             showToast(messageError);
         } else {
             // Refresh images in Pictures.
-            auto message = QString("Artwork saved in Pictures.");
-
             QAndroidJniObject activity = QtAndroid::androidActivity();
             if(activity.isValid()){
                 activity.callStaticMethod<void>("VolfyActivity", "scanFile", "(Ljava/lang/String;)V", QAndroidJniObject::fromString(path).object<jstring>());

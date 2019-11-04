@@ -12,7 +12,7 @@ Ui.BaseContent {
     hasToolbar: true
     title: qsTr("Artworks")
     rightAction: Action {
-        icon.source: "qrc:/assets/reset_icon.svg"
+        icon.source: "qrc:/assets/artworks/download.svg"
         onTriggered: {
             // download artwork image
             console.log("download image", root.url);
