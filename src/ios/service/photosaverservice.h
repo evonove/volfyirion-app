@@ -7,7 +7,6 @@
 class PhotoSaverService {
 
 public:
-    bool checkWritingPermission ();
     void saveImageInPhotos(QImage artwork);
     void performChangesInPhotosLibrary(QImage artwork);
     // Function to show a toast to the user
