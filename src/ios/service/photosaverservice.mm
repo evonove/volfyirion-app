@@ -35,11 +35,9 @@ void PhotoSaverService::saveImageInPhotos(QImage artwork) {
         // Required permission to write in Photos Library.
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
             if(status != PHAuthorizationStatusAuthorized) {
-                QString message = "Permission not granted to save artwork in Photos";
-                showToast(message);
+                // Permission not granted to save artwork in Photos.
             } else {
-                QString message = "Permission granted to save artwork in Photos";
-                showToast(message);
+                // Permission granted to save artwork in Photos.
                 performChangesInPhotosLibrary(artwork);
             }
         }];
