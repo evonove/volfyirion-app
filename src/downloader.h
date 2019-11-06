@@ -16,8 +16,10 @@ public:
 
     Q_INVOKABLE void saveArtworkInPictures(QString urlImage);
 
+#ifdef Q_OS_ANDROID
     bool checkAndRequiredWritePermission();
     void showToast(const QString &message);
+#endif
 
 signals:
 

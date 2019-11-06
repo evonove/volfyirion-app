@@ -19,7 +19,7 @@ import android.net.Uri;
 public class VolfyActivity extends org.qtproject.qt5.android.bindings.QtActivity
 {
     static final int PERMISSION_WRITE_EXTERNAL_STORAGE = 0;
-     private static VolfyActivity m_instance;
+    private static VolfyActivity m_instance;
 
     public VolfyActivity()
     {

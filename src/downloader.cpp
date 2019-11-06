@@ -13,9 +13,8 @@
 Downloader::Downloader(QObject *parent) : QObject(parent) {
 }
 
-bool Downloader::checkAndRequiredWritePermission() {
-
 #ifdef Q_OS_ANDROID
+bool Downloader::checkAndRequiredWritePermission() {
     // Retrive activity
     if(QtAndroid::checkPermission("android.permission.WRITE_EXTERNAL_STORAGE") != QtAndroid::PermissionResult::Granted) {
         // Permission denied.
@@ -23,8 +22,8 @@ bool Downloader::checkAndRequiredWritePermission() {
     }
 
     return QtAndroid::checkPermission("android.permission.WRITE_EXTERNAL_STORAGE") == QtAndroid::PermissionResult::Granted;
-#endif
 }
+#endif
 
 void Downloader::saveArtworkInPictures(QString urlImage) {
 
@@ -33,18 +32,19 @@ void Downloader::saveArtworkInPictures(QString urlImage) {
     QString internalPathImage = urlImage.remove(0,3);
     img.load(internalPathImage, "JPG");
 
-    QByteArray arr;
-    QBuffer buffer(&arr);
-    buffer.open(QIODevice::WriteOnly);
-    img.save(&buffer, "JPG");
-    buffer.close();
-
 #ifdef Q_OS_IOS
     m_photoSaver.saveImageInPhotos(img);
 #endif
 
 #ifdef Q_OS_ANDROID
     if(checkAndRequiredWritePermission()) {
+
+        QByteArray arr;
+        QBuffer buffer(&arr);
+        buffer.open(QIODevice::WriteOnly);
+        img.save(&buffer, "JPG");
+        buffer.close();
+
         QString imageName = urlImage.remove(0, 21);
         // Get the path of Pictures Directory and add the name of image to it.
         QString path = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + imageName;
@@ -78,9 +78,8 @@ void Downloader::saveArtworkInPictures(QString urlImage) {
 #endif
 }
 
-
-void Downloader::showToast(const QString &message) {
 #ifdef Q_OS_ANDROID
+void Downloader::showToast(const QString &message) {
         int duration = 0;
 
         QtAndroid::runOnAndroidThread([message, duration] {
@@ -92,5 +91,5 @@ void Downloader::showToast(const QString &message) {
                                                                                     jint(duration));
                 toast.callMethod<void>("show");
         });
-#endif
 }
+#endif
