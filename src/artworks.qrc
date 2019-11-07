@@ -268,5 +268,6 @@
         <file>assets/artworks/thumb/a33_t@2x.jpg</file>
         <file>assets/artworks/thumb/a33_t@3x.jpg</file>
         <file>assets/artworks/thumb/a33_t@4x.jpg</file>
+        <file>assets/artworks/download.svg</file>
     </qresource>
 </RCC>

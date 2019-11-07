@@ -7,12 +7,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        downloader.cpp \
         main.cpp \
         system.cpp \
         models/pointsmodel.cpp \
         vibrator.cpp
 
 HEADERS += \
+    downloader.h \
     system.h \
     models/pointsmodel.h \
     vibrator.h
@@ -73,8 +75,10 @@ ios {
     QMAKE_TARGET_BUNDLE_PREFIX = it.evonove
     QMAKE_BUNDLE = volfyirion
 
-    OBJECTIVE_SOURCES += ios/service/vibratorservice.mm
-    OBJECTIVE_HEADERS += ios/service/vibratorservice.h
+    OBJECTIVE_SOURCES += ios/service/vibratorservice.mm \
+                         ios/service/photosaverservice.mm
+    OBJECTIVE_HEADERS += ios/service/vibratorservice.h \
+                         ios/service/photosaverservice.h
 
     QMAKE_INFO_PLIST = $${PWD}/ios/Info.plist
 
@@ -86,4 +90,6 @@ ios {
 
     app_launch_images.files = $$PWD/ios/LaunchScreen.storyboard
     QMAKE_BUNDLE_DATA += app_launch_images
+
+    LIBS += -framework Photos
 }
