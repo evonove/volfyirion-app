@@ -8,8 +8,6 @@ import android.os.Vibrator;
 import android.content.Context;
 import android.os.Build;
 
-import android.support.v4.content.ContextCompat;
-import android.support.v4.app.ActivityCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.widget.Toast;
