@@ -40,7 +40,7 @@ android {
     QT += androidextras
 
     # To upgrade the version change the following variable
-    VERSION = 1.3.1
+    VERSION = 1.3.2
 
     OTHER_FILES += \
         $$files($$PWD/android/*, true)
