@@ -24,6 +24,7 @@
         <file>ui/SetupViews/Rulebook/RulebookCardDelegate.qml</file>
         <file>ui/SetupViews/Rulebook/RulebookContent.qml</file>
         <file>ui/SetupViews/Rulebook/RulebookIndexContent.qml</file>
+        <file>ui/SetupViews/Rulebook/RulebookLabel.qml</file>
         <file>ui/SetupViews/Rulebook/RulebookText.qml</file>
         <file>ui/SetupViews/Rulebook/RulebookTitle.qml</file>
         <file>ui/SetupViews/Rulebook/RulebookSubtitle.qml</file>

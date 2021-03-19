@@ -176,4 +176,19 @@ ListModel {
         element: 68
         subitem: true
     }
+    ListElement {
+        title: qsTr("Community rules")
+        element: 69
+        subitem: false
+    }
+    ListElement {
+        title: qsTr("The Victory of Volfyirion's Worshipper")
+        element: 70
+        subitem: true
+    }
+    ListElement {
+        title: qsTr("Volfyirion Bait & Death Eraser")
+        element: 71
+        subitem: true
+    }
 }
