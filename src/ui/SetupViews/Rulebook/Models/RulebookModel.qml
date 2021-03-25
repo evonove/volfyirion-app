@@ -5305,11 +5305,11 @@ Item {
                 }
 
                 RulebookLabel {
-                    text: qsTr("Find " + "<a href='https://drive.google.com/file/d/143qBvhW54GFxwGlJhhabb5LajlZJZZ7c/view?usp=sharing' style='color: white;'>"
+                    text: qsTr("Find " + "<a href='https://volfyirion.s3-eu-west-1.amazonaws.com/cards/community-cards.pdf' style='color: white;'>"
                                + "here</a> the printable assets.")
 
                     onLinkActivated: Qt.openUrlExternally(
-                                         "https://drive.google.com/file/d/143qBvhW54GFxwGlJhhabb5LajlZJZZ7c/view?usp=sharing")
+                                         "https://volfyirion.s3-eu-west-1.amazonaws.com/cards/community-cards.pdf")
 
                     Layout.fillWidth: true
                     Layout.bottomMargin: 27
@@ -5409,11 +5409,11 @@ Item {
                 }
 
                 RulebookLabel {
-                    text: qsTr("Find " + "<a href='https://drive.google.com/file/d/1LY2u9Ds6aVphRUfEsWxqF5Xet_5uovQe/view?usp=sharing' style='color: white;'>"
+                    text: qsTr("Find " + "<a href='https://volfyirion.s3-eu-west-1.amazonaws.com/cards/community-cards.pdf' style='color: white;'>"
                                + "here</a> the printable assets.")
 
                     onLinkActivated: Qt.openUrlExternally(
-                                         "https://drive.google.com/file/d/1LY2u9Ds6aVphRUfEsWxqF5Xet_5uovQe/view?usp=sharing")
+                                         "https://volfyirion.s3-eu-west-1.amazonaws.com/cards/community-cards.pdf")
                     Layout.fillWidth: true
                     Layout.bottomMargin: 27
                 }

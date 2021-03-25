@@ -186,12 +186,12 @@ ListModel {
     // Community cards
     ListElement {
         language: "The Victory of Volfyirion’s Worshipper"
-        downloadUrl: "https://drive.google.com/drive/folders/1pQneyfWoW3J0XpuEy-b037we8Z-t5YpG/omnius_cards.pdf"
+        downloadUrl: "https://volfyirion.s3-eu-west-1.amazonaws.com/cards/community-cards.pdf"
         type: "community cards"
     }
     ListElement {
         language: "Volfyirion Bait & Death Eraser"
-        downloadUrl: "https://drive.google.com/drive/folders/1pQneyfWoW3J0XpuEy-b037we8Z-t5YpG/pillai_cards.pdf"
+        downloadUrl: "https://volfyirion.s3-eu-west-1.amazonaws.com/cards/community-cards.pdf"
         type: "community cards"
     }
 }
