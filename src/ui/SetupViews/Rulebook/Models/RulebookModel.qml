@@ -5504,7 +5504,7 @@ Item {
                     Layout.topMargin: 27
                     Layout.bottomMargin: 15
 
-                    text: qsTr("the victory of volfyirion’s worshipper")
+                    text: qsTr("Volfyirion Bait & Death Eraser")
                     wrapMode: Text.WordWrap
                 }
 
